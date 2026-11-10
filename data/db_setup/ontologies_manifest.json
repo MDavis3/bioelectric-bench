@@ -1,0 +1,21 @@
+{
+ "note": "Supplement to data/raw_db_manifest.json (sealed): ontology files fetched by the planner for the zebrafish endpoint.",
+ "files": [
+  {
+   "file": "data/db_setup/ontologies/pato.obo",
+   "url": "https://purl.obolibrary.org/obo/pato.obo",
+   "bytes": 771224,
+   "sha256": "951ca3dc2f0821ab56f46c240836cab1719c789dc79508cbec32e6f99cb8174e",
+   "fetched_utc": "2026-11-10T07:56Z",
+   "license": "CC-BY-4.0 (PATO, ZFA)"
+  },
+  {
+   "file": "data/db_setup/ontologies/zfa.obo",
+   "url": "https://purl.obolibrary.org/obo/zfa.obo",
+   "bytes": 1656680,
+   "sha256": "ee378cb00699a69d8b6fb7c608041ae11db97f0caab5570d63982a9a2d18ee25",
+   "fetched_utc": "2026-11-10T07:56Z",
+   "license": "CC-BY-4.0 (PATO, ZFA)"
+  }
+ ]
+}

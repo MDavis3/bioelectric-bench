@@ -1,0 +1,129 @@
+section,species,stratum,cls,group,metric,value
+units,,,,,n_units,20592
+units_by_stratum_class,mouse,IMPC only,class,,n_units,61
+units_by_stratum_class,mouse,IMPC only,control,,n_units,176
+units_by_stratum_class,mouse,IMPC only,grey,,n_units,33
+units_by_stratum_class,mouse,IMPC only,other,,n_units,4537
+units_by_stratum_class,mouse,MGI-literature and IMPC,class,,n_units,138
+units_by_stratum_class,mouse,MGI-literature and IMPC,control,,n_units,311
+units_by_stratum_class,mouse,MGI-literature and IMPC,grey,,n_units,44
+units_by_stratum_class,mouse,MGI-literature and IMPC,other,,n_units,4168
+units_by_stratum_class,mouse,MGI-literature only,class,,n_units,98
+units_by_stratum_class,mouse,MGI-literature only,control,,n_units,296
+units_by_stratum_class,mouse,MGI-literature only,grey,,n_units,44
+units_by_stratum_class,mouse,MGI-literature only,other,,n_units,4889
+units_by_stratum_class,zebrafish,ZFIN,class,,n_units,97
+units_by_stratum_class,zebrafish,ZFIN,control,,n_units,189
+units_by_stratum_class,zebrafish,ZFIN,grey,,n_units,33
+units_by_stratum_class,zebrafish,ZFIN,other,,n_units,5478
+units_by_species_class,mouse,,class,,n_units,297
+units_by_species_class,mouse,,control,,n_units,783
+units_by_species_class,mouse,,grey,,n_units,121
+units_by_species_class,mouse,,other,,n_units,13594
+units_by_species_class,zebrafish,,class,,n_units,97
+units_by_species_class,zebrafish,,control,,n_units,189
+units_by_species_class,zebrafish,,grey,,n_units,33
+units_by_species_class,zebrafish,,other,,n_units,5478
+class_units_by_subclass,mouse,,class,gap_junction,n_units,21
+class_units_by_subclass,mouse,,class,ligand_gated,n_units,72
+class_units_by_subclass,mouse,,class,other_channel,n_units,26
+class_units_by_subclass,mouse,,class,p_type_pump,n_units,14
+class_units_by_subclass,mouse,,class,v_atpase,n_units,17
+class_units_by_subclass,mouse,,class,voltage_gated,n_units,147
+class_units_by_subclass,zebrafish,,class,gap_junction,n_units,11
+class_units_by_subclass,zebrafish,,class,ligand_gated,n_units,29
+class_units_by_subclass,zebrafish,,class,other_channel,n_units,6
+class_units_by_subclass,zebrafish,,class,p_type_pump,n_units,3
+class_units_by_subclass,zebrafish,,class,v_atpase,n_units,6
+class_units_by_subclass,zebrafish,,class,voltage_gated,n_units,42
+blocks_by_class,,,class,,n_blocks,50
+blocks_by_class,,,control,,n_blocks,161
+blocks_by_class,,,grey,,n_blocks,23
+blocks_by_class,,,other,,n_blocks,7179
+blocks,,,,,n_blocks_all,7392
+blocks,,,,A=anchor without family,n_units_by_block_type,2425
+blocks,,,,F=smallest HGNC family,n_units_by_block_type,15099
+blocks,,,,U=no anchor (singleton),n_units_by_block_type,3068
+orthology,mouse,,,,n_units_no_human_anchor,397
+orthology,zebrafish,,,,n_units_no_human_anchor,2671
+orthology,,,,,n_distinct_human_anchors,14461
+orthology,,,,,n_anchors_with_units_in_both_species,2573
+orthology,,,class,,n_distinct_human_anchors,301
+orthology,,,class,,n_anchors_with_units_in_both_species,79
+orthology,,,control,,n_distinct_human_anchors,780
+orthology,,,control,,n_anchors_with_units_in_both_species,155
+orthology,,,grey,,n_distinct_human_anchors,121
+orthology,,,grey,,n_anchors_with_units_in_both_species,29
+zebrafish_locus_type,zebrafish,,,ENHANCER|unanchored,n_units,6
+zebrafish_locus_type,zebrafish,,,GENE|unanchored,n_units,2622
+zebrafish_locus_type,zebrafish,,,GENE|anchored,n_units,3114
+zebrafish_locus_type,zebrafish,,,LINCRNAG|unanchored,n_units,21
+zebrafish_locus_type,zebrafish,,,LINCRNAG|anchored,n_units,3
+zebrafish_locus_type,zebrafish,,,LNCRNAG|unanchored,n_units,1
+zebrafish_locus_type,zebrafish,,,LNCRNAG|anchored,n_units,2
+zebrafish_locus_type,zebrafish,,,MIRNAG|unanchored,n_units,18
+zebrafish_locus_type,zebrafish,,,MIRNAG|anchored,n_units,6
+zebrafish_locus_type,zebrafish,,,NCCR|unanchored,n_units,1
+zebrafish_locus_type,zebrafish,,,NCRNAG|unanchored,n_units,1
+zebrafish_locus_type,zebrafish,,,SNORNAG|unanchored,n_units,1
+zebrafish_locus_type,zebrafish,,,SNORNAG|anchored,n_units,1
+impc_centre,mouse,,,BCM,n_units,1266
+impc_centre,mouse,,,CCP-IMG,n_units,472
+impc_centre,mouse,,,HMGU,n_units,579
+impc_centre,mouse,,,ICS,n_units,220
+impc_centre,mouse,,,JAX,n_units,2194
+impc_centre,mouse,,,KMPC,n_units,112
+impc_centre,mouse,,,MARC,n_units,217
+impc_centre,mouse,,,MRC Harwell,n_units,818
+impc_centre,mouse,,,RBRC,n_units,106
+impc_centre,mouse,,,TCP,n_units,601
+impc_centre,mouse,,,UC Davis,n_units,1649
+impc_centre,mouse,,,WTSI,n_units,1234
+covariates,mouse,,,,n_units_depth_zero,1483
+covariates,zebrafish,,,,n_units_depth_zero,2746
+covariates,mouse,,,,n_units_expr_breadth_zero,2563
+covariates,zebrafish,,,,n_units_expr_breadth_zero,2817
+nn_features,,,,,n_rows,20592
+nn_features,,,,,n_units_nonempty_mf,16849
+nn_features,,,,,n_units_nonempty_expr,15212
+nn_features,,,,,n_units_nonempty_grp,15099
+human_gene_classes,human,,class,,n_human_genes,325
+human_gene_classes,human,,control,,n_human_genes,903
+human_gene_classes,human,,grey,,n_human_genes,142
+human_gene_classes,human,,class,gap_junction,n_human_genes,24
+human_gene_classes,human,,class,ligand_gated,n_human_genes,79
+human_gene_classes,human,,class,other_channel,n_human_genes,28
+human_gene_classes,human,,class,p_type_pump,n_human_genes,14
+human_gene_classes,human,,class,v_atpase,n_human_genes,23
+human_gene_classes,human,,class,voltage_gated,n_human_genes,157
+human_gene_classes,human,,control,ABC,n_human_genes,40
+human_gene_classes,human,,control,CLDN,n_human_genes,23
+human_gene_classes,human,,control,CMTM,n_human_genes,8
+human_gene_classes,human,,control,DISP,n_human_genes,3
+human_gene_classes,human,,control,GPCR,n_human_genes,361
+human_gene_classes,human,,control,P4_ATPase,n_human_genes,21
+human_gene_classes,human,,control,PTCH,n_human_genes,2
+human_gene_classes,human,,control,SLC,n_human_genes,408
+human_gene_classes,human,,control,TM9SF,n_human_genes,4
+human_gene_classes,human,,control,TSPAN,n_human_genes,33
+human_gene_classes,human,,grey,AQP,n_human_genes,3
+human_gene_classes,human,,grey,SLC12,n_human_genes,9
+human_gene_classes,human,,grey,SLC24,n_human_genes,5
+human_gene_classes,human,,grey,SLC26,n_human_genes,10
+human_gene_classes,human,,grey,SLC4,n_human_genes,10
+human_gene_classes,human,,grey,SLC8,n_human_genes,4
+human_gene_classes,human,,grey,SLC9,n_human_genes,14
+human_gene_classes,human,,grey,symbol_rule,n_human_genes,87
+endpoint_term_sets,mouse,,,Y_terms,n_terms,1304
+endpoint_term_sets,mouse,,,Y_terms_nosize_secondary,n_terms,1122
+endpoint_term_sets,mouse,,,Y_exc_terms,n_terms,4746
+endpoint_term_sets,mouse,,,lethality_terms,n_terms,56
+endpoint_term_sets,zebrafish,,,entity_terms,n_terms,881
+endpoint_term_sets,zebrafish,,,quality_terms,n_terms,574
+endpoint_term_sets,zebrafish,,,entity_exclude_terms,n_terms,1551
+endpoint_term_sets,zebrafish,,,process_terms,n_terms,128
+endpoint_term_sets,zebrafish,,,process_laterality_only_terms,n_terms,2
+endpoint_term_sets,zebrafish,,,lethality_quality_terms,n_terms,4
+endpoint_term_sets,zebrafish,,,laterality_quality_terms,n_terms,8
+endpoint_term_sets,zebrafish,,,Y_exc_entity_terms,n_terms,1532
+endpoint_term_sets,zebrafish,,,Y_exc_process_terms,n_terms,296

@@ -24,11 +24,16 @@ Secondary and settled (not pursued): the published planarian literature is too t
   of function; homozygous, hemizygous or heterozygous; not conditional (no Cre/Flp driver in the allelic composition),
   not tissue-specific, not transgenic overexpression, not a double or multiple mutant, no morpholino and no
   crispant/F0 in a fish record.
-  - Mouse: MGI single-gene genotype-phenotype reports with MGI allele attribute null/knockout or the allele types
-    above; IMPC significant calls (and IMPC genes known to have completed phenotyping, if the downloaded release
-    provides that list).
-  - Zebrafish: ZFIN phenotype records whose fish has exactly one affected genomic feature, a mutant allele, and no
-    sequence-targeting reagent.
+  - Mouse (as implemented in harness/db_build_units.py): MGI single-gene genotypes in which every allele carries the
+    MGI attribute "Null/knockout" (stricter than the list above; no transgene or recombinase allele), counted as
+    MGI-literature only when the record has a PMID; plus IMPC genes that went through phenotyping (IMPC Solr API),
+    with their significant calls.
+  - Zebrafish (as implemented): ZFIN records whose fish has exactly one affected gene, at least one mutant allele
+    feature that is not a transgenic insertion (any mutation class, missense included; no zygosity filter), no
+    morpholino, CRISPR or TALEN reagent, and standard/control environment only. This is looser than "loss of
+    function" for fish; it is stated here as the sealed rule.
+  - Multiple human orthologs: the unit takes the highest-precedence class (class > grey > control > other), so a gene
+    can be class through a weaker paralog. Decided before outcomes.
 - A unit exists if it has at least one eligible record, normal findings included. "No annotation" is not a unit.
   "Normal only" is Y = 0.
 - Source strata: MGI-literature, IMPC, ZFIN. A mouse gene in both MGI and IMPC is one unit; source enters as two
