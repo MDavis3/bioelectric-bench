@@ -1,0 +1,5 @@
+{
+ "note": "Firewall allow-list v5: overnight report written after the counted database run (results are public by design once the counted run is done).",
+ "text_allow_add": {"reports/overnight.md": "post-counted-run summary", "reports/morning_summary.md": "previous night's summary"},
+ "denied_add": []
+}
