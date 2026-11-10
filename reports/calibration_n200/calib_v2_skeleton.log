@@ -1,0 +1,275 @@
+{
+ "meta": {
+  "n_rows": 288,
+  "n_papers": 24,
+  "n_lineages": 9,
+  "params": "config/holdout_params_v2.json",
+  "strength": 0.4,
+  "seeds": 20,
+  "source": "skeleton"
+ },
+ "summary": {
+  "null|real|agent": {
+   "n": 20,
+   "verdict": {
+    "FAIL": 20
+   },
+   "unit_only": {
+    "FAIL": 20
+   },
+   "p3": {}
+  },
+  "null|real|target": {
+   "n": 20,
+   "verdict": {
+    "FAIL": 20
+   },
+   "unit_only": {
+    "FAIL": 20
+   },
+   "p3": {
+    "FAIL": 20
+   }
+  },
+  "null|real|lab": {
+   "n": 20,
+   "verdict": {
+    "FAIL": 20
+   },
+   "unit_only": {
+    "FAIL": 20
+   },
+   "p3": {}
+  },
+  "null|real|decade": {
+   "n": 20,
+   "verdict": {
+    "UNTESTABLE": 20
+   },
+   "unit_only": {
+    "UNTESTABLE": 20
+   },
+   "p3": {}
+  },
+  "class|real|agent": {
+   "n": 20,
+   "verdict": {
+    "PASS": 20
+   },
+   "unit_only": {
+    "PASS": 20
+   },
+   "p3": {}
+  },
+  "class|real|target": {
+   "n": 20,
+   "verdict": {
+    "PASS": 20
+   },
+   "unit_only": {
+    "PASS": 20
+   },
+   "p3": {
+    "FAIL": 13,
+    "INCONCLUSIVE": 7
+   }
+  },
+  "class|real|lab": {
+   "n": 20,
+   "verdict": {
+    "PASS": 20
+   },
+   "unit_only": {
+    "PASS": 20
+   },
+   "p3": {}
+  },
+  "class|real|decade": {
+   "n": 20,
+   "verdict": {
+    "UNTESTABLE": 20
+   },
+   "unit_only": {
+    "UNTESTABLE": 20
+   },
+   "p3": {}
+  },
+  "vmem|real|agent": {
+   "n": 20,
+   "verdict": {
+    "PASS": 20
+   },
+   "unit_only": {
+    "PASS": 20
+   },
+   "p3": {}
+  },
+  "vmem|real|target": {
+   "n": 20,
+   "verdict": {
+    "PASS": 20
+   },
+   "unit_only": {
+    "PASS": 20
+   },
+   "p3": {
+    "PASS": 20
+   }
+  },
+  "vmem|real|lab": {
+   "n": 20,
+   "verdict": {
+    "PASS": 20
+   },
+   "unit_only": {
+    "PASS": 20
+   },
+   "p3": {}
+  },
+  "vmem|real|decade": {
+   "n": 20,
+   "verdict": {
+    "UNTESTABLE": 20
+   },
+   "unit_only": {
+    "UNTESTABLE": 20
+   },
+   "p3": {}
+  },
+  "lineage_only|real|agent": {
+   "n": 20,
+   "verdict": {
+    "FAIL": 20
+   },
+   "unit_only": {
+    "FAIL": 20
+   },
+   "p3": {}
+  },
+  "lineage_only|real|target": {
+   "n": 20,
+   "verdict": {
+    "FAIL": 20
+   },
+   "unit_only": {
+    "FAIL": 20
+   },
+   "p3": {
+    "FAIL": 20
+   }
+  },
+  "lineage_only|real|lab": {
+   "n": 20,
+   "verdict": {
+    "FAIL": 20
+   },
+   "unit_only": {
+    "FAIL": 20
+   },
+   "p3": {}
+  },
+  "lineage_only|real|decade": {
+   "n": 20,
+   "verdict": {
+    "UNTESTABLE": 20
+   },
+   "unit_only": {
+    "UNTESTABLE": 20
+   },
+   "p3": {}
+  },
+  "dominant_lab|real|agent": {
+   "n": 20,
+   "verdict": {
+    "INCONCLUSIVE": 20
+   },
+   "unit_only": {
+    "PASS": 19,
+    "INCONCLUSIVE": 1
+   },
+   "p3": {}
+  },
+  "dominant_lab|real|target": {
+   "n": 20,
+   "verdict": {
+    "INCONCLUSIVE": 12,
+    "FAIL": 8
+   },
+   "unit_only": {
+    "PASS": 11,
+    "FAIL": 8,
+    "INCONCLUSIVE": 1
+   },
+   "p3": {
+    "FAIL": 16,
+    "INCONCLUSIVE": 4
+   }
+  },
+  "dominant_lab|real|lab": {
+   "n": 20,
+   "verdict": {
+    "FAIL": 20
+   },
+   "unit_only": {
+    "FAIL": 20
+   },
+   "p3": {}
+  },
+  "dominant_lab|real|decade": {
+   "n": 20,
+   "verdict": {
+    "UNTESTABLE": 20
+   },
+   "unit_only": {
+    "UNTESTABLE": 20
+   },
+   "p3": {}
+  },
+  "few_dir|real|agent": {
+   "n": 20,
+   "verdict": {
+    "PASS": 20
+   },
+   "unit_only": {
+    "PASS": 20
+   },
+   "p3": {}
+  },
+  "few_dir|real|target": {
+   "n": 20,
+   "verdict": {
+    "FAIL": 1,
+    "INCONCLUSIVE": 18,
+    "PASS": 1
+   },
+   "unit_only": {
+    "FAIL": 1,
+    "INCONCLUSIVE": 18,
+    "PASS": 1
+   },
+   "p3": {
+    "UNTESTABLE": 20
+   }
+  },
+  "few_dir|real|lab": {
+   "n": 20,
+   "verdict": {
+    "PASS": 20
+   },
+   "unit_only": {
+    "PASS": 20
+   },
+   "p3": {}
+  },
+  "few_dir|real|decade": {
+   "n": 20,
+   "verdict": {
+    "UNTESTABLE": 20
+   },
+   "unit_only": {
+    "UNTESTABLE": 20
+   },
+   "p3": {}
+  }
+ }
+}

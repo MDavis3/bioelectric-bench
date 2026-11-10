@@ -82,7 +82,7 @@ Because 12 papers were not in hand, a bound rule (`bound_rule_v1`) was sealed be
 
 The sealed analysis code was run on simulated outcomes to measure how often it passes when nothing is there and when something is (`harness/calibrate_v2.py`). Three inputs were used: a synthetic skeleton of 24 papers in 9 lineages; the real design, meaning the setup columns of the 302 treated primary-family arms from the setup-only pass, with outcomes simulated; and the real adjudicated rows with their outcomes shuffled, run by a separate agent that returned verdict tallies only. Simulated worlds were: no signal; outcome set by target class and action; outcome set by the voltage label; a lab confound with no mechanism; one dominant lab carrying all the signal; and too few directional targets.
 
-Synthetic runs used 50 permutations rather than the sealed 200, for runtime; the real-outcome shuffles used the sealed parameters unchanged. A rerun of the synthetic worlds at 200 permutations was started on 2026-11-10 and had not finished when this draft was written (`reports/calibration_n200/` has no completion flag). All calibration numbers below are from the 50-permutation run.
+Synthetic runs were first made with 50 permutations for runtime and then rerun at the sealed 200; every verdict tally was identical in all 44 world x variant x mode cells (`reports/calibration_v2_n200.md`). The real-outcome shuffles used the sealed parameters throughout.
 
 ### 2.9 Re-pilot gates
 
@@ -145,7 +145,7 @@ Overlap between groups is small: 8 of 108 agents and 8 of 80 targets were tested
 
 ![Figure 2](fig2_calibration_pass_rates.png)
 
-**Figure 2. Calibration pass rates.** Grey: simulated data with no mechanism. Orange: simulated data with a planted mechanism. Synthetic runs used 50 permutations; a 200-permutation rerun is in progress.
+**Figure 2. Calibration pass rates.** Grey: simulated data with no mechanism. Orange: simulated data with a planted mechanism. Tallies are identical at 50 and at the sealed 200 permutations.
 
 The planted-signal and no-signal cases are therefore almost indistinguishable on the real design: the interpretation report gives 196 FAIL in the 200 planted runs and 396 FAIL in 400 null runs on real-corpus inputs. The relabelling result shows that the lineage count is not the only obstacle. Each class of agent sits almost entirely inside one or two papers from one group, and a holdout that removes a unit's papers from training leaves nothing from which to transfer.
 
@@ -205,7 +205,7 @@ Under endpoints and minimums fixed in advance, the in-hand planarian record cann
 - **Procedural slips.** The planning agent once ran the blinding script over restricted rows (it printed a count only). The setup-pass upper bound of 15 was known about two minutes before the bound rule was sealed; the threshold and wording predate it. Endpoint-affecting changes in the second harness version (the 8-lineage minimum, the sign-flip requirement, skipping small folds) were logged and made before any second-version row existed, but after first-session outcomes had leaked. About 70 probe requests reached a publisher's server before its robots.txt, which disallows them, was read; nothing was downloaded.
 - **Firewall strength.** It is enforced by layout, scripts and integer-only replies, not by operating-system permissions.
 - **Harness review.** Two independent code reviews each ended "seal after must-fixes"; the last four fixes were not re-reviewed, and the harness was sealed before calibration finished.
-- **Calibration scope.** Synthetic runs used 50 permutations instead of 200. Power on the real design used one planted signal type and one strength, on the 302 setup-pass arms; the 147 scorable rows are a thinner design, and power with the missing papers added was not simulated.
+- **Calibration scope.** Power on the real design used one planted signal type and one strength, on the 302 setup-pass arms; the 147 scorable rows are a thinner design, and power with the missing papers added was not simulated.
 - **Open data problems.** The adjudicated rows have 31 validation problems, 12 agent names not in the sealed lookup, and one lineage label absent from the sealed map; these would block a counted run. The corpus status file already marks the 12 missing papers unreachable, ahead of closure.
 - **Scope.** One organism group and one outcome family, one search run, a pharmacological voltage label, and a lineage map that involves judgment. Different endpoints or minimums would give different testability thresholds; ours were fixed before the counts were known, with the exceptions stated above.
 - **Corpus completeness.** Twelve of 32 included papers are not in hand, most from before 1971.

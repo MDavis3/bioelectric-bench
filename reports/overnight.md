@@ -71,9 +71,11 @@
 - Q017 needs ClinVar; the drug probe needs FAERS. Neither was approved.
 - Q016 (dataset release) waits on the GtoPdb CC-BY-SA licence choice.
 
-## Still running at the time of writing
+## Calibration at 200 permutations (finished 10:25 PST)
 
-- The old-harness calibration at 200 permutations (reports/calibration_n200/). This section is updated when it finishes.
+- Every verdict tally matched the 50-permutation run: 0 of 44 cells changed, and 0 false PASS in 440 null-type runs
+  (reports/calibration_v2_n200.md). The planarian conclusions and the preprint stand; the preprint now cites the
+  200-permutation rerun.
 
 ## Next step I would take
 
