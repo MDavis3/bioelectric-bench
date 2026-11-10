@@ -64,6 +64,7 @@
   },
   "db_raw_manifest_v1": {
     "copy": "sealed/db_raw_manifest_v1__178454bf68e4.json",
+    "remote_commit": "3cf5e5432c8e4b8f240287bc969ea181b80989ee",
     "sha256": "178454bf68e48258e4a1b425690679b2ce36972a9d131c994200190036228b66",
     "source": "data/raw_db_manifest.json",
     "utc": "2026-11-10T16:38:37Z"
