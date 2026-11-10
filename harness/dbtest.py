@@ -368,6 +368,7 @@ def analyze(s, E, mats_nn, y, y_exc, lethal_nomorph, params, n_perm=None, n_boot
             pick = rng.integers(0, len(bl_d), len(bl_d))
             bs.append(bl_d["sum"].values[pick].sum() / bl_d["count"].values[pick].sum())
         rep[f"{tag}_lo"], rep[f"{tag}_hi"] = [float(v) for v in np.percentile(bs, [2.5, 97.5])]
+        rep[f"{tag}_p05"] = float(np.percentile(bs, 5))   # one-sided alpha 0.05 bound (tier 2)
     # consistency
     def sub_or(mask):
         m = cc & mask
@@ -458,7 +459,12 @@ def sim_one(args):
     y, ye, le = simulate_y(s, rates, rng, world, P)
     rep = analyze(s, E, mats_nn, y, ye, le, P, n_perm=P["sim_n_perm"], n_boot=P["sim_n_boot"], seed=seed)
     if P.get("sim_all_rules"):
-        return {r: judge(rep, dict(P, t2_rule=r))[0] for r in ("brier_required", "logloss_required", "reported")}
+        out = {r: judge(rep, dict(P, t2_rule=r))[0] for r in ("brier_required", "logloss_required", "reported")}
+        out["tier2_brier"] = "MET" if rep["t2_p05"] > 0 else "NOT"
+        out["tier2_logloss"] = "MET" if rep["t2ll_p05"] > 0 else "NOT"
+        out["reported_and_tier2_brier"] = "YES" if out["reported"] == "PASS" and out["tier2_brier"] == "MET" else "NO"
+        out["reported_and_tier2_logloss"] = "YES" if out["reported"] == "PASS" and out["tier2_logloss"] == "MET" else "NO"
+        return out
     v, _ = judge(rep, P)
     return v
 
