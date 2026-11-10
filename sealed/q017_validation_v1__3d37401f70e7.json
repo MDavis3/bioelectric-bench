@@ -1,0 +1,37 @@
+{
+ "note": "Q017 label-validation list (red team MUST 3), frozen by the planner before any ClinVar content was seen. Pairs chosen from functional literature by mechanism, not by phenotype. MIM numbers are from memory and marked for verification; the builder resolves each pair by gene + condition name in ClinVar/OMIM and reports unresolved pairs. Run is INVALID unless >= 80% of non-GREY pairs on each side get the expected label and >= 8 per side are non-GREY.",
+ "expected_ALT": [
+  ["SCN4A", "hyperkalemic periodic paralysis", "170500"],
+  ["SCN9A", "primary erythermalgia", "133020"],
+  ["KCNJ11", "permanent neonatal diabetes mellitus", "606176"],
+  ["SCN5A", "long QT syndrome 3", "603830"],
+  ["KCNT1", "developmental and epileptic encephalopathy 14", "614959"],
+  ["SCN8A", "developmental and epileptic encephalopathy 13", "614558"],
+  ["KCNQ2", "developmental and epileptic encephalopathy 7", "613720"],
+  ["CACNA1A", "familial hemiplegic migraine 1", "141500"],
+  ["TRPV4", "metatropic dysplasia", "156530"],
+  ["PIEZO1", "dehydrated hereditary stomatocytosis", "194380"],
+  ["ABCC8", "transient neonatal diabetes mellitus 2", "610374"],
+  ["KCNMA1", "paroxysmal nonkinesigenic dyskinesia 3", "609446"],
+  ["RYR1", "malignant hyperthermia susceptibility 1", "145600"],
+  ["CACNA1C", "Timothy syndrome", "601005"],
+  ["ATP1A3", "alternating hemiplegia of childhood 2", "614820"]
+ ],
+ "expected_LOF": [
+  ["SCN1A", "Dravet syndrome", "607208"],
+  ["KCNQ1", "Jervell and Lange-Nielsen syndrome 1", "220400"],
+  ["KCNJ1", "Bartter syndrome type 2", "241200"],
+  ["CLCN1", "myotonia congenita recessive (Becker)", "255700"],
+  ["SCN5A", "Brugada syndrome 1", "601144"],
+  ["KCNH2", "long QT syndrome 2", "613688"],
+  ["SCN9A", "congenital insensitivity to pain", "243000"],
+  ["CFTR", "cystic fibrosis", "219700"],
+  ["ATP7A", "Menkes disease", "309400"],
+  ["CACNA1A", "episodic ataxia type 2", "108500"],
+  ["SLC12A3", "Gitelman syndrome", "263800"],
+  ["SLC26A4", "Pendred syndrome", "274600"],
+  ["KCNJ10", "EAST/SeSAME syndrome", "612780"],
+  ["ABCA4", "Stargardt disease 1", "248200"],
+  ["GJB2", "autosomal recessive deafness 1A", "220290"]
+ ]
+}

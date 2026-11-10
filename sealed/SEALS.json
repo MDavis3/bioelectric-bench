@@ -279,6 +279,12 @@
     "source": "harness/planner_firewall_v4.py",
     "utc": "2026-11-10T16:52:42Z"
   },
+  "q017_validation_v1": {
+    "copy": "sealed/q017_validation_v1__3d37401f70e7.json",
+    "sha256": "3d37401f70e71919a5cd270ab58a05cfdbb4d4568d002ab438c6d97480ad6968",
+    "source": "config/q017_validation_v1.json",
+    "utc": "2026-11-10T18:30:10Z"
+  },
   "q018_power": {
     "copy": "sealed/q018_power__67fc9680d190.json",
     "remote_commit": "402a9d5404cb91cb32a9b6814b723d29c74d1d82",
