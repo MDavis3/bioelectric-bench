@@ -610,5 +610,27 @@
   "license": "CC-BY-4.0",
   "robots_ok": true,
   "note": "FMS returns HTTP 500; no PHENOTYPE-ALLIANCE datafile registered; not fetched"
+ },
+ {
+  "source": "impc_api",
+  "url": "https://www.ebi.ac.uk/mi/impc/solr/genotype-phenotype/select?q=%2A%3A%2A&fq=resource_name%3AIMPC&rows=200000&wt=csv&fl=marker_accession_id%2Cmp_term_id%2Czygosity%2Cphenotyping_center%2Callele_accession_id%2Clife_stage_name%2Cresource_name%2Cparameter_stable_id%2Ccolony_id",
+  "local_path": "data/raw_db/impc_api/genotype-phenotype.csv",
+  "bytes": 6140068,
+  "sha256": "120e8a68b99ef73031987805f3e40943b8b675345109b06880ffca9f6cdb2618",
+  "fetched_utc": "2026-11-10T16:00:14Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true,
+  "note": "IMPC Solr API www.ebi.ac.uk (Crawl-Delay 10 honoured)"
+ },
+ {
+  "source": "impc_api",
+  "url": "https://www.ebi.ac.uk/mi/impc/solr/statistical-result/select?q=%2A%3A%2A&fq=resource_name%3AIMPC&fq=status%3ASuccessful&fq=-zygosity%3Awildtype&rows=0&wt=json&facet=true&facet.pivot=marker_accession_id%2Cphenotyping_center&facet.limit=-1&facet.mincount=1",
+  "local_path": "data/raw_db/impc_api/statistical-result_tested_genes.json",
+  "bytes": 2323030,
+  "sha256": "37308b96fc332376b35bac482e4ff575d6afaa8b11d6b61917062c37d9273aad",
+  "fetched_utc": "2026-11-10T16:00:32Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true,
+  "note": "IMPC Solr API www.ebi.ac.uk (Crawl-Delay 10 honoured)"
  }
 ]
