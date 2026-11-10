@@ -48,6 +48,12 @@
     "source": "config/holdout_params.json",
     "utc": "2026-11-10T06:34:16Z"
   },
+  "holdout_params_v2": {
+    "copy": "sealed/holdout_params_v2__6037ba6a6afd.json",
+    "sha256": "6037ba6a6afd93b2f039eabbec080e63fca9ab8f68a15da71df96605840f59a9",
+    "source": "config/holdout_params_v2.json",
+    "utc": "2026-11-10T09:19:35Z"
+  },
   "lab_lineage": {
     "copy": "sealed/lab_lineage__38f6f31232ad.json",
     "remote_commit": "322f8d151ef7a18320f99c441c9dbf0ce31e806a",
