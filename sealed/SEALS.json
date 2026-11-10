@@ -148,6 +148,7 @@
   },
   "planner_firewall_v3_code": {
     "copy": "sealed/planner_firewall_v3_code__d62e948a81b5.py",
+    "remote_commit": "a12cb4f076c7442a7f7f54a60ebcb6b6959b5bdb",
     "sha256": "d62e948a81b59590579cb3a69ffc25e67630ff0f274af78c33cf766c025cff88",
     "source": "harness/planner_firewall_v3.py",
     "utc": "2026-11-10T16:07:32Z"
