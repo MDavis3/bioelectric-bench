@@ -83,6 +83,12 @@
     "source": "config/lab_lineage_v3.json",
     "utc": "2026-11-10T09:19:48Z"
   },
+  "lineage_v3_changes": {
+    "copy": "sealed/lineage_v3_changes__d4b981f11f07.md",
+    "sha256": "d4b981f11f07130b61ac098bb8d94de92a99ef4643e0d0229bce2cc13f951689",
+    "source": "kb/lineage_v3_changes.md",
+    "utc": "2026-11-10T09:19:51Z"
+  },
   "outcome_categories": {
     "copy": "sealed/outcome_categories__e0907615ac51.json",
     "remote_commit": "834659c22ccfdd5341d83ee14e5cec8ed901d988",
