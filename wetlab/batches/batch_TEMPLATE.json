@@ -1,0 +1,84 @@
+{
+  "batch": "batch_01",
+  "sealed_date": "YYYY-MM-DD",
+  "organism": "planaria",
+  "species": "Girardia dorotocephala (or what you actually have; record supplier)",
+  "stage": "trunk fragment",
+  "injury": "pre- and post-pharyngeal cuts",
+  "readout": {
+    "method": "phone macro or USB microscope photo, scored blind by dish code",
+    "timepoint": "10 dpa"
+  },
+  "positive_control": {
+    "arm": "octanol",
+    "category": "double_head",
+    "min_fraction": 0.15
+  },
+  "score_positive_control": false,
+  "arms": [
+    {
+      "arm": "vehicle",
+      "role": "control",
+      "task_family": "planaria_ap_polarity",
+      "dishes": 3,
+      "fragments_per_dish": 10,
+      "intervention": {
+        "type": "control",
+        "target": null,
+        "agent": "vehicle (match the drug arms)",
+        "dose": null,
+        "dose_units": null,
+        "timing": "0 hpa",
+        "duration": "72 h",
+        "delivery": "bath",
+        "description": "vehicle only"
+      }
+    },
+    {
+      "arm": "octanol",
+      "role": "positive_control",
+      "task_family": "planaria_ap_polarity",
+      "dishes": 3,
+      "fragments_per_dish": 10,
+      "intervention": {
+        "type": "gap_junction_block",
+        "target": "innexins",
+        "agent": "1-octanol",
+        "dose": null,
+        "dose_units": "mM (set from the published protocol)",
+        "timing": "0 hpa",
+        "duration": "48-72 h (set from the published protocol)",
+        "delivery": "bath",
+        "description": "octanol bath after cutting"
+      }
+    },
+    {
+      "arm": "test_1",
+      "role": "test",
+      "task_family": "planaria_ap_polarity",
+      "dishes": 3,
+      "fragments_per_dish": 10,
+      "intervention": {
+        "type": "from shortlist",
+        "target": "from shortlist",
+        "agent": "a published intervention with documented handling, varied on dose or timing",
+        "dose": null,
+        "dose_units": null,
+        "timing": "0 hpa",
+        "duration": "72 h",
+        "delivery": "bath",
+        "description": "neutral description"
+      },
+      "drug": null
+    }
+  ],
+  "note": "Batch 1 is rig validation: water only, 60 fragments, must show clean normal regeneration. Batch 2+ use this shape: 3 arms x 30 fragments, cut in two sessions with arm order randomized within each session. Primary endpoint is the cryptic re-cut assay (planaria_cryptic) under a published, documented intervention. No claim leaves the repo until an independent replication batch (replicates field) agrees.",
+  "replicates": null,
+  "max_control_abnormal": 0.1,
+  "max_lethality": 0.3,
+  "viability_check": "day 3: count live fragments per dish; dead ones scored 'dead'",
+  "preregistered": {
+    "min_penetrance_that_counts": "set per arm before sealing",
+    "osf_or_preprint_url": null
+  }
+}

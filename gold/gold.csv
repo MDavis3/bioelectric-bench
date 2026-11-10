@@ -1,0 +1,2 @@
+item_id,batch,paper_id,organism,task_family,stage,injury,type,target,agent,dose,dose_units,timing,duration,outcome_counts
+EXAMPLE-DELETE-ME#fig2#octanol,early,10.0000/example,planaria,planaria_ap_polarity,trunk fragment,pre- and post-pharyngeal cuts,gap_junction_block,innexins,octanol,8,mM,0 hpa,72 h,normal:20;double_head:60;other:5

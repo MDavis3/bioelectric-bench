@@ -1,0 +1,704 @@
+{
+  "note": "Standard sources for the run. At env_check, a screener subagent checks each one (reachable? license? bulk download or API?), sets status to ok / partial / unreachable with a one-line note, and logs it. Never bypass paywalls or robots rules. Database and screen data are pre-cutoff, so they feed tier 3, the knowledge base and the discovery engine, never tier 2. Record source_type on every extracted row.",
+  "sources": [
+    {
+      "group": "theses",
+      "name": "ProQuest Open Access Dissertations",
+      "holds": "full dissertations with failed experiments, pilot data, nulls and extra arms cut from papers",
+      "why": "closest thing to unpublished data without asking anyone",
+      "engines": [
+        "A",
+        "B",
+        "D"
+      ],
+      "max_tier": 3,
+      "access": "open",
+      "priority": 1,
+      "url": "https://www.proquest.com/",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "theses",
+      "name": "OATD (Open Access Theses and Dissertations)",
+      "holds": "full dissertations with failed experiments, pilot data, nulls and extra arms cut from papers",
+      "why": "closest thing to unpublished data without asking anyone",
+      "engines": [
+        "A",
+        "B",
+        "D"
+      ],
+      "max_tier": 3,
+      "access": "open",
+      "priority": 1,
+      "url": "https://oatd.org",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "theses",
+      "name": "NDLTD Global ETD Search",
+      "holds": "full dissertations with failed experiments, pilot data, nulls and extra arms cut from papers",
+      "why": "closest thing to unpublished data without asking anyone",
+      "engines": [
+        "A",
+        "B",
+        "D"
+      ],
+      "max_tier": 3,
+      "access": "open",
+      "priority": 1,
+      "url": "https://search.ndltd.org",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "theses",
+      "name": "DART-Europe",
+      "holds": "full dissertations with failed experiments, pilot data, nulls and extra arms cut from papers",
+      "why": "closest thing to unpublished data without asking anyone",
+      "engines": [
+        "A",
+        "B",
+        "D"
+      ],
+      "max_tier": 3,
+      "access": "open",
+      "priority": 1,
+      "url": "https://www.dart-europe.org",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "theses",
+      "name": "University repositories (Tufts Digital Library, Stowers/KU, Stanford, MIT, Oxford ORA, etc.)",
+      "holds": "full dissertations with failed experiments, pilot data, nulls and extra arms cut from papers",
+      "why": "closest thing to unpublished data without asking anyone",
+      "engines": [
+        "A",
+        "B",
+        "D"
+      ],
+      "max_tier": 3,
+      "access": "open",
+      "priority": 1,
+      "url": null,
+      "status": "verify at env_check"
+    },
+    {
+      "group": "theses",
+      "name": "British Library EThOS (check: offline after 2023 cyberattack)",
+      "holds": "full dissertations with failed experiments, pilot data, nulls and extra arms cut from papers",
+      "why": "closest thing to unpublished data without asking anyone",
+      "engines": [
+        "A",
+        "B",
+        "D"
+      ],
+      "max_tier": 3,
+      "access": "open",
+      "priority": 1,
+      "url": "https://ethos.bl.uk",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "data_repositories",
+      "name": "Zenodo",
+      "holds": "raw counts, per-animal scores, images beyond what papers report",
+      "why": "more arms and n than the paper text",
+      "engines": [
+        "A",
+        "B"
+      ],
+      "max_tier": 2,
+      "access": "open",
+      "priority": 1,
+      "url": "https://zenodo.org",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "data_repositories",
+      "name": "Dryad",
+      "holds": "raw counts, per-animal scores, images beyond what papers report",
+      "why": "more arms and n than the paper text",
+      "engines": [
+        "A",
+        "B"
+      ],
+      "max_tier": 2,
+      "access": "open",
+      "priority": 1,
+      "url": "https://datadryad.org",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "data_repositories",
+      "name": "Figshare",
+      "holds": "raw counts, per-animal scores, images beyond what papers report",
+      "why": "more arms and n than the paper text",
+      "engines": [
+        "A",
+        "B"
+      ],
+      "max_tier": 2,
+      "access": "open",
+      "priority": 1,
+      "url": "https://figshare.com",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "data_repositories",
+      "name": "OSF",
+      "holds": "raw counts, per-animal scores, images beyond what papers report",
+      "why": "more arms and n than the paper text",
+      "engines": [
+        "A",
+        "B"
+      ],
+      "max_tier": 2,
+      "access": "open",
+      "priority": 1,
+      "url": "https://osf.io",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "data_repositories",
+      "name": "Mendeley Data",
+      "holds": "raw counts, per-animal scores, images beyond what papers report",
+      "why": "more arms and n than the paper text",
+      "engines": [
+        "A",
+        "B"
+      ],
+      "max_tier": 2,
+      "access": "open",
+      "priority": 1,
+      "url": "https://data.mendeley.com",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "data_repositories",
+      "name": "DataCite search (cross-repository)",
+      "holds": "raw counts, per-animal scores, images beyond what papers report",
+      "why": "more arms and n than the paper text",
+      "engines": [
+        "A",
+        "B"
+      ],
+      "max_tier": 2,
+      "access": "open",
+      "priority": 1,
+      "url": "https://search.datacite.org",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "data_repositories",
+      "name": "BioImage Archive and Image Data Resource",
+      "holds": "raw counts, per-animal scores, images beyond what papers report",
+      "why": "more arms and n than the paper text",
+      "engines": [
+        "A",
+        "B"
+      ],
+      "max_tier": 2,
+      "access": "open",
+      "priority": 1,
+      "url": "https://www.ebi.ac.uk/bioimage-archive/",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "data_repositories",
+      "name": "Journal source-data files (Nature Source Data, eLife, PLOS supplementary spreadsheets)",
+      "holds": "per-figure numbers in spreadsheets",
+      "why": "exact counts, no figure reading needed",
+      "engines": [
+        "A",
+        "B"
+      ],
+      "max_tier": 2,
+      "access": "open",
+      "priority": 1,
+      "url": null,
+      "status": "verify at env_check"
+    },
+    {
+      "group": "data_repositories",
+      "name": "Transparent peer review files (eLife, Nature Communications, EMBO, PLOS)",
+      "holds": "extra experiments reviewers asked for, often not in the final paper",
+      "why": "hidden arms and nulls",
+      "engines": [
+        "A",
+        "B"
+      ],
+      "max_tier": 2,
+      "access": "open",
+      "priority": 2,
+      "url": null,
+      "status": "verify at env_check"
+    },
+    {
+      "group": "screens",
+      "name": "EPA CompTox / ToxCast zebrafish developmental screens (Tanguay lab and others)",
+      "holds": "thousands of chemicals scored for embryo malformations (axis, craniofacial, fin, edema)",
+      "why": "huge structured drug-to-anatomy data that includes many ion channel agents",
+      "engines": [
+        "B",
+        "C"
+      ],
+      "max_tier": 3,
+      "access": "open",
+      "priority": 1,
+      "url": "https://comptox.epa.gov/dashboard",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "screens",
+      "name": "Planarian high-throughput chemical screens (e.g. Collins/Hagstrom lab ToxCast-library work)",
+      "holds": "regeneration and morphology endpoints for hundreds of chemicals in planaria",
+      "why": "direct planarian drug-to-anatomy data at scale",
+      "engines": [
+        "B",
+        "C"
+      ],
+      "max_tier": 3,
+      "access": "open",
+      "priority": 1,
+      "url": null,
+      "status": "verify at env_check"
+    },
+    {
+      "group": "screens",
+      "name": "FETAX (Frog Embryo Teratogenesis Assay, Xenopus) literature and datasets",
+      "holds": "Xenopus malformation counts for many chemicals under a standard protocol",
+      "why": "standardized Xenopus drug-to-anatomy data",
+      "engines": [
+        "B",
+        "C"
+      ],
+      "max_tier": 3,
+      "access": "open",
+      "priority": 1,
+      "url": null,
+      "status": "verify at env_check"
+    },
+    {
+      "group": "screens",
+      "name": "Zebrafish fin regeneration and drug screen literature",
+      "holds": "fin size and regrowth under channel and calcineurin drugs",
+      "why": "a third regenerating organism for the cross-species test",
+      "engines": [
+        "B",
+        "C"
+      ],
+      "max_tier": 3,
+      "access": "open",
+      "priority": 2,
+      "url": null,
+      "status": "verify at env_check"
+    },
+    {
+      "group": "phenotype_databases",
+      "name": "ZFIN",
+      "holds": "zebrafish mutant, morphant and chemical phenotypes, incl. ion channel genes",
+      "why": "the same channel giving the same anatomical effect across species would be a real piece of the code",
+      "engines": [
+        "B",
+        "C"
+      ],
+      "max_tier": 3,
+      "access": "open",
+      "priority": 1,
+      "url": "https://zfin.org",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "phenotype_databases",
+      "name": "Xenbase phenotypes",
+      "holds": "curated Xenopus phenotypes",
+      "why": "the same channel giving the same anatomical effect across species would be a real piece of the code",
+      "engines": [
+        "B",
+        "C"
+      ],
+      "max_tier": 3,
+      "access": "open",
+      "priority": 1,
+      "url": "https://www.xenbase.org",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "phenotype_databases",
+      "name": "MGI and IMPC",
+      "holds": "mouse knockout phenotypes for ion channel genes (craniofacial, limb, organ size)",
+      "why": "the same channel giving the same anatomical effect across species would be a real piece of the code",
+      "engines": [
+        "B",
+        "C"
+      ],
+      "max_tier": 3,
+      "access": "open",
+      "priority": 1,
+      "url": "https://www.informatics.jax.org",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "phenotype_databases",
+      "name": "FlyBase and WormBase",
+      "holds": "Drosophila and C. elegans channel phenotypes (e.g. wing size and shape)",
+      "why": "the same channel giving the same anatomical effect across species would be a real piece of the code",
+      "engines": [
+        "B",
+        "C"
+      ],
+      "max_tier": 3,
+      "access": "open",
+      "priority": 1,
+      "url": "https://flybase.org",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "phenotype_databases",
+      "name": "HPO, OMIM and Orphanet",
+      "holds": "human channelopathies with developmental anatomy (e.g. KCNJ2 Andersen-Tawil, CACNA1C Timothy, KCNH1)",
+      "why": "the same channel giving the same anatomical effect across species would be a real piece of the code",
+      "engines": [
+        "B",
+        "C"
+      ],
+      "max_tier": 3,
+      "access": "open",
+      "priority": 1,
+      "url": "https://hpo.jax.org",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "phenotype_databases",
+      "name": "Monarch Initiative",
+      "holds": "links phenotypes across species through orthologs",
+      "why": "the same channel giving the same anatomical effect across species would be a real piece of the code",
+      "engines": [
+        "B",
+        "C"
+      ],
+      "max_tier": 3,
+      "access": "open",
+      "priority": 1,
+      "url": "https://monarchinitiative.org",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "regulatory",
+      "name": "DailyMed / FDA drug labels, section 8.1 and 13 (animal developmental toxicity)",
+      "holds": "rat and rabbit malformation findings for approved drugs, incl. channel drugs",
+      "why": "regulator-grade drug-to-anatomy data nobody reads for bioelectricity",
+      "engines": [
+        "B",
+        "C"
+      ],
+      "max_tier": 3,
+      "access": "open",
+      "priority": 1,
+      "url": "https://dailymed.nlm.nih.gov",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "regulatory",
+      "name": "FDA approval packages (Drugs@FDA pharmacology/toxicology reviews) and EMA EPARs",
+      "holds": "full reproductive toxicity study summaries with doses and findings",
+      "why": "more detail than labels",
+      "engines": [
+        "C"
+      ],
+      "max_tier": 3,
+      "access": "open",
+      "priority": 2,
+      "url": "https://www.accessdata.fda.gov/scripts/cder/daf/",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "patents",
+      "name": "Google Patents and Lens.org",
+      "holds": "worked examples with counts (incl. bioelectric regeneration patents)",
+      "why": "experimental data that often never appears in papers",
+      "engines": [
+        "A",
+        "B",
+        "C"
+      ],
+      "max_tier": 3,
+      "access": "open",
+      "priority": 1,
+      "url": "https://www.lens.org",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "grants",
+      "name": "NIH RePORTER (abstracts, progress-linked publications)",
+      "holds": "what labs tried and what they report",
+      "why": "maps who works on what; points to theses and datasets",
+      "engines": [
+        "C",
+        "D"
+      ],
+      "max_tier": 4,
+      "access": "open",
+      "priority": 2,
+      "url": "https://reporter.nih.gov",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "grants",
+      "name": "NSF awards, CORDIS (EU project result summaries), UKRI Gateway to Research",
+      "holds": "final reports that sometimes state outcomes, incl. negative ones",
+      "why": "outcome statements outside journals",
+      "engines": [
+        "A",
+        "C"
+      ],
+      "max_tier": 3,
+      "access": "open",
+      "priority": 2,
+      "url": "https://cordis.europa.eu",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "abstracts",
+      "name": "Biophysical Society, SDB and ASCB meeting abstracts (journal supplements)",
+      "holds": "early results, some never published",
+      "why": "work that died before a paper, incl. nulls",
+      "engines": [
+        "A",
+        "B"
+      ],
+      "max_tier": 2,
+      "access": "open",
+      "priority": 2,
+      "url": null,
+      "status": "verify at env_check"
+    },
+    {
+      "group": "preprints",
+      "name": "bioRxiv",
+      "holds": "early versions, sometimes with arms dropped later",
+      "why": "post-cutoff tier 2 items and version diffs",
+      "engines": [
+        "A"
+      ],
+      "max_tier": 2,
+      "access": "open",
+      "priority": 1,
+      "url": "https://www.biorxiv.org",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "preprints",
+      "name": "Research Square, Preprints.org, Europe PMC preprints",
+      "holds": "early versions, sometimes with arms dropped later",
+      "why": "post-cutoff tier 2 items and version diffs",
+      "engines": [
+        "A"
+      ],
+      "max_tier": 2,
+      "access": "open",
+      "priority": 1,
+      "url": "https://europepmc.org",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "protocols",
+      "name": "protocols.io and Bio-protocol",
+      "holds": "detailed methods, often with expected results and counts",
+      "why": "published handling for desk-safe interventions",
+      "engines": [
+        "E",
+        "A"
+      ],
+      "max_tier": 3,
+      "access": "open",
+      "priority": 2,
+      "url": "https://www.protocols.io",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "teaching",
+      "name": "Undergraduate planarian regeneration labs (CourseSource, lab manuals, education papers with class data)",
+      "holds": "many small replications with student counts, incl. nulls",
+      "why": "replication rates and nulls at scale; desk-safe protocols",
+      "engines": [
+        "A",
+        "B",
+        "E"
+      ],
+      "max_tier": 3,
+      "access": "open",
+      "priority": 2,
+      "url": null,
+      "status": "verify at env_check"
+    },
+    {
+      "group": "old_and_non_english",
+      "name": "Biodiversity Heritage Library",
+      "holds": "pre-1970 scans and non-English regeneration work",
+      "why": "least-mined literature; least likely memorized",
+      "engines": [
+        "D",
+        "B"
+      ],
+      "max_tier": 4,
+      "access": "open",
+      "priority": 1,
+      "url": "https://www.biodiversitylibrary.org",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "old_and_non_english",
+      "name": "archive.org",
+      "holds": "pre-1970 scans and non-English regeneration work",
+      "why": "least-mined literature; least likely memorized",
+      "engines": [
+        "D",
+        "B"
+      ],
+      "max_tier": 4,
+      "access": "open",
+      "priority": 2,
+      "url": "https://archive.org",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "old_and_non_english",
+      "name": "HathiTrust (full-view public domain)",
+      "holds": "pre-1970 scans and non-English regeneration work",
+      "why": "least-mined literature; least likely memorized",
+      "engines": [
+        "D",
+        "B"
+      ],
+      "max_tier": 4,
+      "access": "open",
+      "priority": 2,
+      "url": "https://www.hathitrust.org",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "old_and_non_english",
+      "name": "Gallica (French)",
+      "holds": "pre-1970 scans and non-English regeneration work",
+      "why": "least-mined literature; least likely memorized",
+      "engines": [
+        "D",
+        "B"
+      ],
+      "max_tier": 4,
+      "access": "open",
+      "priority": 2,
+      "url": "https://gallica.bnf.fr",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "old_and_non_english",
+      "name": "J-STAGE (Japanese journals, e.g. Zoological Science)",
+      "holds": "pre-1970 scans and non-English regeneration work",
+      "why": "least-mined literature; least likely memorized",
+      "engines": [
+        "D",
+        "B"
+      ],
+      "max_tier": 4,
+      "access": "open",
+      "priority": 1,
+      "url": "https://www.jstage.jst.go.jp",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "old_and_non_english",
+      "name": "CyberLeninka (Russian open journals)",
+      "holds": "pre-1970 scans and non-English regeneration work",
+      "why": "least-mined literature; least likely memorized",
+      "engines": [
+        "D",
+        "B"
+      ],
+      "max_tier": 4,
+      "access": "open",
+      "priority": 2,
+      "url": "https://cyberleninka.ru",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "old_and_non_english",
+      "name": "Chinese open-access journals and CNKI open content (much Dugesia japonica work)",
+      "holds": "pre-1970 scans and non-English regeneration work",
+      "why": "least-mined literature; least likely memorized",
+      "engines": [
+        "D",
+        "B"
+      ],
+      "max_tier": 4,
+      "access": "open",
+      "priority": 2,
+      "url": "https://www.cnki.net",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "core",
+      "name": "PubMed Central open access and Europe PMC full text",
+      "holds": "papers, planarian genes and expression, drug targets",
+      "why": "v1 core",
+      "engines": [
+        "A",
+        "B",
+        "C"
+      ],
+      "max_tier": 2,
+      "access": "open",
+      "priority": 1,
+      "url": "https://europepmc.org",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "core",
+      "name": "PlanMine and Planosphere",
+      "holds": "papers, planarian genes and expression, drug targets",
+      "why": "v1 core",
+      "engines": [
+        "A",
+        "B",
+        "C"
+      ],
+      "max_tier": 2,
+      "access": "open",
+      "priority": 1,
+      "url": "https://planosphere.stowers.org",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "core",
+      "name": "IUPHAR Guide to Pharmacology",
+      "holds": "papers, planarian genes and expression, drug targets",
+      "why": "v1 core",
+      "engines": [
+        "A",
+        "B",
+        "C"
+      ],
+      "max_tier": 2,
+      "access": "open",
+      "priority": 1,
+      "url": "https://www.guidetopharmacology.org",
+      "status": "verify at env_check"
+    },
+    {
+      "group": "core",
+      "name": "ChEMBL",
+      "holds": "papers, planarian genes and expression, drug targets",
+      "why": "v1 core",
+      "engines": [
+        "A",
+        "B",
+        "C"
+      ],
+      "max_tier": 2,
+      "access": "open",
+      "priority": 1,
+      "url": "https://www.ebi.ac.uk/chembl/",
+      "status": "verify at env_check"
+    }
+  ]
+}

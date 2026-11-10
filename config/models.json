@@ -1,0 +1,98 @@
+{
+  "note": "Role -> model routing. 'bakeoff' means harness/bakeoff.py decides from gold early results and writes the choice to config/routing_decided.json. Fallback is used when a step is blocked by safeguards or fails twice; log every fallback.",
+  "roles": {
+    "planner": {
+      "model": "fable",
+      "fallback": "opus",
+      "sees_test_setups": true,
+      "sees_test_outcomes": false
+    },
+    "predictor": {
+      "model": "fable",
+      "fallback": "opus",
+      "sees_test_setups": true,
+      "sees_test_outcomes": false,
+      "note": "fresh context per batch; reads only data/train and data/test/setups"
+    },
+    "theorist": {
+      "model": "fable",
+      "fallback": "opus",
+      "sees_test_setups": false,
+      "sees_test_outcomes": false,
+      "note": "per-decade rules: give it only rows published before that origin (script-built file)"
+    },
+    "adjudicator": {
+      "model": "opus",
+      "fallback": "sonnet",
+      "sees_test_setups": true,
+      "sees_test_outcomes": true,
+      "note": "different model from the predictor"
+    },
+    "red_team": {
+      "model": "fable",
+      "fallback": "opus",
+      "sees_test_setups": false,
+      "sees_test_outcomes": false
+    },
+    "extractor_A": {
+      "model": "bakeoff",
+      "candidates": [
+        "haiku",
+        "sonnet"
+      ],
+      "sees_test_outcomes": true
+    },
+    "extractor_B": {
+      "model": "bakeoff",
+      "candidates": [
+        "haiku",
+        "sonnet"
+      ],
+      "sees_test_outcomes": true
+    },
+    "screener": {
+      "model": "haiku",
+      "fallback": "sonnet"
+    },
+    "ocr_cleanup": {
+      "model": "haiku",
+      "fallback": "sonnet"
+    },
+    "kb_builder": {
+      "model": "sonnet",
+      "fallback": "opus"
+    },
+    "image_scorer": {
+      "model": "bakeoff",
+      "candidates": [
+        "sonnet",
+        "opus"
+      ],
+      "note": "sees only blinded dish codes; bake-off on Manav's blind-scored images"
+    },
+    "scorer": {
+      "model": "sonnet",
+      "fallback": "opus",
+      "note": "fresh context, runs harness code only"
+    },
+    "memorization_probe": {
+      "model": "fable",
+      "fallback": null,
+      "note": "must be the predictor model itself"
+    },
+    "explorer": {
+      "model": "fable",
+      "fallback": "opus",
+      "sees_test_setups": false,
+      "sees_test_outcomes": false,
+      "note": "about 20% of effort; no scope limit; output never goes to predictor or per-decade theorist"
+    }
+  },
+  "cost_rank": {
+    "haiku": 1,
+    "sonnet": 2,
+    "opus": 3,
+    "fable": 4
+  },
+  "bakeoff_threshold": 0.85
+}

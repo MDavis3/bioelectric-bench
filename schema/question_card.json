@@ -1,0 +1,23 @@
+{
+  "note": "One line per card in questions/queue.jsonl. The planner owns the queue: add, rescore and kill cards freely, but never edit a card's sealed prediction (seal a new card instead).",
+  "fields": {
+    "id": "Q###",
+    "question": "one sentence",
+    "why": "what it would change if answered",
+    "engine": "A benchmark | B code_learning | C discovery | D archaeology | E wet_loop | other",
+    "parents": "list of card ids this came from",
+    "cheapest_test": "the cheapest test that would answer it",
+    "prediction": "what you expect, stated before the test, with probabilities where possible",
+    "kill_criterion": "result that would make you drop this line",
+    "evidence_tier": "1-4, the tier the answer would have",
+    "value": "1-5, how much a clear answer matters",
+    "p_informative": "0-1, chance the test gives a clear answer",
+    "cost_hours": "agent-hours plus Manav-hours",
+    "cost_usd": "materials only",
+    "manav_hours": "hands-on time needed from Manav",
+    "status": "open | running | answered | killed",
+    "seal_name": "name in sealed/SEALS.json if the prediction is sealed",
+    "result": "one line once answered",
+    "created": "UTC", "updated": "UTC"
+  }
+}

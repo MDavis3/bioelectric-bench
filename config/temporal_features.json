@@ -1,0 +1,4 @@
+{
+  "note": "ALL_SETUP = every setup column (see ALL_SETUP in harness/temporal_holdout.py). Do not hand-pick features: picking them after reading the literature leaks later results. Seal this file as temporal_features before running.",
+  "features": "ALL_SETUP"
+}

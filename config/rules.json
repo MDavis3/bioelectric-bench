@@ -1,0 +1,10 @@
+{
+  "note": "DRAFT mechanistic rules for engine B and the v1 'simple mechanistic rule' baseline. The planner (theorist role) must rewrite these from pre-origin evidence only, state a source for each, then seal (--name temporal_rules) before any holdout run. First match wins; unmatched items fall back to majority. Probabilities are over the family's categories.",
+  "rules": [
+    {"id": "R1", "task_family": "planaria_ap_polarity", "if": {"intervention.type": "control"}, "then": {"normal": 0.95, "other": 0.05}, "source": "draft"},
+    {"id": "R2", "task_family": "planaria_ap_polarity", "if": {"intervention.type": "gap_junction_block"}, "then": {"normal": 0.5, "double_head": 0.4, "other": 0.1}, "source": "draft"},
+    {"id": "R3", "task_family": "planaria_ap_polarity", "if": {"drug.vmem_direction_pred": "hyperpolarize"}, "then": {"normal": 0.5, "headless": 0.3, "double_tail": 0.1, "other": 0.1}, "source": "draft"},
+    {"id": "R4", "task_family": "planaria_ap_polarity", "if": {"drug.vmem_direction_pred": "depolarize"}, "then": {"normal": 0.6, "double_head": 0.3, "other": 0.1}, "source": "draft"},
+    {"id": "R5", "task_family": "xenopus_lr_asymmetry", "if": {"intervention.type": "control"}, "then": {"normal": 0.95, "heterotaxia": 0.05}, "source": "draft"}
+  ]
+}

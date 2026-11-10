@@ -1,0 +1,12 @@
+{
+  "note": "Which sealed schema version the run uses. To change the schema after lock: write schema/v<N>/, seal both files (names schema_v<N>, categories_v<N>), switch 'version' here, re-map or re-extract affected rows, and rerun affected scoring. Never edit an older version. Keep old results and report both.",
+  "version": 1,
+  "extraction": "schema/extraction_schema.json",
+  "categories": "schema/outcome_categories.json",
+  "history": [
+    {
+      "version": 1,
+      "reason": "initial"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# Full-text PDFs stay local (copyright). Extractions, seals and reports are committed.
+papers/*
+!papers/.gitkeep
+__pycache__/
+*.tmp
