@@ -6,6 +6,12 @@
     "source": "plans/bound_rule.md",
     "utc": "2026-11-10T08:15:11Z"
   },
+  "corpus_closure_v1": {
+    "copy": "sealed/corpus_closure_v1__3ac3660fc0d4.md",
+    "sha256": "3ac3660fc0d4e1534ea7d00e758d8e9053f48189eb52c227f915c625429d870b",
+    "source": "plans/corpus_closure.md",
+    "utc": "2026-11-10T08:15:14Z"
+  },
   "corpus_manifest": {
     "copy": "sealed/corpus_manifest__cd456381710a.csv",
     "remote_commit": "0952a283dcda74fbc428fe92bdfab001e5eaa6f4",
