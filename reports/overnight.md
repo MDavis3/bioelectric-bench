@@ -90,3 +90,8 @@ Approve ClinVar and run the allele-direction test (Q017): do gain-of-function or
   - Analysis code and self-test done (harness/q017.py).
   - **Blocked:** NCBI's robots.txt disallows all automated fetching, so ClinVar needs a manual browser download by
     Manav. Everything else is ready to run once the file is in data/raw_db/clinvar/.
+- FAERS drug probe (sealed plan faers_probe_v1, openFDA API): **no signal**. Pooled reporting odds ratio for core
+  malformations 0.72 (0.67–0.78), class drugs below comparators. This is driven by which drugs are used in pregnancy
+  (labetalol, methyldopa and metformin comparators), so it is uninformative about mechanism rather than protective.
+  Strata: epilepsy 0.91, acid 1.38, nausea 1.26, diabetes 0.20, hypertension 0.03, pain 0.32
+  (reports/faers_probe_v1.md).
