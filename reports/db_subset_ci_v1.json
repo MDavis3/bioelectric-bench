@@ -1,0 +1,33 @@
+{
+ "note": "POST HOC exploratory intervals (1000 block-bootstrap resamples) for point-only subset estimates in reports/db_counted_v1.json.",
+ "mouse": {
+  "or": 0.742,
+  "lo": 0.458,
+  "hi": 1.271,
+  "n_boot": 1000
+ },
+ "zebrafish": {
+  "or": 0.863,
+  "lo": 0.285,
+  "hi": 2.622,
+  "n_boot": 1000
+ },
+ "impc": {
+  "or": 0.773,
+  "lo": 0.426,
+  "hi": 1.373,
+  "n_boot": 1000
+ },
+ "s1": {
+  "or": 0.918,
+  "lo": 0.534,
+  "hi": 1.57,
+  "n_boot": 1000
+ },
+ "positive_control": {
+  "or": 1.89,
+  "lo": 1.273,
+  "hi": 2.921,
+  "n_boot": 1000
+ }
+}
