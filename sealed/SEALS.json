@@ -55,6 +55,12 @@
     "source": "config/harness_manifest_v2.json",
     "utc": "2026-11-10T09:19:38Z"
   },
+  "harness_v2_plan": {
+    "copy": "sealed/harness_v2_plan__d63367a0a15f.md",
+    "sha256": "d63367a0a15f1545dfc9ce489e1a7e9fc8446b19f4ec951e203a253ea2984e74",
+    "source": "plans/harness_v2.md",
+    "utc": "2026-11-10T09:19:59Z"
+  },
   "holdout_params": {
     "copy": "sealed/holdout_params__8a999a54f97b.json",
     "remote_commit": "e48b8a9a6cef0fcd1f08b4e8d37e9393b484fd15",
