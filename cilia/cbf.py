@@ -82,9 +82,15 @@ def cbf_from_stack(stack, fps, fmin=3.0, fmax=40.0, snr=6.0, seg=256):
     den = a - 2 * b + c
     off = np.where(np.abs(den) > 1e-12, 0.5 * (a - c) / den, 0.0)
     f = fb[km] + np.clip(off, -0.5, 0.5) * (fb[1] - fb[0])
+    # harmonic guard: if half the peak frequency also carries a strong peak, take the fundamental
+    half = np.clip(np.searchsorted(fb, f / 2), 1, len(fb) - 2)
+    hp = np.maximum(np.maximum(sb[half - 1, idx], sb[half, idx]), sb[half + 1, idx])
+    use_half = (f / 2 >= fmin) & (hp >= 0.3 * peak)
+    f = np.where(use_half, fb[half], f)
     ratio = peak / (np.median(sb, 0) + 1e-12)
     active = ratio >= snr
     out = {"n_pixels": int(active.size), "n_active": int(active.sum()), "fps": fps, "frames": T,
+           "warning": "clip shorter than 3 s: spectrum is noisy; film at least 4 s" if T < 3 * fps else None,
            "segments": len(starts), "freq_resolution_hz": round(float(fb[1] - fb[0]), 3)}
     if active.sum() == 0:
         out.update(cbf_hz=None, iqr_hz=None, active_fraction=0.0, note="no beating region above the SNR threshold")
