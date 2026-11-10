@@ -35,9 +35,16 @@ def test(fn):
     return fn
 
 
+MIDS = sorted(H.MANIFEST_IDS)
+
+
 def rows_for(world, seed=0):
     import calibrate_v2 as C
     base = [dict(r, outcomes=[{"category": "normal", "count": 1}]) for r in ST.make_matrix(seed)]
+    for r in base:   # stamp manifest ids, as harness/collect_adjudicated.py does
+        k = MIDS[int(r["source"]["paper_id"][5:])]
+        r["_paper_key"] = k
+        r["source"] = dict(r["source"], paper_id=k)
     rows, _ = H.prepare_rows(base, "planaria_ap_polarity")
     return C.plant(rows, world, seed, 0.4)
 
@@ -59,7 +66,7 @@ def t0_nb_equals_majority():
 def temp_ties_go_low_and_few_papers_give_zero():
     rows = rows_for("null")
     feats = ["_agent_id"]
-    few = [r for r in rows if r["source"]["paper_id"] in ("paper0", "paper1", "paper2")]
+    few = [r for r in rows if r["source"]["paper_id"] in MIDS[:3]]
     assert H.choose_temp(few, CATS, feats, P) == 0.0
     assert H.TEMPS[0] == 0.0 and list(H.TEMPS) == sorted(H.TEMPS)
 
@@ -292,7 +299,7 @@ def low_confidence_figure_reads_and_few_paper_folds_skipped():
     kept, _ = H.prepare_rows(rows, "planaria_ap_polarity")
     assert len(kept) == len(rows) - 1
     feats = json.loads((ROOT / "config/temporal_features.json").read_text())["features"]
-    few = [r for r in kept if r["source"]["paper_id"] in ("paper0", "paper1", "paper2", "paper3")]
+    few = [r for r in kept if r["source"]["paper_id"] in MIDS[:4]]
     _, folds = H.run(few, "agent", H.model_makers(feats, P, CATS, "agent"), dict(P, min_train=1), CATS, [], ROOT / "config")
     assert all(f.get("skipped") for f in folds)
 
@@ -347,8 +354,7 @@ def full_counted_run_then_refused():
         labs = sorted({r["_lineage"] for r in rows})
         (tmp / "config/lab_lineage_v3.json").write_text(json.dumps({"lab_to_lineage": {l: l for l in labs}}))
         (tmp / "kb/vmem_lookup_v3.json").write_text(json.dumps({"agents": {}, "class_rules": []}))
-        (tmp / "extraction").mkdir(exist_ok=True)
-        shutil.copy2(ROOT / "extraction/INSTRUCTIONS_v2.md", tmp / "extraction/INSTRUCTIONS_v2.md")
+        shutil.copytree(ROOT / "extraction", tmp / "extraction", dirs_exist_ok=True)
         (tmp / "config/corpus_protocol.md").write_text("x")
         (tmp / "data/corpus_status.json").write_text(json.dumps({r["paper_id"]: "unreachable" for r in __import__("csv").DictReader(open(tmp / "preflight/corpus_manifest.csv"))}))
         subprocess.run([PY, str(tmp / "harness/make_harness_manifest_v2.py")], capture_output=True, cwd=tmp, check=True)

@@ -79,6 +79,7 @@ SEALED = {"temporal_features": "config/temporal_features.json", "temporal_rules"
           "corpus_protocol": "config/corpus_protocol.md", "corpus_manifest": "preflight/corpus_manifest.csv",
           "corpus_status_final": "data/corpus_status.json"}
 RUN_LOG = ROOT / "logs" / "holdout_runs.jsonl"
+MANIFEST_IDS = {r["paper_id"] for r in csv.DictReader(open(ROOT / "preflight/corpus_manifest.csv"))}
 CATS_PATH = "schema/outcome_categories.json"   # fixed path (in the v2 manifest); never via active_schema.json
 
 
@@ -523,9 +524,27 @@ def validate_for_run(raw, rows, fam, cats, lin_values):
         except (ValueError, KeyError, TypeError) as e:
             probs.append(f"{iid}: bad outcomes ({type(e).__name__})")
             continue
+        if any(float(o["count"]) < 0 for o in r["outcomes"]):
+            probs.append(f"{iid}: negative count")
         tot = sum(float(o["count"]) for o in r["outcomes"])
-        if r.get("outcome_from_percent") and r.get("n_total") is None and not r.get("outcomes_partial") and abs(tot - 100) > 2:
-            probs.append(f"{iid}: percent row sums to {tot:.0f}, not 100, and is not flagged partial")
+        if r.get("n_total") is None and not r.get("outcomes_partial"):
+            if not r.get("outcome_from_percent"):
+                probs.append(f"{iid}: n_total null without outcome_from_percent or outcomes_partial")
+            elif abs(tot - 100) > 2:
+                probs.append(f"{iid}: percent row sums to {tot:.0f}, not 100, and is not flagged partial")
+        elif r.get("n_total") is not None and not r.get("outcomes_partial") and abs(tot + (r.get("dead_count") or 0) - r["n_total"]) > 1 and abs(tot - r["n_total"]) > 1:
+            probs.append(f"{iid}: counts do not sum to n_total")
+    keymap = {}
+    for r in rows:
+        keymap.setdefault(get(r, "source.paper_id"), set()).add(r.get("_paper_key"))
+    for pid, ks in keymap.items():
+        if len(ks) != 1 or None in ks or not (ks <= MANIFEST_IDS):
+            probs.append(f"paper {pid!r}: rows must carry exactly one _paper_key that is a corpus manifest id")
+    rev = {}
+    for r in rows:
+        rev.setdefault(r.get("_paper_key"), set()).add(get(r, "source.paper_id"))
+    if any(len(v) != 1 for v in rev.values()):
+        probs.append("a _paper_key carries more than one source.paper_id (a paper split by spelling)")
     for r in rows:
         if not r.get("_agent_id"):
             probs.append(f"{r.get('item_id')}: no _agent_id")

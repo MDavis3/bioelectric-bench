@@ -30,7 +30,18 @@ def main(paths):
     reps = {}
     for p in paths:
         r = json.load(open(p))
+        fam, prim = r.get("family"), (r.get("params") or {}).get("primary_family")
+        if fam != prim:
+            sys.exit(f"{p}: family {fam} is not the primary family; secondary analyses are never combined")
+        if r["mode"] in reps:
+            sys.exit(f"{p}: a second report for mode {r['mode']}; pass exactly one per mode")
         reps[r["mode"]] = r
+        print(f"using {p}: mode {r['mode']}, dry_run {r.get('dry_run')}, data {r.get('run_record', {}).get('data_sha256')}", file=sys.stderr)
+    hashes = {r.get("run_record", {}).get("data_sha256") for r in reps.values()}
+    if len(hashes) > 1:
+        sys.exit("reports were run on different data files")
+    if len({bool(r.get("dry_run")) for r in reps.values()}) > 1:
+        sys.exit("mixing dry-run and counted reports")
     g = lambda m: word(reps[m]["verdict"]) if m in reps else None
     out = {"P1": conj([g("decade"), g("lab")]), "P2": conj([g("agent"), g("target")]),
            "P3": word(reps["target"]["p3"]["verdict"]) if "target" in reps and reps["target"].get("p3") else "UNTESTABLE",

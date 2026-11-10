@@ -59,7 +59,8 @@ Allowed when no text, table, supplement or source-data file gives the number.
 - Scoring rule (preregistered): figure reads of "low" confidence are never scored by the harness; "medium" and "high"
   are scored like other rows. If the two passes read the same panel differently, the adjudicator takes the mean of
   the two reads when they differ by at most 10 points, otherwise re-reads the panel and records "low" unless its own
-  read agrees with one pass within 3 points.
+  read agrees with one pass within 3 points. The adjudicated row's confidence is never higher than the LOWER of the
+  two passes' confidences for that panel.
 - Never read a frequency off a representative image (a photo of one animal).
 - For values from text, tables, supplements or source-data files set `outcome_source` to "text", "table",
   "supplement" or "source_data".

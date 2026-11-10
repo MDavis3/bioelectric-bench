@@ -44,9 +44,12 @@ PLANNER_READABLE = ["reports", "logs", "plans", "kb", "config", "data/setups", "
 SCAN_EXT = {".md", ".json", ".jsonl", ".csv", ".txt"}
 # Text files reviewed by hand that legitimately pair category words with numbers (design docs, synthetic results).
 # Adding a file here is logged in logs/decisions.md with the reason.
-TEXT_ALLOW = {"reports/extraction_report.md", "reports/harness_v2_review.md", "reports/process_review.md",
+JSON_ALLOW = {"config/rules.json"}   # sealed theorist rules (probabilities written before any row existed)
+TEXT_ALLOW = {"reports/pilot_selection.md", "reports/planform_check.md", "reports/review_tables_check.md", "plans/redteam_1.md",
+              "reports/findings.md", "reports/harness_v2_rereview.md", "reports/setup_counts_v2lookup.md",
+              "reports/setup_counts_v3lookup.md", "reports/extraction_report.md", "reports/harness_v2_review.md", "reports/process_review.md",
               "logs/decisions.md", "plans/endpoint_review_1.md"}
-DERIVED = {"_agent_id", "_components", "_target_id", "_target_components", "_target_class", "_dose_bucket",
+DERIVED = {"_paper_key", "_agent_id", "_components", "_target_id", "_target_components", "_target_class", "_dose_bucket",
            "_timing_bucket", "_duration_bucket", "_fragment", "_delivery", "_field_dir", "_lineage", "_year_bucket"}
 NESTED = {"source": {"paper_id", "doi", "pmid", "title", "year", "pub_date", "location", "lab"},
           "intervention": {"type", "target", "agent", "dose", "dose_units", "timing", "duration", "delivery",
@@ -57,16 +60,28 @@ NUM_PAT = re.compile(r"\d+(\.\d+)?\s*%|\b\d+\s*/\s*\d+\b|\bn\s*=\s*\d+")
 OUTCOME_KEYS = {"outcomes", "dead_count", "result_is_null", "outcome_from_percent"}
 
 
+_CAT_CACHE = []
+
+
+def _CATS():
+    if not _CAT_CACHE:
+        _CAT_CACHE.append({c for fam in load_categories().values() for c in fam} - {"other", "none", "full", "partial"})
+    return _CAT_CACHE[0]
+
+
 def denied(rel):
     return any(fnmatch.fnmatch(rel, g) or fnmatch.fnmatch(rel + "/", g) for g in DENIED)
 
 
 OUTCOME_WORDS_ONLY = {x.lower() for x in OUTCOME_WORDS} - {"phenotype", "ectopic", "heterotax"}
 # identifiers and closed vocabularies: not scanned
-SKIP_PATHS = {".source.title", ".source.paper_id", ".source.doi", ".item_id", ".task_family", ".intervention.agent",
-              ".intervention.dose_units", "._agent_id", "._components", "._target_id", "._target_components"}
+SKIP_PATHS = {".source.title", ".source.paper_id", ".source.doi", ".source.pmid", ".task_family", "._paper_key"}
 # label fields that may name what was scored (a category) but never a result word
-LABEL_PATHS = {".readout.method", ".setup_flags.family_note", ".source.location"}
+LABEL_PATHS = {".readout.method", ".setup_flags.family_note", ".source.location", ".item_id", ".intervention.agent",
+               ".intervention.dose_units", "._agent_id", "._components", "._target_id", "._target_components",
+               ".intervention.target", "._target_class"}
+LABEL_EXEMPT = {".intervention.agent": {"induced"}, "._agent_id": {"induced"}, "._components": {"induced"},
+                ".intervention.dose_units": {"% of"}}
 
 
 def outcome_words():
@@ -85,6 +100,9 @@ def has_outcome_structure(obj):
             return True
         if "category" in obj and "count" in obj:
             return True
+        cats = _CATS()
+        if sum(1 for k, v in obj.items() if k in cats and isinstance(v, (int, float)) and not isinstance(v, bool)) >= 2:
+            return True   # a frequency dict keyed by category names
         return any(has_outcome_structure(v) for v in obj.values())
     if isinstance(obj, list):
         return any(has_outcome_structure(v) for v in obj)
@@ -108,15 +126,33 @@ def iter_json_objs(p):
             pass
 
 
+def _adjacent_number(t, ws):
+    for w in ws:
+        e = re.escape(w)
+        if re.search(r"\d\s*%?\s*(of\s+)?" + e + r"(?![a-z])|(?<![a-z])" + e + r"\s*[:=(]?\s*\d", t):
+            return True
+    return False
+
+
 def check_setup_row(r, allowed, words):
     errs = []
     extra = set(r) - allowed - DERIVED - {"setup_flags"}
     if extra:
         errs.append(f"{len(extra)} non-setup fields")
-    for k, sub in NESTED.items():
-        v = r.get(k)
-        if isinstance(v, dict) and set(v) - sub:
-            errs.append(f"{len(set(v) - sub)} unknown keys inside {k}")
+    for k, v in r.items():
+        if k in NESTED:
+            if v is not None and not isinstance(v, dict):
+                errs.append(f"{k} must be an object")
+            elif isinstance(v, dict):
+                if set(v) - NESTED[k]:
+                    errs.append(f"{len(set(v) - NESTED[k])} unknown keys inside {k}")
+                if any(isinstance(x, (dict, list)) for x in v.values()):
+                    errs.append(f"non-scalar value inside {k}")
+        elif k in ("_components", "_target_components"):
+            if not isinstance(v, list) or any(not isinstance(x, str) for x in v):
+                errs.append(f"{k} must be a list of strings")
+        elif isinstance(v, (dict, list)):
+            errs.append(f"{k} must be a scalar")
     texts = []
 
     def walk(path, v):
@@ -129,21 +165,33 @@ def check_setup_row(r, allowed, words):
         elif isinstance(v, str) and path not in SKIP_PATHS:
             texts.append((path, v.lower()))
     walk("", r)
-    hits = set()
+    hits = 0
+    cats = {c.replace("_", " ") for c in _CATS()} | _CATS()
     for path, t in texts:
-        ws = OUTCOME_WORDS_ONLY if path in LABEL_PATHS else words
-        hits |= {w for w in ws if re.search(r"(?<![a-z])" + re.escape(w) + r"(?![a-z])", t)}
+        if path in LABEL_PATHS:
+            ws = OUTCOME_WORDS_ONLY - LABEL_EXEMPT.get(path, set())
+        else:
+            ws = words
+        hits += any(re.search(r"(?<![a-z])" + re.escape(w) + r"(?![a-z])", t) for w in ws)
+        hits += _adjacent_number(t, cats) or bool(re.search(r"\d+(\.\d+)?\s*%", t) and path in (".source.location", ".item_id"))
     if hits:
-        errs.append(f"{len(hits)} outcome words in free text")
+        errs.append(f"{hits} outcome words or category-number pairs in free text")
     return errs
 
 
 def scan_text_file(p, words):
-    """Lines that name an outcome category AND carry a number pattern (%, a/b, n=)."""
-    bad = 0
+    """Lines that name an outcome category AND carry any digit; markdown/CSV tables whose header names a category."""
+    cats = {c.replace("_", " ") for c in _CATS()} | _CATS()
+    bad, header_hit = 0, False
     for line in p.read_text(errors="replace").splitlines():
         low = line.lower()
-        if NUM_PAT.search(low) and any(re.search(r"(?<![a-z])" + re.escape(w) + r"(?![a-z])", low) for w in words):
+        named = any(re.search(r"(?<![a-z])" + re.escape(w) + r"(?![a-z])", low) for w in cats)
+        if ("|" in line or "," in line) and named and not re.search(r"\d", low):
+            header_hit = True
+            continue
+        if not line.strip():
+            header_hit = False
+        if re.search(r"\d", low) and (named or (header_hit and ("|" in line or "," in line))):
             bad += 1
     return bad
 
@@ -168,7 +216,7 @@ def cmd_check(_):
                     for e in check_setup_row(r, allowed, words):
                         errs.append(f"{rel}:{i}: {e}")
                 continue
-            if rel.startswith(("sealed/", "schema/")):
+            if rel.startswith(("sealed/", "schema/")) or rel in JSON_ALLOW:
                 continue  # sealed copies are checked through their sources; schema files define the fields
             if p.suffix in (".md", ".csv", ".txt"):
                 if rel in TEXT_ALLOW:
@@ -184,7 +232,7 @@ def cmd_check(_):
     # outcome-bearing JSON/JSONL anywhere outside denied paths
     for p in list(ROOT.rglob("*.jsonl")) + list(ROOT.rglob("*.json")):
         rel = str(p.relative_to(ROOT))
-        if denied(rel) or rel.startswith((".venv/", ".git/", "sealed/", "schema/")) or "/tests/" in "/" + rel:
+        if denied(rel) or rel.startswith((".venv/", ".git/", "sealed/", "schema/")) or "/tests/" in "/" + rel or rel in JSON_ALLOW:
             continue
         if any(has_outcome_structure(o) for o in iter_json_objs(p)) and not any(e.startswith(rel + ":") for e in errs):
             errs.append(f"{rel}: outcome rows outside the denied paths")
@@ -242,7 +290,7 @@ def cmd_reply(a):
     print(f"reply check: {len(errs)} problems")
     kinds = {}
     for e in errs:   # print problem kinds only: a rejected key name could itself carry text
-        k = e.split(": ", 1)[-1]
+        k = e.rsplit(": ", 1)[-1]
         kinds[k] = kinds.get(k, 0) + 1
     for k, n in sorted(kinds.items()):
         print(f"  {n} x {k}")

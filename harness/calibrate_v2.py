@@ -112,7 +112,8 @@ def dominate(rows, seed, share=0.58):
     papers = sorted({get(r, "source.paper_id") for r in rows}, key=str)
     big = set(rng.sample(papers, round(share * len(papers))))
     others = sorted({r.get("_lineage") for r in rows}, key=str)
-    m = {p: ("LBIG" if p in big else others[i % len(others)]) for i, p in enumerate(papers)}
+    rest = [p for p in papers if p not in big]
+    m = {p: "LBIG" for p in big} | {p: others[i % len(others)] for i, p in enumerate(rest)}
     for r in rows:
         r["_lineage"] = m[get(r, "source.paper_id")]
     return rows

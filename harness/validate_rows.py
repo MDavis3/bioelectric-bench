@@ -75,13 +75,15 @@ def main():
         under = [k for k in r if k.startswith("_")]
         if under:
             e(f"extractors must not write derived (underscore) keys: {len(under)} found")
-        if (r.get("outcome_from_percent") and r.get("n_total") is None and not r.get("outcomes_partial")
-                and outs and abs(tot - 100) > 2):
-            e(f"percent row sums to {tot} (not 100 within rounding) but is not flagged outcomes_partial")
+        if r.get("n_total") is None and not r.get("outcomes_partial") and outs:
+            if not r.get("outcome_from_percent"):
+                e("n_total is null: give n (counts) or set outcome_from_percent (percentages), or flag outcomes_partial")
+            elif abs(tot - 100) > 2:
+                e(f"percent row sums to {tot} (not 100 within rounding) but is not flagged outcomes_partial")
         if not isinstance(get(r, "source.year"), int):
             e("source.year must be an integer")
         n = r.get("n_total")
-        if n is not None and outs and not r.get("outcomes_partial") and abs(tot + (r.get("dead_count") or 0) - n) > 0.5 and abs(tot - n) > 0.5:
+        if n is not None and outs and not r.get("outcomes_partial") and abs(tot + (r.get("dead_count") or 0) - n) > 1 and abs(tot - n) > 1:   # 1 animal = rounding
             e(f"counts sum to {tot} but n_total is {n} (dead_count {r.get('dead_count')})")
         if any(o.get("category") == "other" and o.get("count") for o in outs) and not (r.get("notes") or "").strip():
             e("'other' count without a description in notes")

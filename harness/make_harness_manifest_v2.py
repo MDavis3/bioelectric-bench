@@ -13,7 +13,9 @@ from common import ROOT, sha256_file  # noqa: E402
 REQUIRED = ["harness/holdout2.py", "harness/common.py", "harness/score.py", "harness/temporal_holdout.py",
             "harness/derive_features.py", "harness/validate_rows.py", "harness/planner_firewall.py",
             "harness/firewall_check.py", "harness/bound_count.py", "harness/combine_verdicts.py",
-            "schema/extraction_schema.json", "schema/outcome_categories.json", "extraction/INSTRUCTIONS_v2.md"]
+            "harness/make_harness_manifest_v2.py", "harness/blind_passes.py", "harness/collect_adjudicated.py",
+            "schema/extraction_schema.json", "schema/outcome_categories.json", "extraction/INSTRUCTIONS_v2.md",
+            "extraction/ADJUDICATION_v2.md", "config/paper_crosswalk.json"]
 
 if __name__ == "__main__":
     out = {"note": "harness v2: sha256 of files that determine holdout verdicts and extracted rows; sealed as harness_manifest_v2",
