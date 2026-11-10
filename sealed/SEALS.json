@@ -6,6 +6,12 @@
     "source": "config/lab_lineage.json",
     "utc": "2026-11-10T05:38:06Z"
   },
+  "temporal_rules": {
+    "copy": "sealed/temporal_rules__69da26e3825b.json",
+    "sha256": "69da26e3825bf92faa2f558952a50147626b5bc3061adf626e9d5657be08666d",
+    "source": "config/rules.json",
+    "utc": "2026-11-10T05:38:09Z"
+  },
   "vmem_lookup": {
     "copy": "sealed/vmem_lookup__10fbc5aa6ba1.json",
     "remote_commit": "96a2cbf26d0ff91fc65a497be9a14375114bdc08",

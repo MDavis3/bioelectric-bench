@@ -1,0 +1,92 @@
+{
+  "note": "SECONDARY, OPENLY CONTAMINATED baseline: 'what an expert who has read this literature would guess'. Unlike every other model in the benchmark, these rules were written with full knowledge of the published anatomical outcomes, by a writer who knows the canonical results of the planarian polarity and Xenopus patterning literature. They are therefore NOT evidence of regularity, transfer or electrical content, and must never be reported as a primary result or as a comparator for P1-P3; they bound how well a reader of the field can do by memory. First match wins; unmatched rows fall back to the training majority. Conditions use only intervention.type, _target_class, _agent_id, intervention.action, drug.vmem_direction_pred, organism and _fragment; values are the canonical class and agent ids defined in kb/vmem_lookup.json. Probabilities are over the family's categories in schema/outcome_categories.json and sum to 1. Direction-of-effect claims here are recalled from the literature, not derived from the sealed vmem rule; where the two disagree, the vmem rule is the textbook one and this file is the contaminated one.",
+  "rules": [
+    {"id": "R1", "task_family": "planaria_ap_polarity", "if": {"_target_class": "control"},
+     "then": {"normal": 0.93, "no_regeneration": 0.03, "other": 0.02, "double_head": 0.01, "double_tail": 0.005, "headless": 0.005},
+     "source": "untreated, vehicle and control-RNAi trunk fragments regenerate normally at high rates throughout this literature; the small residual covers handling loss and scoring noise"},
+
+    {"id": "R2", "task_family": "planaria_ap_polarity", "if": {"_agent_id": ["octanol", "heptanol"]},
+     "then": {"double_head": 0.45, "normal": 0.40, "other": 0.10, "no_regeneration": 0.05},
+     "source": "long-chain alcohol gap-junction blockade is the canonical bipolar-head protocol in Schmidtea and Dugesia; penetrance is partial and strongly fragment- and dose-dependent, hence the large 'normal' mass"},
+
+    {"id": "R3", "task_family": "planaria_ap_polarity", "if": {"_agent_id": "praziquantel"},
+     "then": {"double_head": 0.50, "normal": 0.35, "other": 0.10, "no_regeneration": 0.05},
+     "source": "praziquantel is reported to produce two-headed regenerates in planaria with high penetrance, an effect attributed to Ca2+ entry rather than to a defined voltage change"},
+
+    {"id": "R4", "task_family": "planaria_ap_polarity", "if": {"_agent_id": "sch-28080"},
+     "then": {"headless": 0.40, "normal": 0.35, "no_regeneration": 0.15, "other": 0.10},
+     "source": "H,K-ATPase inhibition is reported to block head regeneration specifically, giving head-deficient rather than bipolar regenerates; note the sealed vmem rule assigns this agent null"},
+
+    {"id": "R5", "task_family": "planaria_ap_polarity", "if": {"_agent_id": ["concanamycin-a", "bafilomycin-a1"]},
+     "then": {"no_regeneration": 0.45, "headless": 0.25, "normal": 0.20, "other": 0.10},
+     "source": "V-ATPase inhibition is reported to block regeneration outright rather than to repolarize the axis"},
+
+    {"id": "R6", "task_family": "planaria_ap_polarity", "if": {"_target_class": "gap_junction", "intervention.action": "block"},
+     "then": {"double_head": 0.35, "normal": 0.50, "other": 0.10, "no_regeneration": 0.05},
+     "source": "generalises R2 to the other gap-junction blockers (carbenoxolone, glycyrrhetinic acids, lindane), which are reported in the same direction but less consistently"},
+
+    {"id": "R7", "task_family": "planaria_ap_polarity", "if": {"_target_class": "gap_junction", "intervention.action": "knockdown"},
+     "then": {"double_head": 0.40, "normal": 0.45, "other": 0.10, "no_regeneration": 0.05},
+     "source": "innexin RNAi (notably the innexin-5/12/13 combination) is the genetic counterpart of the blocker phenotype and is reported to give bipolar regenerates"},
+
+    {"id": "R8", "task_family": "planaria_ap_polarity", "if": {"_target_class": "hk_atpase"},
+     "then": {"headless": 0.30, "normal": 0.50, "no_regeneration": 0.10, "other": 0.10},
+     "source": "generalises R4 to the other H,K-ATPase manipulations, including RNAi; the benzimidazole proton-pump inhibitors are reported as weaker than SCH-28080"},
+
+    {"id": "R9", "task_family": "planaria_ap_polarity", "if": {"_target_class": "cav_channel"},
+     "then": {"double_head": 0.30, "normal": 0.55, "other": 0.10, "no_regeneration": 0.05},
+     "source": "voltage-gated Ca2+ channel blockers of the dihydropyridine class are reported alongside praziquantel as producing bipolar regenerates, with lower penetrance"},
+
+    {"id": "R10", "task_family": "planaria_ap_polarity", "if": {"_target_class": "v_atpase"},
+     "then": {"no_regeneration": 0.35, "headless": 0.25, "normal": 0.30, "other": 0.10},
+     "source": "generalises R5: V-ATPase loss is reported to impair regeneration initiation rather than to flip polarity"},
+
+    {"id": "R11", "task_family": "planaria_ap_polarity", "if": {"_target_class": ["nak_atpase", "proton_ionophore"]},
+     "then": {"no_regeneration": 0.40, "normal": 0.40, "other": 0.15, "headless": 0.05},
+     "source": "cardiac glycosides and uncouplers are metabolically toxic at effective exposures; the modal published outcome is failure to regenerate or tissue loss, not a polarity change"},
+
+    {"id": "R12", "task_family": "planaria_ap_polarity", "if": {"_target_class": "external_k"},
+     "then": {"double_head": 0.30, "normal": 0.50, "no_regeneration": 0.10, "other": 0.10},
+     "source": "raised-K+ depolarization is reported to bias blastemas toward anterior identity, in the same direction as gap-junction blockade but with fewer published arms"},
+
+    {"id": "R13", "task_family": "planaria_ap_polarity", "if": {"_target_class": ["anesthetic", "serotonergic_or_other_nonchannel"]},
+     "then": {"normal": 0.80, "other": 0.10, "no_regeneration": 0.05, "double_head": 0.05},
+     "source": "anaesthetics and monoamine-pathway agents are used in this literature mainly as immobilisers or as negative comparisons and are reported not to change axial identity"},
+
+    {"id": "R14", "task_family": "planaria_ap_polarity", "if": {"_target_class": ["cl_channel", "external_cl", "external_na", "external_ca", "external_ph", "hcn_channel", "trp_channel", "na_channel", "enac_channel", "ca_ionophore", "na_h_ionophore", "k_h_ionophore"]},
+     "then": {"normal": 0.65, "double_head": 0.10, "no_regeneration": 0.10, "other": 0.10, "headless": 0.05},
+     "source": "thinly published classes in planaria; the expert guess is close to the base rate, tilted slightly toward the reported anterior bias of any strong ionic perturbation"},
+
+    {"id": "R15", "task_family": "planaria_ap_polarity", "if": {"drug.vmem_direction_pred": "depolarize"},
+     "then": {"double_head": 0.25, "normal": 0.60, "other": 0.10, "no_regeneration": 0.05},
+     "source": "fallback for depolarizing agents not caught above; the field's stated rule of thumb is that depolarized blastemas favour anterior identity"},
+
+    {"id": "R16", "task_family": "planaria_ap_polarity", "if": {"drug.vmem_direction_pred": "hyperpolarize"},
+     "then": {"normal": 0.60, "headless": 0.20, "other": 0.10, "tailless": 0.05, "no_regeneration": 0.05},
+     "source": "fallback for hyperpolarizing agents; the stated rule of thumb is that hyperpolarization favours posterior identity or head deficiency"},
+
+    {"id": "R17", "task_family": "planaria_cryptic", "if": {"_target_class": "gap_junction"},
+     "then": {"double_head": 0.30, "normal": 0.60, "other": 0.10},
+     "source": "the cryptic-phenotype result: normal-looking regenerates from gap-junction-blocked populations are reported to yield bipolar animals when re-cut without further treatment"},
+
+    {"id": "R18", "task_family": "xenopus_lr_asymmetry", "if": {"_target_class": "control"},
+     "then": {"normal": 0.95, "heterotaxia": 0.04, "other": 0.01},
+     "source": "background heterotaxia in untreated and vehicle Xenopus clutches is reported at a few percent"},
+
+    {"id": "R19", "task_family": "xenopus_lr_asymmetry", "if": {"_target_class": ["hk_atpase", "gap_junction", "v_atpase", "k_channel", "kv_channel"]},
+     "then": {"heterotaxia": 0.38, "normal": 0.57, "other": 0.05},
+     "source": "early ion-flux and coupling manipulations in cleavage-stage Xenopus are the classic randomisers of organ situs; published penetrance is partial"},
+
+    {"id": "R20", "task_family": "xenopus_tail_regeneration", "if": {"_target_class": ["v_atpase", "p_type_proton_pump", "hk_atpase"]},
+     "then": {"none": 0.45, "partial": 0.35, "full": 0.20},
+     "source": "proton-flux manipulation is reported to be required for tail regeneration, with loss of function giving absent or stunted regrowth"},
+
+    {"id": "R21", "task_family": "xenopus_eye", "if": {"drug.vmem_direction_pred": "hyperpolarize"},
+     "then": {"normal": 0.55, "ectopic_eye": 0.20, "eye_defect": 0.20, "other": 0.05},
+     "source": "hyperpolarizing misexpression is reported to induce ectopic eye tissue outside the head field as well as eye defects; low penetrance in published arms"},
+
+    {"id": "R22", "task_family": "xenopus_craniofacial", "if": {"_target_class": ["hk_atpase", "v_atpase", "k_channel", "kv_channel", "gap_junction"]},
+     "then": {"abnormal": 0.45, "normal": 0.50, "other": 0.05},
+     "source": "ion-flux manipulation at neurula and tailbud stages is reported to disrupt craniofacial patterning"}
+  ]
+}
