@@ -1,4 +1,10 @@
 {
+  "corpus_manifest": {
+    "copy": "sealed/corpus_manifest__cd456381710a.csv",
+    "sha256": "cd456381710add3d8e24cfbebd49382253fe3b5885d0d84342b6e8cab7cfe093",
+    "source": "preflight/corpus_manifest.csv",
+    "utc": "2026-11-10T05:54:03Z"
+  },
   "corpus_protocol": {
     "copy": "sealed/corpus_protocol__a87404a267ba.md",
     "remote_commit": "968beaeedde96674ad38ecca6a832ecc42d3afc9",
