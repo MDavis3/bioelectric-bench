@@ -78,6 +78,7 @@
   },
   "db_prereg_v1": {
     "copy": "sealed/db_prereg_v1__c9b6784d688b.md",
+    "remote_commit": "b0ce827155ba321264e29ddf83f70e781f386eb5",
     "sha256": "c9b6784d688b338df317449f4c3c8cd0604e04755d23b8168c25b80be2a8e564",
     "source": "plans/pivot_db_v1.md",
     "utc": "2026-11-10T16:52:57Z"
