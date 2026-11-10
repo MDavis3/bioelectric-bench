@@ -120,6 +120,7 @@
   },
   "dbtest_code_v1": {
     "copy": "sealed/dbtest_code_v1__17c63d50c128.py",
+    "remote_commit": "a2520ec658b73b5a9de1ca660902dd3045d91ebf",
     "sha256": "17c63d50c12815b886e56a7dfb21dfd38e59831680fb9d3e2547d96eeda29ce5",
     "source": "harness/dbtest.py",
     "utc": "2026-11-10T16:53:09Z"
