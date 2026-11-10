@@ -62,6 +62,12 @@
     "source": "data/db_setup/db_outcome_v1.sha256",
     "utc": "2026-11-10T16:38:34Z"
   },
+  "db_raw_manifest_v1": {
+    "copy": "sealed/db_raw_manifest_v1__178454bf68e4.json",
+    "sha256": "178454bf68e48258e4a1b425690679b2ce36972a9d131c994200190036228b66",
+    "source": "data/raw_db_manifest.json",
+    "utc": "2026-11-10T16:38:37Z"
+  },
   "db_units_setup_v1": {
     "copy": "sealed/db_units_setup_v1__70644def60b1.csv",
     "remote_commit": "33232a26271935a2483fa4075750a881845398cc",
