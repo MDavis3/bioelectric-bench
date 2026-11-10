@@ -1,0 +1,12 @@
+{
+  "note": "Firewall v2 allow-list and extra denied paths. Loaded by harness/planner_firewall_v2.py, which wraps the sealed v1 checker unchanged. Each text_allow entry was reviewed by the planner: the flagged numbers are setup counts or synthetic dry-run values, not observed outcomes.",
+  "text_allow_add": {
+    "reports/desk_dryrun.md": "synthetic scores from the desk pipeline dry run (seed 7); no observed outcome",
+    "plans/next_endpoint_proposal.md": "draft endpoint thresholds and setup counts; no observed outcome"
+  },
+  "denied_add": [
+    "data/raw_db/**",
+    "data/db_restricted/**",
+    "reports/db_restricted/**"
+  ]
+}
