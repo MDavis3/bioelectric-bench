@@ -1,0 +1,8279 @@
+{
+ "note": "Human-anchor gene classes for plans/pivot_db_v1.md section C. Built by harness/db_classes.py from HGNC (data/db_setup/hgnc) and GtoPdb 2026.3.1 (data/db_setup/iuphar).",
+ "rules": {
+  "class_hgnc_families": {
+   "177": null,
+   "314": "gap_junction",
+   "288": "gap_junction",
+   "1208": "p_type_pump",
+   "1211": "p_type_pump",
+   "415": "v_atpase"
+  },
+  "class_iuphar_types": [
+   "lgic",
+   "other_ic",
+   "vgic"
+  ],
+  "grey_families": {
+   "2157": "SLC4",
+   "2161": "SLC8",
+   "2162": "SLC9",
+   "2152": "SLC12",
+   "2175": "SLC24",
+   "2177": "SLC26",
+   "305": "AQP",
+   "306": "VDAC",
+   "247": "TPCN",
+   "287": "RYR",
+   "297": "ITPR",
+   "644": "ATP5",
+   "1212": "ATP7",
+   "1213": "ATP13"
+  },
+  "grey_symbol_regex": "^(RYR\\d|ITPR\\d|TPCN\\d|VDAC\\d|CLIC\\d|MCU.*|MICU\\d|ATP2A\\d|ATP2C\\d|ATP5.*|MT-ATP.*|CLCN[3-7]|MCOLN\\d|SMDT1|ANO([3-9]|10)|TMEM175|TMEM38[AB]|ATP7[AB]|ATP13A\\d|AQP\\d+|PKD2L?\\d?_ER)$",
+  "control_families": {
+   "752": "SLC",
+   "417": "ABC",
+   "139": "GPCR",
+   "768": "TSPAN",
+   "488": "CLDN",
+   "1239": "TM9SF",
+   "1210": "P4_ATPase",
+   "2217": "DISP",
+   "978": "CMTM"
+  },
+  "control_exclude_families": [
+   "1161",
+   "1162",
+   "141",
+   "289",
+   "291"
+  ],
+  "control_extra_symbols": [
+   "PTCH1",
+   "PTCH2"
+  ]
+ },
+ "genes": {
+  "HGNC:29": {
+   "symbol": "ABCA1",
+   "cls": "control",
+   "subclass": null,
+   "group": "P4_ATPase"
+  },
+  "HGNC:30": {
+   "symbol": "ABCA10",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:32": {
+   "symbol": "ABCA2",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:33": {
+   "symbol": "ABCA3",
+   "cls": "control",
+   "subclass": null,
+   "group": "P4_ATPase"
+  },
+  "HGNC:34": {
+   "symbol": "ABCA4",
+   "cls": "control",
+   "subclass": null,
+   "group": "P4_ATPase"
+  },
+  "HGNC:35": {
+   "symbol": "ABCA5",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:36": {
+   "symbol": "ABCA6",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:37": {
+   "symbol": "ABCA7",
+   "cls": "control",
+   "subclass": null,
+   "group": "P4_ATPase"
+  },
+  "HGNC:38": {
+   "symbol": "ABCA8",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:39": {
+   "symbol": "ABCA9",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:40": {
+   "symbol": "ABCB1",
+   "cls": "control",
+   "subclass": null,
+   "group": "P4_ATPase"
+  },
+  "HGNC:41": {
+   "symbol": "ABCB10",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:42": {
+   "symbol": "ABCB11",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:43": {
+   "symbol": "TAP1",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:44": {
+   "symbol": "TAP2",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:45": {
+   "symbol": "ABCB4",
+   "cls": "control",
+   "subclass": null,
+   "group": "P4_ATPase"
+  },
+  "HGNC:46": {
+   "symbol": "ABCB5",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:47": {
+   "symbol": "ABCB6",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:48": {
+   "symbol": "ABCB7",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:49": {
+   "symbol": "ABCB8",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:50": {
+   "symbol": "ABCB9",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:51": {
+   "symbol": "ABCC1",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:52": {
+   "symbol": "ABCC10",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:53": {
+   "symbol": "ABCC2",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:54": {
+   "symbol": "ABCC3",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:55": {
+   "symbol": "ABCC4",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:56": {
+   "symbol": "ABCC5",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:57": {
+   "symbol": "ABCC6",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:59": {
+   "symbol": "ABCC8",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:60": {
+   "symbol": "ABCC9",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:61": {
+   "symbol": "ABCD1",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:66": {
+   "symbol": "ABCD2",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:67": {
+   "symbol": "ABCD3",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:68": {
+   "symbol": "ABCD4",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:69": {
+   "symbol": "ABCE1",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:70": {
+   "symbol": "ABCF1",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:71": {
+   "symbol": "ABCF2",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:72": {
+   "symbol": "ABCF3",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:73": {
+   "symbol": "ABCG1",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:74": {
+   "symbol": "ABCG2",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:95": {
+   "symbol": "SLC33A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:99": {
+   "symbol": "ASIC2",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:100": {
+   "symbol": "ASIC1",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:101": {
+   "symbol": "ASIC3",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:102": {
+   "symbol": "CNNM1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:103": {
+   "symbol": "CNNM2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:104": {
+   "symbol": "CNNM3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:105": {
+   "symbol": "CNNM4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:242": {
+   "symbol": "ADCYAP1R1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:262": {
+   "symbol": "ADORA1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:263": {
+   "symbol": "ADORA2A",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:264": {
+   "symbol": "ADORA2B",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:268": {
+   "symbol": "ADORA3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:277": {
+   "symbol": "ADRA1A",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:278": {
+   "symbol": "ADRA1B",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:280": {
+   "symbol": "ADRA1D",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:281": {
+   "symbol": "ADRA2A",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:282": {
+   "symbol": "ADRA2B",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:283": {
+   "symbol": "ADRA2C",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:285": {
+   "symbol": "ADRB1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:286": {
+   "symbol": "ADRB2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:288": {
+   "symbol": "ADRB3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:336": {
+   "symbol": "AGTR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:338": {
+   "symbol": "AGTR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:339": {
+   "symbol": "APLNR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:497": {
+   "symbol": "TRPA1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:633": {
+   "symbol": "AQP1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:634": {
+   "symbol": "AQP2",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:636": {
+   "symbol": "AQP3",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:637": {
+   "symbol": "AQP4",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:638": {
+   "symbol": "AQP5",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:639": {
+   "symbol": "AQP6",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:640": {
+   "symbol": "AQP7",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:642": {
+   "symbol": "AQP8",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:643": {
+   "symbol": "AQP9",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:799": {
+   "symbol": "ATP1A1",
+   "cls": "class",
+   "subclass": "p_type_pump",
+   "group": null
+  },
+  "HGNC:800": {
+   "symbol": "ATP1A2",
+   "cls": "class",
+   "subclass": "p_type_pump",
+   "group": null
+  },
+  "HGNC:801": {
+   "symbol": "ATP1A3",
+   "cls": "class",
+   "subclass": "p_type_pump",
+   "group": null
+  },
+  "HGNC:804": {
+   "symbol": "ATP1B1",
+   "cls": "class",
+   "subclass": "p_type_pump",
+   "group": null
+  },
+  "HGNC:805": {
+   "symbol": "ATP1B2",
+   "cls": "class",
+   "subclass": "p_type_pump",
+   "group": null
+  },
+  "HGNC:806": {
+   "symbol": "ATP1B3",
+   "cls": "class",
+   "subclass": "p_type_pump",
+   "group": null
+  },
+  "HGNC:811": {
+   "symbol": "ATP2A1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:812": {
+   "symbol": "ATP2A2",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:813": {
+   "symbol": "ATP2A3",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:814": {
+   "symbol": "ATP2B1",
+   "cls": "class",
+   "subclass": "p_type_pump",
+   "group": null
+  },
+  "HGNC:815": {
+   "symbol": "ATP2B2",
+   "cls": "class",
+   "subclass": "p_type_pump",
+   "group": null
+  },
+  "HGNC:816": {
+   "symbol": "ATP2B3",
+   "cls": "class",
+   "subclass": "p_type_pump",
+   "group": null
+  },
+  "HGNC:817": {
+   "symbol": "ATP2B4",
+   "cls": "class",
+   "subclass": "p_type_pump",
+   "group": null
+  },
+  "HGNC:819": {
+   "symbol": "ATP4A",
+   "cls": "class",
+   "subclass": "p_type_pump",
+   "group": null
+  },
+  "HGNC:820": {
+   "symbol": "ATP4B",
+   "cls": "class",
+   "subclass": "p_type_pump",
+   "group": null
+  },
+  "HGNC:823": {
+   "symbol": "ATP5F1A",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:830": {
+   "symbol": "ATP5F1B",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:833": {
+   "symbol": "ATP5F1C",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:837": {
+   "symbol": "ATP5F1D",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:838": {
+   "symbol": "ATP5F1E",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:840": {
+   "symbol": "ATP5PB",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:841": {
+   "symbol": "ATP5MC1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:842": {
+   "symbol": "ATP5MC2",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:843": {
+   "symbol": "ATP5MC3",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:845": {
+   "symbol": "ATP5PD",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:846": {
+   "symbol": "ATP5ME",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:847": {
+   "symbol": "ATP5PF",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:848": {
+   "symbol": "ATP5MF",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:850": {
+   "symbol": "ATP5PO",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:851": {
+   "symbol": "ATP6V1A",
+   "cls": "class",
+   "subclass": "v_atpase",
+   "group": null
+  },
+  "HGNC:853": {
+   "symbol": "ATP6V1B1",
+   "cls": "class",
+   "subclass": "v_atpase",
+   "group": null
+  },
+  "HGNC:854": {
+   "symbol": "ATP6V1B2",
+   "cls": "class",
+   "subclass": "v_atpase",
+   "group": null
+  },
+  "HGNC:855": {
+   "symbol": "ATP6V0C",
+   "cls": "class",
+   "subclass": "v_atpase",
+   "group": null
+  },
+  "HGNC:856": {
+   "symbol": "ATP6V1C1",
+   "cls": "class",
+   "subclass": "v_atpase",
+   "group": null
+  },
+  "HGNC:857": {
+   "symbol": "ATP6V1E1",
+   "cls": "class",
+   "subclass": "v_atpase",
+   "group": null
+  },
+  "HGNC:861": {
+   "symbol": "ATP6V0B",
+   "cls": "class",
+   "subclass": "v_atpase",
+   "group": null
+  },
+  "HGNC:862": {
+   "symbol": "ATP6V1G2",
+   "cls": "class",
+   "subclass": "v_atpase",
+   "group": null
+  },
+  "HGNC:863": {
+   "symbol": "ATP6V0E1",
+   "cls": "class",
+   "subclass": "v_atpase",
+   "group": null
+  },
+  "HGNC:864": {
+   "symbol": "ATP6V1G1",
+   "cls": "class",
+   "subclass": "v_atpase",
+   "group": null
+  },
+  "HGNC:865": {
+   "symbol": "ATP6V0A1",
+   "cls": "class",
+   "subclass": "v_atpase",
+   "group": null
+  },
+  "HGNC:866": {
+   "symbol": "ATP6V0A4",
+   "cls": "class",
+   "subclass": "v_atpase",
+   "group": null
+  },
+  "HGNC:869": {
+   "symbol": "ATP7A",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:870": {
+   "symbol": "ATP7B",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:871": {
+   "symbol": "ATP5IF1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:895": {
+   "symbol": "AVPR1A",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:896": {
+   "symbol": "AVPR1B",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:897": {
+   "symbol": "AVPR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:943": {
+   "symbol": "ADGRB1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:944": {
+   "symbol": "ADGRB2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:945": {
+   "symbol": "ADGRB3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1012": {
+   "symbol": "OPN1SW",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1029": {
+   "symbol": "BDKRB1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1030": {
+   "symbol": "BDKRB2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1060": {
+   "symbol": "CXCR5",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1183": {
+   "symbol": "ANO2",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:1188": {
+   "symbol": "ATP5MJ",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:1310": {
+   "symbol": "TMEM184B",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:1319": {
+   "symbol": "C3AR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1329": {
+   "symbol": "SLC30A9",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:1338": {
+   "symbol": "C5AR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1388": {
+   "symbol": "CACNA1A",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:1389": {
+   "symbol": "CACNA1B",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:1390": {
+   "symbol": "CACNA1C",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:1391": {
+   "symbol": "CACNA1D",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:1392": {
+   "symbol": "CACNA1E",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:1393": {
+   "symbol": "CACNA1F",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:1394": {
+   "symbol": "CACNA1G",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:1395": {
+   "symbol": "CACNA1H",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:1396": {
+   "symbol": "CACNA1I",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:1397": {
+   "symbol": "CACNA1S",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:1399": {
+   "symbol": "CACNA2D1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:1400": {
+   "symbol": "CACNA2D2",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:1401": {
+   "symbol": "CACNB1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:1402": {
+   "symbol": "CACNB2",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:1403": {
+   "symbol": "CACNB3",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:1404": {
+   "symbol": "CACNB4",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:1405": {
+   "symbol": "CACNG1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:1406": {
+   "symbol": "CACNG2",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:1407": {
+   "symbol": "CACNG3",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:1408": {
+   "symbol": "CACNG4",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:1409": {
+   "symbol": "CACNG5",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:1421": {
+   "symbol": "SLC25A20",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:1440": {
+   "symbol": "CALCR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1514": {
+   "symbol": "CASR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1530": {
+   "symbol": "MICU1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:1565": {
+   "symbol": "ACKR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1570": {
+   "symbol": "CCKAR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1571": {
+   "symbol": "CCKBR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1602": {
+   "symbol": "CCR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1603": {
+   "symbol": "CCR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1604": {
+   "symbol": "CCR3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1605": {
+   "symbol": "CCR4",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1606": {
+   "symbol": "CCR5",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1607": {
+   "symbol": "CCR6",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1608": {
+   "symbol": "CCR7",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1609": {
+   "symbol": "CCR8",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1610": {
+   "symbol": "CCR9",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1611": {
+   "symbol": "ACKR4",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1612": {
+   "symbol": "CCRL2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1625": {
+   "symbol": "XCR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1630": {
+   "symbol": "CD151",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:1666": {
+   "symbol": "CD37",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:1686": {
+   "symbol": "CD53",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:1692": {
+   "symbol": "CD63",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:1701": {
+   "symbol": "CD81",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:1709": {
+   "symbol": "CD9",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:1711": {
+   "symbol": "ADGRE5",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1850": {
+   "symbol": "CELSR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1884": {
+   "symbol": "CFTR",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:1950": {
+   "symbol": "CHRM1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1951": {
+   "symbol": "CHRM2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1952": {
+   "symbol": "CHRM3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1953": {
+   "symbol": "CHRM4",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1954": {
+   "symbol": "CHRM5",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:1955": {
+   "symbol": "CHRNA1",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:1956": {
+   "symbol": "CHRNA2",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:1957": {
+   "symbol": "CHRNA3",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:1958": {
+   "symbol": "CHRNA4",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:1959": {
+   "symbol": "CHRNA5",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:1960": {
+   "symbol": "CHRNA7",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:1961": {
+   "symbol": "CHRNB1",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:1962": {
+   "symbol": "CHRNB2",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:1963": {
+   "symbol": "CHRNB3",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:1964": {
+   "symbol": "CHRNB4",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:1965": {
+   "symbol": "CHRND",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:1966": {
+   "symbol": "CHRNE",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:1967": {
+   "symbol": "CHRNG",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:2019": {
+   "symbol": "CLCN1",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:2020": {
+   "symbol": "CLCN2",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:2021": {
+   "symbol": "CLCN3",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:2022": {
+   "symbol": "CLCN4",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:2023": {
+   "symbol": "CLCN5",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:2024": {
+   "symbol": "CLCN6",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:2025": {
+   "symbol": "CLCN7",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:2026": {
+   "symbol": "CLCNKA",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:2027": {
+   "symbol": "CLCNKB",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:2032": {
+   "symbol": "CLDN1",
+   "cls": "control",
+   "subclass": null,
+   "group": "CLDN"
+  },
+  "HGNC:2033": {
+   "symbol": "CLDN10",
+   "cls": "control",
+   "subclass": null,
+   "group": "CLDN"
+  },
+  "HGNC:2034": {
+   "symbol": "CLDN12",
+   "cls": "control",
+   "subclass": null,
+   "group": "CLDN"
+  },
+  "HGNC:2035": {
+   "symbol": "CLDN14",
+   "cls": "control",
+   "subclass": null,
+   "group": "CLDN"
+  },
+  "HGNC:2036": {
+   "symbol": "CLDN15",
+   "cls": "control",
+   "subclass": null,
+   "group": "CLDN"
+  },
+  "HGNC:2037": {
+   "symbol": "CLDN16",
+   "cls": "control",
+   "subclass": null,
+   "group": "CLDN"
+  },
+  "HGNC:2038": {
+   "symbol": "CLDN17",
+   "cls": "control",
+   "subclass": null,
+   "group": "CLDN"
+  },
+  "HGNC:2039": {
+   "symbol": "CLDN18",
+   "cls": "control",
+   "subclass": null,
+   "group": "CLDN"
+  },
+  "HGNC:2040": {
+   "symbol": "CLDN19",
+   "cls": "control",
+   "subclass": null,
+   "group": "CLDN"
+  },
+  "HGNC:2041": {
+   "symbol": "CLDN2",
+   "cls": "control",
+   "subclass": null,
+   "group": "CLDN"
+  },
+  "HGNC:2042": {
+   "symbol": "CLDN20",
+   "cls": "control",
+   "subclass": null,
+   "group": "CLDN"
+  },
+  "HGNC:2044": {
+   "symbol": "CLDN22",
+   "cls": "control",
+   "subclass": null,
+   "group": "CLDN"
+  },
+  "HGNC:2045": {
+   "symbol": "CLDN3",
+   "cls": "control",
+   "subclass": null,
+   "group": "CLDN"
+  },
+  "HGNC:2046": {
+   "symbol": "CLDN4",
+   "cls": "control",
+   "subclass": null,
+   "group": "CLDN"
+  },
+  "HGNC:2047": {
+   "symbol": "CLDN5",
+   "cls": "control",
+   "subclass": null,
+   "group": "CLDN"
+  },
+  "HGNC:2048": {
+   "symbol": "CLDN6",
+   "cls": "control",
+   "subclass": null,
+   "group": "CLDN"
+  },
+  "HGNC:2049": {
+   "symbol": "CLDN7",
+   "cls": "control",
+   "subclass": null,
+   "group": "CLDN"
+  },
+  "HGNC:2050": {
+   "symbol": "CLDN8",
+   "cls": "control",
+   "subclass": null,
+   "group": "CLDN"
+  },
+  "HGNC:2051": {
+   "symbol": "CLDN9",
+   "cls": "control",
+   "subclass": null,
+   "group": "CLDN"
+  },
+  "HGNC:2062": {
+   "symbol": "CLIC1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:2063": {
+   "symbol": "CLIC2",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:2064": {
+   "symbol": "CLIC3",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:2065": {
+   "symbol": "CLIC6",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:2074": {
+   "symbol": "CLN3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:2121": {
+   "symbol": "CMKLR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:2148": {
+   "symbol": "CNGA1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:2149": {
+   "symbol": "CNGA2",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:2150": {
+   "symbol": "CNGA3",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:2151": {
+   "symbol": "CNGB1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:2152": {
+   "symbol": "CNGA4",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:2153": {
+   "symbol": "CNGB3",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:2159": {
+   "symbol": "CNR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:2160": {
+   "symbol": "CNR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:2357": {
+   "symbol": "CRHR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:2358": {
+   "symbol": "CRHR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:2518": {
+   "symbol": "CTNS",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:2558": {
+   "symbol": "CX3CR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:2561": {
+   "symbol": "CXCR4",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3018": {
+   "symbol": "SLC26A3",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC26"
+  },
+  "HGNC:3020": {
+   "symbol": "DRD1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3023": {
+   "symbol": "DRD2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3024": {
+   "symbol": "DRD3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3025": {
+   "symbol": "DRD4",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3026": {
+   "symbol": "DRD5",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3128": {
+   "symbol": "GPR183",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3145": {
+   "symbol": "TRPV5",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:3165": {
+   "symbol": "S1PR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3166": {
+   "symbol": "LPAR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3167": {
+   "symbol": "S1PR3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3168": {
+   "symbol": "LPAR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3169": {
+   "symbol": "S1PR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3170": {
+   "symbol": "S1PR4",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3179": {
+   "symbol": "EDNRA",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3180": {
+   "symbol": "EDNRB",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3230": {
+   "symbol": "CELSR3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3231": {
+   "symbol": "CELSR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3336": {
+   "symbol": "ADGRE1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3337": {
+   "symbol": "ADGRE2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3537": {
+   "symbol": "F2R",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3538": {
+   "symbol": "F2RL1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3539": {
+   "symbol": "F2RL2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3540": {
+   "symbol": "F2RL3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3706": {
+   "symbol": "ATP8B1",
+   "cls": "control",
+   "subclass": null,
+   "group": "P4_ATPase"
+  },
+  "HGNC:3826": {
+   "symbol": "FPR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3827": {
+   "symbol": "FPR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3828": {
+   "symbol": "FPR3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:3969": {
+   "symbol": "FSHR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4035": {
+   "symbol": "ACKR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4038": {
+   "symbol": "FZD1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4039": {
+   "symbol": "FZD10",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4040": {
+   "symbol": "FZD2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4041": {
+   "symbol": "FZD3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4042": {
+   "symbol": "FZD4",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4043": {
+   "symbol": "FZD5",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4044": {
+   "symbol": "FZD6",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4045": {
+   "symbol": "FZD7",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4046": {
+   "symbol": "FZD8",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4047": {
+   "symbol": "FZD9",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4061": {
+   "symbol": "SLC37A4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:4070": {
+   "symbol": "GABBR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4075": {
+   "symbol": "GABRA1",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4076": {
+   "symbol": "GABRA2",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4077": {
+   "symbol": "GABRA3",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4078": {
+   "symbol": "GABRA4",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4079": {
+   "symbol": "GABRA5",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4080": {
+   "symbol": "GABRA6",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4081": {
+   "symbol": "GABRB1",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4082": {
+   "symbol": "GABRB2",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4083": {
+   "symbol": "GABRB3",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4084": {
+   "symbol": "GABRD",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4085": {
+   "symbol": "GABRE",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4086": {
+   "symbol": "GABRG1",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4087": {
+   "symbol": "GABRG2",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4088": {
+   "symbol": "GABRG3",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4089": {
+   "symbol": "GABRP",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4090": {
+   "symbol": "GABRR1",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4091": {
+   "symbol": "GABRR2",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4132": {
+   "symbol": "GALR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4133": {
+   "symbol": "GALR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4134": {
+   "symbol": "GALR3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4192": {
+   "symbol": "GCGR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4206": {
+   "symbol": "OPN1MW",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4266": {
+   "symbol": "GHRHR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4267": {
+   "symbol": "GHSR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4271": {
+   "symbol": "GIPR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4274": {
+   "symbol": "GJA1",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:4277": {
+   "symbol": "GJA3",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:4278": {
+   "symbol": "GJA4",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:4279": {
+   "symbol": "GJA5",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:4280": {
+   "symbol": "GJC1",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:4281": {
+   "symbol": "GJA8",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:4283": {
+   "symbol": "GJB1",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:4284": {
+   "symbol": "GJB2",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:4285": {
+   "symbol": "GJB3",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:4286": {
+   "symbol": "GJB4",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:4287": {
+   "symbol": "GJB5",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:4288": {
+   "symbol": "GJB6",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:4324": {
+   "symbol": "GLP1R",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4325": {
+   "symbol": "GLP2R",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4326": {
+   "symbol": "GLRA1",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4327": {
+   "symbol": "GLRA2",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4328": {
+   "symbol": "GLRA3",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4329": {
+   "symbol": "GLRB",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4421": {
+   "symbol": "GNRHR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4463": {
+   "symbol": "CMKLR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4464": {
+   "symbol": "PRLHR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4466": {
+   "symbol": "GPR12",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4468": {
+   "symbol": "UTS2R",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4469": {
+   "symbol": "GPR15",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4471": {
+   "symbol": "GPR17",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4472": {
+   "symbol": "GPR18",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4473": {
+   "symbol": "GPR19",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4474": {
+   "symbol": "CCR10",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4475": {
+   "symbol": "GPR20",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4476": {
+   "symbol": "GPR21",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4477": {
+   "symbol": "GPR22",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4478": {
+   "symbol": "LPAR4",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4479": {
+   "symbol": "MCHR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4480": {
+   "symbol": "GPR25",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4481": {
+   "symbol": "GPR26",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4482": {
+   "symbol": "GPR27",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4484": {
+   "symbol": "GPR3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4485": {
+   "symbol": "GPER1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4486": {
+   "symbol": "GPR31",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4487": {
+   "symbol": "GPR32",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4489": {
+   "symbol": "GPR33",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4490": {
+   "symbol": "GPR34",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4492": {
+   "symbol": "GPR35",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4494": {
+   "symbol": "GPR37",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4495": {
+   "symbol": "MLNR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4496": {
+   "symbol": "GPR39",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4497": {
+   "symbol": "GPR4",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4498": {
+   "symbol": "FFAR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4499": {
+   "symbol": "FFAR3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4500": {
+   "symbol": "GPR42",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4501": {
+   "symbol": "FFAR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4502": {
+   "symbol": "PTGDR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4503": {
+   "symbol": "GPR45",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4504": {
+   "symbol": "LGR5",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4506": {
+   "symbol": "GPR50",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4507": {
+   "symbol": "GABBR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4508": {
+   "symbol": "GPR52",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4510": {
+   "symbol": "KISS1R",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4511": {
+   "symbol": "GPR55",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4512": {
+   "symbol": "ADGRG1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4514": {
+   "symbol": "TAAR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4515": {
+   "symbol": "GPR6",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4516": {
+   "symbol": "ADGRG2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4517": {
+   "symbol": "GPR65",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4518": {
+   "symbol": "NMUR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4519": {
+   "symbol": "GPR68",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4522": {
+   "symbol": "NPBWR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4523": {
+   "symbol": "GPR83",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4524": {
+   "symbol": "PROKR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4525": {
+   "symbol": "NPFFR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4526": {
+   "symbol": "GPR75",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4527": {
+   "symbol": "C5AR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4528": {
+   "symbol": "GPR78",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4530": {
+   "symbol": "NPBWR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4531": {
+   "symbol": "OXGR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4532": {
+   "symbol": "HCAR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4533": {
+   "symbol": "GPR82",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4535": {
+   "symbol": "GPR84",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4536": {
+   "symbol": "GPR85",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4537": {
+   "symbol": "P2RY13",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4538": {
+   "symbol": "GPR87",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4539": {
+   "symbol": "GPR88",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4540": {
+   "symbol": "CXCR3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4542": {
+   "symbol": "SUCNR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4571": {
+   "symbol": "GRIA1",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4572": {
+   "symbol": "GRIA2",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4573": {
+   "symbol": "GRIA3",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4574": {
+   "symbol": "GRIA4",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4575": {
+   "symbol": "GRID1",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4576": {
+   "symbol": "GRID2",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4579": {
+   "symbol": "GRIK1",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4580": {
+   "symbol": "GRIK2",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4581": {
+   "symbol": "GRIK3",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4582": {
+   "symbol": "GRIK4",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4583": {
+   "symbol": "GRIK5",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4584": {
+   "symbol": "GRIN1",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4585": {
+   "symbol": "GRIN2A",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4586": {
+   "symbol": "GRIN2B",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4587": {
+   "symbol": "GRIN2C",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4588": {
+   "symbol": "GRIN2D",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:4593": {
+   "symbol": "GRM1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4594": {
+   "symbol": "GRM2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4595": {
+   "symbol": "GRM3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4596": {
+   "symbol": "GRM4",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4597": {
+   "symbol": "GRM5",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4598": {
+   "symbol": "GRM6",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4599": {
+   "symbol": "GRM7",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4600": {
+   "symbol": "GRM8",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4845": {
+   "symbol": "HCN1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:4846": {
+   "symbol": "HCN2",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:4848": {
+   "symbol": "HCRTR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4849": {
+   "symbol": "HCRTR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:4927": {
+   "symbol": "SLC39A7",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:5182": {
+   "symbol": "HRH1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:5183": {
+   "symbol": "HRH2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:5184": {
+   "symbol": "HRH3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:5286": {
+   "symbol": "HTR1A",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:5287": {
+   "symbol": "HTR1B",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:5289": {
+   "symbol": "HTR1D",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:5291": {
+   "symbol": "HTR1E",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:5292": {
+   "symbol": "HTR1F",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:5293": {
+   "symbol": "HTR2A",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:5294": {
+   "symbol": "HTR2B",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:5295": {
+   "symbol": "HTR2C",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:5297": {
+   "symbol": "HTR3A",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:5298": {
+   "symbol": "HTR3B",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:5299": {
+   "symbol": "HTR4",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:5300": {
+   "symbol": "HTR5A",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:5301": {
+   "symbol": "HTR6",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:5302": {
+   "symbol": "HTR7",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:6026": {
+   "symbol": "CXCR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:6027": {
+   "symbol": "CXCR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:6096": {
+   "symbol": "AQP12B",
+   "cls": "grey",
+   "subclass": null,
+   "group": "AQP"
+  },
+  "HGNC:6180": {
+   "symbol": "ITPR1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:6181": {
+   "symbol": "ITPR2",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:6182": {
+   "symbol": "ITPR3",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:6210": {
+   "symbol": "CD82",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:6218": {
+   "symbol": "KCNA1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6219": {
+   "symbol": "KCNA10",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6220": {
+   "symbol": "KCNA2",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6221": {
+   "symbol": "KCNA3",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6222": {
+   "symbol": "KCNA4",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6224": {
+   "symbol": "KCNA5",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6225": {
+   "symbol": "KCNA6",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6226": {
+   "symbol": "KCNA7",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6231": {
+   "symbol": "KCNB1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6232": {
+   "symbol": "KCNB2",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6233": {
+   "symbol": "KCNC1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6234": {
+   "symbol": "KCNC2",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6235": {
+   "symbol": "KCNC3",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6236": {
+   "symbol": "KCNC4",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6237": {
+   "symbol": "KCND1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6238": {
+   "symbol": "KCND2",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6239": {
+   "symbol": "KCND3",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6246": {
+   "symbol": "KCNF1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6248": {
+   "symbol": "KCNG1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6249": {
+   "symbol": "KCNG2",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6250": {
+   "symbol": "KCNH1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6251": {
+   "symbol": "KCNH2",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6252": {
+   "symbol": "KCNH3",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6253": {
+   "symbol": "KCNH4",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6254": {
+   "symbol": "KCNH5",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6255": {
+   "symbol": "KCNJ1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6256": {
+   "symbol": "KCNJ10",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6257": {
+   "symbol": "KCNJ11",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6258": {
+   "symbol": "KCNJ12",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6259": {
+   "symbol": "KCNJ13",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6260": {
+   "symbol": "KCNJ14",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6261": {
+   "symbol": "KCNJ15",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6262": {
+   "symbol": "KCNJ16",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6263": {
+   "symbol": "KCNJ2",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6264": {
+   "symbol": "KCNJ3",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6265": {
+   "symbol": "KCNJ4",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6266": {
+   "symbol": "KCNJ5",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6267": {
+   "symbol": "KCNJ6",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6269": {
+   "symbol": "KCNJ8",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6270": {
+   "symbol": "KCNJ9",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6272": {
+   "symbol": "KCNK1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6273": {
+   "symbol": "KCNK10",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6274": {
+   "symbol": "KCNK12",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6275": {
+   "symbol": "KCNK13",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6277": {
+   "symbol": "KCNK2",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6278": {
+   "symbol": "KCNK3",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6279": {
+   "symbol": "KCNK4",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6280": {
+   "symbol": "KCNK5",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6281": {
+   "symbol": "KCNK6",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6282": {
+   "symbol": "KCNK7",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6283": {
+   "symbol": "KCNK9",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6284": {
+   "symbol": "KCNMA1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6290": {
+   "symbol": "KCNN1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6291": {
+   "symbol": "KCNN2",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6292": {
+   "symbol": "KCNN3",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6293": {
+   "symbol": "KCNN4",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6294": {
+   "symbol": "KCNQ1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6296": {
+   "symbol": "KCNQ2",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6297": {
+   "symbol": "KCNQ3",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6298": {
+   "symbol": "KCNQ4",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6299": {
+   "symbol": "KCNQ5",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6300": {
+   "symbol": "KCNS1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6301": {
+   "symbol": "KCNS2",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6302": {
+   "symbol": "KCNS3",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:6556": {
+   "symbol": "LETM1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:6585": {
+   "symbol": "LHCGR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:6713": {
+   "symbol": "LTB4R",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:6899": {
+   "symbol": "MAS1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:6929": {
+   "symbol": "MC1R",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:6930": {
+   "symbol": "MC2R",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:6931": {
+   "symbol": "MC3R",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:6932": {
+   "symbol": "MC4R",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:6933": {
+   "symbol": "MC5R",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:7103": {
+   "symbol": "MIP",
+   "cls": "grey",
+   "subclass": null,
+   "group": "AQP"
+  },
+  "HGNC:7146": {
+   "symbol": "TRPM1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:7207": {
+   "symbol": "MPDU1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:7414": {
+   "symbol": "MT-ATP6",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:7415": {
+   "symbol": "MT-ATP8",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:7463": {
+   "symbol": "MTNR1A",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:7464": {
+   "symbol": "MTNR1B",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:7897": {
+   "symbol": "NPC1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:7898": {
+   "symbol": "NPC1L1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:7956": {
+   "symbol": "NPY1R",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:7957": {
+   "symbol": "NPY2R",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:7958": {
+   "symbol": "NPY5R",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:8039": {
+   "symbol": "NTSR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:8040": {
+   "symbol": "NTSR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:8101": {
+   "symbol": "OCA2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:8153": {
+   "symbol": "OPRD1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:8154": {
+   "symbol": "OPRK1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:8155": {
+   "symbol": "OPRL1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:8156": {
+   "symbol": "OPRM1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:8494": {
+   "symbol": "SLC22A13",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:8495": {
+   "symbol": "SLC22A14",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:8514": {
+   "symbol": "CLDN11",
+   "cls": "control",
+   "subclass": null,
+   "group": "CLDN"
+  },
+  "HGNC:8529": {
+   "symbol": "OXTR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:8533": {
+   "symbol": "P2RX1",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:8534": {
+   "symbol": "P2RX3",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:8535": {
+   "symbol": "P2RX4",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:8536": {
+   "symbol": "P2RX5",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:8537": {
+   "symbol": "P2RX7",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:8538": {
+   "symbol": "P2RX6",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:8539": {
+   "symbol": "P2RY1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:8540": {
+   "symbol": "P2RY11",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:8541": {
+   "symbol": "P2RY2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:8542": {
+   "symbol": "P2RY4",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:8543": {
+   "symbol": "P2RY6",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:8599": {
+   "symbol": "PANX1",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:8600": {
+   "symbol": "PANX2",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:8642": {
+   "symbol": "SLC45A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:8818": {
+   "symbol": "SLC26A4",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC26"
+  },
+  "HGNC:9009": {
+   "symbol": "PKD2",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:9011": {
+   "symbol": "PKD2L1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:9012": {
+   "symbol": "PKD2L2",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:9225": {
+   "symbol": "SLC43A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:9329": {
+   "symbol": "NPY4R",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:9359": {
+   "symbol": "SLC26A5",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC26"
+  },
+  "HGNC:9582": {
+   "symbol": "PTAFR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:9585": {
+   "symbol": "PTCH1",
+   "cls": "control",
+   "subclass": null,
+   "group": "PTCH"
+  },
+  "HGNC:9586": {
+   "symbol": "PTCH2",
+   "cls": "control",
+   "subclass": null,
+   "group": "PTCH"
+  },
+  "HGNC:9591": {
+   "symbol": "PTGDR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:9593": {
+   "symbol": "PTGER1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:9594": {
+   "symbol": "PTGER2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:9595": {
+   "symbol": "PTGER3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:9596": {
+   "symbol": "PTGER4",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:9600": {
+   "symbol": "PTGFR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:9602": {
+   "symbol": "PTGIR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:9608": {
+   "symbol": "PTH1R",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:9609": {
+   "symbol": "PTH2R",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:9836": {
+   "symbol": "GPRC5A",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:9936": {
+   "symbol": "OPN1LW",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:9942": {
+   "symbol": "PRPH2",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:9990": {
+   "symbol": "RGR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:10006": {
+   "symbol": "RHAG",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10008": {
+   "symbol": "RHCE",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10009": {
+   "symbol": "RHD",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10012": {
+   "symbol": "RHO",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:10254": {
+   "symbol": "ROM1",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:10450": {
+   "symbol": "RRH",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:10483": {
+   "symbol": "RYR1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:10484": {
+   "symbol": "RYR2",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:10485": {
+   "symbol": "RYR3",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:10539": {
+   "symbol": "TSPAN31",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:10582": {
+   "symbol": "SCN10A",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:10583": {
+   "symbol": "SCN11A",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:10585": {
+   "symbol": "SCN1A",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:10586": {
+   "symbol": "SCN1B",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:10588": {
+   "symbol": "SCN2A",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:10589": {
+   "symbol": "SCN2B",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:10590": {
+   "symbol": "SCN3A",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:10591": {
+   "symbol": "SCN4A",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:10592": {
+   "symbol": "SCN4B",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:10593": {
+   "symbol": "SCN5A",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:10596": {
+   "symbol": "SCN8A",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:10597": {
+   "symbol": "SCN9A",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:10599": {
+   "symbol": "SCNN1A",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:10600": {
+   "symbol": "SCNN1B",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:10601": {
+   "symbol": "SCNN1D",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:10602": {
+   "symbol": "SCNN1G",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:10608": {
+   "symbol": "SCTR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:10905": {
+   "symbol": "SLC10A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10906": {
+   "symbol": "SLC10A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10907": {
+   "symbol": "SLC11A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10908": {
+   "symbol": "SLC11A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10909": {
+   "symbol": "SLC40A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10910": {
+   "symbol": "SLC12A1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC12"
+  },
+  "HGNC:10911": {
+   "symbol": "SLC12A2",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC12"
+  },
+  "HGNC:10912": {
+   "symbol": "SLC12A3",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC12"
+  },
+  "HGNC:10913": {
+   "symbol": "SLC12A4",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC12"
+  },
+  "HGNC:10914": {
+   "symbol": "SLC12A6",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC12"
+  },
+  "HGNC:10915": {
+   "symbol": "SLC12A7",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC12"
+  },
+  "HGNC:10916": {
+   "symbol": "SLC13A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10917": {
+   "symbol": "SLC13A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10918": {
+   "symbol": "SLC14A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10919": {
+   "symbol": "SLC14A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10920": {
+   "symbol": "SLC15A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10921": {
+   "symbol": "SLC15A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10922": {
+   "symbol": "SLC16A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10923": {
+   "symbol": "SLC16A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10924": {
+   "symbol": "SLC16A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10925": {
+   "symbol": "SLC16A4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10926": {
+   "symbol": "SLC16A5",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10927": {
+   "symbol": "SLC16A6",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10928": {
+   "symbol": "SLC16A7",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10929": {
+   "symbol": "SLC17A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10930": {
+   "symbol": "SLC17A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10931": {
+   "symbol": "SLC17A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10932": {
+   "symbol": "SLC17A4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10933": {
+   "symbol": "SLC17A5",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10934": {
+   "symbol": "SLC18A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10935": {
+   "symbol": "SLC18A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10936": {
+   "symbol": "SLC18A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10937": {
+   "symbol": "SLC19A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10938": {
+   "symbol": "SLC19A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10939": {
+   "symbol": "SLC1A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10940": {
+   "symbol": "SLC1A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10941": {
+   "symbol": "SLC1A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10942": {
+   "symbol": "SLC1A4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10943": {
+   "symbol": "SLC1A5",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10944": {
+   "symbol": "SLC1A6",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10945": {
+   "symbol": "SLC1A7",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10946": {
+   "symbol": "SLC20A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10947": {
+   "symbol": "SLC20A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10952": {
+   "symbol": "SLCO3A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10953": {
+   "symbol": "SLCO4A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10955": {
+   "symbol": "SLCO2A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10956": {
+   "symbol": "SLCO1A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10959": {
+   "symbol": "SLCO1B1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10961": {
+   "symbol": "SLCO1B3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10962": {
+   "symbol": "SLCO2B1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10963": {
+   "symbol": "SLC22A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10964": {
+   "symbol": "SLC67A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10966": {
+   "symbol": "SLC22A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10967": {
+   "symbol": "SLC22A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10968": {
+   "symbol": "SLC22A4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10969": {
+   "symbol": "SLC22A5",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10970": {
+   "symbol": "SLC22A6",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10971": {
+   "symbol": "SLC22A7",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10972": {
+   "symbol": "SLC22A8",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10973": {
+   "symbol": "SLC23A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10974": {
+   "symbol": "SLC23A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10975": {
+   "symbol": "SLC24A1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC24"
+  },
+  "HGNC:10976": {
+   "symbol": "SLC24A2",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC24"
+  },
+  "HGNC:10977": {
+   "symbol": "SLC24A3",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC24"
+  },
+  "HGNC:10978": {
+   "symbol": "SLC24A4",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC24"
+  },
+  "HGNC:10979": {
+   "symbol": "SLC25A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10980": {
+   "symbol": "SLC25A10",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10981": {
+   "symbol": "SLC25A11",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10982": {
+   "symbol": "SLC25A12",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10983": {
+   "symbol": "SLC25A13",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10984": {
+   "symbol": "SLC25A14",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10985": {
+   "symbol": "SLC25A15",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10986": {
+   "symbol": "SLC25A16",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10987": {
+   "symbol": "SLC25A17",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10988": {
+   "symbol": "SLC25A18",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10989": {
+   "symbol": "SLC25A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10990": {
+   "symbol": "SLC25A4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10991": {
+   "symbol": "SLC25A5",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10992": {
+   "symbol": "SLC25A6",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10993": {
+   "symbol": "SLC26A1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC26"
+  },
+  "HGNC:10994": {
+   "symbol": "SLC26A2",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC26"
+  },
+  "HGNC:10995": {
+   "symbol": "SLC27A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10996": {
+   "symbol": "SLC27A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10997": {
+   "symbol": "SLC27A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10998": {
+   "symbol": "SLC27A4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:10999": {
+   "symbol": "SLC27A5",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11000": {
+   "symbol": "SLC27A6",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11001": {
+   "symbol": "SLC28A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11002": {
+   "symbol": "SLC28A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11003": {
+   "symbol": "SLC29A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11004": {
+   "symbol": "SLC29A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11005": {
+   "symbol": "SLC2A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11006": {
+   "symbol": "SLC2A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11007": {
+   "symbol": "SLC2A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11009": {
+   "symbol": "SLC2A4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11010": {
+   "symbol": "SLC2A5",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11011": {
+   "symbol": "SLC2A6",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11012": {
+   "symbol": "SLC30A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11013": {
+   "symbol": "SLC30A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11014": {
+   "symbol": "SLC30A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11015": {
+   "symbol": "SLC30A4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11016": {
+   "symbol": "SLC31A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11017": {
+   "symbol": "SLC31A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11018": {
+   "symbol": "SLC32A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11019": {
+   "symbol": "SLC34A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11020": {
+   "symbol": "SLC34A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11021": {
+   "symbol": "SLC35A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11022": {
+   "symbol": "SLC35A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11023": {
+   "symbol": "SLC35A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11024": {
+   "symbol": "SLC37A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11025": {
+   "symbol": "SLC3A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11026": {
+   "symbol": "SLC3A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11027": {
+   "symbol": "SLC4A1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC4"
+  },
+  "HGNC:11028": {
+   "symbol": "SLC4A2",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC4"
+  },
+  "HGNC:11029": {
+   "symbol": "SLC4A3",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC4"
+  },
+  "HGNC:11030": {
+   "symbol": "SLC4A4",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC4"
+  },
+  "HGNC:11033": {
+   "symbol": "SLC4A7",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC4"
+  },
+  "HGNC:11034": {
+   "symbol": "SLC4A8",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC4"
+  },
+  "HGNC:11035": {
+   "symbol": "SLC4A9",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC4"
+  },
+  "HGNC:11036": {
+   "symbol": "SLC5A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11037": {
+   "symbol": "SLC5A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11038": {
+   "symbol": "SLC5A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11039": {
+   "symbol": "SLC5A4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11040": {
+   "symbol": "SLC5A5",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11041": {
+   "symbol": "SLC5A6",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11042": {
+   "symbol": "SLC6A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11044": {
+   "symbol": "SLC6A11",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11045": {
+   "symbol": "SLC6A12",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11046": {
+   "symbol": "SLC6A13",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11047": {
+   "symbol": "SLC6A14",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11048": {
+   "symbol": "SLC6A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11049": {
+   "symbol": "SLC6A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11050": {
+   "symbol": "SLC6A4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11051": {
+   "symbol": "SLC6A5",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11052": {
+   "symbol": "SLC6A6",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11054": {
+   "symbol": "SLC6A7",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11055": {
+   "symbol": "SLC6A8",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11056": {
+   "symbol": "SLC6A9",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11057": {
+   "symbol": "SLC7A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11058": {
+   "symbol": "SLC7A10",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11059": {
+   "symbol": "SLC7A11",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11060": {
+   "symbol": "SLC7A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11061": {
+   "symbol": "SLC7A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11062": {
+   "symbol": "SLC7A4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11063": {
+   "symbol": "SLC7A5",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11064": {
+   "symbol": "SLC7A6",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11065": {
+   "symbol": "SLC7A7",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11066": {
+   "symbol": "SLC7A8",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11067": {
+   "symbol": "SLC7A9",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:11068": {
+   "symbol": "SLC8A1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC8"
+  },
+  "HGNC:11069": {
+   "symbol": "SLC8A2",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC8"
+  },
+  "HGNC:11070": {
+   "symbol": "SLC8A3",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC8"
+  },
+  "HGNC:11071": {
+   "symbol": "SLC9A1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC9"
+  },
+  "HGNC:11072": {
+   "symbol": "SLC9A2",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC9"
+  },
+  "HGNC:11073": {
+   "symbol": "SLC9A3",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC9"
+  },
+  "HGNC:11077": {
+   "symbol": "SLC9A4",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC9"
+  },
+  "HGNC:11078": {
+   "symbol": "SLC9A5",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC9"
+  },
+  "HGNC:11079": {
+   "symbol": "SLC9A6",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC9"
+  },
+  "HGNC:11119": {
+   "symbol": "SMO",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:11330": {
+   "symbol": "SSTR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:11331": {
+   "symbol": "SSTR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:11332": {
+   "symbol": "SSTR3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:11333": {
+   "symbol": "SSTR4",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:11334": {
+   "symbol": "SSTR5",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:11526": {
+   "symbol": "TACR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:11527": {
+   "symbol": "TACR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:11528": {
+   "symbol": "TACR3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:11608": {
+   "symbol": "TBXA2R",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:11647": {
+   "symbol": "TCIRG1",
+   "cls": "class",
+   "subclass": "v_atpase",
+   "group": null
+  },
+  "HGNC:11854": {
+   "symbol": "TSPAN7",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:11855": {
+   "symbol": "TSPAN8",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:11858": {
+   "symbol": "TSPAN6",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:11859": {
+   "symbol": "TSPAN4",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:11864": {
+   "symbol": "TM9SF1",
+   "cls": "control",
+   "subclass": null,
+   "group": "TM9SF"
+  },
+  "HGNC:11865": {
+   "symbol": "TM9SF2",
+   "cls": "control",
+   "subclass": null,
+   "group": "TM9SF"
+  },
+  "HGNC:12299": {
+   "symbol": "TRHR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:12333": {
+   "symbol": "TRPC1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:12335": {
+   "symbol": "TRPC3",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:12336": {
+   "symbol": "TRPC4",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:12337": {
+   "symbol": "TRPC5",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:12338": {
+   "symbol": "TRPC6",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:12339": {
+   "symbol": "TRPM2",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:12373": {
+   "symbol": "TSHR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:12517": {
+   "symbol": "UCP1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:12518": {
+   "symbol": "UCP2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:12519": {
+   "symbol": "UCP3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:12577": {
+   "symbol": "UPK1A",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:12578": {
+   "symbol": "UPK1B",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:12669": {
+   "symbol": "VDAC1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:12672": {
+   "symbol": "VDAC2",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:12674": {
+   "symbol": "VDAC3",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:12694": {
+   "symbol": "VIPR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:12695": {
+   "symbol": "VIPR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:12703": {
+   "symbol": "BEST1",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:12716": {
+   "symbol": "TRPV1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:12827": {
+   "symbol": "XPR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:12876": {
+   "symbol": "SLC39A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:13211": {
+   "symbol": "ATP2C1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:13213": {
+   "symbol": "ATP5MGL",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:13299": {
+   "symbol": "LGR4",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:13300": {
+   "symbol": "GPR61",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:13301": {
+   "symbol": "GPR62",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:13302": {
+   "symbol": "GPR63",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:13307": {
+   "symbol": "LPAR5",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:13308": {
+   "symbol": "GPRC5B",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:13309": {
+   "symbol": "GPRC5C",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:13310": {
+   "symbol": "GPRC5D",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:13356": {
+   "symbol": "MCOLN1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:13357": {
+   "symbol": "MCOLN2",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:13358": {
+   "symbol": "MCOLN3",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:13410": {
+   "symbol": "TSPAN32",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:13444": {
+   "symbol": "SLC2A10",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:13445": {
+   "symbol": "SLC2A7",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:13446": {
+   "symbol": "SLC2A9",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:13447": {
+   "symbol": "SLC38A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:13448": {
+   "symbol": "SLC38A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:13517": {
+   "symbol": "CLIC5",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:13518": {
+   "symbol": "CLIC4",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:13527": {
+   "symbol": "ATP6V1D",
+   "cls": "class",
+   "subclass": "v_atpase",
+   "group": null
+  },
+  "HGNC:13531": {
+   "symbol": "ATP8A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "P4_ATPase"
+  },
+  "HGNC:13533": {
+   "symbol": "ATP8A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "P4_ATPase"
+  },
+  "HGNC:13534": {
+   "symbol": "ATP8B2",
+   "cls": "control",
+   "subclass": null,
+   "group": "P4_ATPase"
+  },
+  "HGNC:13535": {
+   "symbol": "ATP8B3",
+   "cls": "control",
+   "subclass": null,
+   "group": "P4_ATPase"
+  },
+  "HGNC:13536": {
+   "symbol": "ATP8B4",
+   "cls": "control",
+   "subclass": null,
+   "group": "P4_ATPase"
+  },
+  "HGNC:13540": {
+   "symbol": "ATP9A",
+   "cls": "control",
+   "subclass": null,
+   "group": "P4_ATPase"
+  },
+  "HGNC:13541": {
+   "symbol": "ATP9B",
+   "cls": "control",
+   "subclass": null,
+   "group": "P4_ATPase"
+  },
+  "HGNC:13542": {
+   "symbol": "ATP10A",
+   "cls": "control",
+   "subclass": null,
+   "group": "P4_ATPase"
+  },
+  "HGNC:13543": {
+   "symbol": "ATP10B",
+   "cls": "control",
+   "subclass": null,
+   "group": "P4_ATPase"
+  },
+  "HGNC:13549": {
+   "symbol": "ATP10D",
+   "cls": "control",
+   "subclass": null,
+   "group": "P4_ATPase"
+  },
+  "HGNC:13552": {
+   "symbol": "ATP11A",
+   "cls": "control",
+   "subclass": null,
+   "group": "P4_ATPase"
+  },
+  "HGNC:13553": {
+   "symbol": "ATP11B",
+   "cls": "control",
+   "subclass": null,
+   "group": "P4_ATPase"
+  },
+  "HGNC:13554": {
+   "symbol": "ATP11C",
+   "cls": "control",
+   "subclass": null,
+   "group": "P4_ATPase"
+  },
+  "HGNC:13594": {
+   "symbol": "TSPAN17",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:13621": {
+   "symbol": "SLC6A15",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:13622": {
+   "symbol": "SLC6A16",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:13625": {
+   "symbol": "CACNG6",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:13626": {
+   "symbol": "CACNG7",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:13628": {
+   "symbol": "CACNG8",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:13708": {
+   "symbol": "ACKR5",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:13724": {
+   "symbol": "ATP6V0D1",
+   "cls": "class",
+   "subclass": "v_atpase",
+   "group": null
+  },
+  "HGNC:13728": {
+   "symbol": "ADGRG3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:13800": {
+   "symbol": "CHRNA10",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:13811": {
+   "symbol": "SLC4A10",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC4"
+  },
+  "HGNC:13812": {
+   "symbol": "SLC2A8",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:13814": {
+   "symbol": "KCNK15",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:13816": {
+   "symbol": "ATP12A",
+   "cls": "class",
+   "subclass": "p_type_pump",
+   "group": null
+  },
+  "HGNC:13818": {
+   "symbol": "SLC12A5",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC12"
+  },
+  "HGNC:13819": {
+   "symbol": "SLCO1C1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:13838": {
+   "symbol": "ADGRA1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:13839": {
+   "symbol": "ADGRA3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:13841": {
+   "symbol": "ADGRG6",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:13884": {
+   "symbol": "ABCG4",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:13886": {
+   "symbol": "ABCG5",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:13887": {
+   "symbol": "ABCG8",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:13941": {
+   "symbol": "SLC44A4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:13961": {
+   "symbol": "MAS1L",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:14004": {
+   "symbol": "ANO3",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:14006": {
+   "symbol": "TRPV6",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:14007": {
+   "symbol": "OPN3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:14025": {
+   "symbol": "SLC5A7",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:14073": {
+   "symbol": "ATP1A4",
+   "cls": "class",
+   "subclass": "p_type_pump",
+   "group": null
+  },
+  "HGNC:14079": {
+   "symbol": "CHRNA9",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:14239": {
+   "symbol": "SLC2A11",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:14247": {
+   "symbol": "ATP5MG",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:14298": {
+   "symbol": "LPAR3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:14299": {
+   "symbol": "S1PR5",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:14323": {
+   "symbol": "TRPM5",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:14409": {
+   "symbol": "SLC25A19",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:14411": {
+   "symbol": "SLC25A21",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:14430": {
+   "symbol": "SLC13A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:14449": {
+   "symbol": "OPN4",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:14454": {
+   "symbol": "GABRQ",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:14463": {
+   "symbol": "SLC39A11",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:14464": {
+   "symbol": "KCNK16",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:14465": {
+   "symbol": "KCNK17",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:14467": {
+   "symbol": "SLC26A7",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC26"
+  },
+  "HGNC:14468": {
+   "symbol": "SLC26A8",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC26"
+  },
+  "HGNC:14469": {
+   "symbol": "SLC26A9",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC26"
+  },
+  "HGNC:14471": {
+   "symbol": "SLC26A11",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC26"
+  },
+  "HGNC:14472": {
+   "symbol": "SLC26A6",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC26"
+  },
+  "HGNC:14572": {
+   "symbol": "RHBG",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:14637": {
+   "symbol": "ABCA12",
+   "cls": "control",
+   "subclass": null,
+   "group": "P4_ATPase"
+  },
+  "HGNC:14638": {
+   "symbol": "ABCA13",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:14639": {
+   "symbol": "ABCC11",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:14640": {
+   "symbol": "ABCC12",
+   "cls": "control",
+   "subclass": null,
+   "group": "ABC"
+  },
+  "HGNC:14648": {
+   "symbol": "LETM2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:14666": {
+   "symbol": "RXFP4",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:14679": {
+   "symbol": "SLC38A4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:14923": {
+   "symbol": "GPR37L1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:14963": {
+   "symbol": "GPR101",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:14964": {
+   "symbol": "TAAR8",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:15459": {
+   "symbol": "P2RX2",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:15460": {
+   "symbol": "CACNA2D3",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:15492": {
+   "symbol": "ANKH",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:15520": {
+   "symbol": "LPAR6",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:15524": {
+   "symbol": "P2RY8",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:15546": {
+   "symbol": "SLC35G5",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:15565": {
+   "symbol": "QRFPR",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:15595": {
+   "symbol": "SLC12A8",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC12"
+  },
+  "HGNC:15621": {
+   "symbol": "SLC35D3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:15827": {
+   "symbol": "SLC13A4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:15836": {
+   "symbol": "PROKR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:15956": {
+   "symbol": "SLC2A13",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:15963": {
+   "symbol": "CHRNA6",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:16029": {
+   "symbol": "AQP10",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:16055": {
+   "symbol": "SLC46A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:16073": {
+   "symbol": "SFXN5",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:16085": {
+   "symbol": "SFXN1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:16086": {
+   "symbol": "SFXN2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:16087": {
+   "symbol": "SFXN3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:16088": {
+   "symbol": "SFXN4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:16187": {
+   "symbol": "SLC52A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:16192": {
+   "symbol": "SLC17A9",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:16261": {
+   "symbol": "SLC22A9",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:16266": {
+   "symbol": "SLC19A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:16270": {
+   "symbol": "SLC16A8",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:16438": {
+   "symbol": "SLC4A11",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC4"
+  },
+  "HGNC:16442": {
+   "symbol": "P2RY14",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:16454": {
+   "symbol": "NMUR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:16472": {
+   "symbol": "SLC45A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:16484": {
+   "symbol": "SLC28A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:16628": {
+   "symbol": "SLC49A4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:16647": {
+   "symbol": "CXCR6",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:16690": {
+   "symbol": "GJB7",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:16693": {
+   "symbol": "GPR162",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:16703": {
+   "symbol": "SLC17A6",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:16704": {
+   "symbol": "SLC17A7",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:16709": {
+   "symbol": "CALCRL",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:16767": {
+   "symbol": "GRIN3A",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:16768": {
+   "symbol": "GRIN3B",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:16824": {
+   "symbol": "HCAR3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:16832": {
+   "symbol": "ATP6V1F",
+   "cls": "class",
+   "subclass": "v_atpase",
+   "group": null
+  },
+  "HGNC:16872": {
+   "symbol": "SLC35B2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:16874": {
+   "symbol": "SV2B",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:16882": {
+   "symbol": "HCN4",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:16894": {
+   "symbol": "SLC75A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:16992": {
+   "symbol": "LRRC8D",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:16995": {
+   "symbol": "GJA10",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:17027": {
+   "symbol": "SLC16A10",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:17043": {
+   "symbol": "NIPA1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:17044": {
+   "symbol": "NIPA2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:17058": {
+   "symbol": "SLC35E4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:17105": {
+   "symbol": "BEST3",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:17106": {
+   "symbol": "BEST4",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:17107": {
+   "symbol": "BEST2",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:17116": {
+   "symbol": "CATSPER1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:17117": {
+   "symbol": "SLC35H1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:17123": {
+   "symbol": "SLC9A7",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC9"
+  },
+  "HGNC:17127": {
+   "symbol": "SLC39A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:17128": {
+   "symbol": "SLC39A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:17129": {
+   "symbol": "SLC39A4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:17292": {
+   "symbol": "SLC44A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:17318": {
+   "symbol": "RXFP2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:17383": {
+   "symbol": "HRH4",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:17416": {
+   "symbol": "ADGRV1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:17425": {
+   "symbol": "NPFFR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:17435": {
+   "symbol": "SLC12A9",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC12"
+  },
+  "HGNC:17451": {
+   "symbol": "CYSLTR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:17466": {
+   "symbol": "SLC43A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:17482": {
+   "symbol": "GPR132",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:17494": {
+   "symbol": "GJC2",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:17495": {
+   "symbol": "GJC3",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:17537": {
+   "symbol": "ASIC5",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:17586": {
+   "symbol": "MTCH1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:17587": {
+   "symbol": "MTCH2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:17591": {
+   "symbol": "CLDN23",
+   "cls": "control",
+   "subclass": null,
+   "group": "CLDN"
+  },
+  "HGNC:17617": {
+   "symbol": "MRGPRX4",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:17734": {
+   "symbol": "TAAR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:17752": {
+   "symbol": "TSPAN3",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:17753": {
+   "symbol": "TSPAN5",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:17849": {
+   "symbol": "ADGRA2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:17939": {
+   "symbol": "SLC45A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:17961": {
+   "symbol": "TRPM8",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:17962": {
+   "symbol": "MRGPRX1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:17969": {
+   "symbol": "GABRR3",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:17980": {
+   "symbol": "MRGPRX3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:17983": {
+   "symbol": "MRGPRX2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:17989": {
+   "symbol": "SLC22A12",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:17992": {
+   "symbol": "TRPM3",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:17993": {
+   "symbol": "TRPM4",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:17994": {
+   "symbol": "TRPM7",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:17995": {
+   "symbol": "TRPM6",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:18044": {
+   "symbol": "SLC38A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:18057": {
+   "symbol": "SLC22A10",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:18067": {
+   "symbol": "SLC2A12",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:18068": {
+   "symbol": "SLC15A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:18070": {
+   "symbol": "SLC38A5",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:18082": {
+   "symbol": "TRPV2",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:18083": {
+   "symbol": "TRPV4",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:18084": {
+   "symbol": "TRPV3",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:18120": {
+   "symbol": "SLC22A11",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:18124": {
+   "symbol": "P2RY12",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:18125": {
+   "symbol": "ATP6V1E2",
+   "cls": "class",
+   "subclass": "v_atpase",
+   "group": null
+  },
+  "HGNC:18140": {
+   "symbol": "RHCG",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:18168": {
+   "symbol": "SLC4A5",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC4"
+  },
+  "HGNC:18182": {
+   "symbol": "TPCN1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:18186": {
+   "symbol": "GPR173",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:18264": {
+   "symbol": "ATP6V1C2",
+   "cls": "class",
+   "subclass": "v_atpase",
+   "group": null
+  },
+  "HGNC:18265": {
+   "symbol": "ATP6V1G3",
+   "cls": "class",
+   "subclass": "v_atpase",
+   "group": null
+  },
+  "HGNC:18266": {
+   "symbol": "ATP6V0D2",
+   "cls": "class",
+   "subclass": "v_atpase",
+   "group": null
+  },
+  "HGNC:18274": {
+   "symbol": "CYSLTR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:18301": {
+   "symbol": "SLC2A14",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:18303": {
+   "symbol": "ATP6V1H",
+   "cls": "class",
+   "subclass": "v_atpase",
+   "group": null
+  },
+  "HGNC:18306": {
+   "symbol": "KCNG3",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:18481": {
+   "symbol": "ATP6V0A2",
+   "cls": "class",
+   "subclass": "v_atpase",
+   "group": null
+  },
+  "HGNC:18510": {
+   "symbol": "GPRC6A",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:18582": {
+   "symbol": "ADGRL2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:18607": {
+   "symbol": "SLC39A6",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:18651": {
+   "symbol": "ADGRD2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:18761": {
+   "symbol": "SLC36A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:18762": {
+   "symbol": "SLC36A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:18798": {
+   "symbol": "SLC44A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:18810": {
+   "symbol": "CATSPER2",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:18861": {
+   "symbol": "KCNV1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:18862": {
+   "symbol": "KCNH6",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:18863": {
+   "symbol": "KCNH7",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:18864": {
+   "symbol": "KCNH8",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:18865": {
+   "symbol": "KCNT1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:18866": {
+   "symbol": "KCNT2",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:18867": {
+   "symbol": "KCNU1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:18989": {
+   "symbol": "ADGRF3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:18990": {
+   "symbol": "ADGRF1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:18992": {
+   "symbol": "ADGRG4",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:19010": {
+   "symbol": "ADGRG5",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:19011": {
+   "symbol": "ADGRF4",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:19027": {
+   "symbol": "LRRC8A",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:19030": {
+   "symbol": "ADGRF5",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:19046": {
+   "symbol": "SLCO5A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:19060": {
+   "symbol": "GPR119",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:19061": {
+   "symbol": "FFAR4",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:19082": {
+   "symbol": "NALCN",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:19089": {
+   "symbol": "SLC30A5",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:19119": {
+   "symbol": "SLC5A8",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:19147": {
+   "symbol": "GJD3",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:19154": {
+   "symbol": "GJD2",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:19155": {
+   "symbol": "GJA9",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:19172": {
+   "symbol": "CMTM1",
+   "cls": "control",
+   "subclass": null,
+   "group": "CMTM"
+  },
+  "HGNC:19173": {
+   "symbol": "CMTM2",
+   "cls": "control",
+   "subclass": null,
+   "group": "CMTM"
+  },
+  "HGNC:19174": {
+   "symbol": "CMTM3",
+   "cls": "control",
+   "subclass": null,
+   "group": "CMTM"
+  },
+  "HGNC:19175": {
+   "symbol": "CMTM4",
+   "cls": "control",
+   "subclass": null,
+   "group": "CMTM"
+  },
+  "HGNC:19176": {
+   "symbol": "CMTM5",
+   "cls": "control",
+   "subclass": null,
+   "group": "CMTM"
+  },
+  "HGNC:19177": {
+   "symbol": "CMTM6",
+   "cls": "control",
+   "subclass": null,
+   "group": "CMTM"
+  },
+  "HGNC:19178": {
+   "symbol": "CMTM7",
+   "cls": "control",
+   "subclass": null,
+   "group": "CMTM"
+  },
+  "HGNC:19179": {
+   "symbol": "CMTM8",
+   "cls": "control",
+   "subclass": null,
+   "group": "CMTM"
+  },
+  "HGNC:19183": {
+   "symbol": "HCN3",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:19241": {
+   "symbol": "ADGRG7",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:19260": {
+   "symbol": "LTB4R2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:19305": {
+   "symbol": "SLC30A6",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:19306": {
+   "symbol": "SLC30A7",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:19375": {
+   "symbol": "SLC25A23",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:19429": {
+   "symbol": "SLC41A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:19439": {
+   "symbol": "KCNK18",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:19659": {
+   "symbol": "SLC36A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:19660": {
+   "symbol": "SLC36A4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:19680": {
+   "symbol": "GPBAR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:19697": {
+   "symbol": "KCNG4",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:19698": {
+   "symbol": "KCNV2",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:19711": {
+   "symbol": "DISP1",
+   "cls": "control",
+   "subclass": null,
+   "group": "DISP"
+  },
+  "HGNC:19712": {
+   "symbol": "DISP2",
+   "cls": "control",
+   "subclass": null,
+   "group": "DISP"
+  },
+  "HGNC:19718": {
+   "symbol": "RXFP1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:19719": {
+   "symbol": "LGR6",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:19845": {
+   "symbol": "SLC35F4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:19863": {
+   "symbol": "SLC38A6",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:19893": {
+   "symbol": "ADGRD1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:19906": {
+   "symbol": "P2RY10",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:19940": {
+   "symbol": "AQP11",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:19941": {
+   "symbol": "AQP12A",
+   "cls": "grey",
+   "subclass": null,
+   "group": "AQP"
+  },
+  "HGNC:19954": {
+   "symbol": "SLC25A22",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:19991": {
+   "symbol": "GPR135",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:19992": {
+   "symbol": "OPN5",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:19995": {
+   "symbol": "GPR139",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:19997": {
+   "symbol": "GPR141",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:20088": {
+   "symbol": "GPR142",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:20105": {
+   "symbol": "FLVCR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20115": {
+   "symbol": "SLC25A47",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20116": {
+   "symbol": "SLC25A29",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20151": {
+   "symbol": "SLC17A8",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20182": {
+   "symbol": "SLC39A9",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20197": {
+   "symbol": "SLC35C1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20202": {
+   "symbol": "CACNA2D4",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:20301": {
+   "symbol": "SLC22A15",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20302": {
+   "symbol": "SLC22A16",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20303": {
+   "symbol": "SLC30A8",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20305": {
+   "symbol": "SLC34A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20329": {
+   "symbol": "SLC9D1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC9"
+  },
+  "HGNC:20502": {
+   "symbol": "SLC39A5",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20566": {
+   "symbol": "SV2A",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20573": {
+   "symbol": "PANX3",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:20584": {
+   "symbol": "SLC35B4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20601": {
+   "symbol": "SLC23A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20611": {
+   "symbol": "SLC24A5",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC24"
+  },
+  "HGNC:20644": {
+   "symbol": "SLC37A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20651": {
+   "symbol": "SLC37A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20653": {
+   "symbol": "SLC9A9",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC9"
+  },
+  "HGNC:20657": {
+   "symbol": "TSPAN1",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:20659": {
+   "symbol": "TSPAN2",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:20660": {
+   "symbol": "TSPAN18",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:20661": {
+   "symbol": "SLC25A26",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20662": {
+   "symbol": "SLC25A24",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20663": {
+   "symbol": "SLC25A25",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20665": {
+   "symbol": "SCN3B",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:20679": {
+   "symbol": "ANO9",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:20728": {
+   "symbol": "SLC9A8",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC9"
+  },
+  "HGNC:20753": {
+   "symbol": "SLC35A4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20754": {
+   "symbol": "TRPC7",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:20792": {
+   "symbol": "SLC35A5",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20798": {
+   "symbol": "SLC35B1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20799": {
+   "symbol": "SLC35D2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20800": {
+   "symbol": "SLC35D1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20803": {
+   "symbol": "SLC35E1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20819": {
+   "symbol": "CATSPER3",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:20820": {
+   "symbol": "TPCN2",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:20822": {
+   "symbol": "ADGRL4",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:20844": {
+   "symbol": "GPR156",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:20858": {
+   "symbol": "SLC39A14",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20859": {
+   "symbol": "SLC39A13",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20860": {
+   "symbol": "SLC39A12",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20861": {
+   "symbol": "SLC39A10",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20862": {
+   "symbol": "SLC39A8",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20864": {
+   "symbol": "SLC35E3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:20867": {
+   "symbol": "MCHR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:20973": {
+   "symbol": "ADGRL1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:20974": {
+   "symbol": "ADGRL3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:20977": {
+   "symbol": "TAAR9",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:20978": {
+   "symbol": "TAAR6",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:21053": {
+   "symbol": "SLC60A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:21065": {
+   "symbol": "SLC25A27",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:21094": {
+   "symbol": "CALHM4",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:21097": {
+   "symbol": "MCUR1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:21106": {
+   "symbol": "SLC22A23",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:21263": {
+   "symbol": "ASIC4",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:21345": {
+   "symbol": "PTCHD4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:21483": {
+   "symbol": "SLC35F1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:21529": {
+   "symbol": "TM9SF3",
+   "cls": "control",
+   "subclass": null,
+   "group": "TM9SF"
+  },
+  "HGNC:21568": {
+   "symbol": "CALHM5",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:21573": {
+   "symbol": "SLC18B1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:21601": {
+   "symbol": "SLC35B3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:21606": {
+   "symbol": "MPC1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:21625": {
+   "symbol": "ANO1",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:21640": {
+   "symbol": "TSPAN9",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:21641": {
+   "symbol": "TSPAN12",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:21643": {
+   "symbol": "TSPAN13",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:21667": {
+   "symbol": "ORAI2",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:21718": {
+   "symbol": "GPR146",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:21723": {
+   "symbol": "ATP6V0E2",
+   "cls": "class",
+   "subclass": "v_atpase",
+   "group": null
+  },
+  "HGNC:22146": {
+   "symbol": "SLC5A9",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:22921": {
+   "symbol": "SLC25A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:22979": {
+   "symbol": "SLC10A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:22980": {
+   "symbol": "SLC10A4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:22981": {
+   "symbol": "SLC10A5",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23087": {
+   "symbol": "SLC43A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23088": {
+   "symbol": "SLC10A7",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23089": {
+   "symbol": "SLC13A5",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23090": {
+   "symbol": "SLC15A4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23091": {
+   "symbol": "SLC5A11",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23092": {
+   "symbol": "SLC7A13",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23093": {
+   "symbol": "SLC16A11",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23094": {
+   "symbol": "SLC16A12",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23095": {
+   "symbol": "SLC22A17",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23096": {
+   "symbol": "SLC29A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23097": {
+   "symbol": "SLC29A4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23155": {
+   "symbol": "SLC5A10",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23220": {
+   "symbol": "CATSPER4",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:23296": {
+   "symbol": "GJD4",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:23298": {
+   "symbol": "TSPAN15",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:23303": {
+   "symbol": "TSPAN14",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:23323": {
+   "symbol": "SLC25A51",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23324": {
+   "symbol": "SLC25A52",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23363": {
+   "symbol": "SLC71A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23376": {
+   "symbol": "SLC71A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23458": {
+   "symbol": "CALHM3",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:23472": {
+   "symbol": "SLC25A28",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23493": {
+   "symbol": "CALHM2",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:23494": {
+   "symbol": "CALHM1",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:23520": {
+   "symbol": "SLC16A9",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23526": {
+   "symbol": "MCU",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:23612": {
+   "symbol": "SLCO4C1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23613": {
+   "symbol": "SLCO6A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23615": {
+   "symbol": "SLC35F2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23616": {
+   "symbol": "SLC35F3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23617": {
+   "symbol": "SLC35F5",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:23618": {
+   "symbol": "GPR153",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:23622": {
+   "symbol": "GPR152",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:23623": {
+   "symbol": "GPR148",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:23624": {
+   "symbol": "GPR151",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:23627": {
+   "symbol": "GPR149",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:23628": {
+   "symbol": "GPR150",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:23631": {
+   "symbol": "NPSR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:23647": {
+   "symbol": "ADGRE3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:23689": {
+   "symbol": "GPR158",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:23692": {
+   "symbol": "ACKR3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:23693": {
+   "symbol": "GPR160",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:23694": {
+   "symbol": "GPR161",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:23837": {
+   "symbol": "ANO4",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:24003": {
+   "symbol": "HTR3C",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:24004": {
+   "symbol": "HTR3D",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:24005": {
+   "symbol": "HTR3E",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:24113": {
+   "symbol": "ATP13A3",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:24215": {
+   "symbol": "ATP13A1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:24241": {
+   "symbol": "LETMD1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:24244": {
+   "symbol": "SLC9B1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC9"
+  },
+  "HGNC:24279": {
+   "symbol": "SLC25A39",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:24515": {
+   "symbol": "MPC2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:24682": {
+   "symbol": "FLVCR1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:24711": {
+   "symbol": "MFSD6",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:24776": {
+   "symbol": "PTCHD3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:24827": {
+   "symbol": "HCAR2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:24828": {
+   "symbol": "MRGPRF",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:24829": {
+   "symbol": "MRGPRG",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:24883": {
+   "symbol": "RXFP3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:24884": {
+   "symbol": "OXER1",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:25055": {
+   "symbol": "SMDT1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:25075": {
+   "symbol": "LRRC8C",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:25143": {
+   "symbol": "SLC9B2",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC9"
+  },
+  "HGNC:25157": {
+   "symbol": "SLC33A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:25198": {
+   "symbol": "SLC25A46",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:25233": {
+   "symbol": "NIPAL3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:25240": {
+   "symbol": "ANO6",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:25319": {
+   "symbol": "SLC25A31",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:25355": {
+   "symbol": "SLC30A10",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:25380": {
+   "symbol": "TMEM163",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:25417": {
+   "symbol": "SVOP",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:25422": {
+   "symbol": "ATP13A4",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:25433": {
+   "symbol": "SLC60A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:25519": {
+   "symbol": "ANO10",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:25535": {
+   "symbol": "TMEM38B",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:25554": {
+   "symbol": "SLC25A36",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:25582": {
+   "symbol": "SLC38A7",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:25587": {
+   "symbol": "TMEM184C",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:25588": {
+   "symbol": "SLC47A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:25854": {
+   "symbol": "NIPAL2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:25874": {
+   "symbol": "MFSD1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:25896": {
+   "symbol": "ORAI1",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:25897": {
+   "symbol": "MFSD2A",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:25984": {
+   "symbol": "SLC38A12",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:26001": {
+   "symbol": "SLC66A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:26035": {
+   "symbol": "SLC48A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:26054": {
+   "symbol": "SLC25A38",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:26055": {
+   "symbol": "SLC35F6",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:26076": {
+   "symbol": "MCUB",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:26175": {
+   "symbol": "SLC8B1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC8"
+  },
+  "HGNC:26177": {
+   "symbol": "SLC49A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:26188": {
+   "symbol": "SLC66A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:26196": {
+   "symbol": "SLC68A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:26270": {
+   "symbol": "PIEZO2",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:26272": {
+   "symbol": "LRRC8E",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:26392": {
+   "symbol": "PTCHD1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:26417": {
+   "symbol": "SLC16A14",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:26439": {
+   "symbol": "SLC47A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:26441": {
+   "symbol": "SLC6A18",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:26607": {
+   "symbol": "SLC35G1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:26656": {
+   "symbol": "MFSD6L",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:26836": {
+   "symbol": "SLC38A11",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:26848": {
+   "symbol": "SLC35G3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:26907": {
+   "symbol": "SLC38A9",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:26952": {
+   "symbol": "OPN1MW2",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:26992": {
+   "symbol": "SPNS2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:27034": {
+   "symbol": "SVOPL",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:27091": {
+   "symbol": "SLC22A31",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:27194": {
+   "symbol": "NIPAL1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:27337": {
+   "symbol": "ANO5",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:27371": {
+   "symbol": "SLC25A30",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:27442": {
+   "symbol": "SLC25A45",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:27501": {
+   "symbol": "SLC46A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:27653": {
+   "symbol": "SLC25A34",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:27820": {
+   "symbol": "MICU3",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:27960": {
+   "symbol": "SLC6A19",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:28018": {
+   "symbol": "NIPAL4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:28156": {
+   "symbol": "SLC61A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:28158": {
+   "symbol": "SLC67A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:28185": {
+   "symbol": "ORAI3",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:28237": {
+   "symbol": "SLC38A10",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:28240": {
+   "symbol": "HVCN1",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:28299": {
+   "symbol": "MFSD12",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:28380": {
+   "symbol": "SLC25A42",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:28433": {
+   "symbol": "SPNS3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:28462": {
+   "symbol": "TMEM38A",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:28480": {
+   "symbol": "SLC35G2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:28486": {
+   "symbol": "MFSD8",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:28503": {
+   "symbol": "SLC66A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:28524": {
+   "symbol": "SLC44A5",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:28533": {
+   "symbol": "SLC25A41",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:28542": {
+   "symbol": "SLC22A24",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:28664": {
+   "symbol": "SLC9C2",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC9"
+  },
+  "HGNC:28689": {
+   "symbol": "SLC44A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:28709": {
+   "symbol": "TMEM175",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:28743": {
+   "symbol": "TSPAN33",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:28750": {
+   "symbol": "SLC5A12",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:28797": {
+   "symbol": "TMEM184A",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:28880": {
+   "symbol": "MAGT1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:28993": {
+   "symbol": "PIEZO1",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:29036": {
+   "symbol": "SLC25A44",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:29103": {
+   "symbol": "ATP2C2",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:29196": {
+   "symbol": "SLC45A4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:29251": {
+   "symbol": "DISP3",
+   "cls": "control",
+   "subclass": null,
+   "group": "DISP"
+  },
+  "HGNC:29326": {
+   "symbol": "SLC7A14",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:29329": {
+   "symbol": "ANO8",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:29504": {
+   "symbol": "ZACN",
+   "cls": "class",
+   "subclass": "ligand_gated",
+   "group": null
+  },
+  "HGNC:29626": {
+   "symbol": "MRGPRD",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:29680": {
+   "symbol": "SLC25A40",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:29681": {
+   "symbol": "SLC25A33",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:29683": {
+   "symbol": "SLC25A32",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:29786": {
+   "symbol": "SLC25A37",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:29942": {
+   "symbol": "TSPAN10",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:29955": {
+   "symbol": "SLC51A",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:30057": {
+   "symbol": "GPR171",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:30213": {
+   "symbol": "ATP13A2",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:30220": {
+   "symbol": "RFT1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:30224": {
+   "symbol": "SLC52A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:30225": {
+   "symbol": "SLC52A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:30236": {
+   "symbol": "TAAR5",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:30242": {
+   "symbol": "TUSC3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:30245": {
+   "symbol": "GPR174",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:30451": {
+   "symbol": "SLC25A48",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:30521": {
+   "symbol": "SLC46A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:30557": {
+   "symbol": "SLC25A43",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:30603": {
+   "symbol": "SLC10A6",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:30621": {
+   "symbol": "SPNS1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:30650": {
+   "symbol": "STRA6",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:30657": {
+   "symbol": "SLC50A1",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:30670": {
+   "symbol": "SV2C",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:30692": {
+   "symbol": "LRRC8B",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:30694": {
+   "symbol": "MRGPRE",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:30725": {
+   "symbol": "TSPAN16",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:30760": {
+   "symbol": "TMEM165",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:30795": {
+   "symbol": "TSPAN11",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:30797": {
+   "symbol": "TM9SF4",
+   "cls": "control",
+   "subclass": null,
+   "group": "TM9SF"
+  },
+  "HGNC:30889": {
+   "symbol": "ATP5MK",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:30927": {
+   "symbol": "SLC6A20",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:31037": {
+   "symbol": "SLC16A13",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:31043": {
+   "symbol": "SLC35G4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:31045": {
+   "symbol": "SLC41A2",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:31046": {
+   "symbol": "SLC41A3",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:31351": {
+   "symbol": "SLC35G6",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:31371": {
+   "symbol": "GPR179",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:31399": {
+   "symbol": "SLC6A17",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:31401": {
+   "symbol": "SLC9C1",
+   "cls": "grey",
+   "subclass": null,
+   "group": "SLC9"
+  },
+  "HGNC:31677": {
+   "symbol": "ANO7",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:31723": {
+   "symbol": "SLC35D4",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:31789": {
+   "symbol": "ATP13A5",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:31830": {
+   "symbol": "MICU2",
+   "cls": "grey",
+   "subclass": null,
+   "group": "symbol_rule"
+  },
+  "HGNC:31886": {
+   "symbol": "TSPAN19",
+   "cls": "control",
+   "subclass": null,
+   "group": "TSPAN"
+  },
+  "HGNC:31894": {
+   "symbol": "SLC25A53",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:31921": {
+   "symbol": "SLC25A35",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:32370": {
+   "symbol": "GPR176",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  },
+  "HGNC:32434": {
+   "symbol": "SLC38A8",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:32935": {
+   "symbol": "SLC22A25",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:33251": {
+   "symbol": "GJE1",
+   "cls": "class",
+   "subclass": "gap_junction",
+   "group": null
+  },
+  "HGNC:33391": {
+   "symbol": "CALHM6",
+   "cls": "class",
+   "subclass": "other_channel",
+   "group": null
+  },
+  "HGNC:33455": {
+   "symbol": "SLC15A5",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:33941": {
+   "symbol": "SLC35E2B",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:37200": {
+   "symbol": "CLDN24",
+   "cls": "control",
+   "subclass": null,
+   "group": "CLDN"
+  },
+  "HGNC:37207": {
+   "symbol": "MFSD2B",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:37218": {
+   "symbol": "CLDN25",
+   "cls": "control",
+   "subclass": null,
+   "group": "CLDN"
+  },
+  "HGNC:39080": {
+   "symbol": "KCNJ18",
+   "cls": "class",
+   "subclass": "voltage_gated",
+   "group": null
+  },
+  "HGNC:44205": {
+   "symbol": "MPC1L",
+   "cls": "control",
+   "subclass": null,
+   "group": "SLC"
+  },
+  "HGNC:51831": {
+   "symbol": "OPN1MW3",
+   "cls": "control",
+   "subclass": null,
+   "group": "GPCR"
+  }
+ }
+}
