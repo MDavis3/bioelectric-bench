@@ -134,6 +134,7 @@
   },
   "planner_firewall_v2_code": {
     "copy": "sealed/planner_firewall_v2_code__496fcdedead0.py",
+    "remote_commit": "21d91676907d2c27a3c7e773724b311d7071d320",
     "sha256": "496fcdedead078d2ab2f620af241c256059e7acbc4e2a09190e0aa07dc0f19da",
     "source": "harness/planner_firewall_v2.py",
     "utc": "2026-11-10T15:46:10Z"
