@@ -45,3 +45,9 @@ FDA FAERS or pregnancy-registry tables (new downloads, not approved). Not starte
 - drafts/preprint_planarian/ (planarian literature cannot test its claim; its section 6 now reports the database
   result; decide whether that belongs there).
 - drafts/note_db_null/ (short note on the database null), when it lands.
+
+## Manav's answers (2026-11-10, ~10:15 PST, in chat)
+
+"I approve all of the things you just mentioned": the T2 rule change is accepted; ClinVar and FAERS downloads are
+approved; the dataset release goes ahead under CC-BY-SA for the GtoPdb-derived class labels (the first option, taken as
+the default reading of "approve all"; say if you meant another); drafts remain for your review.
