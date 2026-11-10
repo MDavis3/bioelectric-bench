@@ -76,6 +76,12 @@
     "source": "config/lab_lineage_v2.json",
     "utc": "2026-11-10T06:03:46Z"
   },
+  "lab_lineage_v3": {
+    "copy": "sealed/lab_lineage_v3__45ac10c938ab.json",
+    "sha256": "45ac10c938ab370b78bb4b61425bc7ef67579b2b17ee309a977f18c93712ab2a",
+    "source": "config/lab_lineage_v3.json",
+    "utc": "2026-11-10T09:19:48Z"
+  },
   "outcome_categories": {
     "copy": "sealed/outcome_categories__e0907615ac51.json",
     "remote_commit": "834659c22ccfdd5341d83ee14e5cec8ed901d988",
