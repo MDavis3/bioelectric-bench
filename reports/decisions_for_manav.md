@@ -39,3 +39,9 @@ in your approved list, so not downloaded.
 ## 5. Waiting: drug-exposure probe (Fable's third next test)
 
 FDA FAERS or pregnancy-registry tables (new downloads, not approved). Not started.
+
+## 6. Waiting: two paper drafts to review
+
+- drafts/preprint_planarian/ (planarian literature cannot test its claim; its section 6 now reports the database
+  result; decide whether that belongs there).
+- drafts/note_db_null/ (short note on the database null), when it lands.
