@@ -85,7 +85,12 @@ def design(s):
 
 # ---------------------------------------------------------------- logistic regression (IRLS, ridge on chosen cols)
 
-def logit_fit(X, y, l2=0.0, pen=None, iters=50):
+NONCONV = {"n": 0}
+
+
+def logit_fit(X, y, l2=0.0, pen=None, iters=100):
+    """Damped Newton on the penalised log-likelihood; a 0.01 stabilising ridge on all slopes gives a finite optimum
+    under separation. Non-converged fits are counted in NONCONV (a counted run with any is INVALID)."""
     n, p = X.shape
     Xa = np.column_stack([np.ones(n), X])
     pen_vec = np.zeros(p + 1)
@@ -93,20 +98,35 @@ def logit_fit(X, y, l2=0.0, pen=None, iters=50):
         pen_vec[1:] = l2
     else:
         pen_vec[1:][pen] = l2
-    pen_vec[1:] += 1e-6          # tiny ridge for separation stability
+    pen_vec[1:] += 1e-2
+
+    def obj(b):
+        eta = Xa @ b
+        return np.sum(np.logaddexp(0, eta) - y * eta) + 0.5 * np.sum(pen_vec * b * b)
     b = np.zeros(p + 1)
     ybar = np.clip(y.mean(), 1e-4, 1 - 1e-4)
     b[0] = np.log(ybar / (1 - ybar))
+    f = obj(b)
+    done = False
     for _ in range(iters):
-        eta = np.clip(Xa @ b, -30, 30)
-        mu = 1 / (1 + np.exp(-eta))
-        w = np.maximum(mu * (1 - mu), 1e-9)
+        mu = 1 / (1 + np.exp(-np.clip(Xa @ b, -700, 700)))
+        w = mu * (1 - mu)
         g = Xa.T @ (y - mu) - pen_vec * b
         H = (Xa * w[:, None]).T @ Xa + np.diag(pen_vec)
+        H[0, 0] += 1e-10
         step = np.linalg.solve(H, g)
-        b += step
-        if np.max(np.abs(step)) < 1e-8:
+        t_ = 1.0
+        fn = obj(b + step)
+        while fn > f + 1e-12 and t_ > 1e-8:
+            t_ /= 2
+            fn = obj(b + t_ * step)
+        b = b + t_ * step
+        if f - fn < 1e-10 * (1 + abs(fn)):
+            done = True
             break
+        f = fn
+    if not done:
+        NONCONV["n"] += 1
     return b
 
 
@@ -253,17 +273,28 @@ def t2_cv(s, E, x, y, folds, nn, params):
     return d
 
 
-def block_perm_x(s, x, cc, rng, depth_tert):
-    """Permute X at block level within strata (block's dominant stratum x block depth tertile)."""
-    sub = pd.DataFrame({"block": s.block.values[cc], "x": x[cc], "st": s.stratum.values[cc], "dt": depth_tert[cc]})
-    g = sub.groupby("block").agg(x=("x", lambda v: int(round(v.mean()))),
-                                 st=("st", lambda v: v.value_counts().index[0]),
-                                 dt=("dt", lambda v: int(round(v.mean()))))
+def block_table(s, x, cc):
+    """Per-block permutation strata (prereg G as amended): the block's most frequent species x source stratum (ties:
+    alphabetical) and the tertile of its median depth among class/control blocks; a mixed block takes its majority
+    label (>= 0.5 -> class) under permutation."""
+    sub = pd.DataFrame({"block": s.block.values[cc], "x": x[cc], "st": s.stratum.values[cc],
+                        "d": s.depth.values[cc].astype(float)})
+    g = sub.groupby("block").agg(x=("x", lambda v: int(v.mean() >= 0.5)),
+                                 st=("st", lambda v: sorted(v.mode())[0]),
+                                 d=("d", "median"))
+    g["dt"] = pd.qcut(g.d.rank(method="first"), 3, labels=False)
+    groups = [grp.index.values for _, grp in g.groupby(["st", "dt"])]
+    unit_block = sub.block.values
+    return g, groups, unit_block
+
+
+def block_perm_x(s, x, cc, rng, table):
+    g, groups, unit_block = table
     newx = g.x.copy()
-    for _, grp in g.groupby(["st", "dt"]):
-        newx.loc[grp.index] = rng.permutation(grp.x.values)
+    for idx in groups:
+        newx.loc[idx] = rng.permutation(g.x.loc[idx].values)
     out = x.copy()
-    out[cc] = sub.block.map(newx).values
+    out[cc] = pd.Series(unit_block).map(newx).values
     return out
 
 
@@ -289,10 +320,11 @@ def analyze(s, E, mats_nn, y, y_exc, lethal_nomorph, params, n_perm=None, n_boot
     rep["n_class_impc"] = int(((s.cls == "class") & (s.src_impc == 1)).sum())
     # positive control
     b_exc = t1_fit(E, nns_exc, x, y_exc, cc)
-    depth_tert = pd.qcut(s.depth.rank(method="first"), 3, labels=False).values
+    table = block_table(s, x, cc)
+    NONCONV["n"] = 0
     perm_exc = []
     for _ in range(min(n_perm, params.get("n_perm_exc", n_perm))):
-        xp = block_perm_x(s, x, cc, rng, depth_tert)
+        xp = block_perm_x(s, x, cc, rng, table)
         perm_exc.append(t1_fit(E, nns_exc, xp, y_exc, cc))
     rep["exc_logor"] = float(b_exc)
     rep["exc_p"] = float((1 + np.sum(np.array(perm_exc) >= b_exc)) / (1 + len(perm_exc)))
@@ -309,11 +341,15 @@ def analyze(s, E, mats_nn, y, y_exc, lethal_nomorph, params, n_perm=None, n_boot
             continue
         Z = np.column_stack([x[sel], E[sel], nns[sel]])
         boots.append(logit_fit(Z, y[sel])[1])
+    rep["t1_boot_used"] = len(boots)
+    if len(boots) < 0.95 * n_boot or not np.all(np.isfinite(boots)):
+        rep["boot_degenerate"] = 1
+        boots = [b for b in boots if np.isfinite(b)] or [np.nan]
     lo, hi = np.percentile(boots, [2.5, 97.5])
     rep["t1_lo"], rep["t1_hi"] = float(lo), float(hi)
     perms = []
     for _ in range(n_perm):
-        xp = block_perm_x(s, x, cc, rng, depth_tert)
+        xp = block_perm_x(s, x, cc, rng, table)
         perms.append(t1_fit(E, nns, xp, y, cc))
     rep["t1_perm_p"] = float((1 + np.sum(np.array(perms) >= b)) / (1 + n_perm))
     # T2
@@ -331,7 +367,8 @@ def analyze(s, E, mats_nn, y, y_exc, lethal_nomorph, params, n_perm=None, n_boot
         m = cc & mask
         if m.sum() < 10 or x[m].min() == x[m].max() or y[m].min() == y[m].max():
             return None
-        return float(t1_fit(E, nns, x, y, m))
+        keep = E[m].std(0) > 0
+        return float(t1_fit(E[:, keep], nns, x, y, m))
     rep["or_mouse"] = sub_or((s.species == "mouse").values)
     rep["or_zebrafish"] = sub_or((s.species == "zebrafish").values)
     rep["or_impc"] = sub_or((s.src_impc == 1).values)
@@ -340,6 +377,7 @@ def analyze(s, E, mats_nn, y, y_exc, lethal_nomorph, params, n_perm=None, n_boot
     for sc in sorted(s.subclass.dropna().unique()):
         loso[sc] = sub_or(~(s.subclass == sc).values)
     rep["or_loso"] = loso
+    rep["n_nonconverged_fits"] = int(NONCONV["n"])
     return rep
 
 
@@ -353,18 +391,22 @@ def judge(rep, P, sim_ok=True):
     impc_ok = rep["n_class_impc"] >= P["min_class_impc"]
     if not (rep["exc_logor"] > 0 and rep["exc_p"] < P["alpha"]):
         return "INVALID", "positive control not detected"
+    def pos(v):
+        return v is not None and np.isfinite(v) and v > 0
+    if rep.get("n_nonconverged_fits", 0) or rep.get("boot_degenerate"):
+        return "INVALID", "solver did not converge or bootstrap degenerate"
     conds = {
         "t1_lo>0": rep["t1_lo"] > 0,
         "perm_p<alpha": rep["t1_perm_p"] < P["alpha"],
         "t1>=sesoi": rep["t1_logor"] >= sesoi,
         "t2_lo>0": rep["t2_lo"] > 0,
-        "mouse>0": (rep["or_mouse"] or -1) > 0,
-        "zebrafish>0": (rep["or_zebrafish"] or -1) > 0,
-        "s1>0": (rep["or_s1"] or -1) > 0,
-        "loso>0": all((v if v is not None else -1) > 0 for v in rep["or_loso"].values()),
+        "mouse>0": pos(rep["or_mouse"]),
+        "zebrafish>0": pos(rep["or_zebrafish"]),
+        "s1>0": pos(rep["or_s1"]),
+        "loso>0": len(rep["or_loso"]) == P.get("n_subclasses", 6) and all(pos(v) for v in rep["or_loso"].values()),
     }
     if impc_ok:
-        conds["impc>0"] = (rep["or_impc"] or -1) > 0
+        conds["impc>0"] = pos(rep["or_impc"])
     if all(conds.values()):
         return "PASS", "all conditions met" + ("" if impc_ok else " (IMPC floor not met: IMPC condition dropped)")
     if rep["t1_hi"] < sesoi:
@@ -439,11 +481,14 @@ def main():
 
     if a.cmd == "selftest":
         return selftest()
+    a.params = str(Path(a.params).resolve())
     P = json.loads(Path(a.params).read_text())
     s, E, mats_nn = prep(P)
     if a.cmd == "simulate":
         raw = json.loads(Path(a.rates).read_text())
         rates = {k: v[0] / max(v[1], 1) for k, v in raw.items()}
+        if set(rates) != set(s.stratum.unique()):
+            sys.exit("refused: rate strata do not match the setup strata")
         from concurrent.futures import ProcessPoolExecutor
         import multiprocessing as mp
         out = {}
@@ -457,52 +502,118 @@ def main():
         Path(a.out).write_text(json.dumps(out, indent=1))
         return 0
     # run
+    out = Path(a.out).resolve()
+    if not out.parent.is_dir() or out.exists():
+        sys.exit("refused: --out directory missing or file exists")
+    sim_ok = load_sim_gate(P, required=(a.mode == "counted"))
     if a.mode == "counted":
-        check_seals(P, a.params)
-    o = pd.read_csv(ROOT / P["outcome"], dtype={"unit_id": str}).set_index("unit_id").reindex(s.unit_id)
-    y = o.Y.fillna(0).values.astype(float)
-    ye = o.Y_exc.fillna(0).values.astype(float)
-    le = o.lethal_nomorph.fillna(0).values.astype(float)
+        check_seals(P, a.params)                # verification only
+    o = load_outcome(P, s)
+    y = o.Y.values.astype(float)
+    ye = o.Y_exc.values.astype(float)
+    le = o.lethal_nomorph.values.astype(float)
     if a.mode == "rehearsal":
-        # null rehearsal: outcomes permuted among units within each stratum (breaks any class link)
+        # null rehearsal (prereg I): real outcomes stay with their units and blocks; the class/control labels are
+        # block-permuted within the same strata as the T1 null, so any real class link is broken.
         rng = np.random.default_rng(12345)
-        order = np.arange(len(s))
-        for _, idx in s.groupby("stratum").indices.items():
-            order[idx] = rng.permutation(idx)
-        y, ye, le = y[order], ye[order], le[order]
-    sim = json.loads((ROOT / P["simulation_result"]).read_text()) if P.get("simulation_result") else None
-    sim_ok = True
-    if sim:
-        sim_ok = (sim["planted"].get("PASS", 0) / sim["planted"]["n"] >= 0.8
-                  and all(sim[w].get("PASS", 0) / sim[w]["n"] <= 0.05 for w in ("null", "depth", "excitable")))
+        cc = s.cls.isin(["class", "control"]).values
+        x = (s.cls == "class").astype(float).values
+        xp = block_perm_x(s, x, cc, rng, block_table(s, x, cc))
+        subs = sorted(s.subclass.dropna().unique())
+        s = s.copy()
+        s.loc[cc, "cls"] = np.where(xp[cc] == 1, "class", "control")
+        s["subclass"] = s["subclass"].astype(object)
+        s.loc[cc & (xp == 0), "subclass"] = None
+        s.loc[cc & (xp == 1), "subclass"] = rng.choice(subs, int((cc & (xp == 1)).sum()))
+    if a.mode == "counted":
+        claim_counted(P)                         # write-once marker; last step before the analysis
     rep = analyze(s, E, mats_nn, y, ye, le, P)
     v, why = judge(rep, P, sim_ok)
+    if a.mode == "rehearsal":
+        rep["verdict_if_positive_control_passed"] = judge(dict(rep, exc_logor=1.0, exc_p=0.0), P, sim_ok)[0]
     rep.update(verdict=v, reason=why, mode=a.mode, params_sha256=sha(a.params), outcome_sha256=sha(ROOT / P["outcome"]),
-               setup_sha256=sha(ROOT / P["setup"]))
-    Path(a.out).write_text(json.dumps(rep, indent=1, default=float))
+               setup_sha256=sha(ROOT / P["setup"]), code_sha256=sha(Path(__file__).resolve()))
+    out.write_text(json.dumps(rep, indent=1, default=float))
     print(v, why)
     return 0
 
 
+def load_outcome(P, s):
+    o = pd.read_csv(ROOT / P["outcome"], dtype={"unit_id": str})
+    need = {"unit_id", "Y", "Y_exc", "lethal_nomorph"}
+    if not need <= set(o.columns):
+        sys.exit(f"refused: outcome file lacks {sorted(need - set(o.columns))}")
+    if o.unit_id.duplicated().any():
+        sys.exit("refused: duplicate unit_id in outcome file")
+    o = o.set_index("unit_id").reindex(s.unit_id)
+    miss = int(o[["Y", "Y_exc", "lethal_nomorph"]].isna().any(axis=1).sum())
+    if miss:
+        sys.exit(f"refused: {miss} setup units have no complete outcome row")
+    for c in ("Y", "Y_exc", "lethal_nomorph"):
+        if not set(np.unique(o[c].values)) <= {0, 1}:
+            sys.exit(f"refused: {c} is not 0/1")
+    return o
+
+
+def load_sim_gate(P, required):
+    if not P.get("simulation_result"):
+        if required:
+            sys.exit("refused: params name no simulation_result")
+        return True
+    path = ROOT / P["simulation_result"]
+    if not path.exists():
+        if required:
+            sys.exit("refused: simulation result missing")
+        return True
+    sim = json.loads(path.read_text())
+    worlds = ("null", "planted", "depth", "excitable")
+    if any(w not in sim or not sim[w].get("n") for w in worlds):
+        sys.exit("refused: simulation result lacks a world")
+    return (sim["planted"].get("PASS", 0) / sim["planted"]["n"] >= 0.8
+            and all(sim[w].get("PASS", 0) / sim[w]["n"] <= 0.05 for w in worlds if w != "planted"))
+
+
 SEALED_INPUTS = {"db_prereg_v1": "plans/pivot_db_v1.md", "db_params_v1": None, "db_classes_v1": "config/db_classes_v1.json",
+                 "db_endpoint_roots_v1": "config/db_endpoint_roots_v1.json",
                  "db_endpoint_map_v1": "config/db_endpoint_map_v1.json", "db_units_setup_v1": "data/db_setup/units_setup.csv",
                  "db_nn_features_v1": "data/db_setup/nn_features.jsonl", "db_power_v1": "reports/db_power_v1.json",
+                 "db_outcome_hash_v1": "data/db_setup/db_outcome_v1.sha256", "db_raw_manifest_v1": "data/raw_db_manifest.json",
+                 "db_build_code_v1": "harness/db_build_units.py", "db_blocks_code_v1": "harness/db_blocks.py",
                  "dbtest_code_v1": "harness/dbtest.py"}
+PARAM_PATHS = {"setup": "db_units_setup_v1", "feats": "db_nn_features_v1", "simulation_result": "db_power_v1"}
+MARKER = ROOT / "data/confirmatory/db_v1__counted.json"
+REHEARSAL = ROOT / "reports/db_rehearsal_v1.json"
 
 
 def check_seals(P, params_path):
-    """Counted run only: every input must match its seal, and the run is claimed once (write-once marker)."""
+    """Counted run only: every input matches its seal; the outcome file matches its sealed hash; a rehearsal on the
+    same setup, params and outcome exists."""
     reg = json.loads((ROOT / "sealed/SEALS.json").read_text())
+    for k, name in PARAM_PATHS.items():
+        if P[k] != SEALED_INPUTS[name]:
+            sys.exit(f"refused: params {k} is not the sealed path")
     for name, path in SEALED_INPUTS.items():
-        path = path or params_path
+        path = Path(path or params_path)
+        path = path if path.is_absolute() else ROOT / path
         if name not in reg:
             sys.exit(f"refused: {name} is not sealed")
-        if reg[name]["sha256"] != sha(ROOT / path if not Path(path).is_absolute() else path):
+        if reg[name]["sha256"] != sha(path):
             sys.exit(f"refused: {path} does not match seal {name}")
-    marker = ROOT / "data/confirmatory/db_v1__counted.json"
-    marker.parent.mkdir(parents=True, exist_ok=True)
+    want = (ROOT / SEALED_INPUTS["db_outcome_hash_v1"]).read_text().split()[0]
+    if sha(ROOT / P["outcome"]) != want:
+        sys.exit("refused: outcome file does not match its sealed hash")
+    if not REHEARSAL.exists():
+        sys.exit("refused: no rehearsal report")
+    r = json.loads(REHEARSAL.read_text())
+    if (r.get("setup_sha256"), r.get("params_sha256"), r.get("outcome_sha256")) != (
+            sha(ROOT / P["setup"]), sha(params_path), want):
+        sys.exit("refused: rehearsal was run on different inputs")
+
+
+def claim_counted(P):
+    MARKER.parent.mkdir(parents=True, exist_ok=True)
     try:
-        fd = os.open(marker, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+        fd = os.open(MARKER, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
     except FileExistsError:
         sys.exit("refused: the counted run was already claimed (data/confirmatory/db_v1__counted.json)")
     with os.fdopen(fd, "w") as f:
@@ -533,7 +644,7 @@ def selftest():
         for r in feats:
             f.write(json.dumps(r) + "\n")
     P = json.loads((ROOT / "config/db_params_v1.json").read_text())
-    P = dict(P, setup=str(tmp / "setup.csv"), feats=str(tmp / "feats.jsonl"), min_class_units=10,
+    P = dict(P, setup=str(tmp / "setup.csv"), feats=str(tmp / "feats.jsonl"), min_class_units=10, n_subclasses=3,
              min_control_units=10, min_class_per_species=5, min_class_blocks=5, min_class_impc=5)
     s, E, mats_nn = prep(P)
     rates = {st: 0.25 for st in s.stratum.unique()}
@@ -544,6 +655,26 @@ def selftest():
         res[w] = vs
         print(w, vs)
     ok = res["null"].count("PASS") <= 1 and res["planted"].count("PASS") >= 3
+    # solver check (review M1): small IMPC centres and a 5% outcome rate must give finite, sane coefficients
+    s2 = s.copy()
+    cen = np.array(["none"] * len(s2), dtype=object)
+    mouse = np.where(s2.species.values == "mouse")[0]
+    cen[mouse[:70]] = [f"C{i % 9}" for i in range(70)]
+    s2["impc_center"] = cen
+    s2["src_impc"] = (cen != "none").astype(int)
+    E2, _ = design(s2)
+    cc = s2.cls.isin(["class", "control"]).values
+    x = (s2.cls == "class").astype(float).values
+    worst, NONCONV["n"] = 0.0, 0
+    for i in range(30):
+        r = np.random.default_rng(i)
+        y = (r.random(len(s2)) < 0.05).astype(float)
+        nns = r.normal(size=len(s2))
+        for _ in range(5):
+            sel = np.where(cc & (r.random(len(s2)) < 0.8))[0]
+            worst = max(worst, abs(t1_fit(E2, nns, x, y, sel)))
+    print("solver: max |log OR|", round(worst, 2), "nonconverged", NONCONV["n"])
+    ok = ok and worst < 10 and NONCONV["n"] == 0
     print("SELFTEST", "OK" if ok else "FAILED")
     return 0 if ok else 1
 

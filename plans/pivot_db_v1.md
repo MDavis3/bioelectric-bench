@@ -126,11 +126,19 @@ Not allowed: number of phenotype annotations or terms, lethality annotation, any
 - M1: M0 + NN score (computed inside training folds only).
 - M2: M1 + class flag X (one coefficient shared across species).
 - Evaluation set: held-out units in class or control only.
-- Primary T1: adjusted odds ratio for X from M2 (unpenalised X coefficient; covariates and NN score as in M1) fitted
-  on all class and control units, with a 95% interval from a block bootstrap (2000 resamples of blocks).
+- Primary T1: adjusted odds ratio for X from a logistic model of Y on X, the covariates E and the out-of-fold NN score
+  (logit scale), fitted on all class and control units; no penalty apart from a 0.01 stabilising ridge on every slope
+  (finite estimates under separation). 95% interval from a block bootstrap (2000 resamples of blocks; the NN score is
+  held fixed, so the interval is conditional on it). Fits are damped-Newton; any non-converged fit, or a bootstrap with
+  fewer than 95% usable resamples, makes the run INVALID. Subset fits (per species, IMPC, S1, leave-one-subclass-out)
+  drop covariate columns that are constant in the subset.
 - Co-primary T2: mean paired Brier difference M1 minus M2 on held-out class and control units, block-bootstrap interval.
-- Null: block-level permutation of X (whole blocks swap label) within strata of species x source x study-depth
-  tertile, 5000 permutations, one-sided on T1.
+  M1 and M2 are fitted on training-fold class and control units; other genes enter only through the NN score. The
+  ridge penalty is chosen by inner grouped CV on M1 log-loss; the inner CV reuses the outer fold's NN scores
+  (slightly optimistic toward small penalties; no held-out outcome is used).
+- Null: block-level permutation of X (whole blocks swap label), 5000 permutations, one-sided on T1. Strata are
+  assigned per block: the block's most frequent species x source stratum (ties alphabetical) and the tertile of its
+  median depth among class/control blocks. A block holding both labels takes its majority label under permutation.
 - Alpha 0.025 one-sided on T1. SESOI: odds ratio 1.5.
 
 ## H. Decision rule (checked in order)
@@ -164,18 +172,33 @@ Not allowed: number of phenotype annotations or terms, lethality annotation, any
 - Sealed first: data/raw_db_manifest.json (releases and download dates), eligibility code, class/grey/control lists,
   root terms and the generated map, blocks, covariates, NN and model code and parameters, SESOI, alpha, this rule, and
   the simulation results.
-- One counted run, after a rehearsal on block-shuffled outcomes.
+- One counted run, after a rehearsal: the rehearsal keeps the real outcomes on their units and blocks and permutes the
+  class/control labels at block level within the null strata (subclasses reassigned at random), reporting the verdict
+  and the verdict it would have had if the positive control passed (expected: not PASS). The counted run refuses
+  unless a rehearsal report on the same setup, params and outcome hashes exists, every input matches its seal, and the
+  outcome file matches a sealed hash (data/db_setup/db_outcome_v1.sha256, written by the builder subagent).
 
 ## J. Secondary analyses (exploratory; cannot change the verdict)
 
 Xenopus (all records, morpholinos included, flagged), fly, human HPO; morphants and crispants in zebrafish; the grey
 class; pigmentation separately; species x class interaction; ortholog oracle.
 
+## L. Implementation notes decided before sealing (code review plans/dbtest_review.md: 3 MUST, all fixed)
+
+- Simulation (H1) uses n_perm = 200 and n_boot = 200 per simulated run (5000 / 2000 in the counted run), a block
+  random effect (SD 0.5) and a depth effect on the logit scale; the simulated marginal rate is therefore only
+  approximately the observed one.
+- IMPC is taken from the IMPC Solr API (ftp.ebi.ac.uk robots.txt disallows all). MGI records count as
+  MGI-literature only when they carry a PMID.
+- Leave-one-subclass-out requires all 6 subclasses to be present.
+
 ## K. Substitutions forced by the approved download list (logged)
 
 - K1: the control class uses HGNC multi-pass membrane families instead of UniProt TM-helix counts (UniProt topology
   was not in the approved list).
-- K2: NN features use GO molecular function, Monarch/Bgee expression and HGNC groups instead of Pfam/InterPro, PANTHER
-  and STRING experimental interactions.
+- K2: NN features use GO molecular function, expression and HGNC groups instead of Pfam/InterPro, PANTHER and STRING
+  experimental interactions. Monarch has no Bgee edges for mouse or zebrafish genes, so expression comes from the
+  MGI (EMAPA) and ZFIN (ZFA) expressed_in edges in Monarch, mapped to Uberon by Uberon xrefs (89% of terms;
+  harness/db_expr_uberon.py); unmapped terms are kept as-is.
 - K3: study depth uses GO-annotation PMIDs (non-phenotype evidence codes) instead of gene2pubmed; gnomAD LOEUF, DepMap
   essentiality and year of first allele are dropped. Lethality is handled by S1 only.

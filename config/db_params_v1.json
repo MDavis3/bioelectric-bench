@@ -4,12 +4,21 @@
  "feats": "data/db_setup/nn_features.jsonl",
  "outcome": "data/db_restricted/units_outcome.csv",
  "simulation_result": "reports/db_power_v1.json",
- "species": ["mouse", "zebrafish"],
+ "species": [
+  "mouse",
+  "zebrafish"
+ ],
  "n_folds": 10,
  "seed": 0,
  "k": 15,
  "nn_shrink": 5,
- "ridge_grid": [0.01, 0.1, 1, 10, 100],
+ "ridge_grid": [
+  0.01,
+  0.1,
+  1,
+  10,
+  100
+ ],
  "n_boot": 2000,
  "n_perm": 5000,
  "n_perm_exc": 1000,
@@ -27,5 +36,6 @@
  "sim_exc_or": 4.0,
  "sim_exc_leak": 0.05,
  "sim_n_perm": 200,
- "sim_n_boot": 200
+ "sim_n_boot": 200,
+ "n_subclasses": 6
 }
