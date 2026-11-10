@@ -36,6 +36,7 @@
   },
   "firewall_v2": {
     "copy": "sealed/firewall_v2__97b454c6d1fe.md",
+    "remote_commit": "2780ed4d506c4d302cc3c8720202a5dd4936520c",
     "sha256": "97b454c6d1fe36c8ff29deb010328e441a09828b65b69e9734d4a279ef246e1b",
     "source": "FIREWALL.md",
     "utc": "2026-11-10T09:19:56Z"
