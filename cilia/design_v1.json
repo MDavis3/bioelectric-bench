@@ -1,0 +1,29 @@
+{
+ "note": "Design v1 for the nasal-cilia x weak DC field experiment (cilia/PROTOCOL.md). Structure fixed now; the smallest effect of interest and the number of sessions are fixed after the baseline phase, in design_v2.",
+ "conditions": [
+  "SHAM",
+  "FWD",
+  "REV"
+ ],
+ "repeats_per_clump": 1,
+ "clump_types": {
+  "live": 6,
+  "dead": 3
+ },
+ "field_V_per_cm": 1.0,
+ "field_set_by": "current: I = sigma * E * A (Ringer's sigma ~1.5 S/m at 22-25 C); 75 uA for 1 V/cm in a 5 mm x 0.1 mm channel",
+ "epoch_seconds": 30,
+ "film_seconds": 5,
+ "capture_fps": 240,
+ "primary_outcome": "clump drift along the field axis, FWD minus REV, in live clumps minus the same contrast in dead (heat-killed) clumps from the same sample",
+ "secondary_outcomes": [
+  "rotation FWD minus REV (live minus dead)",
+  "CBF FWD minus SHAM and REV minus SHAM (live)",
+  "CBF FWD minus REV (live)"
+ ],
+ "analysis": "per clump paired changes from the preceding OFF epoch; live vs dead two-sample permutation on the primary; sign-flip tests for secondaries; two-sided alpha 0.05 primary, secondaries descriptive",
+ "temperature": "logged at start and end of every clump; a clump whose temperature changes by more than 1.0 C during its epochs is excluded",
+ "medium": "home Ringer's with Ca2+ (PROTOCOL section 1); sigma 1.5 S/m",
+ "light": "battery/USB LED only",
+ "hand_check": "every tenth clip counted by hand for CBF; FFT readings that differ by more than 20% are replaced by the hand count and flagged"
+}
