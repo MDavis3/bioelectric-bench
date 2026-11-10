@@ -48,6 +48,12 @@
     "source": "config/db_endpoint_roots_v1.json",
     "utc": "2026-11-10T16:38:16Z"
   },
+  "db_units_setup_v1": {
+    "copy": "sealed/db_units_setup_v1__70644def60b1.csv",
+    "sha256": "70644def60b1ce99c99ade22f560c7442a964a13cec4346b060209efb652e43a",
+    "source": "data/db_setup/units_setup.csv",
+    "utc": "2026-11-10T16:38:25Z"
+  },
   "desk_threshold_rule_v1": {
     "copy": "sealed/desk_threshold_rule_v1__97d7b9051d78.md",
     "remote_commit": "7f47b576056d9f60dd90962a91f996090c3f7590",
