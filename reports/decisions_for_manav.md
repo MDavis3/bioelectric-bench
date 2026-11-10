@@ -27,3 +27,15 @@ or GtoPdb asked. Both files are already in the public repo as working files; a f
 
 Reference checks listed in the agent note: Zhang 2011, Child 1911, Buchanan 1922, Rustia 1925, Marsh & Beams 1952,
 and the nine not-in-hand papers. Not submitted anywhere.
+
+## 4. Waiting: one new download would unblock the allele-direction test (Q017)
+
+The best follow-up to the null (does gain-of-function/dominant loss of channel genes give more patterning defects
+than null alleles, relative to control membrane genes?) is untestable on what is in hand: MGI has 10 class genes with
+dominant-negative alleles (5 blocks) and 0 with constitutively active alleles; ZFIN has no dominance field. ClinVar
+(ftp.ncbi.nlm.nih.gov, variant_summary.txt.gz, about 400 MB) with OMIM/HPO mechanism labels would be the source. Not
+in your approved list, so not downloaded.
+
+## 5. Waiting: drug-exposure probe (Fable's third next test)
+
+FDA FAERS or pregnancy-registry tables (new downloads, not approved). Not started.
