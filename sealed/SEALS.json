@@ -223,6 +223,12 @@
     "source": "harness/planner_firewall_v3.py",
     "utc": "2026-11-10T16:07:32Z"
   },
+  "planner_firewall_v4_code": {
+    "copy": "sealed/planner_firewall_v4_code__7ae0a2c8f9b4.py",
+    "sha256": "7ae0a2c8f9b49c99f2d79b2ecca3133e6c117207737dc11590c78246893aaf74",
+    "source": "harness/planner_firewall_v4.py",
+    "utc": "2026-11-10T16:52:42Z"
+  },
   "repilot_gates_v1": {
     "copy": "sealed/repilot_gates_v1__9a767c7761ed.md",
     "remote_commit": "429d8a534a3711703072649b8a94c2fffcd40e69",
