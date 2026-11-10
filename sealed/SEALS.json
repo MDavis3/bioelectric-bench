@@ -20,6 +20,12 @@
     "source": "config/lab_lineage.json",
     "utc": "2026-11-10T05:38:06Z"
   },
+  "lab_lineage_v2": {
+    "copy": "sealed/lab_lineage_v2__ade412bcb5ad.json",
+    "sha256": "ade412bcb5ad53d0297745f265b5d7db7fd25b3747a0bf7c8dfbb3fbd7d0bc51",
+    "source": "config/lab_lineage_v2.json",
+    "utc": "2026-11-10T06:03:46Z"
+  },
   "temporal_rules": {
     "copy": "sealed/temporal_rules__69da26e3825b.json",
     "remote_commit": "8654b41c2a73204092551e51c9d53d10ba6398f6",
