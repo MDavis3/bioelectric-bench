@@ -2,6 +2,18 @@
 
 **Why:** the kill criterion needs at least 25 planarian polarity papers with counts. 9 are in hand. These files decide whether the question is testable at all.
 
+**Already downloaded by Claude (2026-11-10), in `inbox/`:**
+- **24** Nogi 2005: the lab PDF.
+- **33** Chan 2011: PDF and figures; the videos were skipped.
+- **durant2017_bpj**, **emmonsbell2015_ijms**, **adams2013_biolopen** and **pai2018_natcommun**: PDF, supplements and figures.
+- **khokha2026_commbiol**: PDF, supplements and the source-data xlsx.
+
+All of these came from the lab's own site or PubMed Central's public data bucket. Skip them.
+
+**Still needs your browser:**
+- Everything in section A except 24 and 33.
+- In section B: oviedo2010, beane2011, beane2013, durant2019, bischof2020, zhang2011, chan2017, pai2012, adams2006 and tseng2010. These are author manuscripts, so their PDFs and supplements aren't offered to programs. Use the PubMed Central page or the publisher link.
+
 **Where to put files:** `inbox/<number or paper key>/` in this project folder, for example `inbox/9/marsh1952.pdf`. Any file name is fine. The folder is git-ignored, so nothing you download gets pushed. If a paper turns out to have no numbers, or you can't get it, write a one-line `inbox/<number>/note.txt` (for example "no access" or "only drawings, no counts"). That resolves the paper too.
 
 **Legal routes only.** Every link below is the publisher, PubMed Central, a public-domain scan, or the authors' own site. Shadow libraries would contaminate the record.
