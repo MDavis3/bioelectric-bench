@@ -457,17 +457,18 @@ def main():
         Path(a.out).write_text(json.dumps(out, indent=1))
         return 0
     # run
+    if a.mode == "counted":
+        check_seals(P, a.params)
     o = pd.read_csv(ROOT / P["outcome"], dtype={"unit_id": str}).set_index("unit_id").reindex(s.unit_id)
     y = o.Y.fillna(0).values.astype(float)
     ye = o.Y_exc.fillna(0).values.astype(float)
     le = o.lethal_nomorph.fillna(0).values.astype(float)
     if a.mode == "rehearsal":
+        # null rehearsal: outcomes permuted among units within each stratum (breaks any class link)
         rng = np.random.default_rng(12345)
-        # block-shuffle outcomes: whole blocks' outcome vectors permuted among blocks of the same stratum
-        perm = s.groupby("stratum").block.transform(lambda b: b).values
-        ub = np.unique(s.block.values)
-        mapping = dict(zip(ub, rng.permutation(ub)))
-        order = np.argsort(s.block.map(mapping).values, kind="stable")
+        order = np.arange(len(s))
+        for _, idx in s.groupby("stratum").indices.items():
+            order[idx] = rng.permutation(idx)
         y, ye, le = y[order], ye[order], le[order]
     sim = json.loads((ROOT / P["simulation_result"]).read_text()) if P.get("simulation_result") else None
     sim_ok = True
@@ -481,6 +482,31 @@ def main():
     Path(a.out).write_text(json.dumps(rep, indent=1, default=float))
     print(v, why)
     return 0
+
+
+SEALED_INPUTS = {"db_prereg_v1": "plans/pivot_db_v1.md", "db_params_v1": None, "db_classes_v1": "config/db_classes_v1.json",
+                 "db_endpoint_map_v1": "config/db_endpoint_map_v1.json", "db_units_setup_v1": "data/db_setup/units_setup.csv",
+                 "db_nn_features_v1": "data/db_setup/nn_features.jsonl", "db_power_v1": "reports/db_power_v1.json",
+                 "dbtest_code_v1": "harness/dbtest.py"}
+
+
+def check_seals(P, params_path):
+    """Counted run only: every input must match its seal, and the run is claimed once (write-once marker)."""
+    reg = json.loads((ROOT / "sealed/SEALS.json").read_text())
+    for name, path in SEALED_INPUTS.items():
+        path = path or params_path
+        if name not in reg:
+            sys.exit(f"refused: {name} is not sealed")
+        if reg[name]["sha256"] != sha(ROOT / path if not Path(path).is_absolute() else path):
+            sys.exit(f"refused: {path} does not match seal {name}")
+    marker = ROOT / "data/confirmatory/db_v1__counted.json"
+    marker.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        fd = os.open(marker, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+    except FileExistsError:
+        sys.exit("refused: the counted run was already claimed (data/confirmatory/db_v1__counted.json)")
+    with os.fdopen(fd, "w") as f:
+        json.dump({"claimed_utc": pd.Timestamp.now("UTC").isoformat(), "outcome_sha256": sha(ROOT / P["outcome"])}, f)
 
 
 def selftest():

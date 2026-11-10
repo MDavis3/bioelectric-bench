@@ -50,17 +50,24 @@ def main():
     ch, nm = parse(O / "mp.obo")
     inc = closure(m["Y_include_roots"], ch)
     exc = closure(m["Y_exclude_roots"], ch) - closure(m["Y_exclude_exceptions_keep"], ch)
+    exc |= closure(m.get("Y_exclude_extra_roots", []), ch)
     y = {t for t in inc - exc if not any(w in nm.get(t, "").lower() for w in m["Y_exclude_label_words"])}
     yexc = closure(m["Y_exc_roots"], ch) - closure(m["Y_exc_minus"], ch)
-    leth = {t for t in closure(m["lethality_roots"], ch) if any(w in nm.get(t, "") for w in m["lethality_label_words"])}
+    leth = {t for t in closure(m["lethality_roots"], ch)
+            if any(w in nm.get(t, "").lower() for w in m["lethality_label_words"])}
     z = R["zebrafish"]
     zch, _ = parse(O / "zfa.obo", ("is_a", "part_of"))
     pch, _ = parse(O / "pato.obo")
     gch, _ = parse(O / "go-basic.obo")
-    out = {"mouse": {"Y_terms": sorted(y), "Y_exc_terms": sorted(yexc), "lethality_terms": sorted(leth)},
+    size_words = ("small", "short", "long ", "large", "enlarged", "elongated")
+    y_nosize = {t for t in y if not any(w in nm.get(t, "").lower() for w in size_words)}
+    out = {"mouse": {"Y_terms": sorted(y), "Y_terms_nosize_secondary": sorted(y_nosize), "Y_exc_terms": sorted(yexc), "lethality_terms": sorted(leth)},
            "zebrafish": {"entity_terms": sorted(closure(z["entity_roots"], zch)),
                          "quality_terms": sorted(closure(z["quality_roots"], pch) - closure(z["quality_exclude_roots"], pch)),
+                         "entity_exclude_terms": sorted(closure(z["entity_exclude_roots"], zch)),
                          "process_terms": sorted(closure(z["process_roots_any_quality"], gch)),
+                         "process_laterality_only_terms": sorted(closure(z["process_roots_laterality_only"], gch)),
+                         "lethality_quality_terms": sorted(closure(z["lethality_quality_ids"], pch)),
                          "laterality_quality_terms": sorted(closure(z["laterality_quality_roots_any_entity"], pch)),
                          "Y_exc_entity_terms": sorted(closure(z["Y_exc_entity_roots"], zch)),
                          "Y_exc_process_terms": sorted(closure(z["Y_exc_process_roots"], gch))}}
