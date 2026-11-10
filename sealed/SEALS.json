@@ -43,6 +43,7 @@
   },
   "harness_manifest_v2": {
     "copy": "sealed/harness_manifest_v2__359b81fe07bc.json",
+    "remote_commit": "11c5710de89b302fa96ef30804a67a1f698fe6dc",
     "sha256": "359b81fe07bc2b94add705f472d7385a425edb7e62cdc67f70e31b6f7ad10514",
     "source": "config/harness_manifest_v2.json",
     "utc": "2026-11-10T09:19:38Z"
