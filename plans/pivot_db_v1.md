@@ -156,11 +156,20 @@ Not allowed: number of phenotype annotations or terms, lethality annotation, any
    If only the IMPC floor fails, the IMPC consistency condition in 3 is dropped and the report says so (decided now).
 2. INVALID RUN (no verdict) if the positive control Y_exc does not give an adjusted odds ratio above 1 with one-sided
    p below 0.025.
-3. PASS if all hold: T1 lower bound above 1.0 and permutation p below 0.025; T1 point estimate at least 1.5; T2
-   interval above 0; point odds ratio above 1 separately in mouse, in zebrafish and in the IMPC stratum; point odds
-   ratio above 1 in S1 and in every leave-one-subclass-out run.
+3. PASS if all hold: T1 lower bound above 1.0 and permutation p below 0.025; T1 point estimate at least 1.5; point
+   odds ratio above 1 separately in mouse, in zebrafish and in the IMPC stratum; point odds ratio above 1 in S1 and in
+   every leave-one-subclass-out run. (T2 is not a PASS condition; see "Tier 2" below and section M.)
 4. FAIL if the T1 upper bound is below 1.5. An upper bound below 1.0 is reported as "depleted".
 5. INCONCLUSIVE otherwise, naming the missed PASS condition.
+
+Tier 2 (out-of-sample), reported next to the verdict and unable to change it: assessed only when the verdict is PASS.
+MET if the 5th percentile of the block bootstrap of the held-out paired log-loss difference (M1 minus M2) is above 0
+(one-sided alpha 0.05). The held-out Brier difference is reported as descriptive. Wording:
+- PASS, tier 2 met: "channel and pump genes show more patterning phenotypes than matched membrane proteins after
+  adjustment for covariates and the nearest-neighbour score, and the class flag improves held-out prediction over both."
+  This is the only outcome that answers the original question ("predicts better") with yes.
+- PASS, tier 2 not met: the first clause, then "an improvement in held-out prediction was not demonstrated; the study
+  had about 42% power for it at odds ratio 2.0".
 
 ## I. Firewall
 
@@ -196,6 +205,22 @@ class; pigmentation separately; species x class interaction; ortholog oracle.
 - IMPC is taken from the IMPC Solr API (ftp.ebi.ac.uk robots.txt disallows all). MGI records count as
   MGI-literature only when they carry a PMID.
 - Leave-one-subclass-out requires all 6 subclasses to be present.
+
+## M. Rule revision after the pre-outcome power simulation (2026-11-10)
+
+- The drafted rule (T2 Brier lower bound > 0 required for PASS) gave PASS in 56 of 200 simulated runs at planted odds
+  ratio 2.0, below the 80% gate in H1, with 0/200 null, 0/200 depth and 1/200 excitable. A 40 + 40 diagnostic showed
+  T2 alone held in 10 of 40 planted runs while every other condition together held in 36 of 40 (0 of 40 null).
+- An independent read (plans/t2_decision_advice.md, written before the variant results existed) recommended variant
+  (c): PASS on T1 and the consistency conditions; T2 as a separate out-of-sample tier with one metric chosen by a
+  rule stated in advance (the metric with the higher planted tier-2 rate, provided it is at most 5% in each
+  non-planted world; tie: Brier).
+- Variant results (reports/db_power_v1_rules.json, 200 seeds per world, same seeds for all variants): Brier required
+  56/200 planted; log-loss required 62/200; variant (c) 180/200 planted, 3/200 null, 2/200 depth, 5/200 excitable.
+  Tier 2 given PASS: log-loss 85/200 planted, Brier 83/200; both 0/200 null and depth, 1/200 excitable. Log-loss is
+  therefore the tier-2 metric. reports/db_power_v1.json (the H1 gate input) holds the variant (c) counts.
+- No outcome had been seen by the planner; only the pooled per-stratum rate of Y over all genes (section I).
+  The original rule's result is kept in reports/db_power_v1_brier_rule.json.
 
 ## K. Substitutions forced by the approved download list (logged)
 

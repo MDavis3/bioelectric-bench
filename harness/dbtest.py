@@ -560,12 +560,14 @@ def main():
         claim_counted(P)                         # write-once marker; last step before the analysis
     rep = analyze(s, E, mats_nn, y, ye, le, P)
     v, why = judge(rep, P, sim_ok)
+    key = {"logloss": "t2ll_p05", "brier": "t2_p05"}[P.get("tier2_metric", "brier")]
+    rep["tier2_out_of_sample"] = ("MET" if rep[key] > 0 else "NOT MET") if v == "PASS" else "not assessed (verdict is not PASS)"
     if a.mode == "rehearsal":
         rep["verdict_if_positive_control_passed"] = judge(dict(rep, exc_logor=1.0, exc_p=0.0), P, sim_ok)[0]
     rep.update(verdict=v, reason=why, mode=a.mode, params_sha256=sha(a.params), outcome_sha256=sha(ROOT / P["outcome"]),
                setup_sha256=sha(ROOT / P["setup"]), code_sha256=sha(Path(__file__).resolve()))
     out.write_text(json.dumps(rep, indent=1, default=float))
-    print(v, why)
+    print(v, why, "| tier 2:", rep["tier2_out_of_sample"])
     return 0
 
 

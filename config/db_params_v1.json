@@ -37,5 +37,8 @@
  "sim_exc_leak": 0.05,
  "sim_n_perm": 200,
  "sim_n_boot": 200,
- "n_subclasses": 6
+ "n_subclasses": 6,
+ "t2_rule": "reported",
+ "tier2_metric": "logloss",
+ "tier2_alpha": 0.05
 }

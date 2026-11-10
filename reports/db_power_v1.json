@@ -1,0 +1,47 @@
+{
+ "null": {
+  "FAIL": 126,
+  "INCONCLUSIVE": 71,
+  "PASS": 3,
+  "n": 200
+ },
+ "planted": {
+  "FAIL": 1,
+  "INCONCLUSIVE": 19,
+  "PASS": 180,
+  "n": 200
+ },
+ "depth": {
+  "FAIL": 135,
+  "INCONCLUSIVE": 63,
+  "PASS": 2,
+  "n": 200
+ },
+ "excitable": {
+  "FAIL": 103,
+  "INCONCLUSIVE": 92,
+  "PASS": 5,
+  "n": 200
+ },
+ "tier2_logloss_given_pass": {
+  "null": {
+   "NO": 200,
+   "n": 200
+  },
+  "planted": {
+   "NO": 115,
+   "YES": 85,
+   "n": 200
+  },
+  "depth": {
+   "NO": 200,
+   "n": 200
+  },
+  "excitable": {
+   "NO": 199,
+   "YES": 1,
+   "n": 200
+  }
+ },
+ "note": "Extracted from reports/db_power_v1_rules.json (rule 'reported' = PASS on T1 + consistency; T2 as tier). n_perm=200, n_boot=200 per simulated run."
+}
