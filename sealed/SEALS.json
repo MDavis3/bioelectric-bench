@@ -118,6 +118,12 @@
     "source": "kb/vmem_lookup_v2.json",
     "utc": "2026-11-10T06:03:40Z"
   },
+  "vmem_lookup_v3": {
+    "copy": "sealed/vmem_lookup_v3__ae902e3140e1.json",
+    "sha256": "ae902e3140e139676c42fed52139c7d4924a619ee97f540b87fd4498dace0191",
+    "source": "kb/vmem_lookup_v3.json",
+    "utc": "2026-11-10T09:19:42Z"
+  },
   "vmem_rule": {
     "copy": "sealed/vmem_rule__0bb768a12b9b.md",
     "remote_commit": "d395a4ad41054c1ec9a40b0d3e08cabd22d1fff4",
