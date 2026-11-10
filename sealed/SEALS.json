@@ -267,6 +267,7 @@
   },
   "q018_power": {
     "copy": "sealed/q018_power__67fc9680d190.json",
+    "remote_commit": "402a9d5404cb91cb32a9b6814b723d29c74d1d82",
     "sha256": "67fc9680d190ad4f0a832229297ad3fc94328de287896ff586915cba59c85dca",
     "source": "reports/q018_power.json",
     "utc": "2026-11-10T17:11:26Z"
