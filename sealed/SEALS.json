@@ -141,6 +141,7 @@
   },
   "vmem_rule_v3_changes": {
     "copy": "sealed/vmem_rule_v3_changes__457055f498c3.md",
+    "remote_commit": "f6138d4b77bac299b326342178b3dd7a4a17f07b",
     "sha256": "457055f498c3f18018a99805a892c314ac7f3875ded528bfad5beba17d35c6fa",
     "source": "kb/vmem_rule_v3_changes.md",
     "utc": "2026-11-10T09:19:45Z"
