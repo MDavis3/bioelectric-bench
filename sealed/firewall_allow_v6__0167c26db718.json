@@ -1,0 +1,5 @@
+{
+ "note": "Firewall allow-list v6: post-counted-run database reports (results are public once the counted run is done).",
+ "text_allow_add": {"reports/findings_db_v1.md": "post-run interpretation", "reports/db_secondary_v1.md": "post-run exploratory"},
+ "denied_add": []
+}
