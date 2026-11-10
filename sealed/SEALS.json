@@ -34,6 +34,12 @@
     "source": "plans/plan.md",
     "utc": "2026-11-10T06:34:10Z"
   },
+  "temporal_features": {
+    "copy": "sealed/temporal_features__b7cbaa8f6de5.json",
+    "sha256": "b7cbaa8f6de510dcf8715ea7da35c097758b169c8aae6c79ef8d5fa38c9cb2de",
+    "source": "config/temporal_features.json",
+    "utc": "2026-11-10T06:34:13Z"
+  },
   "temporal_rules": {
     "copy": "sealed/temporal_rules__69da26e3825b.json",
     "remote_commit": "8654b41c2a73204092551e51c9d53d10ba6398f6",
