@@ -104,6 +104,12 @@
     "source": "plans/plan.md",
     "utc": "2026-11-10T06:34:10Z"
   },
+  "repilot_gates_v1": {
+    "copy": "sealed/repilot_gates_v1__9a767c7761ed.md",
+    "sha256": "9a767c7761ed627f9ce66317c6e153a08ab46162a68208019954687daf3656d0",
+    "source": "plans/repilot_gates.md",
+    "utc": "2026-11-10T09:19:53Z"
+  },
   "temporal_features": {
     "copy": "sealed/temporal_features__b7cbaa8f6de5.json",
     "remote_commit": "6c182c7b2166cedc2f6c63357af346711870c20b",
