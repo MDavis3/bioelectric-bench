@@ -4,7 +4,8 @@
 
 **Supplements, after Manav's second batch:**
 - Have supplements: oviedo2010 (mmc2, mmc4), bischof2020 (spreadsheet + PDF), durant2019, chan2017, beane2011, beane2013, pai2012, plus all six from PubMed Central's data bucket.
-- Still missing: oviedo2010 mmc1.jpg and mmc3.pdf, adams2006 (only the article page was saved), tseng2010 (may have none), zhang2011 (likely none).
+- Also in hand now: oviedo2010 mmc1 and mmc3, the adams2006 Fig. S1 image, and the tseng2010 supplementary PDF.
+- zhang2011: no supplement found (J Neurosci stopped hosting supplements in late 2010). Recorded as none available.
 
 **In hand (inbox/):**
 - **Section A, 8 of 20:**
