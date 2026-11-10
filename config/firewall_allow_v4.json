@@ -1,0 +1,9 @@
+{
+ "note": "Firewall allow-list v4: reviewed design documents of the database test. The flagged lines carry synthetic simulation numbers or code-review measurements on synthetic outcomes, not observed outcomes.",
+ "text_allow_add": {
+  "plans/dbtest_review.md": "code review; synthetic-outcome measurements only",
+  "plans/t2_decision_advice.md": "decision advice; simulation counts only",
+  "reports/decisions_for_manav.md": "decision log; simulation counts only"
+ },
+ "denied_add": []
+}

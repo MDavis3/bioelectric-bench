@@ -1,0 +1,29 @@
+# Decisions for Manav (overnight 2026-11-10)
+
+Items are added as they come up. "Taken" means I took the call because the sealed plan provided a mechanism for it;
+"Waiting" means I left it for you.
+
+## 1. Taken, flagged: T2 moved from a PASS condition to a separate "out-of-sample" tier (database test)
+
+- What: the red team made T2 (held-out Brier improvement) a co-primary PASS condition. The sealed-gate power
+  simulation (section H1, before any outcome) showed that rule detects a planted odds ratio of 2.0 only 56/200 times
+  (gate: 80%), so H1 would have declared the test UNTESTABLE.
+- Choice: an independent Fable read recommended PASS on T1 + consistency checks, with T2 kept as a sealed tier
+  (log-loss chosen by a rule stated before the variant results existed). Variant power 180/200; false PASS 3/200
+  null, 2/200 depth confound, 5/200 excitable confound (all within the 5% limit).
+- Why I took it rather than waiting: H1 is the plan's own mechanism for an unworkable rule, no outcome was seen,
+  and the bar for your literal question is unchanged: "predicts better" is claimed only if tier 2 is met.
+- If you disagree: the original rule's simulation is kept (reports/db_power_v1_brier_rule.json). Under it the
+  sealed answer would have been UNTESTABLE; nothing else changes.
+
+## 2. Waiting: licence for releasing the class labels
+
+GtoPdb is CC-BY-SA-4.0 (share-alike). The class/subclass labels use GtoPdb ion-channel types, so a released copy of
+config/db_classes_v1.json and the cls/subclass columns should be CC-BY-SA, or the GtoPdb-dependent labels split off,
+or GtoPdb asked. Both files are already in the public repo as working files; a formal dataset release waits for you.
+(drafts/data_descriptor_db/descriptor.md)
+
+## 3. Waiting: preprint draft review (drafts/preprint_planarian/)
+
+Reference checks listed in the agent note: Zhang 2011, Child 1911, Buchanan 1922, Rustia 1925, Marsh & Beams 1952,
+and the nine not-in-hand papers. Not submitted anywhere.
