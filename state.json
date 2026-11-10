@@ -1,0 +1,224 @@
+{
+  "created": "2026-11-10T04:48:54Z",
+  "gates": {
+    "archaeology_targeted": {
+      "desc": "Targeted pre-1970 pass for desk-replicable quantitative claims",
+      "note": "",
+      "status": "pending",
+      "track": "D_archaeology",
+      "updated": null
+    },
+    "cryptic_primary": {
+      "desc": "Primary desk endpoint: cryptic re-cut assay, sealed, then replicated",
+      "note": "",
+      "status": "pending",
+      "track": "E_wet",
+      "updated": null
+    },
+    "cutoff_stated": {
+      "desc": "Every model that sees test setups states its cutoff; latest + buffer recorded",
+      "note": "2026-06-30",
+      "status": "passed",
+      "track": "core",
+      "updated": "2026-11-10T04:48:54Z"
+    },
+    "env_check": {
+      "desc": "Tools, OCR and connectors work",
+      "note": "venv; pymupdf etc ok; no OCR tools (not needed for pilot); gh auth ok; PubMed+web connectors loaded",
+      "status": "passed",
+      "track": "core",
+      "updated": "2026-11-10T04:48:54Z"
+    },
+    "explore_round_1": {
+      "desc": "First free exploration round written; best ideas sealed as cards",
+      "note": "",
+      "status": "pending",
+      "track": "F_explore",
+      "updated": null
+    },
+    "firewall_check": {
+      "desc": "Test setups carry no outcome information; no preprint duplicates",
+      "note": "",
+      "status": "pending",
+      "track": "A_benchmark",
+      "updated": null
+    },
+    "full_extraction": {
+      "desc": "Train and test extraction, double-pass, adjudicated, controls included",
+      "note": "",
+      "status": "pending",
+      "track": "A_benchmark",
+      "updated": null
+    },
+    "gold_early": {
+      "desc": "Extraction agrees with Manav's early gold papers",
+      "note": "",
+      "status": "pending",
+      "track": "core",
+      "updated": null
+    },
+    "gold_final": {
+      "desc": "Full gold set comparison",
+      "note": "",
+      "status": "pending",
+      "track": "report",
+      "updated": null
+    },
+    "holdout_decade": {
+      "desc": "Decade holdout run on sealed features",
+      "note": "",
+      "status": "pending",
+      "track": "B_code",
+      "updated": null
+    },
+    "holdout_lab": {
+      "desc": "Leave-one-lab-out run",
+      "note": "",
+      "status": "pending",
+      "track": "B_code",
+      "updated": null
+    },
+    "holdout_species": {
+      "desc": "Leave-one-species-out run",
+      "note": "",
+      "status": "pending",
+      "track": "B_code",
+      "updated": null
+    },
+    "kb_drug_graph": {
+      "desc": "Drug, target, ortholog, expression graph built (kb/)",
+      "note": "",
+      "status": "pending",
+      "track": "C_discovery",
+      "updated": null
+    },
+    "lab_protocols": {
+      "desc": "Top 10 protocols written for labs, sealed",
+      "note": "",
+      "status": "pending",
+      "track": "C_discovery",
+      "updated": null
+    },
+    "lock_schema": {
+      "desc": "Schema, categories, temporal features and rules sealed and pushed",
+      "note": "",
+      "status": "pending",
+      "track": "core",
+      "updated": null
+    },
+    "model_bakeoff": {
+      "desc": "Extractor and image-scorer models chosen from gold results (harness/bakeoff.py)",
+      "note": "",
+      "status": "pending",
+      "track": "core",
+      "updated": null
+    },
+    "negative_search": {
+      "desc": "Documented negative search per shortlisted candidate",
+      "note": "",
+      "status": "pending",
+      "track": "C_discovery",
+      "updated": null
+    },
+    "other_review_1": {
+      "desc": "First other-bucket review done (harness/other_review.py)",
+      "note": "",
+      "status": "pending",
+      "track": "F_explore",
+      "updated": null
+    },
+    "pilot": {
+      "desc": "20 papers end to end",
+      "note": "",
+      "status": "pending",
+      "track": "A_benchmark",
+      "updated": null
+    },
+    "plan_written": {
+      "desc": "Fable planner writes plans/plan.md: primary endpoints, allocation, kill criteria",
+      "note": "",
+      "status": "pending",
+      "track": "core",
+      "updated": null
+    },
+    "positive_control": {
+      "desc": "Desk reproduces a published phenotype under its published protocol",
+      "note": "",
+      "status": "pending",
+      "track": "E_wet",
+      "updated": null
+    },
+    "predict": {
+      "desc": "Predictor (fresh context, script-built setups only) produces probabilities",
+      "note": "",
+      "status": "pending",
+      "track": "A_benchmark",
+      "updated": null
+    },
+    "probe_test": {
+      "desc": "Memorization probe validated on known-seen and brand-new papers",
+      "note": "",
+      "status": "pending",
+      "track": "A_benchmark",
+      "updated": null
+    },
+    "report": {
+      "desc": "Reports, lab note and decision log",
+      "note": "",
+      "status": "pending",
+      "track": "report",
+      "updated": null
+    },
+    "rig_validation": {
+      "desc": "Desk batch 1: water only, 60 fragments, clean regeneration",
+      "note": "",
+      "status": "pending",
+      "track": "E_wet",
+      "updated": null
+    },
+    "score": {
+      "desc": "Independent scorer (different model from Predictor) runs score.py",
+      "note": "",
+      "status": "pending",
+      "track": "A_benchmark",
+      "updated": null
+    },
+    "scorer_selftest": {
+      "desc": "Scorer, holdout and wetlab tools pass synthetic tests",
+      "note": "17/17",
+      "status": "passed",
+      "track": "core",
+      "updated": "2026-11-10T04:48:54Z"
+    },
+    "seal_outcomes": {
+      "desc": "Test outcomes sealed and pushed",
+      "note": "",
+      "status": "pending",
+      "track": "A_benchmark",
+      "updated": null
+    },
+    "seal_predictions": {
+      "desc": "Predictions sealed and pushed",
+      "note": "",
+      "status": "pending",
+      "track": "A_benchmark",
+      "updated": null
+    },
+    "sizing_scout": {
+      "desc": "Post-cutoff test set sized (tier 2 is descriptive if too small)",
+      "note": "",
+      "status": "pending",
+      "track": "A_benchmark",
+      "updated": null
+    },
+    "sources_checked": {
+      "desc": "Every source in config/sources.json checked and marked ok / partial / unreachable",
+      "note": "25 ok, 7 partial, 14 unreachable-to-this-client (reports/sources_check.md); Planform ok (reports/planform_check.md)",
+      "status": "passed",
+      "track": "core",
+      "updated": "2026-11-10T04:53:47Z"
+    }
+  },
+  "papers": {},
+  "predictor_training_cutoff": "2026-06-30"
+}

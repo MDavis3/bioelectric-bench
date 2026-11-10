@@ -3,3 +3,5 @@ papers/*
 !papers/.gitkeep
 __pycache__/
 *.tmp
+.venv/
+state.tmp

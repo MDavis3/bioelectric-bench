@@ -15,7 +15,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://www.proquest.com/",
-      "status": "verify at env_check"
+      "status": "unreachable",
+      "status_note": "ProQuest redirect loop (50 redirects, curl; WebFetch also failed); not verified"
     },
     {
       "group": "theses",
@@ -31,7 +32,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://oatd.org",
-      "status": "verify at env_check"
+      "status": "unreachable",
+      "status_note": "HTTP 403 to research-client and WebFetch; site not verified"
     },
     {
       "group": "theses",
@@ -47,7 +49,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://search.ndltd.org",
-      "status": "verify at env_check"
+      "status": "unreachable",
+      "status_note": "HTTP 503 with Retry-After 86400 (site down for our client)"
     },
     {
       "group": "theses",
@@ -63,7 +66,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://www.dart-europe.org",
-      "status": "verify at env_check"
+      "status": "unreachable",
+      "status_note": "301 to UCL notice: DART-Europe portal has closed down"
     },
     {
       "group": "theses",
@@ -79,7 +83,8 @@
       "access": "open",
       "priority": 1,
       "url": null,
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "Tested dspace.mit.edu: HTTP 200, open repository; no bulk/API checked; repositories vary"
     },
     {
       "group": "theses",
@@ -95,7 +100,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://ethos.bl.uk",
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "HTTP 200 on ethos.bl.uk; open access; note offline-after-2023-cyberattack caveat not verified"
     },
     {
       "group": "data_repositories",
@@ -110,7 +116,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://zenodo.org",
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "HTTP 200; open REST API (api/records returned 200); CC-licensed records vary"
     },
     {
       "group": "data_repositories",
@@ -125,7 +132,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://datadryad.org",
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "HTTP 200; open API (api/v2/search returned 200); CC0 metadata"
     },
     {
       "group": "data_repositories",
@@ -140,7 +148,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://figshare.com",
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "HTTP 202 (accepted); open site with public API; licence per item"
     },
     {
       "group": "data_repositories",
@@ -155,7 +164,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://osf.io",
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "HTTP 200; open API and downloads; licence per project"
     },
     {
       "group": "data_repositories",
@@ -170,7 +180,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://data.mendeley.com",
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "HTTP 200; open download site; licence per dataset"
     },
     {
       "group": "data_repositories",
@@ -185,7 +196,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://search.datacite.org",
-      "status": "verify at env_check"
+      "status": "unreachable",
+      "status_note": "HTTP 429 rate-limited; redirects to commons.datacite.org; not verified"
     },
     {
       "group": "data_repositories",
@@ -200,7 +212,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://www.ebi.ac.uk/bioimage-archive/",
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "HTTP 200; BioStudies API returned 200; open data, licence per study"
     },
     {
       "group": "data_repositories",
@@ -215,7 +228,8 @@
       "access": "open",
       "priority": 1,
       "url": null,
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "Tested nature.com: HTTP 200; source-data files open per article"
     },
     {
       "group": "data_repositories",
@@ -230,7 +244,8 @@
       "access": "open",
       "priority": 2,
       "url": null,
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "Tested elifesciences.org: HTTP 200; open peer review files per article"
     },
     {
       "group": "screens",
@@ -245,7 +260,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://comptox.epa.gov/dashboard",
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "HTTP 200; public dashboard and downloads, open access"
     },
     {
       "group": "screens",
@@ -260,7 +276,8 @@
       "access": "open",
       "priority": 1,
       "url": null,
-      "status": "verify at env_check"
+      "status": "partial",
+      "status_note": "No single canonical site; tested PubMed (HTTP 200), literature only, no bulk data"
     },
     {
       "group": "screens",
@@ -275,7 +292,8 @@
       "access": "open",
       "priority": 1,
       "url": null,
-      "status": "verify at env_check"
+      "status": "partial",
+      "status_note": "No single canonical site; tested PubMed (HTTP 200), literature only, no bulk data"
     },
     {
       "group": "screens",
@@ -290,7 +308,8 @@
       "access": "open",
       "priority": 2,
       "url": null,
-      "status": "verify at env_check"
+      "status": "partial",
+      "status_note": "No single canonical site; tested PubMed (HTTP 200), literature only, no bulk data"
     },
     {
       "group": "phenotype_databases",
@@ -305,7 +324,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://zfin.org",
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "HTTP 200; open downloads and API, CC licence"
     },
     {
       "group": "phenotype_databases",
@@ -320,7 +340,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://www.xenbase.org",
-      "status": "verify at env_check"
+      "status": "unreachable",
+      "status_note": "Connection timed out (20s) on curl; not verified"
     },
     {
       "group": "phenotype_databases",
@@ -335,7 +356,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://www.informatics.jax.org",
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "HTTP 200; open data and API"
     },
     {
       "group": "phenotype_databases",
@@ -350,7 +372,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://flybase.org",
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "HTTP 200; open data and FlyBase downloads"
     },
     {
       "group": "phenotype_databases",
@@ -365,7 +388,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://hpo.jax.org",
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "HTTP 200; open API and downloads"
     },
     {
       "group": "phenotype_databases",
@@ -380,7 +404,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://monarchinitiative.org",
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "HTTP 200; open data, CC BY licence"
     },
     {
       "group": "regulatory",
@@ -395,7 +420,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://dailymed.nlm.nih.gov",
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "HTTP 200; open data and API"
     },
     {
       "group": "regulatory",
@@ -409,7 +435,8 @@
       "access": "open",
       "priority": 2,
       "url": "https://www.accessdata.fda.gov/scripts/cder/daf/",
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "HTTP 200; openFDA-style public label data, open access"
     },
     {
       "group": "patents",
@@ -425,7 +452,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://www.lens.org",
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "HTTP 200; open reporting data via RePORTER API"
     },
     {
       "group": "grants",
@@ -440,7 +468,8 @@
       "access": "open",
       "priority": 2,
       "url": "https://reporter.nih.gov",
-      "status": "verify at env_check"
+      "status": "partial",
+      "status_note": "HTTP 200 on lens.org; API/bulk may need token, not verified"
     },
     {
       "group": "grants",
@@ -455,7 +484,8 @@
       "access": "open",
       "priority": 2,
       "url": "https://cordis.europa.eu",
-      "status": "verify at env_check"
+      "status": "partial",
+      "status_note": "HTTP 200 on cordis.europa.eu; /data path 404; bulk access not verified"
     },
     {
       "group": "abstracts",
@@ -470,7 +500,8 @@
       "access": "open",
       "priority": 2,
       "url": null,
-      "status": "verify at env_check"
+      "status": "unreachable",
+      "status_note": "HTTP 403 to research-client and WebFetch; not verified"
     },
     {
       "group": "preprints",
@@ -484,7 +515,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://www.biorxiv.org",
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "HTTP 200 on bioRxiv (HEAD); one GET returned 429 rate limit; public API"
     },
     {
       "group": "preprints",
@@ -498,7 +530,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://europepmc.org",
-      "status": "verify at env_check"
+      "status": "unreachable",
+      "status_note": "HTTP 403 to research-client and WebFetch on europepmc.org; site not verified"
     },
     {
       "group": "protocols",
@@ -513,7 +546,8 @@
       "access": "open",
       "priority": 2,
       "url": "https://www.protocols.io",
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "HTTP 200; open API"
     },
     {
       "group": "teaching",
@@ -529,7 +563,8 @@
       "access": "open",
       "priority": 2,
       "url": null,
-      "status": "verify at env_check"
+      "status": "unreachable",
+      "status_note": "301 to qubeshub.org (redirect not followed; not verified)"
     },
     {
       "group": "old_and_non_english",
@@ -544,7 +579,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://www.biodiversitylibrary.org",
-      "status": "verify at env_check"
+      "status": "unreachable",
+      "status_note": "HTTP 403 to research-client and WebFetch; not verified"
     },
     {
       "group": "old_and_non_english",
@@ -559,7 +595,8 @@
       "access": "open",
       "priority": 2,
       "url": "https://archive.org",
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "HTTP 200; open archive, free downloads"
     },
     {
       "group": "old_and_non_english",
@@ -574,7 +611,8 @@
       "access": "open",
       "priority": 2,
       "url": "https://www.hathitrust.org",
-      "status": "verify at env_check"
+      "status": "unreachable",
+      "status_note": "HTTP 403 to research-client and WebFetch; not verified"
     },
     {
       "group": "old_and_non_english",
@@ -589,7 +627,8 @@
       "access": "open",
       "priority": 2,
       "url": "https://gallica.bnf.fr",
-      "status": "verify at env_check"
+      "status": "unreachable",
+      "status_note": "HTTP 403 to research-client and WebFetch; not verified"
     },
     {
       "group": "old_and_non_english",
@@ -604,7 +643,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://www.jstage.jst.go.jp",
-      "status": "verify at env_check"
+      "status": "partial",
+      "status_note": "HTTP 200; many articles paywalled, open subset only"
     },
     {
       "group": "old_and_non_english",
@@ -619,7 +659,8 @@
       "access": "open",
       "priority": 2,
       "url": "https://cyberleninka.ru",
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "HTTP 200; open journal site"
     },
     {
       "group": "old_and_non_english",
@@ -634,7 +675,8 @@
       "access": "open",
       "priority": 2,
       "url": "https://www.cnki.net",
-      "status": "verify at env_check"
+      "status": "partial",
+      "status_note": "HTTP 200; much content paywalled or behind login"
     },
     {
       "group": "core",
@@ -650,7 +692,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://europepmc.org",
-      "status": "verify at env_check"
+      "status": "unreachable",
+      "status_note": "HTTP 403 to research-client and WebFetch on europepmc.org; not verified"
     },
     {
       "group": "core",
@@ -666,7 +709,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://planosphere.stowers.org",
-      "status": "verify at env_check"
+      "status": "unreachable",
+      "status_note": "Connection timed out (20s) on curl; not verified"
     },
     {
       "group": "core",
@@ -682,7 +726,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://www.guidetopharmacology.org",
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "HTTP 200; open guide to pharmacology data and downloads"
     },
     {
       "group": "core",
@@ -698,7 +743,8 @@
       "access": "open",
       "priority": 1,
       "url": "https://www.ebi.ac.uk/chembl/",
-      "status": "verify at env_check"
+      "status": "ok",
+      "status_note": "HTTP 200; ChEMBL status API returned 200; open data"
     }
   ]
 }

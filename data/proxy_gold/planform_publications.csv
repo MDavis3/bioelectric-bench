@@ -1,0 +1,125 @@
+id,authors,year,title,journal,doi_url,n_experiments,n_drug_experiments,n_bioelectric_experiments
+1,Oviedo,2010,Long-range neural and gap junction protein-mediated cues control polarity during planarian regeneration,,http://dx.doi.org/10.1016/j.ydbio.2009.12.012,61,38,44
+2,Gurley,2008,B-Catenin Defines Head Versus Tail Identity During Planarian Regeneration and Homeostasis,,http://dx.doi.org/10.1126/science.1150029,14,0,0
+3,Cebria,2002,FGFR-related gene nou-darake restricts brain tissues to the head region of planarians,,http://dx.doi.org/10.1038/nature01042,14,0,0
+4,Beane,2011,"A Chemical Genetics Approach Reveals H,K-ATPase-Mediated Membrane Voltage is Required for Planarian Head Regeneration",,http://dx.doi.org/10.1016/j.chembiol.2010.11.012,28,19,19
+5,Iglesias,2008,Silencing of Smed-βcatenin1 Generates Radial-like Hypercephalized Planarians,,http://dx.doi.org/10.1242/dev.020289,4,0,0
+6,Morgan,1898,Experimental Studies of the Regeneration of Planaria maculata,,http://dx.doi.org/10.1007/BF02161491,66,0,0
+7,Petersen,2008,Smed-Bcatenin-1 is required for anteposterior blastema polarity in planarian regeneration,,http://dx.doi.org/10.1126/science.1149943,16,0,0
+8,Iglesias,2011,Early planarian brain regeneration is independent of blastema polarity mediated by the Wnt/B-catenin pathway,,http://dx.doi.org/10.1016/j.ydbio.2011.07.013,19,0,0
+9,Petersen,2011,Polarized notum activation at wounds inhibits Wnt function to promote planarian head regerneration,,http://dx.doi.org/10.1126/science.1202143,3,0,0
+10,Molina,2011,Noggin and noggin-like genes control dorsoventral axis regeneration in planarians,,http://dx.doi.org/10.1016/j.cub.2011.01.016,12,0,0
+11,Li,2011,Argonaute-2 regulates the proliferation of adult stem cells in planarian,,http://dx.doi.org/10.1038/cr.2011.151,2,0,0
+12,Almuedo-Castillo,2011,Dishevelled is essential for neural connectivity and planar cell polarity in planarians,,http://dx.doi.org/10.1073/pnas.1012090108,9,0,0
+13,Rink,2009,Planarian Hh signaling regulates regeneration polarity and links Hh pathway evolution to cilia,,http://dx.doi.org/10.1126/science.1178712,15,0,0
+14,Adell,2009,Smed-Evi/Wntless is required for beta-catenin-dependent and -independent processes during planarian regeneration,,http://dx.doi.org/10.1242/dev.033761,9,0,0
+15,Palakodeti,2008,The PIWI proteins SMEDWI-2 and SMEDWI-3 are required for stem cell function and piRNA expression in planarians,,http://dx.doi.org/10.1261/rna.1085008,7,0,0
+16,Oviedo,2007,Smedinx-11 is a planarian stem cell gap junction gene required for regeneration and homeostasis,,http://dx.doi.org/10.1242/dev.006635,2,0,2
+17,Reddien,2007,BMP signaling regulates the dorsal planarian midline and is needed for asymmetric regeneration,,http://dx.doi.org/10.1242/dev.007138,19,0,0
+18,Orii,2007,Bone morphogenetic protein is required for dorso-ventral patterning in the planarian Dugesia japonica,,http://dx.doi.org/10.1111/j.1440-169X.2007.00931.x,4,0,0
+19,Molina,2007,The BMP pathway is essential for re-specification and maintenance of the dorsoventral axis in regenerating and intact planarians,,http://dx.doi.org/10.1016/j.ydbio.2007.08.019,14,0,0
+20,Nogi,2005,Characterization of innexin gene expression and functional roles of gap-junctional communication in planarian regeneration,,http://dx.doi.org/10.1016/j.ydbio.2005.09.002,8,7,7
+21,Saito,2003,Mediolateral intercalation in planarians revealed by grafting experiments,,http://dx.doi.org/10.1002/dvdy.10246,5,0,0
+22,Kobayashi,1999,Ectopic pharynxes arise by regional reorganization after anterior/posterior chimera in planarians,,http://dx.doi.org/10.1016/S0925-4773(99)00192-6,6,0,0
+23,Santos,1929,Studies on transplantation in Planaria,,http://dx.doi.org/10.2307/1536781,30,0,0
+24,Evans,2011,Combining classical and molecular approaches elaborates on the complexity of mechanisms underpinning anterior regeneration,,http://dx.doi.org/10.1371/journal.pone.0027927,36,0,0
+25,Nogi,2009,A novel biological activity of praziquantel requiring voltage-operated Ca2+ channel beta subunits: subversion of flatworm regenerative polarity,,http://dx.doi.org/10.1371/journal.pntd.0000464,73,68,70
+26,Gaviño,2011,A Bmp/Admp regulatory circuit controls maintenance and regeneration of dorsal-ventral polarity in planarians,,http://dx.doi.org/10.1016/j.cub.2011.01.017,4,0,0
+27,Felix,2010,The TALE Class Homeobox Gene Smed-prep Defines the Anterior Compartment for Head Regeneration,,http://dx.doi.org/10.1371/journal.pgen.1000915,10,0,0
+28,Gonzalez-Estevez,2007,Gtdap-1 promotes autophagy and is required for planarian remodeling during regeneration and starvation,,http://dx.doi.org/10.1073/pnas.0703588104,5,2,0
+29,Miller,2012,An insulin-like peptide regulates size and adult stem cells in planarians,,http://dx.doi.org/10.1387/ijdb.113443cm,4,0,0
+30,Tasaki,2011,ERK signaling controls blastema cell differentiation during planarian regeneration,,http://dx.doi.org/10.1242/dev.060764,6,4,0
+31,Yazawa,2009,Planarian Hedgehog/Patched establishes anterior-posterior polarity by regulating Wnt signaling,,http://dx.doi.org/10.1073/pnas.0907464106,18,0,0
+32,Oviedo,2008,Planarian PTEN homologs regulate stem cells and regeneration through TOR signaling,,http://dx.doi.org/10.1242/dmm.000117,13,4,0
+33,Mannini,2004,Djeyes absent (Djeya) controls prototypic planarian eye regeneration by cooperating with the transcription factor Djsix-1,,http://dx.doi.org/10.1016/j.ydbio.2004.01.042,5,0,0
+34,Rouhana,2012,PRMT5 and the role of symmetrical dimethylarginine in chromatoid bodies of planarian stem cells,,http://dx.doi.org/10.1242/dev.076182,4,0,0
+35,Cebria,2007,Morphogenesis defects are associated with abnormal nervous system regeneration following roboA RNAi in planarians,,http://dx.doi.org/10.1242/Dev.02794,5,0,0
+36,Reddien,2005,"Identification of genes needed for regeneration, stem cell function, and tissue homeostasis by systematic gene perturbation in planaria",,http://dx.doi.org/10.1016/j.devcel.2005.02.014,164,0,0
+37,Nogi,2005,"Eye regeneration assay reveals an invariant functional left-right asymmetry in the early bilaterian, Dugesia japonica",,http://dx.doi.org/10.1080/1357650054200001440,2,1,1
+38,Romero,2001,"Disto-proximal regional determination and intercalary regeneration in planarians, revealed by retinoic acid induced disruption of regeneration",,http://www.ijdb.ehu.es/web/paper.php?doi=11461003,12,12,0
+39,Brondsted,1969,Planarian Regeneration,,http://books.google.com/books/about/Planarian_regeneration.html?id=4J3wAAAAMAAJ,89,4,0
+40,Gonzalez-Estevez,2012,SMG-1 and mTORC1 Act Antagonistically to Regulate Response to Injury and Growth in Planarians,,http://dx.doi.org/10.1371/journal.pgen.1002619,14,5,0
+41,Reddien,2005,SMEDWI-2 Is a PIWI-like protein that regulates planarian stem cells,,http://dx.doi.org/10.1126/science.1116110,4,0,0
+42,Wagner,2012,Genetic regulators of a pluripotent adult stem cell system in planarians identified by RNAi and clonal analysis,,http://dx.doi.org/10.1016/j.stem.2012.01.016,26,0,0
+43,Isolani,2012,Stem cell protection mechanisms in planarians: the role of some heat shock genes,,http://dx.doi.org/10.1387/ijdb.113432mi,4,0,0
+44,Galloni,2012,"Global irradiation effects, stem cell genes and rare transcripts in the planarian transcriptome",,http://dx.doi.org/10.1387/ijdb.113455mg,3,0,0
+45,Wagner,2011,Clonogenic neoblasts are pluripotent adult stem cells that underlie planarian regeneration,,http://dx.doi.org/10.1126/science.1203983,8,0,0
+46,Tasaki,2011,Role of c-Jun N-terminal kinase activation in blastema formation during planarian regeneration,,http://dx.doi.org/10.1111/j.1440-169X.2011.01254.x,3,3,0
+47,Rink,2011,The maintenance and regeneration of the planarian excretory system are regulated by EGFR signaling,,http://dx.doi.org/10.1242/dev.066852,5,0,1
+48,Fraguas,2011,"EGFR signaling regulates cell proliferation, differentiation and morphogenesis during planarian regeneration and homeostasis",,http://dx.doi.org/10.1016/j.ydbio.2011.03.023,4,0,0
+49,Pearson,2010,A planarian p53 homolog regulates proliferation and self-renewal in adult stem cell lineages,,http://dx.doi.org/10.1242/dev.044297,27,0,0
+50,Cebria,2007,Regeneration and maintenance of the planarian midline is regulated by a slit orthologue,,http://dx.doi.org/10.1016/j.ydbio.2007.05.006,4,0,0
+51,Cowles,2012,A Lissencephaly-1 homologue is essential for mitotic progression in the planarian Schmidtea mediterranea,,http://dx.doi.org/10.1002/dvdy.23775,3,0,0
+52,Tu,2012,TORC1 is required to balance cell proliferation and cell death in planarians,,http://dx.doi.org/10.1016/j.ydbio.2012.03.010,16,0,0
+53,Wenemoser,2012,A molecular wound response program associated with regeneration initiation in planarians,,http://dx.doi.org/10.1101/gad.187377.112,6,0,0
+54,Onal,2012,Gene expression of pluripotency determinants is conserved between mammalian and planarian stem cells,,http://dx.doi.org/10.1038/emboj.2012.110,10,0,0
+55,Isolani2012b,2012,The in vivo effect of chelidonine on the stem cell system of planarians,,http://dx.doi.org/10.1016/j.ejphar.2012.03.036,4,4,0
+56,Beane,2012,"Inhibition of planar cell polarity extends neural growth during regeneration, homeostasis, and development",,http://dx.doi.org/10.1089/scd.2011.0605,8,0,0
+57,Baguna,1989,Regeneration and pattern formation in planarians. III. Evidence That Neoblasts Are Totipotent Stem-Cells and the Source of Blastema Cells,,http://dev.biologists.org/content/107/1/77,6,0,0
+58,Salo,1985,Proximal and distal transformation during intercalary regeneration in the planarian Dugesia (S) mediterranea,,http://dx.doi.org/10.1007/BF00877374,4,0,0
+59,Gremigni,1980,On the role of germ cells in planarian regeneration,,http://dev.biologists.org/content/55/1/53.abstract,8,0,0
+60,Chandebois,1979,The dynamics of wound closure and its role in the programming of planarian regeneration. I — Blastema emergence,,http://dx.doi.org/10.1111/j.1440-169X.1979.00195.x,2,0,0
+61,Montgomery,1974,On the minimal size of a planarian capable of regeneration,,http://www.jstor.org/stable/3225439,6,0,0
+63,Labbe,2012,A comparative transcriptomic analysis reveals conserved features of stem cell pluripotency in planarians and mammals,,http://dx.doi.org/10.1002/stem.1144,52,0,0
+64,Lapan,2012,Transcriptome analysis of the planarian eye identifies ovo as a specific regulator of eye regeneration,,http://dx.doi.org/10.1016/j.celrep.2012.06.018,6,0,0
+65,Peiris,2012,TOR signaling regulates planarian stem cells and controls localized and organismal growth,,http://dx.doi.org/10.1242/​jcs.104711,3,0,0
+66,Child,1911,Experimental control of morphogenesis in the regulation of planaria,,http://www.jstor.org/stable/1535896,48,2,1
+67,Child,1906,Contributions toward a theory of regulation. I The significance of the different methods of regulation in turbellaria,,http://dx.doi.org/10.1007/BF02161479,7,0,0
+68,Cebria,2005,Planarian homologs of netrin and netrin receptor are required for proper regeneration of the central nervous system and the maintenance of nervous system architecture,,http://dx.doi.org/10.1242/dev.01941,7,0,0
+69,Guo,2006,A Bruno-like gene is required for stem cell maintenance in planarians,,http://dx.doi.org/10.1016/j.devcel.2006.06.004,2,0,0
+70,Inoue,2007,"Clathrin-mediated endocytic signals are required for the regeneration of, as well as homeostasis in, the planarian CNS",,http://dx.doi.org/10.1242/dev.02835,6,0,0
+71,Kobayashi,2007,Wnt signaling is required for antero-posterior patterning of the planarian brain,,http://dx.doi.org/10.1016/j.ydbio.2007.04.010,7,0,0
+72,Solana,2009,Spoltud-1 is a chromatoid body component required for planarian long-term stem cell self-renewal,,http://dx.doi.org/10.1016/j.ydbio.2009.01.043,4,0,0
+73,Ma,2010,Djrho2 is involved in regeneration of visual nerves in Dugesia japonica,,http://dx.doi.org/10.1016/S1673-8527(09)60089-8,2,0,0
+74,Hayashi,2011,A LIM-homeobox gene is required for differentiation of Wnt-expressing cells at the posterior end of the planarian body,,http://dx.doi.org/10.1242/dev.060194,5,0,0
+75,Scimone,2010,The Mi-2-like Smed-CHD4 gene is required for stem cell differentiation in the planarian Schmidtea mediterranea,,http://dx.doi.org/10.1242/dev.042051,1,0,0
+76,Owen,2015,Teashirt is required for head-versus-tail regeneration polarity in planarians,,http://dev.biologists.org/content/142/6/1062.long,6,0,0
+77,Chen,2013,pbx is required for pole and eye regeneration in planarians,,http://dev.biologists.org/content/140/4/719#ref-76,10,0,0
+78,Vasquez-Doorman,2014,Zic-1 Expression in Planarian Neoblasts after Injury Controls Anterior Pole Regeneration,,http://dx.doi.org/10.1371/journal.pgen.1004452 ,12,0,0
+79,Vogg,2014,Stem cell-dependent formation of a functional anterior regeneration pole in planarians requires Zic and Forkhead transcription factors,,http://dx.doi.org/10.1016/j.ydbio.2014.03.016,7,0,0
+80,Blassberg,2013,PBX/extradenticle is required to re-establish axial structures and polarity during planarian regeneration,,http://dev.biologists.org/content/develop/140/4/730.full.pdf,38,0,0
+81,Almuedo-Castillo,2014,JNK Controls the Onset of Mitosis in Planarian Stem Cells and Triggers Apoptotic Cell Death Required for Regeneration and Remodeling,,http://dx.doi.org/10.1371/journal.pgen.1004400,4,0,0
+82,Elliott,2016,"Notch signaling is required to generate epidermal cell diversity, sustain sensory organs, and maintain the midline in planarians",,https://www.researchgate.net/publication/304196177_Studies_of_conserved_cell-cell_signaling_pathways_in_the_planarian_Schmidtea_mediterranea,49,0,0
+83,Lander,2016,"Wnt, Ptk7, and FGFRL expression gradients control trunk positional identity in planarian regeneration",,https://elifesciences.org/content/5/e12850,44,1,0
+84,Peiris,2015,Regional signals in the planarian body guide stem cell fate in the presence of genomic instability,,http://dx.doi.org/10.1242/dev.131318,8,0,0
+85,Hwang,2015,"Two distinct roles of the yorkie/yap gene during homeostasis in the planarian Dugesia japonica
+",,http://dx.doi.org/10.1111/dgd.12195,16,0,3
+86,Scimone,2011,A regulatory program for excretory system regeneration in planarians,,dx.doi.org/10.1242/dev.068098,8,0,0
+87,Zeng,2013,Heterochromatin protein 1 promotes self-renewal and triggers regenerative proliferation in adult stem cells,,http://dx.doi.org/10.1083/jcb.201207172,23,0,0
+88,Sikes,2013,Restoration of anterior regeneration in a planarian with limited regenerative ability,,http://dx.doi.org/10.1038/nature12403,5,0,0
+89,Pineda,2000,Searching for the prototypic eye genetic network: Sine oculis is essential for eye regeneration in planarians,,http://www.ncbi.nlm.nih.gov/pmc/articles/PMC18268/,4,0,0
+90,Petersen,2009,A wound-induced Wnt expression program controls planarian regeneration polarity,,http://dx.doi.org/10.1073/pnas.0906823106,6,0,0
+91,Umesomo,2013,The molecular logic for planarian regeneration along the anterior–posterior axis,,http://dx.doi.org/10.1038/nature12359,22,0,0
+92,Guedelhoefer,2012,"Planarian Immobilization, Partial Irradiation, and Tissue Transplantation",,http://dx.doi.org/10.3791/4015,3,0,0
+93,Kurabuchi,1978,The Role of the Nervous System in the Planarian Regeneration II Regeneration of the Body Fragments with the Reversed Nerve Cord,,,3,0,0
+94,Kurabuchi,1990,Comparative-Study of the Influence of Head and Tail Grafts on Axial Polarity in Regeneration of the Fresh-Water Planarian,,,24,0,0
+95,,2015,teashirt is required for head-versus-tail regeneration polarity in planarians,,http://dev.biologists.org/content/142/6/1062.long,0,0,0
+96,Lobo,2016,"Computational discovery and in vivo validation
+of hnf4 as a regulatory gene in planarian regeneration
+",,http://bioinformatics.oxfordjournals.org/content/early/2016/05/09/bioinformatics.btw299.short,5,0,0
+97,Scimone,2014,A forkhead Transcription Factor Is Wound-Induced at the Planarian Midline and Required for Anterior Pole Regeneration,,http://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1003999,1,0,0
+98,Barberán,2016,The EGFR signaling pathway controls gut progenitor differentiation during planarian regeneration and homeostasis,,http://dev.biologists.org/content/143/12/2089.long,5,0,0
+99,Buchanan,1922,The control of head formation in Planaria by means of anesthetics.,,http://onlinelibrary.wiley.com/doi/10.1002/jez.1400360102/epdf,51,51,51
+100,Kanatani,1958,"Formation of bipolar heads induced by demecolcine in the planarian, Dugesia gonocephala",,,71,71,0
+101,Kurabuchi,1978,Role of the Nervous-System in the Planarian Regeneration .3. Influence of the Head and the Nerve Cords on the Blastema Regeneration,,,29,0,0
+102,Kurabuchi,1990,Influence of the Tail Graft on Axial Polarity in Planarian Regeneration,,,24,0,0
+103,,2016,"Wnt, Ptk7, and FGFRL expression
+gradients control trunk positional identity
+in planarian regeneration",,http://www.ncbi.nlm.nih.gov/pubmed/27074666,0,0,0
+104,Scimone,2016,Two FGFRL-Wnt circuits organize the planarian anteroposterior axis,,http://www.ncbi.nlm.nih.gov/pubmed/27063937,15,0,0
+105,Lin,2014,"Planarian yorkie/YAP functions to integrate adult stem cell proliferation, organ homeostasis and maintenance of axial patterning",,http://dx.doi.org/10.1242/dev.101915,18,0,0
+106,Guedelhoefer,2012,Amputation induces stem cell mobilization to sites of injury during planarian regeneration,,http://dx.doi.org/10.1242/dev.082099,7,0,0
+107,Alder,2014,Selective amputation of the pharynx identifies a FoxA-dependent regeneration program in planaria,,http://dx.doi.org/10.7554/eLife.02238,4,0,0
+108,Reuter,2015,beta-Catenin-Dependent Control of Positional Information along the AP Body Axis in Planarians Involves a Teashirt Family Member,,http://dx.doi.org/10.1016/j.celrep.2014.12.018,2,0,0
+109,Gehrke,2016,Neoblasts and the evolution of whole-body regeneration,,http://dx.doi.org/10.1016/j.gde.2016.07.009,2,0,0
+110,Stuckemann,2017,Antagonistic Self-Organizing Patterning Systems Control Maintenance and Regeneration of the Anteroposterior Axis in Planarians,,http://dx.doi.org/10.1016/j.devcel.2016.12.024,3,0,0
+111,Chan,2011,Pharmacological and Functional Genetic Assays to Manipulate Regeneration of the Planarian Dugesia japonica,,http://dx.doi.org/10.3791/3058,3,0,0
+112,Gavino,2013,Tissue absence initiates regeneration through Follistatin-mediated inhibition of Activin signaling,,http://dx.doi.org/10.7554/eLife.00247,14,0,0
+113,Chen,2017,RNAi of CNS-expressed gene DjSlk induces morphogenetic malformation and death in planarian Dugesia japonica,,http://www.isj.unimo.it/articoli/ISJ448.pdf,2,0,0
+114,Flores,2016,Essential role for the planarian intestinal GATA transcription factor in stem cells and regeneration,,http://dx.doi.org/10.1016/j.ydbio.2016.08.015,5,0,0
+115,Dong,2017,DjhnRNPA2/B1-like gene is required for planarian regeneration and tissue homeostasis,,https://doi.org/10.1016/j.gene.2017.08.016,3,0,0
+116,Oderberg,2017,Landmarks in Existing Tissue at Wounds Are Utilized to Generate Pattern in Regenerating Tissue,,https://doi.org/10.1016/j.cub.2017.01.024,4,0,0
+117,Oviedo,2017,SUMOylation controls stem cell proliferation and regional cell death through Hedgehog signaling in planarians,,https://doi.org/10.1007/s00018-017-2697-4,3,0,0
+118,Guo,2018,Down-regulate of Djrfc2 causes tissues hypertrophy during planarian regeneration,,https://doi.org/10.1016/j.bbrc.2017.09.032,1,0,0
+119,Bansal,2017,Cytoplasmic poly (A)-binding protein critically regulates epidermal maintenance and turnover in the planarian Schmidtea mediterranea,,https://doi.org/10.1242/dev.152942 ,8,0,0
+120,DeSousa,2018,Hippo signaling controls cell cycle and restricts cell plasticity in planarians,,https://doi.org/10.1371/journal.pbio.2002399,2,0,0

@@ -1,211 +1,219 @@
 {
-  "version": 2,
-  "note": "One row = one experimental condition (one intervention arm scored for one task family). A paper usually yields several rows. Written as JSON Lines. Fields marked setup are the only ones the Predictor may ever see for test items.",
-  "fields": {
-    "item_id": {
-      "part": "setup",
-      "type": "string",
-      "desc": "<paper_id>#<figure_or_table>#<arm>, unique"
-    },
-    "split": {
-      "part": "setup",
-      "type": "enum",
-      "values": [
-        "train",
-        "test"
-      ],
-      "desc": "test only if published after the Predictor's training cutoff and passed the memorization probe"
-    },
-    "source": {
-      "part": "setup",
-      "type": "object",
-      "fields": {
-        "paper_id": "stable id, prefer DOI, else PMID, else archive URL",
-        "doi": "string or null",
-        "pmid": "string or null",
-        "title": "string",
-        "year": "int",
-        "pub_date": "YYYY-MM-DD, earliest public date (preprint counts)",
-        "location": "figure / table / text section the numbers came from",
-        "lab": "corresponding or last author surname (lab identity, for leave-one-lab-out)"
-      }
-    },
-    "organism": {
-      "part": "setup",
-      "type": "enum",
-      "values": [
-        "planaria",
-        "xenopus",
-        "zebrafish",
-        "mouse",
-        "rat",
-        "rabbit",
-        "drosophila",
-        "c_elegans",
-        "human",
-        "axolotl",
-        "other"
-      ]
-    },
-    "species": {
-      "part": "setup",
-      "type": "string",
-      "desc": "e.g. Dugesia japonica, Schmidtea mediterranea, Xenopus laevis"
-    },
-    "task_family": {
-      "part": "setup",
-      "type": "enum",
-      "desc": "key from outcome_categories.json"
-    },
-    "stage": {
-      "part": "setup",
-      "type": "string",
-      "desc": "Nieuwkoop-Faber stage for Xenopus; fragment type for planaria (trunk, head, tail)"
-    },
-    "injury": {
-      "part": "setup",
-      "type": "string",
-      "desc": "amputation plane or none"
-    },
-    "intervention": {
-      "part": "setup",
-      "type": "object",
-      "fields": {
-        "type": "enum: ion_channel_misexpression | channel_or_pump_drug | gap_junction_block | gap_junction_misexpression | ionophore | applied_field | ion_substitution | combination | control",
-        "target": "molecular target, e.g. H+/K+-ATPase, Kir2.1, innexins, V-ATPase; null for applied fields",
-        "agent": "drug, construct or device, e.g. octanol, SCH-28080, ivermectin, Kv1.5 mRNA",
-        "dose": "number or null",
-        "dose_units": "string or null",
-        "timing": "start relative to injury (hours post amputation, hpa) or developmental stage",
-        "duration": "string",
-        "delivery": "bath, microinjection, electrode, etc",
-        "field_strength_mV_per_mm": "applied fields only",
-        "field_direction": "applied fields only, e.g. anterior cut facing anode",
-        "description": "neutral one-line description of what was done. Must not mention the result."
-      }
-    },
-    "readout": {
-      "part": "setup",
-      "type": "object",
-      "fields": {
-        "method": "string",
-        "timepoint": "string"
-      }
-    },
-    "n_total": {
-      "part": "setup",
-      "type": "int or null"
-    },
-    "outcomes": {
-      "part": "outcome",
-      "type": "list",
-      "desc": "[{category, count}] using only the family's categories. If only percentages are reported, convert with n_total and set outcome_from_percent true. Dead or dissolved fragments go in 'dead' counts outside the family categories (field dead_count), never in 'other'"
-    },
-    "outcome_from_percent": {
-      "part": "outcome",
-      "type": "bool"
-    },
-    "result_is_null": {
-      "part": "outcome",
-      "type": "bool",
-      "desc": "true when the paper reports no effect for this arm"
-    },
-    "confidence": {
-      "part": "meta",
-      "type": "object",
-      "desc": "per-field low/medium/high"
-    },
-    "extraction_pass": {
-      "part": "meta",
-      "type": "enum",
-      "values": [
-        "A",
-        "B",
-        "adjudicated"
-      ]
-    },
-    "notes": {
-      "part": "meta",
-      "type": "string",
-      "desc": "for test items, notes go to the outcomes file, never the setup file"
-    },
-    "evidence_tier": {
-      "part": "setup",
-      "type": "int",
-      "desc": "1 desk or unpublished lab data, 2 post-cutoff published, 3 temporal-holdout only, 4 pre-cutoff probe-passed"
-    },
-    "arm_role": {
-      "part": "setup",
-      "type": "enum",
-      "values": [
-        "test",
-        "control",
-        "vehicle",
-        "positive_control"
-      ],
-      "desc": "extract control and vehicle arms too: they are the unbiased negative class"
-    },
-    "drug": {
-      "part": "setup",
-      "type": "object",
-      "fields": {
-        "approved": "bool or null",
-        "gtopdb_id": "string or null",
-        "chembl_id": "string or null",
-        "vmem_direction_pred": "depolarize | hyperpolarize | unknown, from target and ion gradients, assigned by kb script not by reading results"
-      }
-    },
-    "dead_count": {
-      "part": "outcome",
-      "type": "int or null"
-    },
-    "source_type": {
-      "part": "setup",
-      "type": "enum",
-      "values": [
-        "paper",
-        "preprint",
-        "thesis",
-        "dataset",
-        "source_data",
-        "review_file",
-        "screen",
-        "database",
-        "drug_label",
-        "regulatory_review",
-        "patent",
-        "grant_report",
-        "abstract",
-        "protocol",
-        "teaching",
-        "old_scan"
-      ],
-      "desc": "where the row came from; see config/sources.json"
-    }
+ "version": 2,
+ "note": "One row = one experimental condition (one intervention arm scored for one task family). A paper usually yields several rows. Written as JSON Lines. Fields marked setup are the only ones the Predictor may ever see for test items.",
+ "fields": {
+  "item_id": {
+   "part": "setup",
+   "type": "string",
+   "desc": "<paper_id>#<figure_or_table>#<arm>, unique"
   },
-  "setup_fields": [
-    "item_id",
-    "split",
-    "source",
-    "organism",
-    "species",
-    "task_family",
-    "stage",
-    "injury",
-    "intervention",
-    "readout",
-    "n_total",
-    "evidence_tier",
-    "arm_role",
-    "drug",
-    "source_type"
-  ],
-  "outcome_fields": [
-    "item_id",
-    "outcomes",
-    "outcome_from_percent",
-    "result_is_null",
-    "notes",
-    "dead_count"
-  ]
+  "split": {
+   "part": "setup",
+   "type": "enum",
+   "values": [
+    "train",
+    "test"
+   ],
+   "desc": "test only if published after the Predictor's training cutoff and passed the memorization probe"
+  },
+  "source": {
+   "part": "setup",
+   "type": "object",
+   "fields": {
+    "paper_id": "stable id, prefer DOI, else PMID, else archive URL",
+    "doi": "string or null",
+    "pmid": "string or null",
+    "title": "string",
+    "year": "int",
+    "pub_date": "YYYY-MM-DD, earliest public date (preprint counts)",
+    "location": "figure / table / text section the numbers came from",
+    "lab": "corresponding or last author surname (lab identity, for leave-one-lab-out)"
+   }
+  },
+  "organism": {
+   "part": "setup",
+   "type": "enum",
+   "values": [
+    "planaria",
+    "xenopus",
+    "zebrafish",
+    "mouse",
+    "rat",
+    "rabbit",
+    "drosophila",
+    "c_elegans",
+    "human",
+    "axolotl",
+    "other"
+   ]
+  },
+  "species": {
+   "part": "setup",
+   "type": "string",
+   "desc": "e.g. Dugesia japonica, Schmidtea mediterranea, Xenopus laevis"
+  },
+  "task_family": {
+   "part": "setup",
+   "type": "enum",
+   "desc": "key from outcome_categories.json"
+  },
+  "stage": {
+   "part": "setup",
+   "type": "string",
+   "desc": "Nieuwkoop-Faber stage for Xenopus; fragment type for planaria (trunk, head, tail)"
+  },
+  "injury": {
+   "part": "setup",
+   "type": "string",
+   "desc": "amputation plane or none"
+  },
+  "intervention": {
+   "part": "setup",
+   "type": "object",
+   "fields": {
+    "type": "enum: ion_channel_misexpression | ion_channel_knockdown | channel_or_pump_drug | gap_junction_block | gap_junction_misexpression | gap_junction_knockdown | ionophore | applied_field | ion_substitution | combination | control",
+    "target": "molecular target, e.g. H+/K+-ATPase, Kir2.1, innexins, V-ATPase; null for applied fields",
+    "agent": "drug, construct or device, e.g. octanol, SCH-28080, ivermectin, Kv1.5 mRNA",
+    "dose": "number or null",
+    "dose_units": "string or null",
+    "timing": "start relative to injury (hours post amputation, hpa) or developmental stage",
+    "duration": "string",
+    "delivery": "bath, microinjection, electrode, etc",
+    "field_strength_mV_per_mm": "applied fields only",
+    "field_direction": "applied fields only, e.g. anterior cut facing anode",
+    "description": "neutral one-line description of what was done. Must not mention the result.",
+    "action": "enum: block | open_or_activate | knockdown | overexpress | substitute_ion | apply_field | none",
+    "timing_start_h": "number or null; hours relative to amputation or fertilisation, negative = before",
+    "duration_h": "number or null; hours of exposure"
+   }
+  },
+  "readout": {
+   "part": "setup",
+   "type": "object",
+   "fields": {
+    "method": "string",
+    "timepoint": "string"
+   }
+  },
+  "n_total": {
+   "part": "setup",
+   "type": "int or null"
+  },
+  "outcomes": {
+   "part": "outcome",
+   "type": "list",
+   "desc": "[{category, count}] using only the family's categories. If only percentages are reported, convert with n_total and set outcome_from_percent true. Dead or dissolved fragments go in 'dead' counts outside the family categories (field dead_count), never in 'other'"
+  },
+  "outcome_from_percent": {
+   "part": "outcome",
+   "type": "bool"
+  },
+  "result_is_null": {
+   "part": "outcome",
+   "type": "bool",
+   "desc": "true when the paper reports no effect for this arm"
+  },
+  "confidence": {
+   "part": "meta",
+   "type": "object",
+   "desc": "per-field low/medium/high"
+  },
+  "extraction_pass": {
+   "part": "meta",
+   "type": "enum",
+   "values": [
+    "A",
+    "B",
+    "adjudicated"
+   ]
+  },
+  "notes": {
+   "part": "meta",
+   "type": "string",
+   "desc": "for test items, notes go to the outcomes file, never the setup file"
+  },
+  "evidence_tier": {
+   "part": "setup",
+   "type": "int",
+   "desc": "1 desk or unpublished lab data, 2 post-cutoff published, 3 temporal-holdout only, 4 pre-cutoff probe-passed"
+  },
+  "arm_role": {
+   "part": "setup",
+   "type": "enum",
+   "values": [
+    "test",
+    "control",
+    "vehicle",
+    "positive_control"
+   ],
+   "desc": "extract control and vehicle arms too: they are the unbiased negative class"
+  },
+  "drug": {
+   "part": "setup",
+   "type": "object",
+   "fields": {
+    "approved": "bool or null",
+    "gtopdb_id": "string or null",
+    "chembl_id": "string or null",
+    "vmem_direction_pred": "depolarize | hyperpolarize | null. Set only by harness/derive_features.py from sealed kb/vmem_lookup.json; never by an extractor"
+   }
+  },
+  "dead_count": {
+   "part": "outcome",
+   "type": "int or null"
+  },
+  "source_type": {
+   "part": "setup",
+   "type": "enum",
+   "values": [
+    "paper",
+    "preprint",
+    "thesis",
+    "dataset",
+    "source_data",
+    "review_file",
+    "screen",
+    "database",
+    "drug_label",
+    "regulatory_review",
+    "patent",
+    "grant_report",
+    "abstract",
+    "protocol",
+    "teaching",
+    "old_scan"
+   ],
+   "desc": "where the row came from; see config/sources.json"
+  },
+  "derived": {
+   "part": "setup",
+   "type": "object",
+   "desc": "Top-level underscore fields (_agent_id, _components, _target_id, _target_components, _target_class, _fragment, _delivery, _field_dir, _dose_bucket, _timing_bucket, _duration_bucket, _lineage) are written by harness/derive_features.py only"
+  }
+ },
+ "setup_fields": [
+  "item_id",
+  "split",
+  "source",
+  "organism",
+  "species",
+  "task_family",
+  "stage",
+  "injury",
+  "intervention",
+  "readout",
+  "n_total",
+  "evidence_tier",
+  "arm_role",
+  "drug",
+  "source_type"
+ ],
+ "outcome_fields": [
+  "item_id",
+  "outcomes",
+  "outcome_from_percent",
+  "result_is_null",
+  "notes",
+  "dead_count"
+ ]
 }

@@ -1,4 +1,4 @@
 {
-  "note": "ALL_SETUP = every setup column (see ALL_SETUP in harness/temporal_holdout.py). Do not hand-pick features: picking them after reading the literature leaks later results. Seal this file as temporal_features before running.",
-  "features": "ALL_SETUP"
+  "note": "Plan v1 (after red-team 1) feature list, fixed before any outcome row was scored. Closed vocabularies only, all built by harness/derive_features.py from sealed lookups; no free text, no arm_role, no readout, no n_total, no year, no lab. Sealed as temporal_features.",
+  "features": ["organism", "species", "_fragment", "intervention.type", "_target_id", "_target_class", "_agent_id", "intervention.action", "_delivery", "_field_dir", "drug.vmem_direction_pred", "_dose_bucket", "_timing_bucket", "_duration_bucket"]
 }
