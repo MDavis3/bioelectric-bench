@@ -78,6 +78,7 @@
   },
   "db_params_v1": {
     "copy": "sealed/db_params_v1__e13f54e954c4.json",
+    "remote_commit": "6146ca9571ec6a05f5813041ece7058f630a0526",
     "sha256": "e13f54e954c4bca2cd53998f43aedc618d47207343d316f89762a60e653f30b1",
     "source": "config/db_params_v1.json",
     "utc": "2026-11-10T16:53:00Z"
