@@ -281,6 +281,7 @@
   },
   "q017_cited_cases_v1": {
     "copy": "sealed/q017_cited_cases_v1__adb21291ce36.json",
+    "remote_commit": "dfb3d774bf1a27d32e854ecce9b050266969fc11",
     "sha256": "adb21291ce365ec34281c12a76b0c213d18426f1d9d4012a4b49e6d558b5685f",
     "source": "config/q017_cited_cases_v1.json",
     "utc": "2026-11-10T18:30:14Z"
