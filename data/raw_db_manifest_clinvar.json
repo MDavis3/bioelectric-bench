@@ -1,0 +1,14 @@
+{
+ "note": "ClinVar fetched manually by the owner (NCBI robots.txt disallows automated fetching); transferred via iCloud Drive; md5 checked against NCBI's .md5 file.",
+ "files": [
+  {
+   "file": "data/raw_db/clinvar/variant_summary.txt.gz",
+   "url": "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/variant_summary.txt.gz",
+   "bytes": 458376982,
+   "sha256": "73b550a4e241d386ac1600b27e01e62badcc5fd6276b94b9d77058b9e90801fe",
+   "md5_expected": "d2bb73808fcfbcc1f17ac243f5ef994d",
+   "received_utc": "2026-11-10",
+   "licence": "public domain (NCBI ClinVar)"
+  }
+ ]
+}
