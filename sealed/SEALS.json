@@ -8,6 +8,7 @@
   },
   "temporal_rules": {
     "copy": "sealed/temporal_rules__69da26e3825b.json",
+    "remote_commit": "8654b41c2a73204092551e51c9d53d10ba6398f6",
     "sha256": "69da26e3825bf92faa2f558952a50147626b5bc3061adf626e9d5657be08666d",
     "source": "config/rules.json",
     "utc": "2026-11-10T05:38:09Z"
