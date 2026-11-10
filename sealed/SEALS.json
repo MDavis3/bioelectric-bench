@@ -48,6 +48,12 @@
     "source": "config/db_endpoint_roots_v1.json",
     "utc": "2026-11-10T16:38:16Z"
   },
+  "db_nn_features_v1": {
+    "copy": "sealed/db_nn_features_v1__a8eb54733d85.jsonl",
+    "sha256": "a8eb54733d85e5bc1d1bc67c1e5597f5d799d93eb3bf0d1460e68c649328ed0e",
+    "source": "data/db_setup/nn_features.jsonl",
+    "utc": "2026-11-10T16:38:29Z"
+  },
   "db_units_setup_v1": {
     "copy": "sealed/db_units_setup_v1__70644def60b1.csv",
     "remote_commit": "33232a26271935a2483fa4075750a881845398cc",
