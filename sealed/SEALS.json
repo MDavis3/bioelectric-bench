@@ -307,6 +307,12 @@
     "source": "config/q017_cited_cases_v1.json",
     "utc": "2026-11-10T18:30:14Z"
   },
+  "q017_outcome_hash": {
+    "copy": "sealed/q017_outcome_hash__0d84f12c5956.sha256",
+    "sha256": "0d84f12c5956b89dca3e5322781b8fdd5dd21ce22766aeb18e5687b343d8c7d2",
+    "source": "data/db_setup/q017_outcome.sha256",
+    "utc": "2026-11-10T19:12:08Z"
+  },
   "q017_prereg": {
     "copy": "sealed/q017_prereg__9b1fd9b4f0cf.md",
     "remote_commit": "ce8bf27e8be6302b4575d3f9f079ddf21a339088",
