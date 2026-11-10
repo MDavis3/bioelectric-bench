@@ -5,5 +5,11 @@
     "sha256": "10fbc5aa6ba19a81551e9efa6d24779edcc7a29d5de597976ccf3b0fa3279f2f",
     "source": "kb/vmem_lookup.json",
     "utc": "2026-11-10T05:37:53Z"
+  },
+  "vmem_rule": {
+    "copy": "sealed/vmem_rule__0bb768a12b9b.md",
+    "sha256": "0bb768a12b9b0403d3e573ef86cd6ba89c16960dbc237e1abb5688962a3de995",
+    "source": "kb/vmem_rule.md",
+    "utc": "2026-11-10T05:38:03Z"
   }
 }
