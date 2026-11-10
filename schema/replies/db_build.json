@@ -1,0 +1,6 @@
+{
+ "fields": ["n_units", "n_class", "n_control", "n_grey", "n_other", "n_class_blocks", "n_control_blocks", "n_blocks",
+            "n_Y_all_genes", "n_eligible_records", "n_no_human_anchor", "problem_code"],
+ "keyed_by": "stratum",
+ "keys": ["mouse_mgi_only", "mouse_impc_only", "mouse_mgi_and_impc", "zebrafish_zfin", "all"]
+}

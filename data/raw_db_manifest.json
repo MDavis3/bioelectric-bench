@@ -1,0 +1,614 @@
+[
+ {
+  "source": "monarch",
+  "url": "https://data.monarchinitiative.org/monarch-kg/latest/monarch-kg.tar.gz",
+  "local_path": "data/raw_db/monarch/monarch-kg.tar.gz",
+  "bytes": 343952433,
+  "sha256": "71b506f5d0f125f591846b952141251dccde7a012fc23b857b3e3f8d675b93ef",
+  "fetched_utc": "2026-11-10T15:51:55Z",
+  "license": "CC-BY-4.0 (Monarch KG; component source licenses in metadata.yaml)",
+  "robots_ok": true
+ },
+ {
+  "source": "monarch",
+  "url": "https://data.monarchinitiative.org/monarch-kg/latest/metadata.yaml",
+  "local_path": "data/raw_db/monarch/metadata.yaml",
+  "bytes": 46235,
+  "sha256": "84d984bf0f6a70603ca964e4db46e155a801f3f0b4f002647751d56b86c6f8b1",
+  "fetched_utc": "2026-11-10T15:51:55Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "monarch",
+  "url": "https://data.monarchinitiative.org/mappings/latest/upheno-cross-species.sssom.tsv",
+  "local_path": "data/raw_db/monarch/upheno-cross-species.sssom.tsv",
+  "bytes": 8346767,
+  "sha256": "133b2ac088b23a13cd26020c83730520e620fbaa65c8e7314a195cc3a6b53df4",
+  "fetched_utc": "2026-11-10T15:51:56Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "monarch",
+  "url": "https://data.monarchinitiative.org/mappings/latest/upheno-species-independent.sssom.tsv",
+  "local_path": "data/raw_db/monarch/upheno-species-independent.sssom.tsv",
+  "bytes": 6980013,
+  "sha256": "5edf70b905980896361770f4303273aab5c5604271ff715b63189b28f61ee291",
+  "fetched_utc": "2026-11-10T15:51:57Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "alliance",
+  "url": "https://fms.alliancegenome.org/download/ORTHOLOGY-ALLIANCE_COMBINED.tsv.gz",
+  "local_path": "data/raw_db/alliance/ORTHOLOGY-ALLIANCE_COMBINED.tsv.gz",
+  "bytes": 15302140,
+  "sha256": "977ad252878d25a6cf486a9054448feff0e308e83e2fe5d6e8b6ec31c45491d4",
+  "fetched_utc": "2026-11-10T15:51:46Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "zfin",
+  "url": "https://zfin.org/downloads/phenoGeneCleanData_fish.txt",
+  "local_path": "data/raw_db/zfin/phenoGeneCleanData_fish.txt",
+  "bytes": 45120695,
+  "sha256": "6eb3d07b5fab66738abf8d31dab8ba065765b40703752f0555e63866f6c04d76",
+  "fetched_utc": "2026-11-10T15:51:54Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "zfin",
+  "url": "https://zfin.org/downloads/phenotype_fish.txt",
+  "local_path": "data/raw_db/zfin/phenotype_fish.txt",
+  "bytes": 55730608,
+  "sha256": "91742b54d9c229dd7bdf1b72b431790cc4a3652a712c4c9862c1a8a50af089b4",
+  "fetched_utc": "2026-11-10T15:52:04Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "zfin",
+  "url": "https://zfin.org/downloads/pheno_environment_fish.txt",
+  "local_path": "data/raw_db/zfin/pheno_environment_fish.txt",
+  "bytes": 1783801,
+  "sha256": "1e4a95eb069c70284fc0afa6a427eae06ca37918d89c1f62d815d5448352b4e9",
+  "fetched_utc": "2026-11-10T15:52:05Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "zfin",
+  "url": "https://zfin.org/downloads/fish_model_disease.txt",
+  "local_path": "data/raw_db/zfin/fish_model_disease.txt",
+  "bytes": 419987,
+  "sha256": "1d20f28be10959c91d43560f8d09718fb4a6459894ffe0ca6c3ebc2a926059a4",
+  "fetched_utc": "2026-11-10T15:52:06Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "zfin",
+  "url": "https://zfin.org/downloads/fish_components_fish.txt",
+  "local_path": "data/raw_db/zfin/fish_components_fish.txt",
+  "bytes": 15438513,
+  "sha256": "52dfa23cb27f9528da7ce5ef11d35df99861f1a5a5a855d30cf69255755d57b6",
+  "fetched_utc": "2026-11-10T15:52:08Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "zfin",
+  "url": "https://zfin.org/downloads/genotype_features.txt",
+  "local_path": "data/raw_db/zfin/genotype_features.txt",
+  "bytes": 10882060,
+  "sha256": "0b71e8d50239cb203a03073556f0ec86e9057418e1a7f2a93f9a06b6709b68ed",
+  "fetched_utc": "2026-11-10T15:52:10Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "zfin",
+  "url": "https://zfin.org/downloads/features.txt",
+  "local_path": "data/raw_db/zfin/features.txt",
+  "bytes": 9820838,
+  "sha256": "fc620f583b14bbce71c21614f6b1748bdc19d9fecdcdbbb36465d0338c0237a1",
+  "fetched_utc": "2026-11-10T15:52:12Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "zfin",
+  "url": "https://zfin.org/downloads/Morpholinos.txt",
+  "local_path": "data/raw_db/zfin/Morpholinos.txt",
+  "bytes": 1999307,
+  "sha256": "c062269e149a722ec9297213d032d8aee21a1dfc36d64d2887e2bf11efbe166d",
+  "fetched_utc": "2026-11-10T15:52:14Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "zfin",
+  "url": "https://zfin.org/downloads/CRISPR.txt",
+  "local_path": "data/raw_db/zfin/CRISPR.txt",
+  "bytes": 2529137,
+  "sha256": "52494bd32241324779e8ee8b5a64545b2cabb9de4a807c0c3eceef1071cb1b53",
+  "fetched_utc": "2026-11-10T15:52:15Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "zfin",
+  "url": "https://zfin.org/downloads/TALEN.txt",
+  "local_path": "data/raw_db/zfin/TALEN.txt",
+  "bytes": 157285,
+  "sha256": "1a38dae4ddc70d5d6721256548097aa156d406235002ba215bd24dd04fa0a153",
+  "fetched_utc": "2026-11-10T15:52:16Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "zfin",
+  "url": "https://zfin.org/downloads/human_orthos.txt",
+  "local_path": "data/raw_db/zfin/human_orthos.txt",
+  "bytes": 9738081,
+  "sha256": "ff70994f04ba1528070443686bb502806f14fd88ab2cac5723fac80b83298423",
+  "fetched_utc": "2026-11-10T15:52:19Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "zfin",
+  "url": "https://zfin.org/downloads/gene.txt",
+  "local_path": "data/raw_db/zfin/gene.txt",
+  "bytes": 1091768,
+  "sha256": "adc84345e6b84600406e832d184818ff78b58a5916bcf72c05012b69c71b4d3b",
+  "fetched_utc": "2026-11-10T15:52:20Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "xenbase",
+  "url": "https://download.xenbase.org/xenbase/GenePageReports/GenePhenoRef.txt",
+  "local_path": "data/raw_db/xenbase/GenePhenoRef.txt",
+  "bytes": 2637480,
+  "sha256": "6d3bccfc285f153d465288fa433731036a9eda156c6d1f7f02b88ce3119cf4e8",
+  "fetched_utc": "2026-11-10T15:51:46Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "xenbase",
+  "url": "https://download.xenbase.org/xenbase/GenePageReports/XenbaseGeneHumanOrthologMapping.txt",
+  "local_path": "data/raw_db/xenbase/XenbaseGeneHumanOrthologMapping.txt",
+  "bytes": 1054887,
+  "sha256": "a1fe78816a1b4baf987b761a2ad8a71b2b8862ad957b0696f438c40244adadb4",
+  "fetched_utc": "2026-11-10T15:51:47Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "xenbase",
+  "url": "https://download.xenbase.org/xenbase/GenePageReports/GenePageGeneralInfo_ManuallyCurated.txt",
+  "local_path": "data/raw_db/xenbase/GenePageGeneralInfo_ManuallyCurated.txt",
+  "bytes": 2188594,
+  "sha256": "a2318b142dd09c1a2f206fc16596b94ae460961acc4065317cebdeaafb936293",
+  "fetched_utc": "2026-11-10T15:51:51Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "mgi",
+  "url": "https://www.informatics.jax.org/downloads/reports/MGI_GenePheno.rpt",
+  "local_path": "data/raw_db/mgi/MGI_GenePheno.rpt",
+  "bytes": 37717217,
+  "sha256": "fc5107ead9b7301170b7e5a6a6da99ac2117e10de05d182e876d4eeb259a32c1",
+  "fetched_utc": "2026-11-10T15:51:42Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "mgi",
+  "url": "https://www.informatics.jax.org/downloads/reports/MGI_PhenoGenoMP.rpt",
+  "local_path": "data/raw_db/mgi/MGI_PhenoGenoMP.rpt",
+  "bytes": 54182559,
+  "sha256": "9da483fe0d119655758e636a2a951384b5f308d4f53af0a0a40876ae6653fdd6",
+  "fetched_utc": "2026-11-10T15:53:01Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "mgi",
+  "url": "https://www.informatics.jax.org/downloads/reports/MGI_PhenotypicAllele.rpt",
+  "local_path": "data/raw_db/mgi/MGI_PhenotypicAllele.rpt",
+  "bytes": 32385502,
+  "sha256": "5059cfe5a6cfd77d1e8a267a6ce88481a559bd3140e4a53774f243ee48d76d14",
+  "fetched_utc": "2026-11-10T15:52:15Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "mgi",
+  "url": "https://www.informatics.jax.org/downloads/reports/HOM_MouseHumanSequence.rpt",
+  "local_path": "data/raw_db/mgi/HOM_MouseHumanSequence.rpt",
+  "bytes": 15112917,
+  "sha256": "0b8eb746eb41eb9505b3bf3c5c8b986aba8a51e6a75df77642dcac34322aeb06",
+  "fetched_utc": "2026-11-10T15:52:16Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "mgi",
+  "url": "https://www.informatics.jax.org/downloads/reports/HMD_HumanPhenotype.rpt",
+  "local_path": "data/raw_db/mgi/HMD_HumanPhenotype.rpt",
+  "bytes": 1991561,
+  "sha256": "5cd812b1825038859ae1d18b7073ed5590d6f8303fa442df8a4d9772139a7dcb",
+  "fetched_utc": "2026-11-10T15:52:17Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "mgi",
+  "url": "https://www.informatics.jax.org/downloads/reports/MRK_List2.rpt.gz",
+  "local_path": "data/raw_db/mgi/MRK_List2.rpt.gz",
+  "bytes": 12521440,
+  "sha256": "7f3253da1e605530108f06c0a4032ef90e4368d9869f99ba095dacdb25c8bc87",
+  "fetched_utc": "2026-11-10T15:52:19Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "mgi",
+  "url": "https://www.informatics.jax.org/downloads/reports/VOC_MammalianPhenotype.rpt",
+  "local_path": "data/raw_db/mgi/VOC_MammalianPhenotype.rpt",
+  "bytes": 2966351,
+  "sha256": "4f4fe2536a1556724da1cb9c69471067db9b4bb9adc9e039a285147f45616493",
+  "fetched_utc": "2026-11-10T15:52:20Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "flybase",
+  "url": "https://s3ftp.flybase.org/releases/current/precomputed_files/alleles/genotype_phenotype_data_fb_2026_03.tsv.gz",
+  "local_path": "data/raw_db/flybase/genotype_phenotype_data_fb_2026_03.tsv.gz",
+  "bytes": 4295132,
+  "sha256": "57468fbce2ad4a26809926041fc440c2b3e074a68f9804308fde364ea83f5aec",
+  "fetched_utc": "2026-11-10T15:51:39Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "flybase",
+  "url": "https://s3ftp.flybase.org/releases/current/precomputed_files/alleles/dmel_classical_and_insertion_allele_descriptions_fb_2026_03.tsv.gz",
+  "local_path": "data/raw_db/flybase/dmel_classical_and_insertion_allele_descriptions_fb_2026_03.tsv.gz",
+  "bytes": 3521133,
+  "sha256": "7edfce751a083880426b71c69f4e4d19a47e30f39b56f90aced85026cffa56ae",
+  "fetched_utc": "2026-11-10T15:51:40Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "flybase",
+  "url": "https://s3ftp.flybase.org/releases/current/precomputed_files/genes/gene_group_data_fb_2026_03.tsv.gz",
+  "local_path": "data/raw_db/flybase/gene_group_data_fb_2026_03.tsv.gz",
+  "bytes": 148791,
+  "sha256": "3dc90b387ba061707fbf81245e68b1a26d2ae77057d03f3c58f67817e0f6e5ee",
+  "fetched_utc": "2026-11-10T15:51:40Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "flybase",
+  "url": "https://s3ftp.flybase.org/releases/current/precomputed_files/genes/gene_groups_HGNC_fb_2026_03.tsv.gz",
+  "local_path": "data/raw_db/flybase/gene_groups_HGNC_fb_2026_03.tsv.gz",
+  "bytes": 32381,
+  "sha256": "8464c06038791e572b04e6971411f7e6bb90caadd1027493f26ec184b1b2e0f5",
+  "fetched_utc": "2026-11-10T15:51:40Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "flybase",
+  "url": "https://s3ftp.flybase.org/releases/current/precomputed_files/genes/fbgn_fbtr_fbpp_fb_2026_03.tsv.gz",
+  "local_path": "data/raw_db/flybase/fbgn_fbtr_fbpp_fb_2026_03.tsv.gz",
+  "bytes": 266327,
+  "sha256": "935057daf31137cb3687ba5d855a8a93b0b0404351172dffcbe803780ab8234f",
+  "fetched_utc": "2026-11-10T15:51:41Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "flybase",
+  "url": "https://s3ftp.flybase.org/releases/current/precomputed_files/genes/fbgn_annotation_ID_fb_2026_03.tsv.gz",
+  "local_path": "data/raw_db/flybase/fbgn_annotation_ID_fb_2026_03.tsv.gz",
+  "bytes": 239903,
+  "sha256": "368327a0c41eadf3606cdc3f9ac75918f4c99dff7cf33c07d1d50904fb757aaf",
+  "fetched_utc": "2026-11-10T15:51:41Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "flybase",
+  "url": "https://s3ftp.flybase.org/releases/current/precomputed_files/orthologs/dmel_human_orthologs_disease_fb_2026_03.tsv.gz",
+  "local_path": "data/raw_db/flybase/dmel_human_orthologs_disease_fb_2026_03.tsv.gz",
+  "bytes": 765078,
+  "sha256": "ec0224b656d1d9d332942820ce849182ec8fe01ca86e9efe78c177fdc0a7f7dd",
+  "fetched_utc": "2026-11-10T15:51:42Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "flybase",
+  "url": "https://s3ftp.flybase.org/releases/current/precomputed_files/synonyms/fb_synonym_fb_2026_03.tsv.gz",
+  "local_path": "data/raw_db/flybase/fb_synonym_fb_2026_03.tsv.gz",
+  "bytes": 11943023,
+  "sha256": "e229f1a3be7124fa04fd70e04db4432e9bddcde38408d8840af2caedd002ecce",
+  "fetched_utc": "2026-11-10T15:51:44Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "flybase",
+  "url": "https://s3ftp.flybase.org/releases/current/precomputed_files/md5sum.txt",
+  "local_path": "data/raw_db/flybase/md5sum.txt",
+  "bytes": 6361,
+  "sha256": "b1578afd635f2a49381634dd2227d51b17449b73d45205590119d22ff58d8d8d",
+  "fetched_utc": "2026-11-10T15:51:44Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "hpo",
+  "url": "https://purl.obolibrary.org/obo/hp/hpoa/genes_to_phenotype.txt",
+  "local_path": "data/raw_db/hpo/genes_to_phenotype.txt",
+  "bytes": 20821704,
+  "sha256": "507a17bff9c49e6329fbd88b1f91734fa7e9fdea5c06304044c0892eb6ab248c",
+  "fetched_utc": "2026-11-10T15:51:44Z",
+  "license": "HPO license (free with attribution; hpo.jax.org/license)",
+  "robots_ok": true
+ },
+ {
+  "source": "hpo",
+  "url": "https://purl.obolibrary.org/obo/hp/hpoa/phenotype.hpoa",
+  "local_path": "data/raw_db/hpo/phenotype.hpoa",
+  "bytes": 35816037,
+  "sha256": "e89aa39c8f97bf5a52c5d160f9250a603681d630ade8ec2679d84ac5aece1f72",
+  "fetched_utc": "2026-11-10T15:51:46Z",
+  "license": "HPO license (free with attribution; hpo.jax.org/license)",
+  "robots_ok": true
+ },
+ {
+  "source": "hpo",
+  "url": "https://purl.obolibrary.org/obo/hp.obo",
+  "local_path": "data/raw_db/hpo/hp.obo",
+  "bytes": 10863613,
+  "sha256": "93dace952fcb3ec4728818857f6ba76bc2d5312f4d83266519b8694b8e798f22",
+  "fetched_utc": "2026-11-10T15:51:47Z",
+  "license": "HPO license (free with attribution; hpo.jax.org/license)",
+  "robots_ok": true
+ },
+ {
+  "source": "ontologies",
+  "url": "https://purl.obolibrary.org/obo/uberon/uberon-basic.obo",
+  "local_path": "data/raw_db/ontologies/uberon-basic.obo",
+  "bytes": 12161460,
+  "sha256": "1f119822dc2dfd7acf973fa1534e692d971064caecae6b7701d3221f1810a397",
+  "fetched_utc": "2026-11-10T15:51:48Z",
+  "license": "CC-BY-3.0",
+  "robots_ok": true
+ },
+ {
+  "source": "ontologies",
+  "url": "https://purl.obolibrary.org/obo/mp.obo",
+  "local_path": "data/raw_db/ontologies/mp.obo",
+  "bytes": 7730549,
+  "sha256": "bee6fb90d6b8da406c1a55804f1c28702460c2e7b6b2dc87fdc42890cf96fbd4",
+  "fetched_utc": "2026-11-10T15:51:56Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "ontologies",
+  "url": "https://purl.obolibrary.org/obo/zp.obo",
+  "local_path": "data/raw_db/ontologies/zp.obo",
+  "bytes": 28918514,
+  "sha256": "890ac6d03d64cce6cf1c859fd769792b42a312ee8a6e96f2af3e56a337625732",
+  "fetched_utc": "2026-11-10T15:51:58Z",
+  "license": "CC-BY-3.0",
+  "robots_ok": true
+ },
+ {
+  "source": "ontologies",
+  "url": "https://purl.obolibrary.org/obo/xpo.obo",
+  "local_path": "data/raw_db/ontologies/xpo.obo",
+  "bytes": 11508476,
+  "sha256": "5ee33faf373de157dd077ec33aee1d3dc1f5c92dd1e02991554110b444f0f6c8",
+  "fetched_utc": "2026-11-10T15:51:58Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "ontologies",
+  "url": "https://purl.obolibrary.org/obo/fbcv.obo",
+  "local_path": "data/raw_db/ontologies/fbcv.obo",
+  "bytes": 568780,
+  "sha256": "a74a6afd769930acfc7e7ec9e5f3e6c0a0747787fb92b272bcd19f1dd0734305",
+  "fetched_utc": "2026-11-10T15:51:59Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "ontologies",
+  "url": "https://purl.obolibrary.org/obo/fbbt/fbbt-simple.obo",
+  "local_path": "data/raw_db/ontologies/fbbt-simple.obo",
+  "bytes": 38784458,
+  "sha256": "8bcdd810e2bcfa31d10e38af5c0aca7c3a3051c8e5c146ae7c7a3362bed13068",
+  "fetched_utc": "2026-11-10T15:52:00Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "ontologies",
+  "url": "https://purl.obolibrary.org/obo/go/go-basic.obo",
+  "local_path": "data/raw_db/ontologies/go-basic.obo",
+  "bytes": 32227785,
+  "sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "fetched_utc": "2026-11-10T15:52:01Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "ontologies",
+  "url": "https://github.com/obophenotype/upheno-dev/releases/download/v2025-07-21/upheno-base-with-bridge.obo",
+  "local_path": "data/raw_db/ontologies/upheno-base-with-bridge.obo",
+  "bytes": 30385444,
+  "sha256": "04b9af7106c2d7f2309a5258bcd26f8967cb775bc283cf561dafb8d4a5caf20f",
+  "fetched_utc": "2026-11-10T15:51:41Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "hgnc",
+  "url": "https://storage.googleapis.com/public-download-files/hgnc/tsv/tsv/hgnc_complete_set.txt",
+  "local_path": "data/db_setup/hgnc/hgnc_complete_set.txt",
+  "bytes": 16994064,
+  "sha256": "3944cdad7affce5bc2c7d63d7079d7e68762ed28ef414fc287cc0f57c4b0d78f",
+  "fetched_utc": "2026-11-10T15:51:41Z",
+  "license": "CC0-1.0",
+  "robots_ok": true
+ },
+ {
+  "source": "hgnc",
+  "url": "https://storage.googleapis.com/public-download-files/hgnc/csv/csv/genefamily_db_tables/family.csv",
+  "local_path": "data/db_setup/hgnc/family.csv",
+  "bytes": 1029544,
+  "sha256": "71ba631546b81911331345096befa269105362385927b31fbc61d726752d2c48",
+  "fetched_utc": "2026-11-10T15:51:42Z",
+  "license": "CC0-1.0",
+  "robots_ok": true
+ },
+ {
+  "source": "hgnc",
+  "url": "https://storage.googleapis.com/public-download-files/hgnc/csv/csv/genefamily_db_tables/hierarchy.csv",
+  "local_path": "data/db_setup/hgnc/hierarchy.csv",
+  "bytes": 22999,
+  "sha256": "fc3a1c584bf7bae83320ac7e887c6856479eb57d45a44e135919b163ad085dda",
+  "fetched_utc": "2026-11-10T15:51:43Z",
+  "license": "CC0-1.0",
+  "robots_ok": true
+ },
+ {
+  "source": "hgnc",
+  "url": "https://storage.googleapis.com/public-download-files/hgnc/csv/csv/genefamily_db_tables/hierarchy_closure.csv",
+  "local_path": "data/db_setup/hgnc/hierarchy_closure.csv",
+  "bytes": 105373,
+  "sha256": "92b776a22fbfb053193479ae8cb3fb5464af5bebaee86407feefc9a5651425c9",
+  "fetched_utc": "2026-11-10T15:51:44Z",
+  "license": "CC0-1.0",
+  "robots_ok": true
+ },
+ {
+  "source": "hgnc",
+  "url": "https://storage.googleapis.com/public-download-files/hgnc/csv/csv/genefamily_db_tables/gene_has_family.csv",
+  "local_path": "data/db_setup/hgnc/gene_has_family.csv",
+  "bytes": 521307,
+  "sha256": "b332303b5e253201fb12bd0160a7ac0b7da9c5a993840b24a149656a32959030",
+  "fetched_utc": "2026-11-10T15:51:45Z",
+  "license": "CC0-1.0",
+  "robots_ok": true
+ },
+ {
+  "source": "iuphar",
+  "url": "https://www.guidetopharmacology.org/DATA/targets_and_families.csv",
+  "local_path": "data/db_setup/iuphar/targets_and_families.csv",
+  "bytes": 1896910,
+  "sha256": "9e91ae4eed1e147f0c5b01dd2e0645c2d57edb39442114d3128c70232b0d39fb",
+  "fetched_utc": "2026-11-10T15:51:41Z",
+  "license": "CC-BY-SA-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "iuphar",
+  "url": "https://www.guidetopharmacology.org/DATA/GtP_to_HGNC_mapping.csv",
+  "local_path": "data/db_setup/iuphar/GtP_to_HGNC_mapping.csv",
+  "bytes": 479045,
+  "sha256": "67ae9e8adf62e1874f3474e8502b817b4ef451fdb424907e1424690b9831ae03",
+  "fetched_utc": "2026-11-10T15:51:43Z",
+  "license": "CC-BY-SA-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "go",
+  "url": "https://current.geneontology.org/annotations/goa_human.gaf.gz",
+  "local_path": "data/db_setup/go/goa_human.gaf.gz",
+  "bytes": 15041996,
+  "sha256": "db472faff1785878521693af62646546cea6af4a386609dd01c72c0554a46a30",
+  "fetched_utc": "2026-11-10T15:51:39Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "go",
+  "url": "https://current.geneontology.org/annotations/mgi.gaf.gz",
+  "local_path": "data/db_setup/go/mgi.gaf.gz",
+  "bytes": 14020707,
+  "sha256": "9b7613f786f9f805531a8f6768f310220d28c82095f938e1212c86f39596ce30",
+  "fetched_utc": "2026-11-10T15:51:42Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "go",
+  "url": "https://current.geneontology.org/annotations/zfin.gaf.gz",
+  "local_path": "data/db_setup/go/zfin.gaf.gz",
+  "bytes": 9042741,
+  "sha256": "0e922ea240dc04d00ff3855222cc775ef1aa9e750816ecbf7fd673ae63d112e7",
+  "fetched_utc": "2026-11-10T15:51:43Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "go",
+  "url": "https://current.geneontology.org/annotations/fb.gaf.gz",
+  "local_path": "data/db_setup/go/fb.gaf.gz",
+  "bytes": 4130648,
+  "sha256": "f3b3ad14a1fd8e86569564d884d53059b7f7c7d3ec973cf2955ffb54c631aad3",
+  "fetched_utc": "2026-11-10T15:51:44Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "go",
+  "url": "https://current.geneontology.org/annotations/xenbase.gaf.gz",
+  "local_path": "data/db_setup/go/xenbase.gaf.gz",
+  "bytes": 7984594,
+  "sha256": "5f9df317beb007ae6586bb7cf02869147f565919c383fb887f9c690cfc7e0f0b",
+  "fetched_utc": "2026-11-10T15:51:44Z",
+  "license": "CC-BY-4.0",
+  "robots_ok": true
+ },
+ {
+  "source": "impc",
+  "url": "https://ftp.ebi.ac.uk/pub/databases/impc/all-data-releases/latest/results/",
+  "local_path": null,
+  "bytes": null,
+  "sha256": null,
+  "fetched_utc": null,
+  "license": "CC-BY-4.0",
+  "robots_ok": false,
+  "note": "ftp.ebi.ac.uk robots.txt: User-agent * Disallow / ; not fetched"
+ },
+ {
+  "source": "alliance",
+  "url": "https://fms.alliancegenome.org/download/PHENOTYPE-ALLIANCE_COMBINED.tsv.gz",
+  "local_path": null,
+  "bytes": null,
+  "sha256": null,
+  "fetched_utc": null,
+  "license": "CC-BY-4.0",
+  "robots_ok": true,
+  "note": "FMS returns HTTP 500; no PHENOTYPE-ALLIANCE datafile registered; not fetched"
+ }
+]

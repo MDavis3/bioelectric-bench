@@ -11,3 +11,7 @@ inbox/*
 # Database dumps (licensed; outcome-bearing; fetched by scripts, hashes in data/raw_db_manifest.json)
 data/raw_db/
 data/db_restricted/
+data/db_setup/ontologies/
+data/db_setup/go/
+data/db_setup/hgnc/
+data/db_setup/iuphar/
