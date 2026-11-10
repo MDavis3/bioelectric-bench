@@ -139,6 +139,12 @@
     "source": "schema/extraction_schema.json",
     "utc": "2026-11-10T06:34:18Z"
   },
+  "faers_probe_v1": {
+    "copy": "sealed/faers_probe_v1__1f1459290db3.md",
+    "sha256": "1f1459290db3183fe8a9ddd306db429faa4d02f39a48e5f35c69afcd7ca138ef",
+    "source": "plans/faers_probe_v1.md",
+    "utc": "2026-11-10T18:36:29Z"
+  },
   "firewall_allow_v2": {
     "copy": "sealed/firewall_allow_v2__2c60a5b92bf9.json",
     "remote_commit": "666d5eb81085255a585caa135651e1f4fe2e9c0e",
