@@ -169,6 +169,7 @@
   },
   "firewall_allow_v6": {
     "copy": "sealed/firewall_allow_v6__0167c26db718.json",
+    "remote_commit": "b553abf1c37c2dbab2be5ce82597cd82264427a2",
     "sha256": "0167c26db718a8528ed99eea548a18ed18838c2eb943312513976d45e68fffc4",
     "source": "config/firewall_allow_v6.json",
     "utc": "2026-11-10T17:14:07Z"
