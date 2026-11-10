@@ -50,6 +50,7 @@
   },
   "holdout_params_v2": {
     "copy": "sealed/holdout_params_v2__6037ba6a6afd.json",
+    "remote_commit": "99d66b836a8bf7dc36a32be3659d2107577d6a17",
     "sha256": "6037ba6a6afd93b2f039eabbec080e63fca9ab8f68a15da71df96605840f59a9",
     "source": "config/holdout_params_v2.json",
     "utc": "2026-11-10T09:19:35Z"
