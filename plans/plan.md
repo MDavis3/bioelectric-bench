@@ -61,3 +61,26 @@ A: cutoff 2026-06-30 + 90 days = 2026-09-28; about six weeks of literature, effe
 ## Sealed predictions for labs
 
 None are issued from this session. A prediction is only sealed when it comes from the sealed memoryless model, states what `knn_smoothed` and the majority baseline predict for the same setup, and differs from them by a stated margin.
+
+## Adopted endpoints (v1.2, 2026-11-09, before any real outcome was scored by any holdout)
+
+Supersedes the endpoint section above. Sources: plans/redteam_1.md, plans/endpoint_revision_1.md, plans/endpoint_review_1.md.
+Implemented in harness/holdout2.py (sealed via config/harness_manifest.json).
+
+- Primary learner `nb_tempered`: naive Bayes on the sealed features, majority distribution as prior, feature
+  log-likelihoods scaled by T in {1, .5, .33, .2, .1, 0} chosen by 5-fold paper-level CV inside each training fold.
+  `covariate` uses the same tempered learner on non-mechanistic covariates.
+- Verdict rule, FAIL tested first: UNTESTABLE below 3 scored folds or 8 clusters; FAIL if any CI lower bound > -0.02;
+  PASS if every CI upper bound < 0; else INCONCLUSIVE.
+- P1: `nb_tempered` beats `covariate` AND `majority` in decade mode AND in lab-lineage mode. Species mode descriptive.
+- P2: the same in agent mode and in target mode, each also requiring the lineage-resampled CI below zero.
+- P3 (target mode): `core_vmem` beats `core_novmem` (core = sealed features minus the Vmem label's parents, plus
+  _lineage and _year_bucket), on direction-carrying rows only, clusters = directional targets (< 8 UNTESTABLE),
+  lineage CI below zero, label-permutation p < 0.05, and P3b: `core_class` minus `core_vmem` CI lower bound > -0.02.
+- Secondary P3 sensitivity (preregistered): rerun with the four contested class calls forced to null
+  (v_atpase, the k_channel/kv_channel split, k_ionophore, trp and new ligand-gated cation openers).
+- Calibration before sealing (synthetic worlds; params n_perm 40, n_boot 1000): planted voltage -> P2 PASS, P3 PASS;
+  null -> FAIL; one dominant lab -> INCONCLUSIVE; 4 directional targets -> P3 UNTESTABLE; class-not-voltage -> P3 FAIL (P3b);
+  lab confound -> FAIL.
+- Extraction routing for the confirmatory run: Sonnet + Opus, adjudicated by a fresh Opus blinded to pass identity,
+  with figure reading from PDFs/images where legally available (pilot showed coverage, not accuracy, is the failure).

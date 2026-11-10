@@ -1,0 +1,228 @@
+{
+  "endpoint": "descriptive (species)",
+  "verdict": "DRY RUN ON SHUFFLED OUTCOMES, NOT COUNTED. UNTESTABLE: 1 scored folds, 1 clusters (need 3 and 8).",
+  "p3": null,
+  "mode": "species",
+  "family": "planaria_ap_polarity",
+  "dry_run": true,
+  "seals": {
+    "temporal_features": "sealed 2026-11-10T06:34:13Z",
+    "temporal_rules": "sealed 2026-11-10T05:38:09Z",
+    "holdout_params": "sealed 2026-11-10T06:34:16Z",
+    "harness_manifest": "sealed 2026-11-10T06:34:24Z",
+    "lab_lineage_v2": "sealed 2026-11-10T06:03:46Z",
+    "vmem_lookup_v2": "sealed 2026-11-10T06:03:40Z",
+    "corpus_protocol": "sealed 2026-11-10T05:54:00Z",
+    "corpus_manifest": "sealed 2026-11-10T05:54:03Z"
+  },
+  "params": {
+    "note": "Every tunable of harness/holdout2.py. Sealed as holdout_params; the script takes no tunables from the command line.",
+    "primary_family": "planaria_ap_polarity",
+    "origins": [
+      1960,
+      1970,
+      1980,
+      1990,
+      2000,
+      2010,
+      2020
+    ],
+    "window": 10,
+    "min_train": 20,
+    "min_test": 1,
+    "min_folds": 3,
+    "min_clusters": 8,
+    "alpha": 1.0,
+    "k": 5,
+    "smooth": 0.02,
+    "sesoi_brier": 0.02,
+    "n_boot": 5000,
+    "n_perm": 200,
+    "seed": 0,
+    "covariates": [
+      "_year_bucket",
+      "_lineage",
+      "organism",
+      "intervention.type"
+    ]
+  },
+  "features": [
+    "organism",
+    "species",
+    "_fragment",
+    "intervention.type",
+    "_target_id",
+    "_target_class",
+    "_agent_id",
+    "intervention.action",
+    "_delivery",
+    "_field_dir",
+    "drug.vmem_direction_pred",
+    "_dose_bucket",
+    "_timing_bucket",
+    "_duration_bucket"
+  ],
+  "n_scored_items": 1,
+  "n_units": 1,
+  "n_papers": 9,
+  "n_rows": 102,
+  "n_lineages": 2,
+  "controls_excluded": 14,
+  "folds": [
+    {
+      "fold": "dugesia japonica",
+      "skipped": true,
+      "n_train": 1,
+      "n_test": 101
+    },
+    {
+      "fold": "schmidtea mediterranea",
+      "n_train": 101,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.2358144723748571,
+        "nb_tempered": 0.24324163641166988,
+        "covariate": 0.24324163641166988,
+        "knn_sealed": 0.21243255069964884,
+        "naive_bayes": 0.12215506953324647,
+        "nn_v1": 0.23581447237485717,
+        "rules": 0.3656868571428571
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    }
+  ],
+  "comparisons": {
+    "nb_tempered_minus_covariate": {
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "n_clusters": 1,
+      "clusters_favoring_first": 0,
+      "sign_flip_p": 1.0,
+      "item_weighted_mean": 0.0,
+      "lineage_ci95": [
+        0.0,
+        0.0
+      ],
+      "n_lineages": 1
+    },
+    "nb_tempered_minus_majority": {
+      "mean": 0.007427164036812789,
+      "ci95": [
+        0.007427164036812789,
+        0.007427164036812789
+      ],
+      "n_clusters": 1,
+      "clusters_favoring_first": 0,
+      "sign_flip_p": 1.0,
+      "item_weighted_mean": 0.007427164036812789,
+      "lineage_ci95": [
+        0.007427164036812789,
+        0.007427164036812789
+      ],
+      "n_lineages": 1
+    },
+    "knn_sealed_minus_majority": {
+      "mean": -0.02338192167520825,
+      "ci95": [
+        -0.02338192167520825,
+        -0.02338192167520825
+      ],
+      "n_clusters": 1,
+      "clusters_favoring_first": 1,
+      "sign_flip_p": 1.0,
+      "item_weighted_mean": -0.02338192167520825,
+      "lineage_ci95": [
+        -0.02338192167520825,
+        -0.02338192167520825
+      ],
+      "n_lineages": 1
+    },
+    "nb_tempered_minus_knn_sealed": {
+      "mean": 0.03080908571202104,
+      "ci95": [
+        0.03080908571202104,
+        0.03080908571202104
+      ],
+      "n_clusters": 1,
+      "clusters_favoring_first": 0,
+      "sign_flip_p": 1.0,
+      "item_weighted_mean": 0.03080908571202104,
+      "lineage_ci95": [
+        0.03080908571202104,
+        0.03080908571202104
+      ],
+      "n_lineages": 1
+    },
+    "naive_bayes_minus_majority": {
+      "mean": -0.11365940284161062,
+      "ci95": [
+        -0.11365940284161062,
+        -0.11365940284161062
+      ],
+      "n_clusters": 1,
+      "clusters_favoring_first": 1,
+      "sign_flip_p": 1.0,
+      "item_weighted_mean": -0.11365940284161062,
+      "lineage_ci95": [
+        -0.11365940284161062,
+        -0.11365940284161062
+      ],
+      "n_lineages": 1
+    },
+    "nn_v1_minus_majority": {
+      "mean": 8.326672684688674e-17,
+      "ci95": [
+        8.326672684688674e-17,
+        8.326672684688674e-17
+      ],
+      "n_clusters": 1,
+      "clusters_favoring_first": 0,
+      "sign_flip_p": 1.0,
+      "item_weighted_mean": 8.326672684688674e-17,
+      "lineage_ci95": [
+        8.326672684688674e-17,
+        8.326672684688674e-17
+      ],
+      "n_lineages": 1
+    },
+    "rules_minus_majority": {
+      "mean": 0.129872384768,
+      "ci95": [
+        0.129872384768,
+        0.129872384768
+      ],
+      "n_clusters": 1,
+      "clusters_favoring_first": 0,
+      "sign_flip_p": 1.0,
+      "item_weighted_mean": 0.129872384768,
+      "lineage_ci95": [
+        0.129872384768,
+        0.129872384768
+      ],
+      "n_lineages": 1
+    },
+    "covariate_minus_majority": {
+      "mean": 0.007427164036812789,
+      "ci95": [
+        0.007427164036812789,
+        0.007427164036812789
+      ],
+      "n_clusters": 1,
+      "clusters_favoring_first": 0,
+      "sign_flip_p": 1.0,
+      "item_weighted_mean": 0.007427164036812789,
+      "lineage_ci95": [
+        0.007427164036812789,
+        0.007427164036812789
+      ],
+      "n_lineages": 1
+    }
+  }
+}

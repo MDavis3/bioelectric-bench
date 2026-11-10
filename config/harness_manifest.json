@@ -1,0 +1,15 @@
+{
+  "note": "sha256 of files that determine holdout verdicts; sealed as harness_manifest",
+  "files": {
+    "harness/holdout2.py": "7d86b63d484ba03c66dbb98749b62f0ac1d7e111f313e9ea090f04aadca650cb",
+    "harness/derive_features.py": "a11632ea60de35633c3251a79746fe896aadadc721b9844d3018ad9cebd03a3a",
+    "harness/common.py": "98de41e7e31be2bca18f1428b2c05c1527c38fef38c01d4b5b65f4b18017ecde",
+    "harness/score.py": "484133c8494f1e6facbf306cdfeee94059b78d8ae065850a884c32677360e0ab",
+    "harness/temporal_holdout.py": "b8c2bdeb21f8646120131834d353312a83ccbcd2e3a98f15794d78b217ffecb6",
+    "config/active_schema.json": "2d7aa5846efe4673dcf471c16eb241675e50749c70de393b4d63d4e506bc783f",
+    "schema/outcome_categories.json": "e0907615ac517108572492b5e4d1c946eecc9f415ac02994605db48d217433ae",
+    "schema/extraction_schema.json": "8e71066ce2fc52b536685b593b3dc83382fbc43d1603d23d27e1521b50401570",
+    "extraction/INSTRUCTIONS.md": "05e5762a0114941e0b99f1fb835f8336a2c5acf15e512971ad8873a6bcd5d645",
+    "harness/validate_rows.py": "37c3a1eba889257ce0e093f1f4552a4bec21a18b868d85ea8b96ac3753573527"
+  }
+}

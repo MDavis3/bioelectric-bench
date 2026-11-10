@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import get, load_categories, load_jsonl  # noqa: E402
 from firewall_check import OUTCOME_WORDS  # noqa: E402
 
-TYPES = {"ion_channel_misexpression", "channel_or_pump_drug", "gap_junction_block", "gap_junction_misexpression",
+TYPES = {"ion_channel_misexpression", "ion_channel_knockdown", "gap_junction_knockdown", "channel_or_pump_drug", "gap_junction_block", "gap_junction_misexpression",
          "ionophore", "applied_field", "ion_substitution", "combination", "control"}
 ACTIONS = {"block", "open_or_activate", "knockdown", "overexpress", "substitute_ion", "apply_field", "none", None}
 ROLES = {"test", "control", "vehicle", "positive_control"}

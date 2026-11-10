@@ -1,1 +1,28 @@
 paper_id,title,pub_date,organism,task_family,has_counts,est_items
+10.1016/j.chembiol.2010.11.012,"A chemical genetics approach reveals H,K-ATPase-mediated membrane voltage is required for planarian head regeneration.",2011-01-01,planarian,planarian_AP_polarity,yes,40
+10.1242/dev.086900,Bioelectric signaling regulates head and organ size during planarian regeneration.,2013-01-01,planarian,planarian_AP_polarity,yes,30
+10.1016/j.ydbio.2009.12.012,Long-range neural and gap junction protein-mediated cues control polarity during planarian regeneration.,2009-12-21,planarian,planarian_AP_polarity,yes,40
+10.3390/ijms161126065,Gap Junctional Blockade Stochastically Induces Different Species-Specific Head Anatomies in Genetically Wild-Type Girardia dorotocephala Flatworms.,2015-11-24,planarian,planarian_AP_polarity,yes,40
+10.1016/j.bpj.2017.04.011,"Long-Term, Stochastic Editing of Regenerative Anatomy via Targeting Endogenous Bioelectric Gradients.",2017-05-01,planarian,planarian_AP_polarity,yes,40
+10.1016/j.bpj.2019.01.029,The Role of Early Bioelectric Signals in the Regeneration of Planarian Anterior/Posterior Polarity.,2019-02-01,planarian,planarian_AP_polarity,yes,40
+10.1371/journal.pcbi.1006904,Neural control of body-plan axis in regenerating planaria.,2019-04-16,planarian,planarian_AP_polarity,yes,40
+10.1016/j.isci.2019.11.014,Regenerative Adaptation to Electrochemical Perturbation in Planaria: A Molecular Analysis of Physiological Plasticity.,2019-11-09,planarian,planarian_AP_polarity,yes,10
+10.1016/j.ydbio.2020.08.009,Nervous system and tissue polarity dynamically adapt to new morphologies in planaria.,2020-08-31,planarian,planarian_AP_polarity,yes,15
+10.1371/journal.pntd.0000464,A novel biological activity of praziquantel requiring voltage-operated Ca2+ channel beta subunits: subversion of flatworm regenerative polarity.,2009-06-23,planarian,planarian_AP_polarity,yes,40
+10.1523/jneurosci.3029-11.2011,Opposing roles of voltage-gated Ca2+ channels in neuronal control of regenerative patterning.,2011-11-01,planarian,planarian_AP_polarity,yes,60
+10.1016/j.bbamcr.2016.10.010,Utilizing the planarian voltage-gated ion channel transcriptome to resolve a role for a Ca&lt;sup&gt;2+&lt;/sup&gt; channel in neuromuscular function and regeneration.,2016-10-19,planarian,planarian_AP_polarity,yes,15
+10.1371/journal.pgen.1011944,Identification of an innexin required for termination of the asexual state in planarian reproductive switching.,2025-11-18,planarian,planarian_other_anatomy,yes,20
+10.1242/dev.073759,Transmembrane voltage potential controls embryonic eye patterning in Xenopus laevis.,2011-12-07,Xenopus laevis,xenopus_ectopic_eye,yes,40
+10.1038/s41467-018-03334-5,HCN2 Rescues brain defects by enforcing endogenous voltage pre-patterns.,2018-03-08,Xenopus laevis,xenopus_brain,yes,30
+10.1523/jneurosci.3315-10.2010,Induction of vertebrate regeneration by a transient sodium current.,2010-09-01,Xenopus laevis,xenopus_tail_regeneration,yes,30
+10.1242/dev.02341,"Early, H+-V-ATPase-dependent proton flux is necessary for consistent left-right patterning of non-mammalian vertebrates.",2006-03-22,Xenopus laevis,xenopus_left_right,yes,50
+10.1242/bio.20133665,Light-activation of the Archaerhodopsin H(+)-pump reverses age-dependent loss of vertebrate regeneration: sparking system-level controls in vivo.,2013-01-17,Xenopus laevis,xenopus_tail_regeneration,yes,15
+10.1038/s42003-026-10039-9,Germ layer-specific interaction of ion channels and transporters controls membrane potential and left-right patterning in Xenopus tropicalis.,2026-06-23,Xenopus laevis,xenopus_left_right,yes,25
+10.3390/ijms26062637,Notch Is Required for Neural Progenitor Proliferation During Embryonic Eye Regrowth.,2025-03-14,Xenopus laevis,xenopus_eye_regrowth,yes,25
+10.1523/jneurosci.1877-14.2015,Endogenous gradients of resting potential instructively pattern embryonic neural tissue via Notch signaling and regulation of proliferation.,2015-03-01,Xenopus laevis,xenopus_brain,yes,30
+10.3389/fncel.2020.00136,HCN2 Channel-Induced Rescue of Brain Teratogenesis <i>via</i> Local and Long-Range Bioelectric Repair.,2020-05-26,Xenopus laevis,xenopus_brain,yes,20
+10.1242/bio.025957,HCN4 ion channel function is required for early events that regulate anatomical left-right patterning in a nodal and lefty asymmetric gene expression-independent manner.,2017-10-15,Xenopus laevis,xenopus_left_right,yes,15
+10.1242/bio.2012760,Connexin26-mediated transfer of laterality cues in Xenopus.,2012-03-30,Xenopus laevis,xenopus_left_right,yes,10
+10.1016/j.ydbio.2010.07.011,The ATP-sensitive K(+)-channel (K(ATP)) controls early left-right patterning in Xenopus and chick embryos.,2010-07-17,Xenopus laevis,xenopus_left_right,yes,25
+10.1089/jop.2022.0085,V-ATPase Regulates Retinal Progenitor Cell Proliferation During Eye Regrowth in <i>Xenopus</i>.,2023-03-03,Xenopus laevis,xenopus_eye_regrowth,yes,15
+10.1242/jcs.259304,Restoration of DNA integrity and the cell cycle by electric stimulation in planarian tissues damaged by ionizing radiation.,2022-05-13,planarian,planarian_other_anatomy,yes,8

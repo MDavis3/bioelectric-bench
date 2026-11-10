@@ -7,6 +7,12 @@
     {
       "version": 1,
       "reason": "initial"
+    },
+    {
+      "version": 1,
+      "reason": "lookup v2 and lineage v2 add pilot agents and labs (setup strings only); class rules of v1 unchanged except 4 new classes documented in kb/vmem_rule_v2_additions.md"
     }
-  ]
+  ],
+  "vmem_lookup": "kb/vmem_lookup_v2.json",
+  "lab_lineage": "config/lab_lineage_v2.json"
 }

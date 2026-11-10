@@ -1,0 +1,241 @@
+{
+  "endpoint": "P1 component",
+  "verdict": "DRY RUN ON SHUFFLED OUTCOMES, NOT COUNTED. UNTESTABLE: 2 scored folds, 2 clusters (need 3 and 8).",
+  "p3": null,
+  "mode": "lab",
+  "family": "planaria_ap_polarity",
+  "dry_run": true,
+  "seals": {
+    "temporal_features": "sealed 2026-11-10T06:34:13Z",
+    "temporal_rules": "sealed 2026-11-10T05:38:09Z",
+    "holdout_params": "sealed 2026-11-10T06:34:16Z",
+    "harness_manifest": "sealed 2026-11-10T06:34:24Z",
+    "lab_lineage_v2": "sealed 2026-11-10T06:03:46Z",
+    "vmem_lookup_v2": "sealed 2026-11-10T06:03:40Z",
+    "corpus_protocol": "sealed 2026-11-10T05:54:00Z",
+    "corpus_manifest": "sealed 2026-11-10T05:54:03Z"
+  },
+  "params": {
+    "note": "Every tunable of harness/holdout2.py. Sealed as holdout_params; the script takes no tunables from the command line.",
+    "primary_family": "planaria_ap_polarity",
+    "origins": [
+      1960,
+      1970,
+      1980,
+      1990,
+      2000,
+      2010,
+      2020
+    ],
+    "window": 10,
+    "min_train": 20,
+    "min_test": 1,
+    "min_folds": 3,
+    "min_clusters": 8,
+    "alpha": 1.0,
+    "k": 5,
+    "smooth": 0.02,
+    "sesoi_brier": 0.02,
+    "n_boot": 5000,
+    "n_perm": 200,
+    "seed": 0,
+    "covariates": [
+      "_year_bucket",
+      "_lineage",
+      "organism",
+      "intervention.type"
+    ]
+  },
+  "features": [
+    "organism",
+    "species",
+    "_fragment",
+    "intervention.type",
+    "_target_id",
+    "_target_class",
+    "_agent_id",
+    "intervention.action",
+    "_delivery",
+    "_field_dir",
+    "drug.vmem_direction_pred",
+    "_dose_bucket",
+    "_timing_bucket",
+    "_duration_bucket"
+  ],
+  "n_scored_items": 102,
+  "n_units": 2,
+  "n_papers": 9,
+  "n_rows": 102,
+  "n_lineages": 2,
+  "controls_excluded": 14,
+  "folds": [
+    {
+      "fold": "levin",
+      "n_train": 63,
+      "n_test": 39,
+      "n_test_papers": 6,
+      "brier": {
+        "majority": 0.8204318434268989,
+        "nb_tempered": 0.9273682705987445,
+        "covariate": 0.8211177919812448,
+        "knn_sealed": 0.5327110258549305,
+        "naive_bayes": 0.7608679476825717,
+        "nn_v1": 0.4611787461294274,
+        "rules": 0.5344093083193782
+      },
+      "temps": {
+        "nb_tempered": 1.0,
+        "covariate": 1.0
+      }
+    },
+    {
+      "fold": "marchant",
+      "n_train": 39,
+      "n_test": 63,
+      "n_test_papers": 3,
+      "brier": {
+        "majority": 0.5048783293930726,
+        "nb_tempered": 0.5323665985593686,
+        "covariate": 0.5035981558815177,
+        "knn_sealed": 0.487755369539983,
+        "naive_bayes": 0.5533869729137435,
+        "nn_v1": 0.48237781405885355,
+        "rules": 0.5185740817823673
+      },
+      "temps": {
+        "nb_tempered": 0.5,
+        "covariate": 0.0
+      }
+    }
+  ],
+  "comparisons": {
+    "nb_tempered_minus_covariate": {
+      "mean": 0.06750946064767524,
+      "ci95": [
+        0.028768442677850926,
+        0.10625047861749955
+      ],
+      "n_clusters": 2,
+      "clusters_favoring_first": 0,
+      "sign_flip_p": 0.5,
+      "item_weighted_mean": 0.058393927007716576,
+      "lineage_ci95": [
+        0.028768442677850937,
+        0.10625047861749952
+      ],
+      "n_lineages": 2
+    },
+    "nb_tempered_minus_majority": {
+      "mean": 0.06721234816907076,
+      "ci95": [
+        0.027488269166296028,
+        0.10693642717184548
+      ],
+      "n_clusters": 2,
+      "clusters_favoring_first": 0,
+      "sign_flip_p": 0.5,
+      "item_weighted_mean": 0.057865506050770815,
+      "lineage_ci95": [
+        0.02748826916629604,
+        0.10693642717184548
+      ],
+      "n_lineages": 2
+    },
+    "knn_sealed_minus_majority": {
+      "mean": -0.15242188871252904,
+      "ci95": [
+        -0.2877208175719685,
+        -0.017122959853089596
+      ],
+      "n_clusters": 2,
+      "clusters_favoring_first": 2,
+      "sign_flip_p": 0.5,
+      "item_weighted_mean": -0.12058684662795505,
+      "lineage_ci95": [
+        -0.28772081757196855,
+        -0.017122959853089603
+      ],
+      "n_lineages": 2
+    },
+    "nb_tempered_minus_knn_sealed": {
+      "mean": 0.21963423688159978,
+      "ci95": [
+        0.04461122901938562,
+        0.3946572447438139
+      ],
+      "n_clusters": 2,
+      "clusters_favoring_first": 0,
+      "sign_flip_p": 0.5,
+      "item_weighted_mean": 0.1784523526787259,
+      "lineage_ci95": [
+        0.04461122901938562,
+        0.39465724474381386
+      ],
+      "n_lineages": 2
+    },
+    "naive_bayes_minus_majority": {
+      "mean": -0.005527626111828117,
+      "ci95": [
+        -0.059563895744327196,
+        0.04850864352067096
+      ],
+      "n_clusters": 2,
+      "clusters_favoring_first": 1,
+      "sign_flip_p": 1.0,
+      "item_weighted_mean": 0.007186790272289313,
+      "lineage_ci95": [
+        -0.0595638957443272,
+        0.04850864352067093
+      ],
+      "n_lineages": 2
+    },
+    "nn_v1_minus_majority": {
+      "mean": -0.19087680631584533,
+      "ci95": [
+        -0.3592530972974716,
+        -0.02250051533421903
+      ],
+      "n_clusters": 2,
+      "clusters_favoring_first": 2,
+      "sign_flip_p": 0.5,
+      "item_weighted_mean": -0.15125885549663912,
+      "lineage_ci95": [
+        -0.3592530972974716,
+        -0.022500515334219037
+      ],
+      "n_lineages": 2
+    },
+    "rules_minus_majority": {
+      "mean": -0.13616339135911307,
+      "ci95": [
+        -0.28602253510752085,
+        0.013695752389294736
+      ],
+      "n_clusters": 2,
+      "clusters_favoring_first": 1,
+      "sign_flip_p": 1.0,
+      "item_weighted_mean": -0.10090241635948768,
+      "lineage_ci95": [
+        -0.2860225351075209,
+        0.013695752389294729
+      ],
+      "n_lineages": 2
+    },
+    "covariate_minus_majority": {
+      "mean": -0.00029711247860448264,
+      "ci95": [
+        -0.0012801735115548964,
+        0.0006859485543459312
+      ],
+      "n_clusters": 2,
+      "clusters_favoring_first": 1,
+      "sign_flip_p": 1.0,
+      "item_weighted_mean": -0.0005284209569457566,
+      "lineage_ci95": [
+        -0.0012801735115548967,
+        0.0006859485543459322
+      ],
+      "n_lineages": 2
+    }
+  }
+}

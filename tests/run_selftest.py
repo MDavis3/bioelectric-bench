@@ -146,7 +146,15 @@ def main():
                              "then": dist} for (t, d), dist in RULES.items()]}
     (tmp / "rules.json").write_text(json.dumps(true_rules))
     (tmp / "feat.json").write_text(json.dumps({"features": "ALL_SETUP"}))
-    th = [PY, str(ROOT / "harness/temporal_holdout.py"), "--data", str(tmp / "all.jsonl"), "--rules", str(tmp / "rules.json"),
+    # Run the holdout from a scratch copy of the project with an empty seal registry, so the real
+    # registry (where temporal_features is sealed) cannot interfere with synthetic feature files.
+    import shutil as _shc
+    iso = tmp / "iso_root"
+    for d in ("harness", "schema", "config"):
+        _shc.copytree(ROOT / d, iso / d, ignore=_shc.ignore_patterns("__pycache__"))
+    (iso / "sealed").mkdir(parents=True, exist_ok=True)
+    TH = str(iso / "harness/temporal_holdout.py")
+    th = [PY, TH, "--data", str(tmp / "all.jsonl"), "--rules", str(tmp / "rules.json"),
           "--features", str(tmp / "feat.json"), "--allow-unsealed", "--out-dir", str(tmp / "reports")]
     ok, out = run(th + ["--mode", "decade", "--origins", "1980,1990,2000"])
     rep = json.loads((tmp / "reports/holdout_decade.json").read_text()) if ok else {}
@@ -154,7 +162,7 @@ def main():
           ok and rep["vs_nearest_neighbor"]["rules"]["mean_minus_nn"] <= 0.001, out)
     ok, out = run(th + ["--mode", "lab", "--min-test", "5"])
     check("leave-one-lab-out runs with covariate baseline", ok and "covariate" in out, out)
-    ok, out = run([PY, str(ROOT / "harness/temporal_holdout.py"), "--data", str(tmp / "all.jsonl"), "--rules", str(tmp / "rules.json"),
+    ok, out = run([PY, TH, "--data", str(tmp / "all.jsonl"), "--rules", str(tmp / "rules.json"),
                    "--features", str(tmp / "feat.json"), "--out-dir", str(tmp / "reports")], expect_ok=False)
     check("holdout refuses unsealed features", ok and "not sealed" in out, out)
 

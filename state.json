@@ -52,10 +52,10 @@
     },
     "gold_early": {
       "desc": "Extraction agrees with Manav's early gold papers",
-      "note": "",
-      "status": "pending",
+      "note": "No human gold. Proxies: sheet 7/7 exact; Planform freq 27/27, category 16/27, coverage 30/133; Fable re-extraction gate 0.73; review tables uninformative. Accuracy OK where extracted, coverage poor.",
+      "status": "failed",
       "track": "core",
-      "updated": null
+      "updated": "2026-11-10T06:13:48Z"
     },
     "gold_final": {
       "desc": "Full gold set comparison",
@@ -66,24 +66,24 @@
     },
     "holdout_decade": {
       "desc": "Decade holdout run on sealed features",
-      "note": "",
-      "status": "pending",
+      "note": "DRY RUN (shuffled): UNTESTABLE, 1 scored fold",
+      "status": "passed",
       "track": "B_code",
-      "updated": null
+      "updated": "2026-11-10T06:35:41Z"
     },
     "holdout_lab": {
       "desc": "Leave-one-lab-out run",
-      "note": "",
-      "status": "pending",
+      "note": "DRY RUN (shuffled): UNTESTABLE, 2 lineages",
+      "status": "passed",
       "track": "B_code",
-      "updated": null
+      "updated": "2026-11-10T06:35:41Z"
     },
     "holdout_species": {
       "desc": "Leave-one-species-out run",
-      "note": "",
-      "status": "pending",
+      "note": "DRY RUN (shuffled): UNTESTABLE, 1 species with rows",
+      "status": "passed",
       "track": "B_code",
-      "updated": null
+      "updated": "2026-11-10T06:35:41Z"
     },
     "kb_drug_graph": {
       "desc": "Drug, target, ortholog, expression graph built (kb/)",
@@ -101,17 +101,17 @@
     },
     "lock_schema": {
       "desc": "Schema, categories, temporal features and rules sealed and pushed",
-      "note": "",
-      "status": "pending",
+      "note": "sealed+pushed: extraction_schema, outcome_categories, temporal_features, temporal_rules, holdout_params, harness_manifest, plan_v1_2, vmem_rule(+v2 additions), vmem_lookup(v1,v2), lab_lineage(v1,v2), corpus_protocol, corpus_manifest",
+      "status": "passed",
       "track": "core",
-      "updated": null
+      "updated": "2026-11-10T06:35:04Z"
     },
     "model_bakeoff": {
       "desc": "Extractor and image-scorer models chosen from gold results (harness/bakeoff.py)",
-      "note": "",
-      "status": "pending",
+      "note": "No human gold. vs Fable pass: Haiku 0.63, Sonnet 0.69 (outcomes 0.89-0.94). Routing: Sonnet + Opus extract, fresh Opus adjudicates blinded to pass identity; Haiku screening only.",
+      "status": "passed",
       "track": "core",
-      "updated": null
+      "updated": "2026-11-10T06:12:01Z"
     },
     "negative_search": {
       "desc": "Documented negative search per shortlisted candidate",
@@ -129,10 +129,10 @@
     },
     "pilot": {
       "desc": "20 papers end to end",
-      "note": "",
-      "status": "pending",
+      "note": "20 papers end to end (13 planaria, 7 Xenopus): 214 adjudicated rows; 4 papers yield no counted rows",
+      "status": "passed",
       "track": "A_benchmark",
-      "updated": null
+      "updated": "2026-11-10T06:12:01Z"
     },
     "plan_written": {
       "desc": "Fable planner writes plans/plan.md: primary endpoints, allocation, kill criteria",
@@ -185,10 +185,10 @@
     },
     "scorer_selftest": {
       "desc": "Scorer, holdout and wetlab tools pass synthetic tests",
-      "note": "17/17",
+      "note": "17/17 after isolating the old holdout's seal registry in the test (sealing temporal_features made the test's throwaway features file collide with the real registry; seals unaffected)",
       "status": "passed",
       "track": "core",
-      "updated": "2026-11-10T04:48:54Z"
+      "updated": "2026-11-10T06:35:04Z"
     },
     "seal_outcomes": {
       "desc": "Test outcomes sealed and pushed",

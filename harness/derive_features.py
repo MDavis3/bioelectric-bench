@@ -25,13 +25,20 @@ from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common import ROOT, get, load_jsonl, norm_val, write_jsonl  # noqa: E402
+from common import ROOT, active_schema, get, load_jsonl, norm_val, write_jsonl  # noqa: E402
 
 UNIT_TO_UM = {"m": 1e6, "mm": 1e3, "um": 1.0, "µm": 1.0, "μm": 1.0, "nm": 1e-3, "pm": 1e-6}
 
 
 def canon(s):
     return re.sub(r"[^a-z0-9+]+", " ", str(s).lower().replace("μ", "u").replace("µ", "u")).strip()
+
+
+def strip_dose(s):
+    """Drop concentration fragments an extractor left in an agent name, e.g. '(30 mM K+)' or '20 mm kcl'."""
+    s = re.sub(r"\([^)]*\d[^)]*\)", " ", str(s))
+    s = re.sub(r"\b\d+(?:\.\d+)?\s*(?:m|mm|um|µm|μm|nm|%|mg/ml|ug/ml)\b", " ", s, flags=re.I)
+    return re.sub(r"\s+", " ", s).strip()
 
 
 def num(x):
@@ -98,8 +105,9 @@ def field_dir(x):
 
 def main():
     src, dst = sys.argv[1], sys.argv[2]
-    lk = json.loads((ROOT / "kb/vmem_lookup.json").read_text())
-    lin = {canon(k): v for k, v in json.loads((ROOT / "config/lab_lineage.json").read_text())["lab_to_lineage"].items()}
+    cfg = active_schema()
+    lk = json.loads((ROOT / cfg.get("vmem_lookup", "kb/vmem_lookup.json")).read_text())
+    lin = {canon(k): v for k, v in json.loads((ROOT / cfg.get("lab_lineage", "config/lab_lineage.json")).read_text())["lab_to_lineage"].items()}
     alias = {}
     for name, a in lk["agents"].items():
         for n in [name] + a.get("aliases", []):
@@ -113,9 +121,15 @@ def main():
         ctrl = typ == "control" or norm_val(r.get("arm_role")) in ("control", "vehicle")
         raw = str(iv.get("agent") or "")
         whole = alias.get(canon(raw))
-        parts = [raw] if whole else [x for x in re.split(r"\s*(?:\+|;|\band\b|\bwith\b)\s*", raw.lower()) if x.strip()]
-        hits = [whole] if whole else [alias.get(canon(x)) for x in parts]
+        if not whole:
+            whole = alias.get(canon(strip_dose(raw)))
+        # split combinations only on a spaced plus, semicolon, or the words and/with; never inside "Na+/H+"
+        parts = [raw] if whole else [x for x in re.split(r"\s+\+\s+|;|\s+and\s+|\s+with\s+|\s+plus\s+", raw.lower()) if x.strip()]
+        hits = [whole] if whole else [alias.get(canon(x)) or alias.get(canon(strip_dose(x))) for x in parts]
         comps, tcomps = [], []
+        if whole and whole[1].get("components"):
+            parts = list(whole[1]["components"])  # lookup-defined combination: use its parts
+            hits = [alias.get(canon(x)) for x in parts]
         for x, h in zip(parts, hits):
             if h:
                 comps.append(h[0])

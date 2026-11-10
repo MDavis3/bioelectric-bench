@@ -1,0 +1,1115 @@
+{
+  "endpoint": "P2",
+  "verdict": "DRY RUN ON SHUFFLED OUTCOMES, NOT COUNTED. FAIL: at least one comparison rules out a gain of 0.02 Brier or more.",
+  "p3": null,
+  "mode": "agent",
+  "family": "planaria_ap_polarity",
+  "dry_run": true,
+  "seals": {
+    "temporal_features": "sealed 2026-11-10T06:34:13Z",
+    "temporal_rules": "sealed 2026-11-10T05:38:09Z",
+    "holdout_params": "sealed 2026-11-10T06:34:16Z",
+    "harness_manifest": "sealed 2026-11-10T06:34:24Z",
+    "lab_lineage_v2": "sealed 2026-11-10T06:03:46Z",
+    "vmem_lookup_v2": "sealed 2026-11-10T06:03:40Z",
+    "corpus_protocol": "sealed 2026-11-10T05:54:00Z",
+    "corpus_manifest": "sealed 2026-11-10T05:54:03Z"
+  },
+  "params": {
+    "note": "Every tunable of harness/holdout2.py. Sealed as holdout_params; the script takes no tunables from the command line.",
+    "primary_family": "planaria_ap_polarity",
+    "origins": [
+      1960,
+      1970,
+      1980,
+      1990,
+      2000,
+      2010,
+      2020
+    ],
+    "window": 10,
+    "min_train": 20,
+    "min_test": 1,
+    "min_folds": 3,
+    "min_clusters": 8,
+    "alpha": 1.0,
+    "k": 5,
+    "smooth": 0.02,
+    "sesoi_brier": 0.02,
+    "n_boot": 5000,
+    "n_perm": 200,
+    "seed": 0,
+    "covariates": [
+      "_year_bucket",
+      "_lineage",
+      "organism",
+      "intervention.type"
+    ]
+  },
+  "features": [
+    "organism",
+    "species",
+    "_fragment",
+    "intervention.type",
+    "_target_id",
+    "_target_class",
+    "_agent_id",
+    "intervention.action",
+    "_delivery",
+    "_field_dir",
+    "drug.vmem_direction_pred",
+    "_dose_bucket",
+    "_timing_bucket",
+    "_duration_bucket"
+  ],
+  "n_scored_items": 124,
+  "n_units": 48,
+  "n_papers": 9,
+  "n_rows": 102,
+  "n_lineages": 2,
+  "controls_excluded": 14,
+  "folds": [
+    {
+      "fold": "2-apb",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.6217727538327786,
+        "nb_tempered": 0.615971945685595,
+        "covariate": 0.615971945685595,
+        "knn_sealed": 0.6699495877512454,
+        "naive_bayes": 0.40816757988149777,
+        "nn_v1": 0.5525085101375556,
+        "rules": 0.9325348344671203
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "apc-rnai",
+      "n_train": 87,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.6315370895539858,
+        "nb_tempered": 0.6328186717282829,
+        "covariate": 0.6537594090776773,
+        "knn_sealed": 0.585588356361898,
+        "naive_bayes": 0.967249097506567,
+        "nn_v1": 0.6335632361992873,
+        "rules": 0.6315370895539858
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.1
+      }
+    },
+    {
+      "fold": "beta-catenin-rnai",
+      "n_train": 72,
+      "n_test": 2,
+      "n_test_papers": 2,
+      "brier": {
+        "majority": 0.4120122893305115,
+        "nb_tempered": 0.4124830860203248,
+        "covariate": 0.4124830860203248,
+        "knn_sealed": 0.3196532923044383,
+        "naive_bayes": 0.28695574647902516,
+        "nn_v1": 0.4119987863840959,
+        "rules": 0.4120122893305115
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "caffeine",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.31566972423195555,
+        "nb_tempered": 0.32215877713030316,
+        "covariate": 0.32215877713030316,
+        "knn_sealed": 0.3108448010332268,
+        "naive_bayes": 0.2861383008856524,
+        "nn_v1": 0.380959637190098,
+        "rules": 0.31566972423195555
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "calcicludine",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.8496952183555612,
+        "nb_tempered": 0.8438269904368609,
+        "covariate": 0.8438269904368609,
+        "knn_sealed": 0.924968981421987,
+        "naive_bayes": 0.4674464129836531,
+        "nn_v1": 0.782666815364719,
+        "rules": 1.117659212292983
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "carbamazepine",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.9795696500329675,
+        "nb_tempered": 0.972780704415295,
+        "covariate": 0.972780704415295,
+        "knn_sealed": 1.0543874188773446,
+        "naive_bayes": 0.7970501797652418,
+        "nn_v1": 0.9073344354055164,
+        "rules": 1.2409248571428573
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "cav1a-rnai",
+      "n_train": 87,
+      "n_test": 3,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.5260638370539799,
+        "nb_tempered": 0.5288043657819439,
+        "covariate": 0.5344314695470171,
+        "knn_sealed": 0.5867508690272341,
+        "naive_bayes": 0.6277514089535144,
+        "nn_v1": 0.5459446662409863,
+        "rules": 0.5146829957873132
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.1
+      }
+    },
+    {
+      "fold": "cav1b-rnai",
+      "n_train": 79,
+      "n_test": 6,
+      "n_test_papers": 2,
+      "brier": {
+        "majority": 0.4713060357624921,
+        "nb_tempered": 0.47267736957590084,
+        "covariate": 0.4861936809383674,
+        "knn_sealed": 0.5120867486565469,
+        "naive_bayes": 0.7102562481250353,
+        "nn_v1": 0.4217921992984191,
+        "rules": 0.37699994758471433
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.1
+      }
+    },
+    {
+      "fold": "cav2a-rnai",
+      "n_train": 79,
+      "n_test": 2,
+      "n_test_papers": 2,
+      "brier": {
+        "majority": 0.39090959182434754,
+        "nb_tempered": 0.3901191189579843,
+        "covariate": 0.39493688365019985,
+        "knn_sealed": 0.34648804454620585,
+        "naive_bayes": 0.44919203408477637,
+        "nn_v1": 0.392514434739719,
+        "rules": 0.39090959182434754
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.1
+      }
+    },
+    {
+      "fold": "cav2b-rnai",
+      "n_train": 94,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.4206518268610767,
+        "nb_tempered": 0.42488106271658505,
+        "covariate": 0.42488106271658505,
+        "knn_sealed": 0.3861409321201024,
+        "naive_bayes": 0.4231495872917018,
+        "nn_v1": 0.4206518268610767,
+        "rules": 0.4206518268610767
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "cav3-rnai",
+      "n_train": 94,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.5716562979257712,
+        "nb_tempered": 0.5711626789278866,
+        "covariate": 0.5711626789278866,
+        "knn_sealed": 0.5704406746285366,
+        "naive_bayes": 0.4778384212339448,
+        "nn_v1": 0.571656297925771,
+        "rules": 0.5716562979257712
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "cavb1-rnai",
+      "n_train": 62,
+      "n_test": 4,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 1.1569294095577036,
+        "nb_tempered": 1.1359752178935834,
+        "covariate": 1.1359752178935834,
+        "knn_sealed": 0.8451869713242612,
+        "naive_bayes": 1.053647659624996,
+        "nn_v1": 0.9718967834838729,
+        "rules": 0.8883098783077037
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "cavb2-rnai",
+      "n_train": 62,
+      "n_test": 3,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.7641067782517544,
+        "nb_tempered": 0.7524462211584789,
+        "covariate": 0.7524462211584789,
+        "knn_sealed": 0.5902275848958588,
+        "naive_bayes": 0.699081384655415,
+        "nn_v1": 0.6263867865570759,
+        "rules": 0.7641067782517544
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "cobalt-chloride",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.8222819923533723,
+        "nb_tempered": 0.8155943598892916,
+        "covariate": 0.8155943598892916,
+        "knn_sealed": 0.7202081337215102,
+        "naive_bayes": 0.9650446383921726,
+        "nn_v1": 0.7503513896279724,
+        "rules": 0.6812188571428572
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "cyclopiazonic-acid",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.1476196871324615,
+        "nb_tempered": 0.14746974077279904,
+        "covariate": 0.14746974077279904,
+        "knn_sealed": 0.11350710677928817,
+        "naive_bayes": 0.04807630388269324,
+        "nn_v1": 0.14414703629780715,
+        "rules": 0.1476196871324615
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "dantrolene",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.7096345008930013,
+        "nb_tempered": 0.699455298258128,
+        "covariate": 0.699455298258128,
+        "knn_sealed": 0.7738515606873502,
+        "naive_bayes": 0.86208796775667,
+        "nn_v1": 0.6646953135248186,
+        "rules": 0.7096345008930013
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "diltiazem",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.31566972423195555,
+        "nb_tempered": 0.32215877713030316,
+        "covariate": 0.32215877713030316,
+        "knn_sealed": 0.4464754640346076,
+        "naive_bayes": 0.5913424343579126,
+        "nn_v1": 0.380959637190098,
+        "rules": 0.31090485714285704
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "egta",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.15802795957551016,
+        "nb_tempered": 0.16299857035183016,
+        "covariate": 0.16299857035183016,
+        "knn_sealed": 0.1717026287810755,
+        "naive_bayes": 0.3452623605990987,
+        "nn_v1": 0.1726476230861005,
+        "rules": 0.10282893877551015
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "fipronil",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.25081311951020174,
+        "nb_tempered": 0.2566993045029844,
+        "covariate": 0.2566993045029844,
+        "knn_sealed": 0.1687863304568835,
+        "naive_bayes": 0.26485732949619994,
+        "nn_v1": 0.3094102772348786,
+        "rules": 0.1218248571428571
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "fpl-64176",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.09588219640733504,
+        "nb_tempered": 0.09739199986217505,
+        "covariate": 0.09739199986217505,
+        "knn_sealed": 0.10080167131032802,
+        "naive_bayes": 0.3348792568597193,
+        "nn_v1": 0.10960018652087987,
+        "rules": 0.02590485714285714
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "gabapentin",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.14310221124713263,
+        "nb_tempered": 0.14726761440517666,
+        "covariate": 0.14726761440517666,
+        "knn_sealed": 0.2333079618704703,
+        "naive_bayes": 0.12344510476150067,
+        "nn_v1": 0.18432522687779618,
+        "rules": 0.10790485714285707
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "gadolinium-chloride",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.6806240114281872,
+        "nb_tempered": 0.6754777048021872,
+        "covariate": 0.6754777048021872,
+        "knn_sealed": 0.5786316678912159,
+        "naive_bayes": 0.7320333138652529,
+        "nn_v1": 0.6254022146463765,
+        "rules": 0.5234726114206764
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "heptanol",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.8617879224825046,
+        "nb_tempered": 0.8544846208251996,
+        "covariate": 0.8544846208251996,
+        "knn_sealed": 0.9524737461741023,
+        "naive_bayes": 1.0942309547284026,
+        "nn_v1": 0.7625178938893143,
+        "rules": 0.9385528571428572
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "high-potassium",
+      "n_train": 87,
+      "n_test": 3,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.31335795578731324,
+        "nb_tempered": 0.31596142444158537,
+        "covariate": 0.32660806465371284,
+        "knn_sealed": 0.3401106089549033,
+        "naive_bayes": 0.6154889227940117,
+        "nn_v1": 0.3438373116689823,
+        "rules": 0.3476951439354614
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.1
+      }
+    },
+    {
+      "fold": "hk-atpase-rnai",
+      "n_train": 101,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.2358144723748571,
+        "nb_tempered": 0.24324163641166988,
+        "covariate": 0.24324163641166988,
+        "knn_sealed": 0.21243255069964884,
+        "naive_bayes": 0.12215506953324647,
+        "nn_v1": 0.23581447237485717,
+        "rules": 0.3656868571428571
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "imidacloprid",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.31566972423195555,
+        "nb_tempered": 0.32215877713030316,
+        "covariate": 0.32215877713030316,
+        "knn_sealed": 0.2763567759011262,
+        "naive_bayes": 0.3829073838815819,
+        "nn_v1": 0.380959637190098,
+        "rules": 0.24171685714285712
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "innexin-5/12/13-rnai",
+      "n_train": 94,
+      "n_test": 2,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.18564169710109454,
+        "nb_tempered": 0.18971954058617227,
+        "covariate": 0.18971954058617227,
+        "knn_sealed": 0.14465020411611937,
+        "naive_bayes": 0.121047441902955,
+        "nn_v1": 0.18564169710109443,
+        "rules": 0.22811285714285714
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "ionomycin",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.10784065802328544,
+        "nb_tempered": 0.1132895285230547,
+        "covariate": 0.1132895285230547,
+        "knn_sealed": 0.2241968357435945,
+        "naive_bayes": 0.387146157170841,
+        "nn_v1": 0.18317013216300673,
+        "rules": 0.1629248571428571
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "ivermectin",
+      "n_train": 47,
+      "n_test": 3,
+      "n_test_papers": 2,
+      "brier": {
+        "majority": 0.713111286883442,
+        "nb_tempered": 0.7076823202357033,
+        "covariate": 0.7076823202357033,
+        "knn_sealed": 0.77913555726295,
+        "naive_bayes": 0.9131412231759137,
+        "nn_v1": 0.699242988839718,
+        "rules": 0.7472331314939978
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "l-glutamate",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.10348370494021868,
+        "nb_tempered": 0.10652047822440099,
+        "covariate": 0.10652047822440099,
+        "knn_sealed": 0.07535268670682624,
+        "naive_bayes": 0.08761211024616156,
+        "nn_v1": 0.13301708472610677,
+        "rules": 0.10348370494021868
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "monensin",
+      "n_train": 99,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.2739428571428572,
+        "nb_tempered": 0.2600481371428571,
+        "covariate": 0.2600481371428571,
+        "knn_sealed": 0.08585847041063671,
+        "naive_bayes": 0.10417678193941754,
+        "nn_v1": 0.04662639670879527,
+        "rules": 0.2739428571428572
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "n methyl d glucamine hcl",
+      "n_train": 87,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.7246191263540928,
+        "nb_tempered": 0.7153072672870261,
+        "covariate": 0.7153072672870261,
+        "knn_sealed": 0.5260542405402883,
+        "naive_bayes": 0.06587990246102524,
+        "nn_v1": 0.7246191263540928,
+        "rules": 0.7246191263540928
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "nemadipine-a",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.09303469826230974,
+        "nb_tempered": 0.09487645168005024,
+        "covariate": 0.09487645168005024,
+        "knn_sealed": 0.14264045970633316,
+        "naive_bayes": 0.6234268544491548,
+        "nn_v1": 0.11019081656549441,
+        "rules": 0.027404857142857137
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "nicardipine",
+      "n_train": 47,
+      "n_test": 2,
+      "n_test_papers": 2,
+      "brier": {
+        "majority": 0.5818749358556539,
+        "nb_tempered": 0.5789300913343085,
+        "covariate": 0.5789300913343085,
+        "knn_sealed": 0.6845656610473326,
+        "naive_bayes": 0.7529406023485541,
+        "nn_v1": 0.5413292459020326,
+        "rules": 0.6582768571428572
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "nickel-chloride",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.9795696500329675,
+        "nb_tempered": 0.972780704415295,
+        "covariate": 0.972780704415295,
+        "knn_sealed": 1.039276721476336,
+        "naive_bayes": 1.0955215122028543,
+        "nn_v1": 0.9073344354055164,
+        "rules": 0.8009048571428572
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "nigericin",
+      "n_train": 99,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.008123939831732808,
+        "nb_tempered": 0.006256927148805977,
+        "covariate": 0.006256927148805977,
+        "knn_sealed": 0.15059279973736522,
+        "naive_bayes": 0.23959877075461053,
+        "nn_v1": 0.08066821483947738,
+        "rules": 0.008123939831732808
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "nimodipine",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.31566972423195555,
+        "nb_tempered": 0.32215877713030316,
+        "covariate": 0.32215877713030316,
+        "knn_sealed": 0.2707479459640462,
+        "naive_bayes": 0.5805096354806474,
+        "nn_v1": 0.380959637190098,
+        "rules": 0.31090485714285704
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "octanol",
+      "n_train": 82,
+      "n_test": 16,
+      "n_test_papers": 3,
+      "brier": {
+        "majority": 1.3491113111181372,
+        "nb_tempered": 1.3233879994385607,
+        "covariate": 1.3233879994385607,
+        "knn_sealed": 0.6429640029159029,
+        "naive_bayes": 1.0973013268480554,
+        "nn_v1": 0.5226792416540329,
+        "rules": 0.5457831743350987
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "potassium-gluconate",
+      "n_train": 84,
+      "n_test": 4,
+      "n_test_papers": 2,
+      "brier": {
+        "majority": 0.4670882320329085,
+        "nb_tempered": 0.45805215424816,
+        "covariate": 0.45805215424816,
+        "knn_sealed": 0.32473962196109296,
+        "naive_bayes": 0.4727015850932236,
+        "nn_v1": 0.3238491793720456,
+        "rules": 0.33853745163290855
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "praziquantel",
+      "n_train": 39,
+      "n_test": 27,
+      "n_test_papers": 3,
+      "brier": {
+        "majority": 0.5091785413112823,
+        "nb_tempered": 0.4923576899149268,
+        "covariate": 0.509578081350012,
+        "knn_sealed": 0.5036092196306386,
+        "naive_bayes": 0.4841618697787466,
+        "nn_v1": 0.5054285628547958,
+        "rules": 0.5523186208441992
+      },
+      "temps": {
+        "nb_tempered": 0.5,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "r-bay-k-8644",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.05511481512621466,
+        "nb_tempered": 0.05590392078877865,
+        "covariate": 0.05590392078877865,
+        "knn_sealed": 0.08703902682645055,
+        "naive_bayes": 0.07672555733544481,
+        "nn_v1": 0.06622496370944624,
+        "rules": 0.15735258624793638
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "ryanodine",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.31566972423195555,
+        "nb_tempered": 0.32215877713030316,
+        "covariate": 0.32215877713030316,
+        "knn_sealed": 0.3717535415339657,
+        "naive_bayes": 0.32068729469797397,
+        "nn_v1": 0.380959637190098,
+        "rules": 0.31566972423195555
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "s-bay-k-8644",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 1.2193890523938442,
+        "nb_tempered": 1.2055477187289543,
+        "covariate": 1.2055477187289543,
+        "knn_sealed": 1.182629202863635,
+        "naive_bayes": 1.2022764600629943,
+        "nn_v1": 1.1896549083376664,
+        "rules": 1.264344857142857
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "sch-28080",
+      "n_train": 81,
+      "n_test": 13,
+      "n_test_papers": 2,
+      "brier": {
+        "majority": 0.46874373785496337,
+        "nb_tempered": 0.46925424100560864,
+        "covariate": 0.46925424100560864,
+        "knn_sealed": 0.5305672715757747,
+        "naive_bayes": 0.4513341115572859,
+        "nn_v1": 0.46874373785496337,
+        "rules": 0.6195943316742679
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "sodium-gluconate",
+      "n_train": 99,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.2739428571428572,
+        "nb_tempered": 0.2600481371428571,
+        "covariate": 0.2600481371428571,
+        "knn_sealed": 0.08585847041063671,
+        "naive_bayes": 0.10417678193941754,
+        "nn_v1": 0.04662639670879527,
+        "rules": 0.2739428571428572
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "thapsigargin",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.7602305116181277,
+        "nb_tempered": 0.754552348768752,
+        "covariate": 0.754552348768752,
+        "knn_sealed": 0.8245541489554705,
+        "naive_bayes": 0.6404079118310442,
+        "nn_v1": 0.691335017844493,
+        "rules": 0.7602305116181277
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "verapamil",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.30097269356337764,
+        "nb_tempered": 0.29873992390708454,
+        "covariate": 0.29873992390708454,
+        "knn_sealed": 0.27938631711874357,
+        "naive_bayes": 0.3935537312740237,
+        "nn_v1": 0.275927473695689,
+        "rules": 0.18197944384028125
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "xestospongin-c",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.7146614722252104,
+        "nb_tempered": 0.7089466901636929,
+        "covariate": 0.7089466901636929,
+        "knn_sealed": 0.7727664519137939,
+        "naive_bayes": 0.5975304601355235,
+        "nn_v1": 0.6456558777640872,
+        "rules": 0.7146614722252104
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    }
+  ],
+  "comparisons": {
+    "nb_tempered_minus_covariate": {
+      "mean": -0.0015160197670075523,
+      "ci95": [
+        -0.0029313305645587303,
+        -0.00039882114849041267
+      ],
+      "n_clusters": 48,
+      "clusters_favoring_first": 6,
+      "sign_flip_p": 0.03205,
+      "item_weighted_mean": -0.005043918835383303,
+      "lineage_ci95": [
+        -0.0018658704824708338,
+        0.0
+      ],
+      "n_lineages": 2
+    },
+    "nb_tempered_minus_majority": {
+      "mean": -0.002712402986476004,
+      "ci95": [
+        -0.004967739349698663,
+        -0.0006656671964668935
+      ],
+      "n_clusters": 48,
+      "clusters_favoring_first": 26,
+      "sign_flip_p": 0.0188,
+      "item_weighted_mean": -0.008492362792354312,
+      "lineage_ci95": [
+        -0.0062054145240966465,
+        -0.0017026779964381138
+      ],
+      "n_lineages": 2
+    },
+    "knn_sealed_minus_majority": {
+      "mean": -0.024226705809996526,
+      "ci95": [
+        -0.06607110685807878,
+        0.010930753831463164
+      ],
+      "n_clusters": 48,
+      "clusters_favoring_first": 25,
+      "sign_flip_p": 0.24955,
+      "item_weighted_mean": -0.10026042604172941,
+      "lineage_ci95": [
+        -0.09640856771896988,
+        0.002115805433375502
+      ],
+      "n_lineages": 2
+    },
+    "nb_tempered_minus_knn_sealed": {
+      "mean": 0.021514302823520518,
+      "ci95": [
+        -0.012677733562601328,
+        0.061956231732539196
+      ],
+      "n_clusters": 48,
+      "clusters_favoring_first": 24,
+      "sign_flip_p": 0.2982,
+      "item_weighted_mean": 0.0917680632493751,
+      "lineage_ci95": [
+        -0.003818483429813615,
+        0.09020315319487322
+      ],
+      "n_lineages": 2
+    },
+    "naive_bayes_minus_majority": {
+      "mean": 0.02634191619908729,
+      "ci95": [
+        -0.033246892782804134,
+        0.0825537076474191
+      ],
+      "n_clusters": 48,
+      "clusters_favoring_first": 22,
+      "sign_flip_p": 0.38495,
+      "item_weighted_mean": -0.010911269490396154,
+      "lineage_ci95": [
+        -0.05955896523216445,
+        0.05659377100563418
+      ],
+      "n_lineages": 2
+    },
+    "nn_v1_minus_majority": {
+      "mean": -0.03934903747519675,
+      "ci95": [
+        -0.08283277603125236,
+        -0.007454268479875016
+      ],
+      "n_clusters": 48,
+      "clusters_favoring_first": 26,
+      "sign_flip_p": 0.01875,
+      "item_weighted_mean": -0.12787523434264694,
+      "lineage_ci95": [
+        -0.12207313548133829,
+        -0.014114666560725256
+      ],
+      "n_lineages": 2
+    },
+    "rules_minus_majority": {
+      "mean": -0.014796108564403295,
+      "ci95": [
+        -0.06259702308216626,
+        0.02554708193435187
+      ],
+      "n_clusters": 48,
+      "clusters_favoring_first": 17,
+      "sign_flip_p": 0.56465,
+      "item_weighted_mean": -0.09079272565060716,
+      "lineage_ci95": [
+        -0.04523011621444379,
+        -4.697388328584667e-05
+      ],
+      "n_lineages": 2
+    },
+    "covariate_minus_majority": {
+      "mean": -0.0011963832194684515,
+      "ci95": [
+        -0.0037293885029403367,
+        0.0013262442989890628
+      ],
+      "n_clusters": 48,
+      "clusters_favoring_first": 24,
+      "sign_flip_p": 0.3598,
+      "item_weighted_mean": -0.0034484439569710083,
+      "lineage_ci95": [
+        -0.0062054145240966465,
+        0.00016319248603271992
+      ],
+      "n_lineages": 2
+    }
+  }
+}

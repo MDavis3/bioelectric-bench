@@ -1,0 +1,61 @@
+{
+ "sheet": {
+  "rows_checked": 7,
+  "rows_agree": 7,
+  "n_total_agree": 7,
+  "category_counts_compared": 14,
+  "category_counts_agree": 14,
+  "sheet_entries_without_adjudicated_row": 20
+ },
+ "planform": {
+  "papers_covered": 3,
+  "experiments_total": 133,
+  "experiments_matched": 30,
+  "planform_unmatched": 103,
+  "adjudicated_rows_total": 65,
+  "adjudicated_rows_matched": 27,
+  "adjudicated_unmatched": 38,
+  "category_agree": 16,
+  "freq_agree": 27,
+  "both_agree": 16
+ },
+ "combined": {
+  "rows_checked": 34,
+  "rows_agree": 23
+ },
+ "per_paper": {
+  "beane2011_chembiol": {
+   "matched_adj": 10,
+   "cat": 5,
+   "freq": 10,
+   "both": 5,
+   "pf_total": 19,
+   "pf_matched": 10,
+   "pf_unmatched": 9,
+   "adj_total": 15,
+   "adj_unmatched": 5
+  },
+  "oviedo2010_devbiol": {
+   "matched_adj": 4,
+   "cat": 3,
+   "freq": 4,
+   "both": 3,
+   "pf_total": 44,
+   "pf_matched": 7,
+   "pf_unmatched": 37,
+   "adj_total": 8,
+   "adj_unmatched": 4
+  },
+  "nogi2009_plosntd": {
+   "matched_adj": 13,
+   "cat": 8,
+   "freq": 13,
+   "both": 8,
+   "pf_total": 70,
+   "pf_matched": 13,
+   "pf_unmatched": 57,
+   "adj_total": 42,
+   "adj_unmatched": 29
+  }
+ }
+}

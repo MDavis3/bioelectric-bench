@@ -1,0 +1,114 @@
+{
+  "x": "data/raw_extractions/B",
+  "y": "data/raw_extractions/adjudicated",
+  "papers": 17,
+  "x_rows": 209,
+  "y_rows": 214,
+  "matched": 186,
+  "recall_of_y": 0.8691588785046729,
+  "precision_vs_y": 0.8899521531100478,
+  "field_agreement": {
+    "task_family": 1.0,
+    "intervention.type": 0.9731182795698925,
+    "_agent_id": 0.9086021505376344,
+    "_target_id": 0.9247311827956989,
+    "arm_role": 0.978494623655914,
+    "_fragment": 0.9623655913978495,
+    "_dose_bucket": 0.9516129032258065,
+    "_timing_bucket": 0.956989247311828,
+    "_duration_bucket": 0.9247311827956989,
+    "n_total": 0.8602150537634409,
+    "dominant_outcome": 0.8817204301075269
+  },
+  "tv_within_0.15": 0.7849462365591398,
+  "mean_tv": 0.13391297313501133,
+  "per_paper_counts": {
+    "adams2006_development": {
+      "x_rows": 28,
+      "y_rows": 37,
+      "matched": 26
+    },
+    "beane2011_chembiol": {
+      "x_rows": 16,
+      "y_rows": 15,
+      "matched": 14
+    },
+    "beane2013_development": {
+      "x_rows": 1,
+      "y_rows": 1,
+      "matched": 1
+    },
+    "chan2017_bba": {
+      "x_rows": 9,
+      "y_rows": 9,
+      "matched": 9
+    },
+    "durant2017_bpj": {
+      "x_rows": 8,
+      "y_rows": 8,
+      "matched": 6
+    },
+    "durant2019_bpj": {
+      "x_rows": 6,
+      "y_rows": 6,
+      "matched": 6
+    },
+    "emmonsbell2015_ijms": {
+      "x_rows": 1,
+      "y_rows": 1,
+      "matched": 1
+    },
+    "emmonsbell2019_iscience": {
+      "x_rows": 14,
+      "y_rows": 16,
+      "matched": 14
+    },
+    "khokha2026_commbiol": {
+      "x_rows": 26,
+      "y_rows": 22,
+      "matched": 22
+    },
+    "nogi2009_plosntd": {
+      "x_rows": 37,
+      "y_rows": 42,
+      "matched": 37
+    },
+    "oviedo2010_devbiol": {
+      "x_rows": 6,
+      "y_rows": 8,
+      "matched": 5
+    },
+    "pai2012_development": {
+      "x_rows": 6,
+      "y_rows": 8,
+      "matched": 6
+    },
+    "pai2018_natcommun": {
+      "x_rows": 20,
+      "y_rows": 8,
+      "matched": 8
+    },
+    "pietak2019_ploscb": {
+      "x_rows": 7,
+      "y_rows": 7,
+      "matched": 7
+    },
+    "tseng2010_jneurosci": {
+      "x_rows": 3,
+      "y_rows": 3,
+      "matched": 3
+    },
+    "tseng2025_ijms": {
+      "x_rows": 2,
+      "y_rows": 2,
+      "matched": 2
+    },
+    "zhang2011_jneurosci": {
+      "x_rows": 19,
+      "y_rows": 21,
+      "matched": 19
+    }
+  },
+  "gate_score": 0.7849462365591398,
+  "gate_pass": false
+}

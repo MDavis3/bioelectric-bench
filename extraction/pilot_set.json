@@ -1,0 +1,34 @@
+{
+ "pilot": [
+  "beane2011_chembiol",
+  "oviedo2010_devbiol",
+  "durant2019_bpj",
+  "adams2006_development",
+  "tseng2025_ijms",
+  "beane2013_development",
+  "emmonsbell2015_ijms",
+  "pai2012_development",
+  "adams2013_biolopen",
+  "chan2017_bba",
+  "durant2017_bpj",
+  "pietak2019_ploscb",
+  "pai2018_natcommun",
+  "khokha2026_commbiol",
+  "nogi2009_plosntd",
+  "emmonsbell2019_iscience",
+  "bischof2020_devbiol",
+  "zhang2011_jneurosci",
+  "tseng2010_jneurosci",
+  "escobar2022_jcs"
+ ],
+ "fable_sample": [
+  "beane2013_development",
+  "chan2017_bba",
+  "emmonsbell2015_ijms",
+  "emmonsbell2019_iscience",
+  "oviedo2010_devbiol",
+  "tseng2025_ijms"
+ ],
+ "seed": 20261109,
+ "note": "Fable re-extraction sample drawn with random.Random(20261109).sample(pilot, 6)"
+}

@@ -1,0 +1,687 @@
+[
+ {
+  "canon": "nicotine",
+  "n_rows": 16,
+  "examples": [
+   "hcn2-dn mrna + nicotine | HCN2 (GYG to AAA pore mutant); nAChR | combination",
+   "hcn2-wt mrna + nicotine | HCN2; nAChR | combination",
+   "nicotine + hcn2-dn mrna | nicotinic acetylcholine receptor; HCN2 ( | combination"
+  ]
+ },
+ {
+  "canon": "choline",
+  "n_rows": 8,
+  "examples": [
+   "DIDS + choline | Cl- channels/exchanger; Na+ replacement  | combination",
+   "dids + choline + ouabain | chloride transport; Na+/K+ ATPase | combination",
+   "dids + choline | chloride transport; Na+ replaced by chol | combination"
+  ]
+ },
+ {
+  "canon": "hcn2 wt mrna",
+  "n_rows": 8,
+  "examples": [
+   "hcn2-wt mrna + nicotine | HCN2; nAChR | combination",
+   "hcn2-wt mrna | HCN2 | ion_channel_misexpression",
+   "nicotine + hcn2-wt mrna | nicotinic acetylcholine receptor; HCN2 | combination"
+  ]
+ },
+ {
+  "canon": "cavb2 rnai",
+  "n_rows": 6,
+  "examples": [
+   "cavb1 + cavb2 rnai + praziquantel | Cavbeta1 and Cavbeta2; voltage-operated  | combination",
+   "cavb1 + cavb2 rnai + praziquantel | voltage-operated Ca2+ channel beta1 and  | combination",
+   "cavb1 + cavb2 rnai | voltage-operated Ca2+ channel beta1 and  | ion_channel_knockdown"
+  ]
+ },
+ {
+  "canon": "dnkir6 1p mrna",
+  "n_rows": 6,
+  "examples": [
+   "dnkir6.1p mrna + kv1.5 mrna | KATP channel subunit Kir6.1 (dominant-ne | combination",
+   "dnkir6.1p mrna + kv1.5 mrna | Kir6.1 (KATP) and Kv1.5 | combination",
+   "dnkir6.1p mrna | KATP channel subunit Kir6.1 (dominant-ne | ion_channel_misexpression"
+  ]
+ },
+ {
+  "canon": "ms222 tricaine",
+  "n_rows": 6,
+  "examples": [
+   "MS222 (tricaine) | voltage-gated sodium channels (NaV) | channel_or_pump_drug",
+   "ms222 (tricaine) | voltage-gated sodium channels (NaV) | channel_or_pump_drug"
+  ]
+ },
+ {
+  "canon": "cav2a rnai",
+  "n_rows": 5,
+  "examples": [
+   "cav2a rnai + praziquantel | Cav2A (voltage-gated Ca2+ channel) with  | combination",
+   "cav2a rnai + praziquantel | Cav2A (voltage-operated Ca2+ channel alp | combination",
+   "cav2a rnai + praziquantel | Cav2A | combination"
+  ]
+ },
+ {
+  "canon": "yche78 mrna dominant negative h+ v atpase subunit e",
+  "n_rows": 4,
+  "examples": [
+   "YCHE78 mRNA (dominant-negative H+-V-ATPase subunit E) | H+-V-ATPase subunit E | ion_channel_misexpression",
+   "ychE78 mRNA (dominant-negative H+-V-ATPase subunit E) | H+-V-ATPase subunit E | ion_channel_misexpression"
+  ]
+ },
+ {
+  "canon": "cavb1 rnai",
+  "n_rows": 4,
+  "examples": [
+   "cavb1 rnai + praziquantel | Cavbeta1; voltage-operated Ca2+ channels | combination",
+   "cavb1 rnai + praziquantel | voltage-operated Ca2+ channel beta1 subu | combination",
+   "cavb1 rnai | voltage-operated Ca2+ channel beta1 subu | ion_channel_knockdown"
+  ]
+ },
+ {
+  "canon": "cavb1",
+  "n_rows": 4,
+  "examples": [
+   "cavb1 + cavb2 rnai + praziquantel | Cavbeta1 and Cavbeta2; voltage-operated  | combination",
+   "cavb1 + cavb2 rnai + praziquantel | voltage-operated Ca2+ channel beta1 and  | combination",
+   "cavb1 + cavb2 rnai | voltage-operated Ca2+ channel beta1 and  | ion_channel_knockdown"
+  ]
+ },
+ {
+  "canon": "dj inx 5+13 12 rnai",
+  "n_rows": 4,
+  "examples": [
+   "dj-inx-5+13,-12 rnai | innexins Dj-Inx-5, Dj-Inx-13, Dj-Inx-12 | gap_junction_knockdown"
+  ]
+ },
+ {
+  "canon": "smed six 1 rnai",
+  "n_rows": 4,
+  "examples": [
+   "smed-six-1 rnai + praziquantel | control RNAi background with voltage-ope | combination",
+   "smed-six-1 rnai | none | control"
+  ]
+ },
+ {
+  "canon": "lobatamide a16",
+  "n_rows": 3,
+  "examples": [
+   "lobatamide A16 | H+-V-ATPase | channel_or_pump_drug"
+  ]
+ },
+ {
+  "canon": "cav2b rnai",
+  "n_rows": 3,
+  "examples": [
+   "cav2b rnai + praziquantel | Cav2B (voltage-operated Ca2+ channel alp | combination",
+   "cav2b rnai + praziquantel | cav2b voltage-operated Ca2+ channel | combination"
+  ]
+ },
+ {
+  "canon": "cav3 rnai",
+  "n_rows": 3,
+  "examples": [
+   "cav3 rnai + praziquantel | Cav3 (low-voltage-activated Ca2+ channel | combination",
+   "cav3 rnai + praziquantel | Cav3 (voltage-operated Ca2+ channel alph | combination",
+   "cav3 rnai + praziquantel | cav3 voltage-operated Ca2+ channel | combination"
+  ]
+ },
+ {
+  "canon": "amtb",
+  "n_rows": 3,
+  "examples": [
+   "AMTB + barium chloride | TRPM channels | combination",
+   "amtb + barium chloride (BaCl2-adapted worms) | TRPM channels | combination",
+   "barium chloride + amtb | K+ channels (BaCl2); TRPM channels (TRPM | combination"
+  ]
+ },
+ {
+  "canon": "yche78 mrna",
+  "n_rows": 3,
+  "examples": [
+   "yche78 mrna | H+-V-ATPase subunit E (dominant negative | ion_channel_misexpression"
+  ]
+ },
+ {
+  "canon": "bromocriptine",
+  "n_rows": 3,
+  "examples": [
+   "barium chloride + bromocriptine | K+ channels (BaCl2); dopamine receptor a | combination",
+   "bromocriptine + barium chloride | dopamine/monoaminergic receptors (agonis | combination",
+   "bromocriptine + barium chloride | dopamine/monoaminergic receptors | combination"
+  ]
+ },
+ {
+  "canon": "dominant negative kir2 2 mrna",
+  "n_rows": 2,
+  "examples": [
+   "dominant-negative Kir2.2 mRNA | Kir2.2 | ion_channel_misexpression",
+   "dominant-negative kir2.2 mrna | Kir2.2 | ion_channel_misexpression"
+  ]
+ },
+ {
+  "canon": "pma1 2 mrna plasma membrane h+ atpase",
+  "n_rows": 2,
+  "examples": [
+   "PMA1.2 mRNA (plasma-membrane H+-ATPase) | plasma-membrane H+-ATPase (PMA1.2) | ion_channel_misexpression"
+  ]
+ },
+ {
+  "canon": "nhe3 mrna na+ h+ exchanger 3",
+  "n_rows": 2,
+  "examples": [
+   "NHE3 mRNA (Na+/H+ exchanger 3) | NHE3 (Na+/H+ exchanger) | ion_channel_misexpression"
+  ]
+ },
+ {
+  "canon": "palytoxin",
+  "n_rows": 2,
+  "examples": [
+   "palytoxin | Na+/K+-ATPase (converted to a nonspecifi | channel_or_pump_drug",
+   "palytoxin | Na+/K+-ATPase | channel_or_pump_drug"
+  ]
+ },
+ {
+  "canon": "bromocriptine mesylate",
+  "n_rows": 2,
+  "examples": [
+   "barium chloride + bromocriptine mesylate | dopamine receptors (agonist) | combination"
+  ]
+ },
+ {
+  "canon": "high k 20 mm kcl",
+  "n_rows": 2,
+  "examples": [
+   "high K (20 mM KCl) | extracellular K+ (K+ gradient) | ion_substitution"
+  ]
+ },
+ {
+  "canon": "imidacloprid",
+  "n_rows": 2,
+  "examples": [
+   "imidacloprid | None | channel_or_pump_drug"
+  ]
+ },
+ {
+  "canon": "nicarpidine",
+  "n_rows": 2,
+  "examples": [
+   "nicarpidine | l-type voltage-operated Ca2+ channel | channel_or_pump_drug"
+  ]
+ },
+ {
+  "canon": "thapsigargin",
+  "n_rows": 2,
+  "examples": [
+   "thapsigargin | None | channel_or_pump_drug"
+  ]
+ },
+ {
+  "canon": "l glutamate",
+  "n_rows": 2,
+  "examples": [
+   "l-glutamate | None | channel_or_pump_drug"
+  ]
+ },
+ {
+  "canon": "s bay k8644",
+  "n_rows": 2,
+  "examples": [
+   "s(-) bay k8644 | None | channel_or_pump_drug",
+   "s(-)bay k8644 | None | channel_or_pump_drug"
+  ]
+ },
+ {
+  "canon": "r + bay k8644",
+  "n_rows": 2,
+  "examples": [
+   "r(+) bay k8644 | None | channel_or_pump_drug",
+   "r(+)bay k8644 | None | channel_or_pump_drug"
+  ]
+ },
+ {
+  "canon": "gd3+",
+  "n_rows": 2,
+  "examples": [
+   "gd3+ | None | channel_or_pump_drug"
+  ]
+ },
+ {
+  "canon": "nemadipine a",
+  "n_rows": 2,
+  "examples": [
+   "nemadipine-a | None | channel_or_pump_drug"
+  ]
+ },
+ {
+  "canon": "fpl 64176",
+  "n_rows": 2,
+  "examples": [
+   "fpl-64176 | None | channel_or_pump_drug"
+  ]
+ },
+ {
+  "canon": "calcicludine",
+  "n_rows": 2,
+  "examples": [
+   "calcicludine | None | channel_or_pump_drug"
+  ]
+ },
+ {
+  "canon": "xestospongin c",
+  "n_rows": 2,
+  "examples": [
+   "xestospongin c | None | channel_or_pump_drug"
+  ]
+ },
+ {
+  "canon": "dantrolene",
+  "n_rows": 2,
+  "examples": [
+   "dantrolene | None | channel_or_pump_drug"
+  ]
+ },
+ {
+  "canon": "gabapentin",
+  "n_rows": 2,
+  "examples": [
+   "gabapentin | None | channel_or_pump_drug"
+  ]
+ },
+ {
+  "canon": "caffeine",
+  "n_rows": 2,
+  "examples": [
+   "caffeine | None | channel_or_pump_drug"
+  ]
+ },
+ {
+  "canon": "ryanodine",
+  "n_rows": 2,
+  "examples": [
+   "ryanodine | None | channel_or_pump_drug"
+  ]
+ },
+ {
+  "canon": "fipronil",
+  "n_rows": 2,
+  "examples": [
+   "fipronil | None | channel_or_pump_drug"
+  ]
+ },
+ {
+  "canon": "carbamazepine",
+  "n_rows": 2,
+  "examples": [
+   "carbamazepine | None | channel_or_pump_drug"
+  ]
+ },
+ {
+  "canon": "exp1 mrna",
+  "n_rows": 2,
+  "examples": [
+   "exp1 mrna | EXP1 cation channel | ion_channel_misexpression"
+  ]
+ },
+ {
+  "canon": "hcn2 dn mrna",
+  "n_rows": 2,
+  "examples": [
+   "hcn2-dn mrna + nicotine | HCN2 (GYG to AAA pore mutant); nAChR | combination",
+   "nicotine + hcn2-dn mrna | nicotinic acetylcholine receptor; HCN2 ( | combination"
+  ]
+ },
+ {
+  "canon": "dj six 1 rnai",
+  "n_rows": 2,
+  "examples": [
+   "dj-six-1 rnai + praziquantel | Dj-six-1 (eye regeneration gene; positiv | combination",
+   "dj-six-1 rnai + praziquantel | eyeless phenotype control RNAi backgroun | combination"
+  ]
+ },
+ {
+  "canon": "beta catenin 1 rnai suboptimal",
+  "n_rows": 2,
+  "examples": [
+   "beta-catenin-1 rnai (suboptimal) + praziquantel | beta-catenin-1 (RNAi, suboptimal protoco | combination",
+   "beta-catenin-1 rnai (suboptimal) + praziquantel | beta-catenin-1 | combination"
+  ]
+ },
+ {
+  "canon": "apc rnai",
+  "n_rows": 2,
+  "examples": [
+   "apc rnai + praziquantel | APC (beta-catenin inhibitor) knockdown w | combination",
+   "apc rnai + praziquantel | APC | combination"
+  ]
+ },
+ {
+  "canon": "medium ph 4",
+  "n_rows": 2,
+  "examples": [
+   "medium ph 4 | extracellular H+ | ion_substitution"
+  ]
+ },
+ {
+  "canon": "medium ph 9",
+  "n_rows": 2,
+  "examples": [
+   "medium ph 9 | extracellular H+ | ion_substitution"
+  ]
+ },
+ {
+  "canon": "h k atpase alpha subunit mrna",
+  "n_rows": 1,
+  "examples": [
+   "H,K-ATPase alpha subunit mRNA | H+/K+-ATPase alpha subunit | ion_channel_misexpression"
+  ]
+ },
+ {
+  "canon": "yche78 dna dominant negative h+ v atpase subunit e",
+  "n_rows": 1,
+  "examples": [
+   "ychE78 DNA (dominant-negative H+-V-ATPase subunit E) | H+-V-ATPase subunit E | ion_channel_misexpression"
+  ]
+ },
+ {
+  "canon": "beta galactosidase dna",
+  "n_rows": 1,
+  "examples": [
+   "beta-galactosidase DNA | None | control"
+  ]
+ },
+ {
+  "canon": "tributyltin chloride tbt",
+  "n_rows": 1,
+  "examples": [
+   "tributyltin chloride (TBT) | OH-/Cl- exchanger | ionophore"
+  ]
+ },
+ {
+  "canon": "medium at ph 4",
+  "n_rows": 1,
+  "examples": [
+   "medium at pH 4 | external H+ (medium pH) | ion_substitution"
+  ]
+ },
+ {
+  "canon": "medium at ph 5",
+  "n_rows": 1,
+  "examples": [
+   "medium at pH 5 | external H+ (medium pH) | ion_substitution"
+  ]
+ },
+ {
+  "canon": "medium at ph 6",
+  "n_rows": 1,
+  "examples": [
+   "medium at pH 6 | external H+ (medium pH) | ion_substitution"
+  ]
+ },
+ {
+  "canon": "medium at ph 10",
+  "n_rows": 1,
+  "examples": [
+   "medium at pH 10 | external H+ (medium pH) | ion_substitution"
+  ]
+ },
+ {
+  "canon": "medium at ph 11",
+  "n_rows": 1,
+  "examples": [
+   "medium at pH 11 | external H+ (medium pH) | ion_substitution"
+  ]
+ },
+ {
+  "canon": "medium at ph 7",
+  "n_rows": 1,
+  "examples": [
+   "medium at pH 7 | external H+ (medium pH) | ion_substitution"
+  ]
+ },
+ {
+  "canon": "medium at ph 8",
+  "n_rows": 1,
+  "examples": [
+   "medium at pH 8 | external H+ (medium pH) | ion_substitution"
+  ]
+ },
+ {
+  "canon": "medium at ph 9",
+  "n_rows": 1,
+  "examples": [
+   "medium at pH 9 | external H+ (medium pH) | ion_substitution"
+  ]
+ },
+ {
+  "canon": "medium at ph 7 8 control",
+  "n_rows": 1,
+  "examples": [
+   "medium at pH 7.8 (control) | None | control"
+  ]
+ },
+ {
+  "canon": "sch 28080 plus potassium d gluconate",
+  "n_rows": 1,
+  "examples": [
+   "sch-28080 plus potassium-d-gluconate | H,K-ATPase; external K+ | combination"
+  ]
+ },
+ {
+  "canon": "ivermectin plus nmdg hcl",
+  "n_rows": 1,
+  "examples": [
+   "ivermectin plus nmdg-hcl | glutamate-gated chloride (GluCl) channel | combination"
+  ]
+ },
+ {
+  "canon": "sch 28080 plus beta catenin rnai",
+  "n_rows": 1,
+  "examples": [
+   "sch-28080 plus beta-catenin rnai | H,K-ATPase; beta-catenin | combination"
+  ]
+ },
+ {
+  "canon": "smed hkatpase rnai",
+  "n_rows": 1,
+  "examples": [
+   "smed-hkatpase rnai | H,K-ATPase alpha subunit (Smed-H,K-ATPas | ion_channel_knockdown"
+  ]
+ },
+ {
+  "canon": "smed six 1 rnai negative control",
+  "n_rows": 1,
+  "examples": [
+   "smed-six-1 rnai (negative control) | None | control"
+  ]
+ },
+ {
+  "canon": "nigericin plus potassium gluconate",
+  "n_rows": 1,
+  "examples": [
+   "nigericin plus potassium gluconate | K+/H+ exchange (nigericin ionophore) | ionophore"
+  ]
+ },
+ {
+  "canon": "monensin plus sodium gluconate",
+  "n_rows": 1,
+  "examples": [
+   "monensin plus sodium gluconate | Na+ ionophore (monensin) | ionophore"
+  ]
+ },
+ {
+  "canon": "potassium gluconate presoak no ionophore",
+  "n_rows": 1,
+  "examples": [
+   "potassium gluconate (presoak, no ionophore) | external K+ | ion_substitution"
+  ]
+ },
+ {
+  "canon": "beta catenin dsrna plus nigericin plus potassium gluconate",
+  "n_rows": 1,
+  "examples": [
+   "beta-catenin dsrna plus nigericin plus potassium gluconate | beta-catenin; K+/H+ exchange (nigericin  | combination"
+  ]
+ },
+ {
+  "canon": "cyclopiazonic acid cpa",
+  "n_rows": 1,
+  "examples": [
+   "cyclopiazonic acid (cpa) | None | channel_or_pump_drug"
+  ]
+ },
+ {
+  "canon": "xen rnai negative control dsrna",
+  "n_rows": 1,
+  "examples": [
+   "xen rnai (negative control dsRNA) | None | control"
+  ]
+ },
+ {
+  "canon": "six 1 rnai positive control construct",
+  "n_rows": 1,
+  "examples": [
+   "six-1 rnai (positive control construct) | six-1 (eye regeneration gene) | control"
+  ]
+ },
+ {
+  "canon": "concanamycin a plus dexamethasone inducible nicd mrna hgr icd22",
+  "n_rows": 1,
+  "examples": [
+   "concanamycin a plus dexamethasone-inducible NICD mRNA (hGR/I | V-ATPase (H+ pump); Notch intracellular  | combination"
+  ]
+ },
+ {
+  "canon": "dexamethasone",
+  "n_rows": 1,
+  "examples": [
+   "concanamycin a plus dexamethasone-inducible NICD mRNA (hGR/I | V-ATPase (H+ pump); Notch intracellular  | combination"
+  ]
+ },
+ {
+  "canon": "h k atpase alpha mrna",
+  "n_rows": 1,
+  "examples": [
+   "h,k-atpase alpha mrna | H+,K+-ATPase alpha subunit | ion_channel_misexpression"
+  ]
+ },
+ {
+  "canon": "yche78 dna",
+  "n_rows": 1,
+  "examples": [
+   "yche78 dna | H+-V-ATPase subunit E (dominant negative | ion_channel_misexpression"
+  ]
+ },
+ {
+  "canon": "medium ph 5",
+  "n_rows": 1,
+  "examples": [
+   "medium ph 5 | extracellular H+ | ion_substitution"
+  ]
+ },
+ {
+  "canon": "medium ph 6",
+  "n_rows": 1,
+  "examples": [
+   "medium ph 6 | extracellular H+ | ion_substitution"
+  ]
+ },
+ {
+  "canon": "medium ph 7",
+  "n_rows": 1,
+  "examples": [
+   "medium ph 7 | extracellular H+ | ion_substitution"
+  ]
+ },
+ {
+  "canon": "medium ph 8",
+  "n_rows": 1,
+  "examples": [
+   "medium ph 8 | extracellular H+ | ion_substitution"
+  ]
+ },
+ {
+  "canon": "medium ph 10",
+  "n_rows": 1,
+  "examples": [
+   "medium ph 10 | extracellular H+ | ion_substitution"
+  ]
+ },
+ {
+  "canon": "medium ph 11",
+  "n_rows": 1,
+  "examples": [
+   "medium ph 11 | extracellular H+ | ion_substitution"
+  ]
+ },
+ {
+  "canon": "tributyltin chloride",
+  "n_rows": 1,
+  "examples": [
+   "tributyltin chloride | OH-/Cl- exchanger | ionophore"
+  ]
+ },
+ {
+  "canon": "nhe3 mrna",
+  "n_rows": 1,
+  "examples": [
+   "nhe3 mrna | Na+/H+ exchanger NHE3 | ion_channel_misexpression"
+  ]
+ },
+ {
+  "canon": "n methyl d glucamine chloride",
+  "n_rows": 1,
+  "examples": [
+   "ivermectin + n-methyl-d-glucamine chloride | glutamate-gated chloride channel; extrac | combination"
+  ]
+ },
+ {
+  "canon": "beta catenin rnai",
+  "n_rows": 1,
+  "examples": [
+   "sch-28080 + beta-catenin rnai | H+,K+-ATPase; beta-catenin | combination"
+  ]
+ },
+ {
+  "canon": "fs 2",
+  "n_rows": 1,
+  "examples": [
+   "fs-2 | None | channel_or_pump_drug"
+  ]
+ },
+ {
+  "canon": "cyclopiazonic acid",
+  "n_rows": 1,
+  "examples": [
+   "cyclopiazonic acid | None | channel_or_pump_drug"
+  ]
+ },
+ {
+  "canon": "dnkir6 1 er mrna",
+  "n_rows": 1,
+  "examples": [
+   "dnkir6.1-er mrna | Kir6.1 (KATP channel) | ion_channel_misexpression"
+  ]
+ },
+ {
+  "canon": "nicd",
+  "n_rows": 1,
+  "examples": [
+   "concanamycin a + nicd | V-ATPase; Notch | combination"
+  ]
+ },
+ {
+  "canon": "ventral nerve cord cut",
+  "n_rows": 1,
+  "examples": [
+   "octanol + ventral nerve cord cut | gap junctions (innexins); ventral nerve  | combination"
+  ]
+ },
+ {
+  "canon": "nicd mrna",
+  "n_rows": 1,
+  "examples": [
+   "concanamycin a + nicd mrna | V-ATPase; Notch1 (activated intracellula | combination"
+  ]
+ }
+]

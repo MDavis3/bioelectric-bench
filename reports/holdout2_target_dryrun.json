@@ -1,0 +1,1015 @@
+{
+  "endpoint": "P2",
+  "verdict": "DRY RUN ON SHUFFLED OUTCOMES, NOT COUNTED. FAIL: at least one comparison rules out a gain of 0.02 Brier or more.",
+  "p3": {
+    "verdict": "DRY RUN ON SHUFFLED OUTCOMES, NOT COUNTED. UNTESTABLE: 31 scored folds, 2 clusters (need 3 and 8).",
+    "perm_p": null,
+    "n_directional_targets": 2,
+    "n_rows_with_direction": 4
+  },
+  "mode": "target",
+  "family": "planaria_ap_polarity",
+  "dry_run": true,
+  "seals": {
+    "temporal_features": "sealed 2026-11-10T06:34:13Z",
+    "temporal_rules": "sealed 2026-11-10T05:38:09Z",
+    "holdout_params": "sealed 2026-11-10T06:34:16Z",
+    "harness_manifest": "sealed 2026-11-10T06:34:24Z",
+    "lab_lineage_v2": "sealed 2026-11-10T06:03:46Z",
+    "vmem_lookup_v2": "sealed 2026-11-10T06:03:40Z",
+    "corpus_protocol": "sealed 2026-11-10T05:54:00Z",
+    "corpus_manifest": "sealed 2026-11-10T05:54:03Z"
+  },
+  "params": {
+    "note": "Every tunable of harness/holdout2.py. Sealed as holdout_params; the script takes no tunables from the command line.",
+    "primary_family": "planaria_ap_polarity",
+    "origins": [
+      1960,
+      1970,
+      1980,
+      1990,
+      2000,
+      2010,
+      2020
+    ],
+    "window": 10,
+    "min_train": 20,
+    "min_test": 1,
+    "min_folds": 3,
+    "min_clusters": 8,
+    "alpha": 1.0,
+    "k": 5,
+    "smooth": 0.02,
+    "sesoi_brier": 0.02,
+    "n_boot": 5000,
+    "n_perm": 200,
+    "seed": 0,
+    "covariates": [
+      "_year_bucket",
+      "_lineage",
+      "organism",
+      "intervention.type"
+    ]
+  },
+  "features": [
+    "organism",
+    "species",
+    "_fragment",
+    "intervention.type",
+    "_target_id",
+    "_target_class",
+    "_agent_id",
+    "intervention.action",
+    "_delivery",
+    "_field_dir",
+    "drug.vmem_direction_pred",
+    "_dose_bucket",
+    "_timing_bucket",
+    "_duration_bucket"
+  ],
+  "n_scored_items": 123,
+  "n_units": 31,
+  "n_papers": 9,
+  "n_rows": 102,
+  "n_lineages": 2,
+  "controls_excluded": 14,
+  "folds": [
+    {
+      "fold": "apc",
+      "n_train": 87,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.6315370895539858,
+        "nb_tempered": 0.6328186717282829,
+        "covariate": 0.6537594090776773,
+        "knn_sealed": 0.585588356361898,
+        "naive_bayes": 0.967249097506567,
+        "nn_v1": 0.6335632361992873,
+        "rules": 0.6315370895539858,
+        "core_vmem": 0.8451617578188065,
+        "core_novmem": 0.8451617578188065,
+        "core_class": 0.7477176366960683
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.1,
+        "core_vmem": 0.5,
+        "core_novmem": 0.5,
+        "core_class": 0.2
+      }
+    },
+    {
+      "fold": "beta-catenin",
+      "n_train": 72,
+      "n_test": 2,
+      "n_test_papers": 2,
+      "brier": {
+        "majority": 0.4120122893305115,
+        "nb_tempered": 0.4124830860203248,
+        "covariate": 0.4124830860203248,
+        "knn_sealed": 0.3196532923044383,
+        "naive_bayes": 0.28695574647902516,
+        "nn_v1": 0.4119987863840959,
+        "rules": 0.4120122893305115,
+        "core_vmem": 0.4124830860203248,
+        "core_novmem": 0.4124830860203248,
+        "core_class": 0.4124830860203248
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.0,
+        "core_novmem": 0.0,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "ca_selective_carrier",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.10784065802328544,
+        "nb_tempered": 0.1132895285230547,
+        "covariate": 0.1132895285230547,
+        "knn_sealed": 0.2241968357435945,
+        "naive_bayes": 0.387146157170841,
+        "nn_v1": 0.18317013216300673,
+        "rules": 0.1629248571428571,
+        "core_vmem": 0.1132895285230547,
+        "core_novmem": 0.11602292269444703,
+        "core_class": 0.1132895285230547
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.0,
+        "core_novmem": 0.1,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "cav1_l_type",
+      "n_train": 47,
+      "n_test": 10,
+      "n_test_papers": 2,
+      "brier": {
+        "majority": 0.44605058818786275,
+        "nb_tempered": 0.4434035566678246,
+        "covariate": 0.4434035566678246,
+        "knn_sealed": 0.4727241058786313,
+        "naive_bayes": 0.5097953517502736,
+        "nn_v1": 0.4346902449860748,
+        "rules": 0.47130092423812,
+        "core_vmem": 0.45912696344122195,
+        "core_novmem": 0.45912696344122195,
+        "core_class": 0.4492488427120156
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.5,
+        "core_novmem": 0.5,
+        "core_class": 0.1
+      }
+    },
+    {
+      "fold": "cav1a",
+      "n_train": 87,
+      "n_test": 3,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.5260638370539799,
+        "nb_tempered": 0.5288043657819439,
+        "covariate": 0.5344314695470171,
+        "knn_sealed": 0.5867508690272341,
+        "naive_bayes": 0.6277514089535144,
+        "nn_v1": 0.5459446662409863,
+        "rules": 0.5146829957873132,
+        "core_vmem": 0.5772931074196764,
+        "core_novmem": 0.5772931074196764,
+        "core_class": 0.5500895357405136
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.1,
+        "core_vmem": 0.5,
+        "core_novmem": 0.5,
+        "core_class": 0.2
+      }
+    },
+    {
+      "fold": "cav1b",
+      "n_train": 79,
+      "n_test": 6,
+      "n_test_papers": 2,
+      "brier": {
+        "majority": 0.4713060357624921,
+        "nb_tempered": 0.47267736957590084,
+        "covariate": 0.4861936809383674,
+        "knn_sealed": 0.5120867486565469,
+        "naive_bayes": 0.7102562481250353,
+        "nn_v1": 0.4217921992984191,
+        "rules": 0.37699994758471433,
+        "core_vmem": 0.7995640690372964,
+        "core_novmem": 0.7995640690372964,
+        "core_class": 0.5528036267241924
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.1,
+        "core_vmem": 1.0,
+        "core_novmem": 1.0,
+        "core_class": 0.2
+      }
+    },
+    {
+      "fold": "cav2a",
+      "n_train": 79,
+      "n_test": 2,
+      "n_test_papers": 2,
+      "brier": {
+        "majority": 0.39090959182434754,
+        "nb_tempered": 0.3901191189579843,
+        "covariate": 0.39493688365019985,
+        "knn_sealed": 0.34648804454620585,
+        "naive_bayes": 0.44919203408477637,
+        "nn_v1": 0.392514434739719,
+        "rules": 0.39090959182434754,
+        "core_vmem": 0.517927743245164,
+        "core_novmem": 0.517927743245164,
+        "core_class": 0.41449424266659507
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.1,
+        "core_vmem": 1.0,
+        "core_novmem": 1.0,
+        "core_class": 0.2
+      }
+    },
+    {
+      "fold": "cav2b",
+      "n_train": 94,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.4206518268610767,
+        "nb_tempered": 0.42488106271658505,
+        "covariate": 0.42488106271658505,
+        "knn_sealed": 0.3861409321201024,
+        "naive_bayes": 0.4231495872917018,
+        "nn_v1": 0.4206518268610767,
+        "rules": 0.4206518268610767,
+        "core_vmem": 0.42488106271658505,
+        "core_novmem": 0.4276898318300363,
+        "core_class": 0.42488106271658505
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.0,
+        "core_novmem": 0.1,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "cav3",
+      "n_train": 94,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.5716562979257712,
+        "nb_tempered": 0.5711626789278866,
+        "covariate": 0.5711626789278866,
+        "knn_sealed": 0.5704406746285366,
+        "naive_bayes": 0.4778384212339448,
+        "nn_v1": 0.571656297925771,
+        "rules": 0.5716562979257712,
+        "core_vmem": 0.5711626789278866,
+        "core_novmem": 0.554097918937551,
+        "core_class": 0.5711626789278866
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.0,
+        "core_novmem": 0.1,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "cav_alpha2delta_subunit",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.14310221124713263,
+        "nb_tempered": 0.14726761440517666,
+        "covariate": 0.14726761440517666,
+        "knn_sealed": 0.2333079618704703,
+        "naive_bayes": 0.12344510476150067,
+        "nn_v1": 0.18432522687779618,
+        "rules": 0.10790485714285707,
+        "core_vmem": 0.14726761440517666,
+        "core_novmem": 0.14262284453050117,
+        "core_class": 0.14726761440517666
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.0,
+        "core_novmem": 0.1,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "cav_beta1_subunit",
+      "n_train": 62,
+      "n_test": 4,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 1.1569294095577036,
+        "nb_tempered": 1.1359752178935834,
+        "covariate": 1.1359752178935834,
+        "knn_sealed": 0.8451869713242612,
+        "naive_bayes": 1.053647659624996,
+        "nn_v1": 0.9718967834838729,
+        "rules": 0.8883098783077037,
+        "core_vmem": 1.1359752178935834,
+        "core_novmem": 1.1435620274785345,
+        "core_class": 1.1359752178935834
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.0,
+        "core_novmem": 0.1,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "cav_beta2_subunit",
+      "n_train": 62,
+      "n_test": 3,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.7641067782517544,
+        "nb_tempered": 0.7524462211584789,
+        "covariate": 0.7524462211584789,
+        "knn_sealed": 0.5902275848958588,
+        "naive_bayes": 0.699081384655415,
+        "nn_v1": 0.6263867865570759,
+        "rules": 0.7641067782517544,
+        "core_vmem": 0.7524462211584789,
+        "core_novmem": 0.7528414619689551,
+        "core_class": 0.7524462211584789
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.0,
+        "core_novmem": 0.1,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "cav_channels_nonselective",
+      "n_train": 62,
+      "n_test": 3,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.8274918846048424,
+        "nb_tempered": 0.8212842563689247,
+        "covariate": 0.8212842563689247,
+        "knn_sealed": 0.7793721743630208,
+        "naive_bayes": 0.9308664881534267,
+        "nn_v1": 0.7610293465599551,
+        "rules": 0.668532108568797,
+        "core_vmem": 0.8212842563689247,
+        "core_novmem": 0.8188751597354118,
+        "core_class": 0.8212842563689247
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.0,
+        "core_novmem": 0.1,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "external_calcium",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.15802795957551016,
+        "nb_tempered": 0.16299857035183016,
+        "covariate": 0.16299857035183016,
+        "knn_sealed": 0.1717026287810755,
+        "naive_bayes": 0.3452623605990987,
+        "nn_v1": 0.1726476230861005,
+        "rules": 0.10282893877551015,
+        "core_vmem": 0.16299857035183016,
+        "core_novmem": 0.1657144272329067,
+        "core_class": 0.16299857035183016
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.0,
+        "core_novmem": 0.1,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "external_chloride",
+      "n_train": 99,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.2739428571428572,
+        "nb_tempered": 0.2600481371428571,
+        "covariate": 0.2600481371428571,
+        "knn_sealed": 0.08585847041063671,
+        "naive_bayes": 0.10417678193941754,
+        "nn_v1": 0.04662639670879527,
+        "rules": 0.2739428571428572,
+        "core_vmem": 0.2613076533698241,
+        "core_novmem": 0.2613076533698241,
+        "core_class": 0.2600481371428571
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.1,
+        "core_novmem": 0.1,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "external_potassium",
+      "n_train": 69,
+      "n_test": 7,
+      "n_test_papers": 3,
+      "brier": {
+        "majority": 0.362355416083596,
+        "nb_tempered": 0.3581995721292884,
+        "covariate": 0.3581995721292884,
+        "knn_sealed": 0.32004856288565603,
+        "naive_bayes": 0.5640244370914422,
+        "nn_v1": 0.3571370196820239,
+        "rules": 0.33498941608359606,
+        "core_vmem": 0.3581995721292884,
+        "core_novmem": 0.3581995721292884,
+        "core_class": 0.3581995721292884
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.0,
+        "core_novmem": 0.0,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "gaba_gated_cl_channel",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.25081311951020174,
+        "nb_tempered": 0.2566993045029844,
+        "covariate": 0.2566993045029844,
+        "knn_sealed": 0.1687863304568835,
+        "naive_bayes": 0.26485732949619994,
+        "nn_v1": 0.3094102772348786,
+        "rules": 0.1218248571428571,
+        "core_vmem": 0.2566993045029844,
+        "core_novmem": 0.2472936560298974,
+        "core_class": 0.2566993045029844
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.0,
+        "core_novmem": 0.1,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "glutamate_and_glycine_gated_cl_channels",
+      "n_train": 47,
+      "n_test": 3,
+      "n_test_papers": 2,
+      "brier": {
+        "majority": 0.713111286883442,
+        "nb_tempered": 0.7076823202357033,
+        "covariate": 0.7076823202357033,
+        "knn_sealed": 0.77913555726295,
+        "naive_bayes": 0.9131412231759137,
+        "nn_v1": 0.699242988839718,
+        "rules": 0.7472331314939978,
+        "core_vmem": 0.8142588797697874,
+        "core_novmem": 0.8142588797697874,
+        "core_class": 0.7174787989766239
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.5,
+        "core_novmem": 0.5,
+        "core_class": 0.1
+      }
+    },
+    {
+      "fold": "glutamate_receptors_mixed",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.10348370494021868,
+        "nb_tempered": 0.10652047822440099,
+        "covariate": 0.10652047822440099,
+        "knn_sealed": 0.07535268670682624,
+        "naive_bayes": 0.08761211024616156,
+        "nn_v1": 0.13301708472610677,
+        "rules": 0.10348370494021868,
+        "core_vmem": 0.10652047822440099,
+        "core_novmem": 0.10260717377298756,
+        "core_class": 0.10652047822440099
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.0,
+        "core_novmem": 0.1,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "h_k_atpase_atp4a",
+      "n_train": 80,
+      "n_test": 14,
+      "n_test_papers": 3,
+      "brier": {
+        "majority": 0.4521059331778129,
+        "nb_tempered": 0.453110483534613,
+        "covariate": 0.453110483534613,
+        "knn_sealed": 0.505463321443231,
+        "naive_bayes": 0.4691194546351984,
+        "nn_v1": 0.45210593317781295,
+        "rules": 0.601458083493453,
+        "core_vmem": 0.453110483534613,
+        "core_novmem": 0.453110483534613,
+        "core_class": 0.453110483534613
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.0,
+        "core_novmem": 0.0,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "innexin-5_12_13",
+      "n_train": 94,
+      "n_test": 2,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.18564169710109454,
+        "nb_tempered": 0.18971954058617227,
+        "covariate": 0.18971954058617227,
+        "knn_sealed": 0.14465020411611937,
+        "naive_bayes": 0.121047441902955,
+        "nn_v1": 0.18564169710109443,
+        "rules": 0.22811285714285714,
+        "core_vmem": 0.18971954058617227,
+        "core_novmem": 0.18971954058617227,
+        "core_class": 0.18971954058617227
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.0,
+        "core_novmem": 0.0,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "innexin_connexin_gap_junction",
+      "n_train": 42,
+      "n_test": 17,
+      "n_test_papers": 4,
+      "brier": {
+        "majority": 0.5345557040326224,
+        "nb_tempered": 0.5334746333582655,
+        "covariate": 0.5334746333582655,
+        "knn_sealed": 0.5432545290417226,
+        "naive_bayes": 0.5289902067358595,
+        "nn_v1": 0.5442755021408281,
+        "rules": 0.5688872733237904,
+        "core_vmem": 0.5334746333582655,
+        "core_novmem": 0.5334746333582655,
+        "core_class": 0.5334746333582655
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.0,
+        "core_novmem": 0.0,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "ip3_receptor",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.7146614722252104,
+        "nb_tempered": 0.7089466901636929,
+        "covariate": 0.7089466901636929,
+        "knn_sealed": 0.7727664519137939,
+        "naive_bayes": 0.5975304601355235,
+        "nn_v1": 0.6456558777640872,
+        "rules": 0.7146614722252104,
+        "core_vmem": 0.7089466901636929,
+        "core_novmem": 0.6970619657096312,
+        "core_class": 0.7089466901636929
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.0,
+        "core_novmem": 0.1,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "k_h_exchanging_carrier",
+      "n_train": 99,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.008123939831732808,
+        "nb_tempered": 0.006256927148805977,
+        "covariate": 0.006256927148805977,
+        "knn_sealed": 0.15059279973736522,
+        "naive_bayes": 0.23959877075461053,
+        "nn_v1": 0.08066821483947738,
+        "rules": 0.008123939831732808,
+        "core_vmem": 0.0063941920685011535,
+        "core_novmem": 0.0063941920685011535,
+        "core_class": 0.006256927148805977
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.1,
+        "core_novmem": 0.1,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "na_h_exchanging_carrier",
+      "n_train": 99,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.2739428571428572,
+        "nb_tempered": 0.2600481371428571,
+        "covariate": 0.2600481371428571,
+        "knn_sealed": 0.08585847041063671,
+        "naive_bayes": 0.10417678193941754,
+        "nn_v1": 0.04662639670879527,
+        "rules": 0.2739428571428572,
+        "core_vmem": 0.2613076533698241,
+        "core_novmem": 0.2613076533698241,
+        "core_class": 0.2600481371428571
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.1,
+        "core_novmem": 0.1,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "nav_channels",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.9795696500329675,
+        "nb_tempered": 0.972780704415295,
+        "covariate": 0.972780704415295,
+        "knn_sealed": 1.0543874188773446,
+        "naive_bayes": 0.7970501797652418,
+        "nn_v1": 0.9073344354055164,
+        "rules": 1.2409248571428573,
+        "core_vmem": 0.972780704415295,
+        "core_novmem": 0.9700319828314313,
+        "core_class": 0.972780704415295
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.0,
+        "core_novmem": 0.1,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "nicotinic_acetylcholine_receptor",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.31566972423195555,
+        "nb_tempered": 0.32215877713030316,
+        "covariate": 0.32215877713030316,
+        "knn_sealed": 0.2763567759011262,
+        "naive_bayes": 0.3829073838815819,
+        "nn_v1": 0.380959637190098,
+        "rules": 0.24171685714285712,
+        "core_vmem": 0.32215877713030316,
+        "core_novmem": 0.30972110304262074,
+        "core_class": 0.32215877713030316
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.0,
+        "core_novmem": 0.1,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "ryanodine_receptor",
+      "n_train": 62,
+      "n_test": 3,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.4469913164523041,
+        "nb_tempered": 0.4479242841729114,
+        "covariate": 0.4479242841729114,
+        "knn_sealed": 0.4854833010848476,
+        "naive_bayes": 0.48963785444676544,
+        "nn_v1": 0.47553819596833824,
+        "rules": 0.4469913164523041,
+        "core_vmem": 0.4479242841729114,
+        "core_novmem": 0.4531283318201195,
+        "core_class": 0.4479242841729114
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.0,
+        "core_novmem": 0.1,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "serca_pump",
+      "n_train": 62,
+      "n_test": 2,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.4539250993752946,
+        "nb_tempered": 0.4510110447707755,
+        "covariate": 0.4510110447707755,
+        "knn_sealed": 0.46903062786737937,
+        "naive_bayes": 0.3442421078568687,
+        "nn_v1": 0.4177410270711501,
+        "rules": 0.4539250993752946,
+        "core_vmem": 0.4510110447707755,
+        "core_novmem": 0.4405726761577072,
+        "core_class": 0.4510110447707755
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.0,
+        "core_novmem": 0.1,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "trp_channels_and_ip3r",
+      "n_train": 62,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.6217727538327786,
+        "nb_tempered": 0.615971945685595,
+        "covariate": 0.615971945685595,
+        "knn_sealed": 0.6699495877512454,
+        "naive_bayes": 0.40816757988149777,
+        "nn_v1": 0.5525085101375556,
+        "rules": 0.9325348344671203,
+        "core_vmem": 0.615971945685595,
+        "core_novmem": 0.6056670949057877,
+        "core_class": 0.615971945685595
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0,
+        "core_vmem": 0.0,
+        "core_novmem": 0.1,
+        "core_class": 0.0
+      }
+    },
+    {
+      "fold": "trpm_pzq_contested",
+      "n_train": 39,
+      "n_test": 27,
+      "n_test_papers": 3,
+      "brier": {
+        "majority": 0.5091785413112823,
+        "nb_tempered": 0.4923576899149268,
+        "covariate": 0.509578081350012,
+        "knn_sealed": 0.5036092196306386,
+        "naive_bayes": 0.4841618697787466,
+        "nn_v1": 0.5054285628547958,
+        "rules": 0.5523186208441992,
+        "core_vmem": 0.4871811557107267,
+        "core_novmem": 0.4871811557107267,
+        "core_class": 0.4923576899149268
+      },
+      "temps": {
+        "nb_tempered": 0.5,
+        "covariate": 0.0,
+        "core_vmem": 1.0,
+        "core_novmem": 1.0,
+        "core_class": 0.5
+      }
+    }
+  ],
+  "comparisons": {
+    "nb_tempered_minus_covariate": {
+      "mean": -0.0020039454388462927,
+      "ci95": [
+        -0.004071044370775839,
+        -0.0004360100439505342
+      ],
+      "n_clusters": 31,
+      "clusters_favoring_first": 5,
+      "sign_flip_p": 0.06365,
+      "item_weighted_mean": -0.004825252154074368,
+      "lineage_ci95": [
+        -0.002389319561701349,
+        0.0
+      ],
+      "n_lineages": 2
+    },
+    "nb_tempered_minus_majority": {
+      "mean": -0.0024196626364921072,
+      "ci95": [
+        -0.00501538840866907,
+        -0.00010800158998523785
+      ],
+      "n_clusters": 31,
+      "clusters_favoring_first": 17,
+      "sign_flip_p": 0.06495,
+      "item_weighted_mean": -0.0053638789095286745,
+      "lineage_ci95": [
+        -0.00461383760613872,
+        -0.00218571254220796
+      ],
+      "n_lineages": 2
+    },
+    "knn_sealed_minus_majority": {
+      "mean": -0.01655096887316798,
+      "ci95": [
+        -0.0535919110617046,
+        0.01548376124291086
+      ],
+      "n_clusters": 31,
+      "clusters_favoring_first": 16,
+      "sign_flip_p": 0.3638,
+      "item_weighted_mean": -0.006881431734891136,
+      "lineage_ci95": [
+        -0.020476444000586992,
+        -0.0055111561732936664
+      ],
+      "n_lineages": 2
+    },
+    "nb_tempered_minus_knn_sealed": {
+      "mean": 0.014131306236675873,
+      "ci95": [
+        -0.016609632124882506,
+        0.049763356728271764
+      ],
+      "n_clusters": 31,
+      "clusters_favoring_first": 16,
+      "sign_flip_p": 0.4185,
+      "item_weighted_mean": 0.0015175528253624615,
+      "lineage_ci95": [
+        0.0033254436310857084,
+        0.015862606394448274
+      ],
+      "n_lineages": 2
+    },
+    "naive_bayes_minus_majority": {
+      "mean": 0.021437015902743013,
+      "ci95": [
+        -0.028949266019819963,
+        0.07265756976084554
+      ],
+      "n_clusters": 31,
+      "clusters_favoring_first": 15,
+      "sign_flip_p": 0.42055,
+      "item_weighted_mean": 0.02714829130430959,
+      "lineage_ci95": [
+        0.021437015902743016,
+        0.03597602769757434
+      ],
+      "n_lineages": 2
+    },
+    "nn_v1_minus_majority": {
+      "mean": -0.024366005875941142,
+      "ci95": [
+        -0.05353242229282336,
+        0.0005160593221661945
+      ],
+      "n_clusters": 31,
+      "clusters_favoring_first": 17,
+      "sign_flip_p": 0.09545,
+      "item_weighted_mean": -0.01632023049231384,
+      "lineage_ci95": [
+        -0.05762750555044366,
+        -0.009902423936650974
+      ],
+      "n_lineages": 2
+    },
+    "rules_minus_majority": {
+      "mean": 0.0032870608262869456,
+      "ci95": [
+        -0.03217888321982161,
+        0.04159871436519041
+      ],
+      "n_clusters": 31,
+      "clusters_favoring_first": 9,
+      "sign_flip_p": 0.8672,
+      "item_weighted_mean": 0.018456305859379036,
+      "lineage_ci95": [
+        0.003287060826286945,
+        0.01682187761041666
+      ],
+      "n_lineages": 2
+    },
+    "covariate_minus_majority": {
+      "mean": -0.00041571719764581423,
+      "ci95": [
+        -0.0034150969337740224,
+        0.002566931501811752
+      ],
+      "n_clusters": 31,
+      "clusters_favoring_first": 15,
+      "sign_flip_p": 0.7881,
+      "item_weighted_mean": -0.000538626755454306,
+      "lineage_ci95": [
+        -0.00461383760613872,
+        0.00020360701949338913
+      ],
+      "n_lineages": 2
+    },
+    "P3_core_vmem_minus_core_novmem_dirrows": {
+      "mean": 0.006218837043841213,
+      "ci95": [
+        0.0,
+        0.012437674087682427
+      ],
+      "n_clusters": 2,
+      "clusters_favoring_first": 0,
+      "sign_flip_p": 1.0,
+      "item_weighted_mean": 0.0031094185219206066,
+      "lineage_ci95": [
+        0.0,
+        0.006218837043841213
+      ],
+      "n_lineages": 2
+    },
+    "P3b_core_class_minus_core_vmem_dirrows": {
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "n_clusters": 2,
+      "clusters_favoring_first": 0,
+      "sign_flip_p": 1.0,
+      "item_weighted_mean": 0.0,
+      "lineage_ci95": [
+        0.0,
+        0.0
+      ],
+      "n_lineages": 2
+    }
+  }
+}
