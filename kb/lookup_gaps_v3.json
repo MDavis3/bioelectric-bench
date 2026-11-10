@@ -1,0 +1,3144 @@
+{
+ "note": "Setup-only: agent components in the step-3 setup pass (non-control arms) that are not in kb/vmem_lookup_v2.json. No outcome fields.",
+ "n": 151,
+ "gaps": {
+  "0 1x mmr at altered ph": {
+   "n_rows": 8,
+   "families": [
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "ion_substitution",
+     "agent": "0.1x mmr at altered ph",
+     "target": "external medium pH",
+     "action": "substitute_ion",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "11r vivit": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "11r-vivit",
+     "target": "calcineurin-NFAT interaction",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "2-apb": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "2-apb",
+     "target": "IP3 receptor",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "acetazolamide": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "acetazolamide",
+     "target": "carbonic anhydrase",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "acidified-medium": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "ion_substitution",
+     "agent": "medium at pH 4",
+     "target": null,
+     "action": "substitute_ion",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "alkaline-medium": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "ion_substitution",
+     "agent": "medium at pH 9",
+     "target": null,
+     "action": "substitute_ion",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "apc-rnai": {
+   "n_rows": 2,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "apc rnai plus praziquantel",
+     "target": "APC",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "arch tomato mrna": {
+   "n_rows": 5,
+   "families": [
+    "other_family",
+    "xenopus_craniofacial",
+    "xenopus_tail_regeneration"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "concanamycin plus arch-tomato mrna",
+     "target": "H+-V-ATPase; archaerhodopsin-3",
+     "action": "block",
+     "delivery": "bath plus LED light"
+    },
+    {
+     "type": "combination",
+     "agent": "yche78 mrna plus arch-tomato mrna",
+     "target": "H+-V-ATPase subunit (YCHE78); archaerhodopsin-3",
+     "action": "block",
+     "delivery": "microinjection plus LED light"
+    },
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "arch-tomato mrna",
+     "target": "archaerhodopsin-3 light-gated H+ pump",
+     "action": "open_or_activate",
+     "delivery": "microinjection plus LED light"
+    }
+   ]
+  },
+  "bafilomycin-a1": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "bafilomycin A1",
+     "target": "H+-V-ATPase",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "barium-chloride": {
+   "n_rows": 9,
+   "families": [
+    "other_family",
+    "planaria_screen"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "bacl2 + amtb",
+     "target": "TRPM channels",
+     "action": "block",
+     "delivery": "bath"
+    },
+    {
+     "type": "combination",
+     "agent": "bacl2 + bromocriptine",
+     "target": "monoaminergic (dopamine agonist / 5-HT7-like antagonist) signaling",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    },
+    {
+     "type": "combination",
+     "agent": "bacl2 + nicardipine",
+     "target": "L-type calcium channels",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "beta catenin b rnai": {
+   "n_rows": 5,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "beta-catenin-B rnai plus octanol",
+     "target": "gap junctions",
+     "action": "block",
+     "delivery": "microinjection plus bath"
+    }
+   ]
+  },
+  "beta-catenin-rnai": {
+   "n_rows": 3,
+   "families": [
+    "other_family",
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "beta-catenin dsrna + nigericin + potassium gluconate",
+     "target": "beta-catenin; potassium ionophore",
+     "action": "knockdown",
+     "delivery": "microinjection and bath"
+    },
+    {
+     "type": "combination",
+     "agent": "beta-catenin rnai plus sch-28080",
+     "target": "H,K-ATPase",
+     "action": "block",
+     "delivery": "microinjection plus bath"
+    },
+    {
+     "type": "combination",
+     "agent": "beta-catenin-1 rnai (suboptimal) plus praziquantel",
+     "target": "Cav1A and beta-catenin-1",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "bir10 er retention mrna": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_eye"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "bir10-er retention mrna",
+     "target": "Kir4.1 (Bir10)",
+     "action": "overexpress",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "bradykinin": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "bradykinin",
+     "target": "internal Ca2+ stores, NO",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "bumetanide": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "bumetanide",
+     "target": "Na+/K+/Cl- co-transporter",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "calcium": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "praziquantel + calcium",
+     "target": "extracellular Ca2+",
+     "action": "substitute_ion",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "calmidazolium": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "calmidazolium",
+     "target": "calmodulin",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "cav1a-rnai": {
+   "n_rows": 10,
+   "families": [
+    "other_family",
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "Cav1A rnai + praziquantel",
+     "target": "Ca2+ channel / neuromuscular targets (as described by authors)",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    },
+    {
+     "type": "combination",
+     "agent": "cav1a rnai plus elevated external K+",
+     "target": "external K+",
+     "action": "substitute_ion",
+     "delivery": "bath"
+    },
+    {
+     "type": "combination",
+     "agent": "cav1a rnai plus praziquantel",
+     "target": "Cav1A voltage-gated Ca2+ channel",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "cav1b-rnai": {
+   "n_rows": 20,
+   "families": [
+    "other_family",
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "Cav1B rnai + egta",
+     "target": "extracellular Ca2+ (chelator)",
+     "action": "block",
+     "delivery": "bath"
+    },
+    {
+     "type": "combination",
+     "agent": "Cav1B rnai + high K+ medium",
+     "target": "membrane potential",
+     "action": "substitute_ion",
+     "delivery": "bath"
+    },
+    {
+     "type": "combination",
+     "agent": "Cav1B rnai + nicotine",
+     "target": "nicotinic acetylcholine receptors",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "cav2a-rnai": {
+   "n_rows": 4,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "Cav2A rnai + praziquantel",
+     "target": "Ca2+ channel / neuromuscular targets (as described by authors)",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    },
+    {
+     "type": "combination",
+     "agent": "cav2a rnai plus praziquantel",
+     "target": "Cav2A voltage-gated Ca2+ channel",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    },
+    {
+     "type": "ion_channel_knockdown",
+     "agent": "Cav2A rnai",
+     "target": "voltage-gated Ca2+ channel Cav2A",
+     "action": "knockdown",
+     "delivery": "feeding"
+    }
+   ]
+  },
+  "cav2b-rnai": {
+   "n_rows": 2,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "Cav2B rnai + praziquantel",
+     "target": "Ca2+ channel / neuromuscular targets (as described by authors)",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    },
+    {
+     "type": "ion_channel_knockdown",
+     "agent": "Cav2B rnai",
+     "target": "voltage-gated Ca2+ channel Cav2B",
+     "action": "knockdown",
+     "delivery": "feeding"
+    }
+   ]
+  },
+  "cav3-rnai": {
+   "n_rows": 2,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "Cav3 rnai + praziquantel",
+     "target": "Ca2+ channel / neuromuscular targets (as described by authors)",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    },
+    {
+     "type": "ion_channel_knockdown",
+     "agent": "Cav3 rnai",
+     "target": "voltage-gated Ca2+ channel Cav3",
+     "action": "knockdown",
+     "delivery": "feeding"
+    }
+   ]
+  },
+  "cava1 1 rnai": {
+   "n_rows": 2,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "cava1.1 rnai + praziquantel",
+     "target": "voltage-operated Ca2+ channel alpha1.1 subunit",
+     "action": "knockdown",
+     "delivery": "bath"
+    },
+    {
+     "type": "ion_channel_knockdown",
+     "agent": "cava1.1 rnai",
+     "target": "voltage-operated Ca2+ channel alpha1.1 subunit",
+     "action": "knockdown",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "cavb1+cavb2 rnai": {
+   "n_rows": 4,
+   "families": [
+    "other_family",
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "cavb1+cavb2 rnai + praziquantel",
+     "target": "voltage-operated Ca2+ channel beta subunits 1 and 2",
+     "action": "knockdown",
+     "delivery": "bath"
+    },
+    {
+     "type": "ion_channel_knockdown",
+     "agent": "cavb1+cavb2 rnai",
+     "target": "voltage-operated Ca2+ channel beta subunits 1 and 2",
+     "action": "knockdown",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "cavb1-rnai": {
+   "n_rows": 5,
+   "families": [
+    "other_family",
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "cavb1 rnai + praziquantel",
+     "target": "voltage-operated Ca2+ channel beta 1 subunit",
+     "action": "knockdown",
+     "delivery": "bath"
+    },
+    {
+     "type": "ion_channel_knockdown",
+     "agent": "cavb1 rnai",
+     "target": "voltage-operated Ca2+ channel beta 1 subunit",
+     "action": "knockdown",
+     "delivery": "bath"
+    },
+    {
+     "type": "ion_channel_knockdown",
+     "agent": "cavbeta1 rnai",
+     "target": "Ca2+ channel accessory beta1 subunit",
+     "action": "knockdown",
+     "delivery": "feeding"
+    }
+   ]
+  },
+  "cavb2-rnai": {
+   "n_rows": 5,
+   "families": [
+    "other_family",
+    "planaria_ap_polarity",
+    "planaria_head_shape"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "cavb2 rnai + praziquantel",
+     "target": "voltage-operated Ca2+ channel beta 2 subunit",
+     "action": "knockdown",
+     "delivery": "bath"
+    },
+    {
+     "type": "ion_channel_knockdown",
+     "agent": "cavb2 rnai",
+     "target": "voltage-operated Ca2+ channel beta 2 subunit",
+     "action": "knockdown",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "chloral hydrate": {
+   "n_rows": 6,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "chloral hydrate",
+     "target": null,
+     "action": "none",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "chloroform": {
+   "n_rows": 6,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "chloroform",
+     "target": null,
+     "action": "none",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "choline chloride in medium": {
+   "n_rows": 3,
+   "families": [
+    "xenopus_eye"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "glycr mrna + ivermectin + choline chloride in medium",
+     "target": "glycine-gated chloride channel; external Cl-",
+     "action": "open_or_activate",
+     "delivery": "microinjection plus bath"
+    }
+   ]
+  },
+  "choline-chloride": {
+   "n_rows": 25,
+   "families": [
+    "other_family",
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "dids plus choline plus ouabain",
+     "target": "chloride channels and Cl-/HCO3- exchangers ; Na+ in medium (half replaced) ; Na+/K+ ATPase",
+     "action": "none",
+     "delivery": "bath"
+    },
+    {
+     "type": "combination",
+     "agent": "dids plus choline",
+     "target": "chloride channels and Cl-/HCO3- exchangers ; Na+ in medium (half replaced)",
+     "action": "none",
+     "delivery": "bath"
+    },
+    {
+     "type": "combination",
+     "agent": "ergtoxin plus choline plus ouabain",
+     "target": "ERG (KCNH) potassium channels ; Na+ in medium (half replaced) ; Na+/K+ ATPase",
+     "action": "none",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "cobalt-chloride": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "co2+",
+     "target": "Ca2+ channels (nonspecific)",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "concanamycin-a": {
+   "n_rows": 10,
+   "families": [
+    "other_family",
+    "xenopus_eye",
+    "xenopus_lr_asymmetry",
+    "xenopus_tail_regeneration"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "concanamycin a",
+     "target": "V-ATPase",
+     "action": "block",
+     "delivery": "bath"
+    },
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "concanamycin",
+     "target": "H+-V-ATPase",
+     "action": "block",
+     "delivery": "bath"
+    },
+    {
+     "type": "combination",
+     "agent": "concanamycin a + dexamethasone-induced nicd mrna",
+     "target": "V-ATPase; Notch signaling",
+     "action": "block",
+     "delivery": "bath plus microinjection"
+    }
+   ]
+  },
+  "cucl2": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "cucl2",
+     "target": "tight junctions",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "cyclopiazonic-acid": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "cpa",
+     "target": "SERCA pump",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "cyclosporin a": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "cyclosporin a",
+     "target": "calcineurin",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "dc electric field": {
+   "n_rows": 13,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "applied_field",
+     "agent": "dc electric field",
+     "target": null,
+     "action": "apply_field",
+     "delivery": "electrode (Ag/AgCl, agar bridges)"
+    }
+   ]
+  },
+  "dccd": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "dccd",
+     "target": "H+-V-ATPase",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "dexamethasone induced nicd mrna": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_eye"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "concanamycin a + dexamethasone-induced nicd mrna",
+     "target": "V-ATPase; Notch signaling",
+     "action": "block",
+     "delivery": "bath plus microinjection"
+    }
+   ]
+  },
+  "djinx 11 mrna": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_misexpression",
+     "agent": "djinx-11 mrna",
+     "target": "DjInx-11 (Dugesia japonica innexin)",
+     "action": "overexpress",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "dn kvlqt v244m mrna": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_eye"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "dn kvlqt v244m mrna",
+     "target": "KvLQT",
+     "action": "overexpress",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "dn-kir6.1": {
+   "n_rows": 4,
+   "families": [
+    "other_family",
+    "xenopus_eye"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "dnkir6.1p mrna + kv1.5 mrna",
+     "target": "KATP channel Kir6.1; Kv1.5",
+     "action": "overexpress",
+     "delivery": "microinjection"
+    },
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "dnkir6.1p mrna + lacz lineage tracer",
+     "target": "KATP channel Kir6.1",
+     "action": "overexpress",
+     "delivery": "microinjection"
+    },
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "dnkir6.1p mrna",
+     "target": "KATP channel Kir6.1 (pore mutant)",
+     "action": "overexpress",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "dn-kir6.1-er": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_eye"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "dnkir6.1-er mrna",
+     "target": "KATP channel Kir6.1 (ER-retention mutant)",
+     "action": "overexpress",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "dnkir6 1 r185q mrna": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_eye"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "dnkir6.1 r185q mrna",
+     "target": "Kir6.1",
+     "action": "overexpress",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "dnsur2a pew10 mrna": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_eye"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "dnsur2a pew10 mrna",
+     "target": "SUR2A",
+     "action": "overexpress",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "donepezil": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "donepezil",
+     "target": "acetylcholinesterase",
+     "action": "none",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "dtg": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "dtg",
+     "target": "sigma receptors",
+     "action": "none",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "egta am": {
+   "n_rows": 1,
+   "families": [
+    "other_family"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "pdcs + egta-am",
+     "target": "intracellular calcium (chelator)",
+     "action": "block",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "elevated external k+": {
+   "n_rows": 2,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "cav1a rnai plus elevated external K+",
+     "target": "external K+",
+     "action": "substitute_ion",
+     "delivery": "bath"
+    },
+    {
+     "type": "combination",
+     "agent": "cav1b rnai plus elevated external K+",
+     "target": "external K+",
+     "action": "substitute_ion",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "ergtoxin": {
+   "n_rows": 3,
+   "families": [
+    "other_family"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "ergtoxin",
+     "target": "ERG (KCNH) potassium channels",
+     "action": "block",
+     "delivery": "bath"
+    },
+    {
+     "type": "combination",
+     "agent": "ergtoxin plus choline plus ouabain",
+     "target": "ERG (KCNH) potassium channels ; Na+ in medium (half replaced) ; Na+/K+ ATPase",
+     "action": "none",
+     "delivery": "bath"
+    },
+    {
+     "type": "combination",
+     "agent": "ergtoxin plus choline",
+     "target": "ERG (KCNH) potassium channels ; Na+ in medium (half replaced)",
+     "action": "none",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "ether": {
+   "n_rows": 9,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "ether",
+     "target": null,
+     "action": "none",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "ethyl alcohol": {
+   "n_rows": 7,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "ethyl alcohol",
+     "target": null,
+     "action": "none",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "exp1-mrna": {
+   "n_rows": 3,
+   "families": [
+    "other_family",
+    "xenopus_eye"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "exp1 mrna",
+     "target": "EXP1 cation channel",
+     "action": "open_or_activate",
+     "delivery": "microinjection"
+    },
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "exp1 mrna",
+     "target": "GlyR/EXP1",
+     "action": "open_or_activate",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "fk 506": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "fk-506",
+     "target": "calcineurin",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "fpl-64176": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "fpl-64176",
+     "target": "L-type Ca2+ channels",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "fs-2": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "fs-2",
+     "target": "Ca2+ channels",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "gadolinium-chloride": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "gd3+",
+     "target": "Ca2+ channels (nonspecific)",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "glycr mrna": {
+   "n_rows": 7,
+   "families": [
+    "other_family",
+    "xenopus_eye"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "glycr mrna + ivermectin + choline chloride in medium",
+     "target": "glycine-gated chloride channel; external Cl-",
+     "action": "open_or_activate",
+     "delivery": "microinjection plus bath"
+    },
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "glycr mrna + ivermectin + lacz lineage tracer",
+     "target": "glycine-gated chloride channel",
+     "action": "open_or_activate",
+     "delivery": "microinjection plus bath"
+    },
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "glycr mrna + ivermectin",
+     "target": "GlyR/EXP1",
+     "action": "open_or_activate",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "h+ pump blockers various": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "k+ channel and h+ pump blockers (various)",
+     "target": "K+ channels; H+ pumps",
+     "action": "block",
+     "delivery": null
+    }
+   ]
+  },
+  "hcn2-dn": {
+   "n_rows": 2,
+   "families": [
+    "xenopus_brain"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "nicotine plus hcn2-dn mrna",
+     "target": "nicotinic acetylcholine receptors; HCN2 channel",
+     "action": "block",
+     "delivery": "microinjection plus bath"
+    },
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "hcn2-dn mrna",
+     "target": "HCN2 channel",
+     "action": "block",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "hcn2-mrna": {
+   "n_rows": 7,
+   "families": [
+    "other_family",
+    "xenopus_brain"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "nicotine plus hcn2-wt mrna",
+     "target": "nicotinic acetylcholine receptors; HCN2 channel",
+     "action": "overexpress",
+     "delivery": "microinjection plus bath"
+    },
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "hcn2-wt mrna",
+     "target": "HCN2 channel",
+     "action": "overexpress",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "hh rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "hh rnai plus praziquantel",
+     "target": "Hh",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "high k+ medium": {
+   "n_rows": 2,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "Cav1B rnai + high K+ medium",
+     "target": "membrane potential",
+     "action": "substitute_ion",
+     "delivery": "bath"
+    },
+    {
+     "type": "ion_substitution",
+     "agent": "high K+ medium",
+     "target": "membrane potential",
+     "action": "substitute_ion",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "high-potassium": {
+   "n_rows": 7,
+   "families": [
+    "other_family",
+    "planaria_ap_polarity",
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "planaria",
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "high k (20 mm kcl) plus choline plus ouabain",
+     "target": "K+ gradient across membrane (K+ channels) ; Na+ in medium (half replaced) ; Na+/K+ ATPase",
+     "action": "none",
+     "delivery": "bath"
+    },
+    {
+     "type": "combination",
+     "agent": "high k (20 mm kcl) plus choline",
+     "target": "K+ gradient across membrane (K+ channels) ; Na+ in medium (half replaced)",
+     "action": "none",
+     "delivery": "bath"
+    },
+    {
+     "type": "combination",
+     "agent": "praziquantel + high k+",
+     "target": "membrane potential; voltage-operated Ca2+ channels",
+     "action": "substitute_ion",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "hk-atpase-mrna": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "h,k-atpase alpha subunit mrna",
+     "target": "H,K-ATPase alpha subunit",
+     "action": "overexpress",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "hk-atpase-rnai": {
+   "n_rows": 9,
+   "families": [
+    "other_family",
+    "planaria_head_shape"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "ion_channel_knockdown",
+     "agent": "h,k-atpase rnai",
+     "target": "H,K-ATPase alpha subunit",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "hoe642 cariporide": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "hoe642 (cariporide)",
+     "target": "Na+/H+ exchanger",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "human nav1 5 mrna": {
+   "n_rows": 2,
+   "families": [
+    "xenopus_tail_regeneration"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "human nav1.5 mrna + concanamycin",
+     "target": "NaV1.5; V-ATPase",
+     "action": "overexpress",
+     "delivery": "microinjection plus bath"
+    },
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "human nav1.5 mrna",
+     "target": "NaV1.5",
+     "action": "overexpress",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "hydrochloric acid": {
+   "n_rows": 7,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "ion_substitution",
+     "agent": "hydrochloric acid",
+     "target": "medium pH (about 4.2-4.4)",
+     "action": "substitute_ion",
+     "delivery": "bath"
+    },
+    {
+     "type": "ion_substitution",
+     "agent": "hydrochloric acid",
+     "target": "medium pH",
+     "action": "substitute_ion",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "innexin 12 13 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-12/13 rnai",
+     "target": "Dj-Inx-12+13",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 2 12 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-2/12 rnai",
+     "target": "Dj-Inx-2+12",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 2 13 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-2/13 rnai",
+     "target": "Dj-Inx-2+13",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 2 3 4 13 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-2/3/4/13 rnai",
+     "target": "Dj-Inx-2+3;4+13",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 2 4 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-2/4 rnai",
+     "target": "Dj-Inx-2+4",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 2 5 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-2/5 rnai",
+     "target": "Dj-Inx-2+5",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 3 12 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-3/12 rnai",
+     "target": "Dj-Inx-3+12",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 3 13 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-3/13 rnai",
+     "target": "Dj-Inx-3+13",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 3 4 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-3/4 rnai",
+     "target": "Dj-Inx-3+4",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 3 5 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-3/5 rnai",
+     "target": "Dj-Inx-3+5",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 4 13 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-4/13 rnai",
+     "target": "Dj-Inx-4+13",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 4 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-4 rnai",
+     "target": "Dj-Inx-4",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 5 12 2 13 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-5/12/2/13 rnai",
+     "target": "Dj-Inx-5+12;2+13",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 5 12 2 3 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-5/12/2/3 rnai",
+     "target": "Dj-Inx-5+12;2+3",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 5 12 2 4 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-5/12/2/4 rnai",
+     "target": "Dj-Inx-5+12;2+4",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 5 12 2 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-5/12/2 rnai",
+     "target": "Dj-Inx-5+12;2",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 5 12 3 13 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-5/12/3/13 rnai",
+     "target": "Dj-Inx-5+12;3+13",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 5 12 3 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-5/12/3 rnai",
+     "target": "Dj-Inx-5+12;3",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 5 12 4 13 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-5/12/4/13 rnai",
+     "target": "Dj-Inx-5+12;4+13",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 5 12 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-5/12 rnai",
+     "target": "Dj-Inx-5+12",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 5 13 12 rnai": {
+   "n_rows": 7,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-5/13/12 rnai",
+     "target": "Dj-Inx-5+13;12",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    },
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-5/13/12 rnai",
+     "target": "Dj-Inx-5, Dj-Inx-13, Dj-Inx-12",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 5 13 3 12 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-5/13/3/12 rnai",
+     "target": "Dj-Inx-5+13;3+12",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 5 13 3 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-5/13/3 rnai",
+     "target": "Dj-Inx-5+13;3",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 5 13 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-5/13 rnai",
+     "target": "Dj-Inx-5+13",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin 8 9 rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-8/9 rnai",
+     "target": "Dj-Inx-8+9",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin-12-rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-12 rnai",
+     "target": "Dj-Inx-12",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin-13-rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-13 rnai",
+     "target": "Dj-Inx-13",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin-2-rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-2 rnai",
+     "target": "Dj-Inx-2",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin-3-rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-3 rnai",
+     "target": "Dj-Inx-3",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin-5-rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-5 rnai",
+     "target": "Dj-Inx-5",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin-5/12/13-rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin-5/12/13 rnai",
+     "target": "Dj-Inx-5+12;13",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "innexin-rnai-pooled": {
+   "n_rows": 1,
+   "families": [
+    "other_family"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "innexin rnai (smedinx-1 to 9 and 12)",
+     "target": "smedinx-1 to smedinx-9, smedinx-12 (innexins)",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "isoquinolinone derivative a": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "isoquinolinone derivative a",
+     "target": "voltage-operated Ca2+ channel beta subunits (presumed, as for PZQ)",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "isoquinolinone derivative b": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "isoquinolinone derivative b",
+     "target": "voltage-operated Ca2+ channel beta subunits (presumed, as for PZQ)",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "isoquinolinone derivative c": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "isoquinolinone derivative c",
+     "target": "voltage-operated Ca2+ channel beta subunits (presumed, as for PZQ)",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "k+ channel": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "k+ channel and h+ pump blockers (various)",
+     "target": "K+ channels; H+ pumps",
+     "action": "block",
+     "delivery": null
+    }
+   ]
+  },
+  "kir2.2-dn": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "dominant-negative kir2.2 mrna",
+     "target": "Kir2.2",
+     "action": "overexpress",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "kir6 2 kir2 1 chimera 666 mrna": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_eye"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "kir6.2-kir2.1 chimera (666) mrna",
+     "target": "Kir6.2/Kir2.1",
+     "action": "overexpress",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "kn 93": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "kn-93",
+     "target": "CaMKII",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "kv1.5-mrna": {
+   "n_rows": 6,
+   "families": [
+    "xenopus_eye"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "dnkir6.1p mrna + kv1.5 mrna",
+     "target": "KATP channel Kir6.1; Kv1.5",
+     "action": "overexpress",
+     "delivery": "microinjection"
+    },
+    {
+     "type": "combination",
+     "agent": "kv1.5 mrna + fluoxetine",
+     "target": "serotonin reuptake transporter",
+     "action": "block",
+     "delivery": "microinjection plus bath"
+    },
+    {
+     "type": "combination",
+     "agent": "kv1.5 mrna + lindane",
+     "target": "gap junctions",
+     "action": "block",
+     "delivery": "microinjection plus bath"
+    }
+   ]
+  },
+  "l-glutamate": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "l-glutamate",
+     "target": "glutamate receptors",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "lacz lineage tracer": {
+   "n_rows": 2,
+   "families": [
+    "xenopus_eye"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "dnkir6.1p mrna + lacz lineage tracer",
+     "target": "KATP channel Kir6.1",
+     "action": "overexpress",
+     "delivery": "microinjection"
+    },
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "glycr mrna + ivermectin + lacz lineage tracer",
+     "target": "glycine-gated chloride channel",
+     "action": "open_or_activate",
+     "delivery": "microinjection plus bath"
+    }
+   ]
+  },
+  "lobatamide c": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "lobatamide c",
+     "target": "H+-V-ATPase",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "lobatamide c a15": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "lobatamide c a15",
+     "target": "H+-V-ATPase",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "lobatamide c a16": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "lobatamide c a16",
+     "target": "H+-V-ATPase",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "lobatamide c analogue 6": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "lobatamide c analogue 6",
+     "target": "H+-V-ATPase",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "m50054": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_tail_regeneration"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "m50054 + monensin + sodium gluconate",
+     "target": "Na+ influx",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "ms-222": {
+   "n_rows": 10,
+   "families": [
+    "other_family",
+    "xenopus_lr_asymmetry",
+    "xenopus_tail_regeneration"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "ms222 (tricaine)",
+     "target": "voltage-gated Na+ channels",
+     "action": "block",
+     "delivery": "bath"
+    },
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "tricaine",
+     "target": "voltage-gated Na+ channels",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "na gluconate medium": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_tail_regeneration"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "nhe3 mrna plus na-gluconate medium",
+     "target": "Na+/H+ exchanger NHE3",
+     "action": "overexpress",
+     "delivery": "microinjection plus bath"
+    }
+   ]
+  },
+  "nav1 2 shrna": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_tail_regeneration"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "ion_channel_knockdown",
+     "agent": "nav1.2 shrna",
+     "target": "NaV1.2",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "nemadipine-a": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "nemadipine-a",
+     "target": "L-type Ca2+ channel (EGL-19)",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "neonatal nav1 5 mrna": {
+   "n_rows": 4,
+   "families": [
+    "xenopus_eye"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "neonatal nav1.5 mrna + sodium gluconate in medium",
+     "target": "Nav1.5; external Na+",
+     "action": "substitute_ion",
+     "delivery": "microinjection plus bath"
+    }
+   ]
+  },
+  "nhe3-mrna": {
+   "n_rows": 4,
+   "families": [
+    "xenopus_lr_asymmetry",
+    "xenopus_tail_regeneration"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "nhe3 mrna plus na-gluconate medium",
+     "target": "Na+/H+ exchanger NHE3",
+     "action": "overexpress",
+     "delivery": "microinjection plus bath"
+    },
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "nhe3 mrna",
+     "target": "Na+/H+ exchanger NHE3",
+     "action": "overexpress",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "nickel-chloride": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "ni2+",
+     "target": "Ca2+ channels (nonspecific)",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "niflumic-acid": {
+   "n_rows": 2,
+   "families": [
+    "planaria_screen",
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "planaria",
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "niflumic acid",
+     "target": "Ca2+-activated Cl- channels",
+     "action": "block",
+     "delivery": "bath"
+    },
+    {
+     "type": "combination",
+     "agent": "bacl2 + niflumic acid",
+     "target": "calcium-activated chloride channels",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "octanol earlier exposure none at re cut": {
+   "n_rows": 3,
+   "families": [
+    "planaria_cryptic"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_block",
+     "agent": "octanol (earlier exposure, none at re-cut)",
+     "target": "gap junctions",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "pdcs": {
+   "n_rows": 19,
+   "families": [
+    "other_family"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "applied_field",
+     "agent": "pdcs",
+     "target": null,
+     "action": "apply_field",
+     "delivery": "electrode"
+    },
+    {
+     "type": "combination",
+     "agent": "pdcs + egta-am",
+     "target": "intracellular calcium (chelator)",
+     "action": "block",
+     "delivery": "microinjection"
+    },
+    {
+     "type": "combination",
+     "agent": "pdcs + nicardipine",
+     "target": "L-type voltage-gated calcium channels",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "phlorizin": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "phlorizin",
+     "target": "Na+/glucose co-transporter",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "pma1 2 mrna yeast plasma membrane h+ pump": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "pma1.2 mrna (yeast plasma-membrane H+ pump)",
+     "target": "PMA1.2 H+-ATPase",
+     "action": "overexpress",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "potassium gluconate elevated external k+": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "ion_substitution",
+     "agent": "potassium gluconate (elevated external K+)",
+     "target": "external K+",
+     "action": "substitute_ion",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "potassium hydroxide": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "ion_substitution",
+     "agent": "potassium hydroxide",
+     "target": "medium pH (8.2-8.4)",
+     "action": "substitute_ion",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "potassium-gluconate": {
+   "n_rows": 11,
+   "families": [
+    "other_family",
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "beta-catenin dsrna + nigericin + potassium gluconate",
+     "target": "beta-catenin; potassium ionophore",
+     "action": "knockdown",
+     "delivery": "microinjection and bath"
+    },
+    {
+     "type": "combination",
+     "agent": "sch-28080 plus potassium gluconate",
+     "target": "H,K-ATPase and external K+",
+     "action": "block",
+     "delivery": "bath"
+    },
+    {
+     "type": "ion_substitution",
+     "agent": "potassium gluconate",
+     "target": "membrane potential",
+     "action": "substitute_ion",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "praziquantel delayed": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "egta + praziquantel (delayed)",
+     "target": "extracellular Ca2+ (chelator); praziquantel targets as described by authors",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "ptc rnai": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "ptc rnai plus praziquantel",
+     "target": "ptc",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "r-bay-k-8644": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "r(+)bay k8644",
+     "target": "L-type Ca2+ channels",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "rknbc mrna": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_eye"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "rknbc mrna",
+     "target": "Na+/HCO3- cotransporter",
+     "action": "overexpress",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "ro11 3128": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "ro11-3128",
+     "target": "Ca2+ channel modulator",
+     "action": "none",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "s 4 nitrobenzyl 6 thioinosine": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "s-(4-nitrobenzyl)-6-thioinosine",
+     "target": "nucleoside transporter",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "s-bay-k-8644": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "s(-)bay k8644",
+     "target": "L-type Ca2+ channels",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "sb 242784": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "sb-242784",
+     "target": "H+-V-ATPase",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "sch-28080": {
+   "n_rows": 25,
+   "families": [
+    "other_family",
+    "planaria_ap_polarity",
+    "planaria_cryptic",
+    "planaria_head_shape"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "sch-28080",
+     "target": "H+,K+-ATPase",
+     "action": "block",
+     "delivery": "bath"
+    },
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "sch-28080",
+     "target": "H,K-ATPase",
+     "action": "block",
+     "delivery": "bath"
+    },
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "sch-28080",
+     "target": null,
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "slo2 2 inhibitor": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_tail_regeneration"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "slo2.2 inhibitor",
+     "target": "sodium-activated K+ channel Slo2.2",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "smedinx 10 rnai": {
+   "n_rows": 1,
+   "families": [
+    "other_family"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "smedinx-10 rnai",
+     "target": "smedinx-10 (innexin)",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "smedinx 11 mrna": {
+   "n_rows": 2,
+   "families": [
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_misexpression",
+     "agent": "smedinx-11 mrna",
+     "target": "smedinx-11 (planarian innexin)",
+     "action": "overexpress",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "smedinx 11 rnai": {
+   "n_rows": 4,
+   "families": [
+    "other_family"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "gap_junction_knockdown",
+     "agent": "smedinx-11 rnai",
+     "target": "smedinx-11 (innexin)",
+     "action": "knockdown",
+     "delivery": "microinjection"
+    }
+   ]
+  },
+  "sodium gluconate in medium": {
+   "n_rows": 4,
+   "families": [
+    "xenopus_eye"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "neonatal nav1.5 mrna + sodium gluconate in medium",
+     "target": "Nav1.5; external Na+",
+     "action": "substitute_ion",
+     "delivery": "microinjection plus bath"
+    }
+   ]
+  },
+  "sodium-gluconate": {
+   "n_rows": 8,
+   "families": [
+    "other_family",
+    "planaria_ap_polarity",
+    "xenopus_tail_regeneration"
+   ],
+   "organisms": [
+    "planaria",
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "m50054 + monensin + sodium gluconate",
+     "target": "Na+ influx",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    },
+    {
+     "type": "combination",
+     "agent": "monensin + sodium gluconate + staurosporine",
+     "target": "Na+ influx; SIK",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    },
+    {
+     "type": "combination",
+     "agent": "monensin + sodium gluconate",
+     "target": "Na+ influx",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "spermidine": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "spermidine",
+     "target": "NMDA receptor",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "staurosporine": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_tail_regeneration"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "monensin + sodium gluconate + staurosporine",
+     "target": "Na+ influx; SIK",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "tributyltin-chloride": {
+   "n_rows": 1,
+   "families": [
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "tributyltin chloride",
+     "target": "OH-/Cl- exchanger",
+     "action": "open_or_activate",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "ventral nerve cord interruption": {
+   "n_rows": 3,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "octanol plus ventral nerve cord interruption",
+     "target": "gap junctions",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "xestospongin-c": {
+   "n_rows": 1,
+   "families": [
+    "planaria_ap_polarity"
+   ],
+   "organisms": [
+    "planaria"
+   ],
+   "examples": [
+    {
+     "type": "channel_or_pump_drug",
+     "agent": "xestospongin c",
+     "target": "IP3 receptor",
+     "action": "block",
+     "delivery": "bath"
+    }
+   ]
+  },
+  "yche78-dn": {
+   "n_rows": 5,
+   "families": [
+    "xenopus_craniofacial",
+    "xenopus_lr_asymmetry"
+   ],
+   "organisms": [
+    "xenopus"
+   ],
+   "examples": [
+    {
+     "type": "combination",
+     "agent": "yche78 mrna plus arch-tomato mrna",
+     "target": "H+-V-ATPase subunit (YCHE78); archaerhodopsin-3",
+     "action": "block",
+     "delivery": "microinjection plus LED light"
+    },
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "yche78 dna (dominant-negative H+-V-ATPase subunit E)",
+     "target": "H+-V-ATPase subunit E",
+     "action": "overexpress",
+     "delivery": "microinjection"
+    },
+    {
+     "type": "ion_channel_misexpression",
+     "agent": "yche78 mrna (dominant-negative H+-V-ATPase subunit E)",
+     "target": "H+-V-ATPase subunit E",
+     "action": "overexpress",
+     "delivery": "microinjection"
+    }
+   ]
+  }
+ }
+}

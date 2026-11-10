@@ -1,0 +1,20 @@
+{
+ "fields": [
+  "g1_matched",
+  "g1_agree",
+  "g2_planform_inscope",
+  "g2_matched",
+  "g3_within",
+  "g4_sheet_arms",
+  "g4_matched",
+  "g4_exact",
+  "g5_rows_S",
+  "g5_rows_O",
+  "g5_matched_S_in_O",
+  "g5_matched_O_in_S",
+  "partial_matched",
+  "map_entries",
+  "exit_code"
+ ],
+ "keyed_by": null
+}

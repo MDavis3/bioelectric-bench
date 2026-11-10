@@ -1,0 +1,9 @@
+{
+ "fields": [
+  "n_incl_in_hand",
+  "n_papers_with_counts",
+  "n_treated_primary_rows_with_counts",
+  "exit_code"
+ ],
+ "keyed_by": null
+}

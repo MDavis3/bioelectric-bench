@@ -1,0 +1,4 @@
+{"oviedo2010_devbiol":{"n_arms":75,"n_primary_family_arms":72,"n_treated_primary_arms":60,"n_control_primary_arms":12,"n_other_family_arms":3,"pages_read":11,"files_read":5,"problem_code":1},
+"beane2011_chembiol":{"n_arms":39,"n_primary_family_arms":27,"n_treated_primary_arms":22,"n_control_primary_arms":5,"n_other_family_arms":12,"pages_read":3,"files_read":2,"problem_code":1},
+"zhang2011_jneurosci":{"n_arms":45,"n_primary_family_arms":31,"n_treated_primary_arms":19,"n_control_primary_arms":12,"n_other_family_arms":14,"pages_read":0,"files_read":1,"problem_code":1},
+"beane2013_development":{"n_arms":20,"n_primary_family_arms":6,"n_treated_primary_arms":3,"n_control_primary_arms":3,"n_other_family_arms":14,"pages_read":8,"files_read":2,"problem_code":1}}

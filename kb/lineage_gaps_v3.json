@@ -1,0 +1,20 @@
+{
+ "note": "Lab surnames (last author as extracted) in the setup pass not in config/lab_lineage_v2.json, with year and paper.",
+ "missing": [
+  [
+   "Annand",
+   2014,
+   "annand2014_ethos"
+  ],
+  [
+   "Buchanan",
+   1922,
+   "buchanan1922_jexpzool"
+  ],
+  [
+   "Rustia",
+   1925,
+   "rustia1925_jexpzool"
+  ]
+ ]
+}
