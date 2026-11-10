@@ -15,6 +15,7 @@
   },
   "extraction_schema": {
     "copy": "sealed/extraction_schema__8e71066ce2fc.json",
+    "remote_commit": "d6aabb017c045bcb0ab1814f10760b68294e7261",
     "sha256": "8e71066ce2fc52b536685b593b3dc83382fbc43d1603d23d27e1521b50401570",
     "source": "schema/extraction_schema.json",
     "utc": "2026-11-10T06:34:18Z"
