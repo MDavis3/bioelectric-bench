@@ -27,6 +27,12 @@
     "source": "config/corpus_protocol.md",
     "utc": "2026-11-10T05:54:00Z"
   },
+  "db_classes_v1": {
+    "copy": "sealed/db_classes_v1__13cce957a1e1.json",
+    "sha256": "13cce957a1e162ab740304e77326ede1a5f90c7e0656c61ce93cdc72c65091bc",
+    "source": "config/db_classes_v1.json",
+    "utc": "2026-11-10T16:38:13Z"
+  },
   "desk_threshold_rule_v1": {
     "copy": "sealed/desk_threshold_rule_v1__97d7b9051d78.md",
     "remote_commit": "7f47b576056d9f60dd90962a91f996090c3f7590",
