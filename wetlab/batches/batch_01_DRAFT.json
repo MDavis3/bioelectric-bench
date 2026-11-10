@@ -1,0 +1,73 @@
+{
+  "organism": "planaria",
+  "stage": "trunk fragment",
+  "injury": "pre- and post-pharyngeal cuts",
+  "readout": {
+    "method": "phone macro or USB microscope photo, one animal per image, scored blind by dish code",
+    "timepoint": "day 10-14 after cutting"
+  },
+  "viability_check": "day 3: count live fragments per dish; dead ones scored 'dead'",
+  "replicates": null,
+  "batch": "batch_01",
+  "status": "DRAFT: confirm species and supplier before sealing",
+  "sealed_date": null,
+  "species": "SET ON ARRIVAL (expected Girardia dorotocephala; record supplier and listing name)",
+  "purpose": "Rig validation (wetlab/PROTOCOL.md gate rig_validation): water only, 60 trunk fragments in two cutting sessions.",
+  "positive_control": null,
+  "score_positive_control": false,
+  "arms": [
+    {
+      "arm": "water_session1",
+      "role": "control",
+      "task_family": "planaria_ap_polarity",
+      "dishes": 3,
+      "fragments_per_dish": 10,
+      "intervention": {
+        "type": "control",
+        "target": null,
+        "agent": "water",
+        "dose": null,
+        "dose_units": null,
+        "timing": "0 hpa",
+        "duration": "whole regeneration period",
+        "delivery": "bath",
+        "description": "plain worm water only"
+      }
+    },
+    {
+      "arm": "water_session2",
+      "role": "control",
+      "task_family": "planaria_ap_polarity",
+      "dishes": 3,
+      "fragments_per_dish": 10,
+      "intervention": {
+        "type": "control",
+        "target": null,
+        "agent": "water",
+        "dose": null,
+        "dose_units": null,
+        "timing": "0 hpa",
+        "duration": "whole regeneration period",
+        "delivery": "bath",
+        "description": "plain worm water only"
+      }
+    }
+  ],
+  "max_control_abnormal": 0.1,
+  "max_lethality": 0.1,
+  "pass_rule": "desk_threshold_rule_v1 item 7: wetlab/tabulate.py exits 0 (no control arm over 10% non-normal) and no arm flagged toxic (lethality limit 0.10).",
+  "handling": {
+    "medium": "one brand of commercial natural spring water throughout (all published octanol protocols in wetlab/published_handling.csv used spring water)",
+    "temperature_c": "20-22 (published: 20-22)",
+    "starve_days_before_cut": 7,
+    "cut": "remove head and tail on a cold damp surface; keep the pharynx-containing trunk piece",
+    "density": "10 fragments per 100 mm dish",
+    "water_change": "every 2-3 days, and the day after cutting",
+    "scoring_day": "14 (published D. japonica scoring day; record day 10 too)"
+  },
+  "preregistered": {
+    "min_penetrance_that_counts": "n/a (rig validation)",
+    "osf_or_preprint_url": null
+  },
+  "note": "Generate dish codes with wetlab/randomize.py only after sealing. Predictions for both arms are sealed by a fresh Predictor before cutting (wetlab/batch_setups.py makes its input)."
+}

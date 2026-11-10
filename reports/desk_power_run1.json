@@ -1,0 +1,122 @@
+{
+ "dugesia_japonica__C1_octanol_polarity": {
+  "low_pct": 33,
+  "n_animals": 4319,
+  "n_arms": 38,
+  "n_lineages": 2,
+  "n_papers": 5,
+  "n_per_arm_g20": 70,
+  "n_per_arm_g30": 35,
+  "n_per_arm_g40": 21,
+  "pc_min_pct": 15,
+  "pc_pass_permille_21": 959,
+  "pc_pass_permille_30": 990,
+  "qualifies": 1
+ },
+ "dugesia_japonica__C4_heptanol_polarity": {
+  "low_pct": 36,
+  "n_animals": 802,
+  "n_arms": 5,
+  "n_lineages": 1,
+  "n_papers": 1,
+  "n_per_arm_g20": 70,
+  "n_per_arm_g30": 35,
+  "n_per_arm_g40": 21,
+  "pc_min_pct": 20,
+  "pc_pass_permille_21": 930,
+  "pc_pass_permille_30": 985,
+  "qualifies": 1
+ },
+ "dugesia_japonica__control_polarity": {
+  "control_void_permille_30": 605,
+  "n_animals": 743,
+  "n_arms": 8,
+  "n_lineages": 3,
+  "n_papers": 5,
+  "n_per_arm_g20": 70,
+  "n_per_arm_g30": 35,
+  "n_per_arm_g40": 21
+ },
+ "girardia_dorotocephala__C1_octanol_polarity": {
+  "low_pct": 0,
+  "n_animals": 0,
+  "n_arms": 0,
+  "n_lineages": 0,
+  "n_papers": 0,
+  "n_per_arm_g20": 96,
+  "n_per_arm_g30": 41,
+  "n_per_arm_g40": 22,
+  "pc_min_pct": 0,
+  "pc_pass_permille_21": 0,
+  "pc_pass_permille_30": 0,
+  "qualifies": 0
+ },
+ "girardia_dorotocephala__C2_octanol_headshape": {
+  "low_pct": 0,
+  "n_animals": 0,
+  "n_arms": 0,
+  "n_lineages": 0,
+  "n_papers": 0,
+  "n_per_arm_g20": 96,
+  "n_per_arm_g30": 41,
+  "n_per_arm_g40": 22,
+  "pc_min_pct": 0,
+  "pc_pass_permille_21": 0,
+  "pc_pass_permille_30": 0,
+  "qualifies": 0
+ },
+ "girardia_dorotocephala__C3_ethanol_polarity": {
+  "low_pct": 25,
+  "n_animals": 347,
+  "n_arms": 7,
+  "n_lineages": 1,
+  "n_papers": 2,
+  "n_per_arm_g20": 96,
+  "n_per_arm_g30": 41,
+  "n_per_arm_g40": 22,
+  "pc_min_pct": 10,
+  "pc_pass_permille_21": 934,
+  "pc_pass_permille_30": 991,
+  "qualifies": 0
+ },
+ "girardia_dorotocephala__control_polarity": {
+  "control_void_permille_30": 1000,
+  "n_animals": 2789,
+  "n_arms": 9,
+  "n_lineages": 1,
+  "n_papers": 3,
+  "n_per_arm_g20": 96,
+  "n_per_arm_g30": 41,
+  "n_per_arm_g40": 22
+ },
+ "girardia_tigrina__control_polarity": {
+  "control_void_permille_30": 74,
+  "n_animals": 280,
+  "n_arms": 7,
+  "n_lineages": 1,
+  "n_papers": 1,
+  "n_per_arm_g20": 50,
+  "n_per_arm_g30": 28,
+  "n_per_arm_g40": 18
+ },
+ "other_or_unstated__control_polarity": {
+  "control_void_permille_30": 3,
+  "n_animals": 600,
+  "n_arms": 5,
+  "n_lineages": 1,
+  "n_papers": 1,
+  "n_per_arm_g20": 41,
+  "n_per_arm_g30": 24,
+  "n_per_arm_g40": 16
+ },
+ "schmidtea_mediterranea__control_polarity": {
+  "control_void_permille_30": 0,
+  "n_animals": 146,
+  "n_arms": 5,
+  "n_lineages": 1,
+  "n_papers": 1,
+  "n_per_arm_g20": 35,
+  "n_per_arm_g30": 22,
+  "n_per_arm_g40": 15
+ }
+}

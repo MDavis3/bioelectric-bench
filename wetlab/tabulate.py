@@ -79,7 +79,11 @@ def main():
     if pc:
         c = counts.get(pc["arm"], Counter())
         n = sum(c.values())
-        frac = c.get(pc["category"], 0) / n if n else 0.0
+        if pc["category"] == "affected":   # desk_threshold_rule_v1: every category except normal (dead already excluded)
+            hit = sum(v for k, v in c.items() if k not in ("normal", "dead"))
+        else:
+            hit = c.get(pc["category"], 0)
+        frac = hit / n if n else 0.0
         print(f"positive control {pc['arm']}: {pc['category']} {frac:.2f} (need >= {pc['min_fraction']}, n={n})")
         if frac < pc["min_fraction"]:
             void.append(f"positive control {pc['arm']} {frac:.2f} < {pc['min_fraction']}")

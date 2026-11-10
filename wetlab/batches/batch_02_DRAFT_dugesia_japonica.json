@@ -1,0 +1,93 @@
+{
+  "organism": "planaria",
+  "stage": "trunk fragment",
+  "injury": "pre- and post-pharyngeal cuts",
+  "readout": {
+    "method": "phone macro or USB microscope photo, one animal per image, scored blind by dish code",
+    "timepoint": "day 10-14 after cutting"
+  },
+  "viability_check": "day 3: count live fragments per dish; dead ones scored 'dead'",
+  "replicates": null,
+  "batch": "batch_02",
+  "status": "DRAFT: only if Manav obtains Dugesia japonica (not sold to individuals)",
+  "sealed_date": null,
+  "species": "Dugesia japonica",
+  "purpose": "Positive control (gate positive_control): reproduce the published octanol phenotype exactly as published.",
+  "positive_control": {
+    "arm": "octanol",
+    "category": "affected",
+    "min_fraction": 0.2,
+    "source": "reports/desk_power.md run 2 (desk_threshold_rule_v1): dugesia_japonica C1 octanol minimum 20 points; 4 papers, 1 lineage after verification"
+  },
+  "score_positive_control": false,
+  "arms": [
+    {
+      "arm": "water",
+      "role": "control",
+      "task_family": "planaria_ap_polarity",
+      "dishes": 3,
+      "fragments_per_dish": 10,
+      "intervention": {
+        "type": "control",
+        "target": null,
+        "agent": "water",
+        "dose": null,
+        "dose_units": null,
+        "timing": "0 hpa",
+        "duration": "whole regeneration period",
+        "delivery": "bath",
+        "description": "plain worm water only"
+      }
+    },
+    {
+      "arm": "octanol",
+      "role": "positive_control",
+      "task_family": "planaria_ap_polarity",
+      "dishes": 3,
+      "fragments_per_dish": 10,
+      "intervention": {
+        "type": "gap_junction_block",
+        "target": "innexins",
+        "agent": "1-octanol",
+        "dose": 127,
+        "dose_units": "uM",
+        "timing": "0 hpa (immediately after cutting)",
+        "duration": "72 h, then plain water",
+        "delivery": "bath",
+        "description": "1-octanol bath in spring water after cutting, as published"
+      },
+      "citation": "oviedo2010_devbiol and durant2017_bpj methods (wetlab/published_handling.csv): 127 uM 1-octanol in commercial spring water, 72 h from cutting, pharynx-containing fragments, scored at day 14 (Oviedo) or 21 (Durant)"
+    },
+    {
+      "arm": "vehicle_handling",
+      "role": "control",
+      "task_family": "planaria_ap_polarity",
+      "dishes": 3,
+      "fragments_per_dish": 10,
+      "intervention": {
+        "type": "control",
+        "target": null,
+        "agent": "water, handled exactly like the octanol arm (same bottle shaking, same changes)",
+        "dose": null,
+        "dose_units": null,
+        "timing": "0 hpa",
+        "duration": "whole regeneration period",
+        "delivery": "bath",
+        "description": "sham bath: spring water handled like the octanol bath"
+      }
+    }
+  ],
+  "max_control_abnormal": 0.1,
+  "max_lethality": 0.3,
+  "handling": {
+    "medium": "commercial natural spring water",
+    "temperature_c": "20-22",
+    "stock": "about 10 uL 1-octanol into 500 mL spring water gives about 127 uM; shake or stir long (poorly soluble); make fresh",
+    "exposure": "72 h from cutting, then rinse into plain water",
+    "scoring_day": 14
+  },
+  "preregistered": {
+    "min_penetrance_that_counts": "positive control: >= 20% affected (any non-normal) among scorable fragments, per desk_threshold_rule_v1",
+    "osf_or_preprint_url": null
+  }
+}

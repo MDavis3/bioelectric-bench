@@ -1,0 +1,87 @@
+{
+  "organism": "planaria",
+  "stage": "pre-tail fragment (posterior to pharynx)",
+  "injury": "pre- and post-pharyngeal cuts",
+  "readout": {
+    "method": "phone macro or USB microscope photo, one animal per image, scored blind by dish code",
+    "timepoint": "day 10-14 after cutting"
+  },
+  "viability_check": "day 3: count live fragments per dish; dead ones scored 'dead'",
+  "replicates": null,
+  "batch": "batch_02",
+  "status": "DRAFT: positive control NOT QUALIFIED under desk_threshold_rule_v1 (no scorable published Girardia rows); run only as a descriptive pilot, never as the gate",
+  "sealed_date": null,
+  "species": "Girardia dorotocephala",
+  "purpose": "Descriptive pilot of the only published octanol protocol in a species hobby suppliers sell. Readout is head shape, not anterior-posterior polarity.",
+  "positive_control": null,
+  "score_positive_control": true,
+  "arms": [
+    {
+      "arm": "water",
+      "role": "control",
+      "task_family": "planaria_head_shape",
+      "dishes": 3,
+      "fragments_per_dish": 10,
+      "intervention": {
+        "type": "control",
+        "target": null,
+        "agent": "water",
+        "dose": null,
+        "dose_units": null,
+        "timing": "0 hpa",
+        "duration": "whole regeneration period",
+        "delivery": "bath",
+        "description": "plain worm water only"
+      }
+    },
+    {
+      "arm": "octanol",
+      "role": "positive_control",
+      "task_family": "planaria_head_shape",
+      "dishes": 3,
+      "fragments_per_dish": 10,
+      "intervention": {
+        "type": "gap_junction_block",
+        "target": "innexins",
+        "agent": "1-octanol",
+        "dose": 123,
+        "dose_units": "uM",
+        "timing": "0 hpa",
+        "duration": "72 h with daily refresh, then plain water",
+        "delivery": "bath",
+        "description": "1-octanol bath in spring water after cutting, refreshed daily, as published"
+      },
+      "citation": "emmonsbell2015_ijms methods (wetlab/published_handling.csv): Girardia dorotocephala pre-tail fragments, 123 uM 1-octanol dispersed directly in spring water, 72 h with daily refresh, 20 C, scored about day 10; hexanol used as a control alcohol"
+    },
+    {
+      "arm": "hexanol",
+      "role": "control",
+      "task_family": "planaria_head_shape",
+      "dishes": 3,
+      "fragments_per_dish": 10,
+      "intervention": {
+        "type": "control",
+        "target": null,
+        "agent": "1-hexanol",
+        "dose": null,
+        "dose_units": "uM (same molar concentration as the published hexanol control; copy from the paper before sealing)",
+        "timing": "0 hpa",
+        "duration": "72 h with daily refresh",
+        "delivery": "bath",
+        "description": "control alcohol bath, as published"
+      }
+    }
+  ],
+  "max_control_abnormal": 0.1,
+  "max_lethality": 0.3,
+  "handling": {
+    "medium": "commercial natural spring water",
+    "temperature_c": 20,
+    "exposure": "72 h, refreshed daily, then plain water",
+    "scoring_day": 10
+  },
+  "preregistered": {
+    "min_penetrance_that_counts": "none set: the sealed rule found no published rate to set it from; any threshold would be invented",
+    "osf_or_preprint_url": null
+  }
+}
