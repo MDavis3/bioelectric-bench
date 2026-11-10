@@ -36,6 +36,7 @@
   },
   "db_endpoint_roots_v1": {
     "copy": "sealed/db_endpoint_roots_v1__9594c6b32153.json",
+    "remote_commit": "d7e8d44d631fc729e997eba909abfcde6ee7ea07",
     "sha256": "9594c6b321530403c3c8ce0426cbfcb4f1ba8e0a01b48a380b5e62f13c3ee459",
     "source": "config/db_endpoint_roots_v1.json",
     "utc": "2026-11-10T16:38:16Z"
