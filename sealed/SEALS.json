@@ -8,6 +8,7 @@
   },
   "vmem_rule": {
     "copy": "sealed/vmem_rule__0bb768a12b9b.md",
+    "remote_commit": "d395a4ad41054c1ec9a40b0d3e08cabd22d1fff4",
     "sha256": "0bb768a12b9b0403d3e573ef86cd6ba89c16960dbc237e1abb5688962a3de995",
     "source": "kb/vmem_rule.md",
     "utc": "2026-11-10T05:38:03Z"
