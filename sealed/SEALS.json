@@ -309,6 +309,7 @@
   },
   "q017_outcome_hash": {
     "copy": "sealed/q017_outcome_hash__0d84f12c5956.sha256",
+    "remote_commit": "fdbb9607728f11b4c1e4e8a0372c56fe6932a0bf",
     "sha256": "0d84f12c5956b89dca3e5322781b8fdd5dd21ce22766aeb18e5687b343d8c7d2",
     "source": "data/db_setup/q017_outcome.sha256",
     "utc": "2026-11-10T19:12:08Z"
