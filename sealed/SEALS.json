@@ -1,4 +1,10 @@
 {
+  "lab_lineage": {
+    "copy": "sealed/lab_lineage__38f6f31232ad.json",
+    "sha256": "38f6f31232ad020afddd9b17c4ed8aa5e5bc7468fc06b0e82a4d4bacbb25c89c",
+    "source": "config/lab_lineage.json",
+    "utc": "2026-11-10T05:38:06Z"
+  },
   "vmem_lookup": {
     "copy": "sealed/vmem_lookup__10fbc5aa6ba1.json",
     "remote_commit": "96a2cbf26d0ff91fc65a497be9a14375114bdc08",
