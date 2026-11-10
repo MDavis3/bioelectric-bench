@@ -118,6 +118,12 @@
     "source": "data/db_setup/units_setup.csv",
     "utc": "2026-11-10T16:38:25Z"
   },
+  "dbtest_code_v1": {
+    "copy": "sealed/dbtest_code_v1__17c63d50c128.py",
+    "sha256": "17c63d50c12815b886e56a7dfb21dfd38e59831680fb9d3e2547d96eeda29ce5",
+    "source": "harness/dbtest.py",
+    "utc": "2026-11-10T16:53:09Z"
+  },
   "desk_threshold_rule_v1": {
     "copy": "sealed/desk_threshold_rule_v1__97d7b9051d78.md",
     "remote_commit": "7f47b576056d9f60dd90962a91f996090c3f7590",
