@@ -120,6 +120,7 @@
   },
   "vmem_lookup_v3": {
     "copy": "sealed/vmem_lookup_v3__ae902e3140e1.json",
+    "remote_commit": "cec7788ebe2483a3afcc6bfa376556b01c42eec9",
     "sha256": "ae902e3140e139676c42fed52139c7d4924a619ee97f540b87fd4498dace0191",
     "source": "kb/vmem_lookup_v3.json",
     "utc": "2026-11-10T09:19:42Z"
