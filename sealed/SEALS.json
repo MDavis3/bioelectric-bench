@@ -83,6 +83,12 @@
     "source": "config/db_params_v1.json",
     "utc": "2026-11-10T16:53:00Z"
   },
+  "db_power_v1": {
+    "copy": "sealed/db_power_v1__d00d2ba84130.json",
+    "sha256": "d00d2ba84130c1b05dc7b05ac4cb089fc591c6d2cff16c912aa7d70fce8c3418",
+    "source": "reports/db_power_v1.json",
+    "utc": "2026-11-10T16:53:03Z"
+  },
   "db_prereg_v1": {
     "copy": "sealed/db_prereg_v1__c9b6784d688b.md",
     "remote_commit": "b0ce827155ba321264e29ddf83f70e781f386eb5",
