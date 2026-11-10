@@ -15,3 +15,7 @@ data/db_setup/ontologies/
 data/db_setup/go/
 data/db_setup/hgnc/
 data/db_setup/iuphar/
+!release/db_v1/units_outcome.csv
+
+# Personal logistics (location, stores, purchases) stay local
+cilia/private/
