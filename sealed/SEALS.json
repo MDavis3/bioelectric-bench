@@ -36,6 +36,7 @@
   },
   "db_endpoint_map_v1": {
     "copy": "sealed/db_endpoint_map_v1__0cc070a98681.json",
+    "remote_commit": "c5c363489925cf3d3c2af037511d60345d53ad1c",
     "sha256": "0cc070a986817c59c65564719803ff7cfb1bfc29f9becf5fa4eea42d012314ff",
     "source": "config/db_endpoint_map_v1.json",
     "utc": "2026-11-10T16:38:20Z"
