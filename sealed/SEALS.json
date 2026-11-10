@@ -1,6 +1,7 @@
 {
   "corpus_manifest": {
     "copy": "sealed/corpus_manifest__cd456381710a.csv",
+    "remote_commit": "0952a283dcda74fbc428fe92bdfab001e5eaa6f4",
     "sha256": "cd456381710add3d8e24cfbebd49382253fe3b5885d0d84342b6e8cab7cfe093",
     "source": "preflight/corpus_manifest.csv",
     "utc": "2026-11-10T05:54:03Z"
