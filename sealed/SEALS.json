@@ -48,6 +48,12 @@
     "source": "config/firewall_allow_v2.json",
     "utc": "2026-11-10T15:46:07Z"
   },
+  "firewall_allow_v3": {
+    "copy": "sealed/firewall_allow_v3__b42d76c4ed0c.json",
+    "sha256": "b42d76c4ed0c184b695b5a210b44b7b4e27801e157f87d7637abd497e4e23fa2",
+    "source": "config/firewall_allow_v3.json",
+    "utc": "2026-11-10T16:07:29Z"
+  },
   "firewall_v2": {
     "copy": "sealed/firewall_v2__97b454c6d1fe.md",
     "remote_commit": "2780ed4d506c4d302cc3c8720202a5dd4936520c",
