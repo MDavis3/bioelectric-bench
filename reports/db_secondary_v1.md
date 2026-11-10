@@ -65,3 +65,16 @@ T1-style adjusted OR on morphant units (dbtest design: depth, n_genotypes, famil
 - Fly endpoint is anatomy-only (no quality), so 'wing' includes size, vein and margin defects; bristle patterning on the notum is not in Y. Fly class membership depends on the human anchor; many fly channel families map one-to-many to human genes.
 - No NN score for secondary species (no expression/MF features built for them); covariates restricted to depth and family size as specified.
 - Morphant phenotypes are known to include off-target/toxicity artefacts (p53-mediated apoptosis, necrosis, edema); the paired McNemar compares annotation-level outcomes from different publications, not matched experiments.
+
+## Q019 annotation-density check (post hoc)
+
+EXPLORATORY and post hoc (queue Q019); code harness/db_q019.py. Distinct HPO terms per gene, restricted to Phenotypic abnormality (HP:0000118). Non-excluded = not in the exclusions used to build Y (excluded areas, extra exclusions, label words). Block bootstrap and block permutation, 1000 each.
+
+Units: 166 class, 282 control. Median distinct terms: class 45.5, control 29.5.
+
+| check | class vs control | difference or OR [95% CI] | permutation p |
+|---|---|---|---|
+| (1a) mean share of all terms in Y set | 0.0887 vs 0.0718 | 0.0168 [-0.0111, 0.0443] | p1=0.1229, p2=0.2388 |
+| (1b) mean share of non-excluded terms in Y set (n 135/218) | 0.4273 vs 0.2986 | 0.1287 [0.0386, 0.2207] | p1=0.004, p2=0.009 |
+| (2) adj OR Y + log n_terms | Y 0.645 vs 0.496 | 1.035 [0.492, 2.028] | p1=0.4885 |
+| (3) as (2), 10-60 terms (n 85/166) | Y 0.576 vs 0.554 | 1.021 [0.466, 2.34] | p1=0.5215 |
