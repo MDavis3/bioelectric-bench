@@ -27,6 +27,12 @@
     "source": "config/corpus_protocol.md",
     "utc": "2026-11-10T05:54:00Z"
   },
+  "db_build_code_v1": {
+    "copy": "sealed/db_build_code_v1__54b9eeca28f9.py",
+    "sha256": "54b9eeca28f955e13306ba1d1c8e8da19aba13d08067ef167c70455fc94d2649",
+    "source": "harness/db_build_units.py",
+    "utc": "2026-11-10T16:38:40Z"
+  },
   "db_classes_v1": {
     "copy": "sealed/db_classes_v1__13cce957a1e1.json",
     "remote_commit": "a8320cf7a101804f9724066fdf5fd1d44761571c",
