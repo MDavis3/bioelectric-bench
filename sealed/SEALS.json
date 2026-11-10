@@ -29,6 +29,7 @@
   },
   "db_build_code_v1": {
     "copy": "sealed/db_build_code_v1__54b9eeca28f9.py",
+    "remote_commit": "fcb7dec5211029a72634b25af88300ade40e99dd",
     "sha256": "54b9eeca28f955e13306ba1d1c8e8da19aba13d08067ef167c70455fc94d2649",
     "source": "harness/db_build_units.py",
     "utc": "2026-11-10T16:38:40Z"
