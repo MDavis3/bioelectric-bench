@@ -309,6 +309,7 @@
   },
   "q017_prereg": {
     "copy": "sealed/q017_prereg__9b1fd9b4f0cf.md",
+    "remote_commit": "ce8bf27e8be6302b4575d3f9f079ddf21a339088",
     "sha256": "9b1fd9b4f0cfa0f4044979ec2a96b9aadd54e2f9607c396e57a1df6ee3d6f614",
     "source": "plans/q017_prereg.md",
     "utc": "2026-11-10T19:12:05Z"
