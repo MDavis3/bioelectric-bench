@@ -489,6 +489,10 @@ def main():
         rates = {k: v[0] / max(v[1], 1) for k, v in raw.items()}
         if set(rates) != set(s.stratum.unique()):
             sys.exit("refused: rate strata do not match the setup strata")
+        # harness/queue.py shadows the stdlib queue module: drop the script directory before importing multiprocessing
+        here = Path(__file__).resolve().parent
+        sys.path[:] = [q for q in sys.path if Path(q or ".").resolve() != here]
+        sys.modules.pop("queue", None)
         from concurrent.futures import ProcessPoolExecutor
         import multiprocessing as mp
         out = {}
