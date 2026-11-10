@@ -85,6 +85,7 @@
   },
   "lineage_v3_changes": {
     "copy": "sealed/lineage_v3_changes__d4b981f11f07.md",
+    "remote_commit": "b8f13b418fc497dbef08ee7d16fcb1506d66fb41",
     "sha256": "d4b981f11f07130b61ac098bb8d94de92a99ef4643e0d0229bce2cc13f951689",
     "source": "kb/lineage_v3_changes.md",
     "utc": "2026-11-10T09:19:51Z"
