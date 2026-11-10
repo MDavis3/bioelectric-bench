@@ -57,8 +57,21 @@ def main():
                 tot += o["count"]
         if tot <= 0:
             e("outcome counts sum to zero")
+        for f, ok in (("outcome_source", {None, "text", "table", "supplement", "source_data", "figure_read"}),
+                      ("figure_read_confidence", {None, "high", "medium", "low"})):
+            if r.get(f) not in ok:
+                e(f"bad {f} {r.get(f)}")
+        if r.get("outcome_source") == "figure_read" and not r.get("figure_read_confidence"):
+            e("figure_read row needs figure_read_confidence")
+        if r.get("outcomes_partial") not in (None, True, False):
+            e("outcomes_partial must be true/false")
+        sf = r.get("setup_flags") or {}
+        if sf.get("remainder") not in (None, "stated", "unstated", "not_applicable"):
+            e(f"bad setup_flags.remainder {sf.get('remainder')}")
+        if r.get("outcomes_partial") and sf.get("remainder") != "unstated":
+            e("partial outcomes need setup_flags.remainder = unstated")
         n = r.get("n_total")
-        if n is not None and outs and abs(tot + (r.get("dead_count") or 0) - n) > 0.5 and abs(tot - n) > 0.5:
+        if n is not None and outs and not r.get("outcomes_partial") and abs(tot + (r.get("dead_count") or 0) - n) > 0.5 and abs(tot - n) > 0.5:
             e(f"counts sum to {tot} but n_total is {n} (dead_count {r.get('dead_count')})")
         if any(o.get("category") == "other" and o.get("count") for o in outs) and not (r.get("notes") or "").strip():
             e("'other' count without a description in notes")

@@ -1,44 +1,62 @@
 #!/usr/bin/env python3
-"""Engine B holdouts. Design = plans/plan.md as amended by plans/redteam_1.md, plans/endpoint_revision_1.md and
-plans/endpoint_review_1.md (all changes adopted). temporal_holdout.py is kept unchanged for the self-test.
+"""Engine B holdouts, harness v2. Design = plans/plan.md "Adopted endpoints (v1.2)" with the harness-v2 changes of
+reports/process_review.md findings 2, 3 and 8 (see plans/harness_v2.md).
 
-  python harness/holdout2.py --data data/derived/all.jsonl --mode decade|lab|species|agent|target [--dry-run]
+  python harness/holdout2.py --data data/restricted/derived/all.jsonl --mode decade|lab|species|agent|target [--dry-run]
 
-Rows: one family (sealed primary), control/vehicle arms removed. Tunables only from config/holdout_params.json.
+This entry point has no synthetic or parameter-override flags. Tests and calibration call analyze() through
+harness/holdout2_selftest.py and harness/calibrate_v2.py, which never write to reports/ or the run marker.
+
+Counted run (no --dry-run): needs every v2 seal pushed, the harness files equal to the sealed v2 manifest, the data
+file's derive sidecar (<data>.meta.json) naming the sealed lookup and lineage hashes, a sealed corpus status with no
+included paper pending, and no earlier counted run for this (family, mode): data/confirmatory/<family>__<mode>.json
+is created write-once BEFORE anything is fitted, so a second counted run is refused even if the first crashed.
+
+Rows: one family (sealed primary), control/vehicle arms removed. Tunables only from config/holdout_params_v2.json.
 Folds: decade (rolling origin), lab (sealed lineage), species, agent (canonical component), target (canonical
 component). Agent/target folds drop from training every row containing the held-out unit and every row from a
 paper that has a test row.
 
 Models (memoryless):
-  majority      by (family, intervention.type)
-  nb_tempered   naive Bayes on the sealed features; prior = majority distribution; feature log-likelihoods
-                scaled by T in {1, .5, .33, .2, .1, 0}, chosen by 5-fold paper-level CV inside the training fold;
-                features missing or unseen in training are skipped                       (PRIMARY LEARNER)
+  majority      by (family, intervention.type), smoothed once (score.SMOOTH)
+  nb_tempered   naive Bayes on the sealed features; prior = the majority distribution (already smoothed, so the
+                output is NOT smoothed again: at T=0 nb_tempered equals majority exactly); feature log-likelihoods
+                scaled by T in {0, .1, .2, .33, .5, 1}, chosen by 5-fold paper-level CV inside the training fold,
+                ties to the smaller T, T=0 when fewer than 5 training papers; features missing or unseen in
+                training are skipped                                                  (PRIMARY LEARNER)
   covariate     the same tempered learner on non-mechanistic covariates only
   core_vmem / core_novmem       tempered learner on core features (sealed features minus the Vmem label's
                 parents) plus _lineage and _year_bucket, with / without the Vmem label    (P3)
   core_class    core_novmem plus _target_class and intervention.action                     (P3b class check)
   secondary: knn_sealed, naive_bayes (untempered), nn_v1, rules
 
-Endpoints (FAIL is tested before PASS; S = sealed smallest effect of interest):
-  judge(cs): UNTESTABLE if < min_folds scored folds or < min_clusters clusters;
-             FAIL if any comparison's CI lower bound > -S; PASS if every CI upper bound < 0; else INCONCLUSIVE.
-  P1 component (decade, lab): nb_tempered beats covariate AND majority. P1 passes only if decade AND lab pass.
-  species: descriptive only.
-  P2 (agent, target): as P1 plus both comparisons' lineage-resampled CI upper bounds < 0.
-  P3 (target): core_vmem beats core_novmem on direction-carrying rows only (clusters = directional targets,
-       < min_clusters -> UNTESTABLE), lineage CI < 0, label-permutation p < 0.05, AND P3b: core_class minus
-       core_vmem has CI lower bound > -S (the class label must not clearly beat the Vmem label).
+Endpoints (S = sealed smallest effect of interest; order is fixed):
+  judge(cs): 1 UNTESTABLE if < min_folds scored folds or < min_clusters clusters;
+             2 FAIL if any comparison's unit CI lower bound > -S;
+             3 (lineage-gated endpoints only) UNTESTABLE if any comparison has < min_lineages lineages;
+             4 PASS if every comparison has unit CI upper bound < 0 AND sign-flip p < alpha_signflip AND
+               (lineage-gated) lineage-resampled CI upper bound < 0;
+             5 else INCONCLUSIVE.
+  P1 component (decade, lab): nb_tempered beats covariate AND majority (not lineage-gated: in lab mode the units
+     are lineages). P1 passes only if decade AND lab pass.  species: descriptive only.
+  P2 (agent, target): as P1, lineage-gated.
+  P3 (target): core_vmem beats core_novmem on direction-carrying rows only (clusters = directional targets),
+     lineage-gated, then label-permutation p < 0.05, AND P3b: core_class minus core_vmem has unit CI lower bound
+     > -S (the class label must not clearly beat the Vmem label).
 Unit of inference = held-out unit (paper in decade mode); statistic = mean over units of per-unit mean Brier
-difference; bootstrap CI over units, sign-flip p, and a lineage-resampled CI.
---dry-run shuffles outcomes across rows before anything is fit; never counted.
+difference; bootstrap CI over units, exact or Monte Carlo sign-flip p over units, and a lineage-resampled CI.
+--dry-run shuffles outcomes across rows (sealed seed) before anything is fitted; never counted.
 """
 import argparse
 import csv
+import datetime as dt
 import itertools
 import json
 import math
+import os
+import platform
 import random
+import subprocess
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -51,46 +69,89 @@ from temporal_holdout import add_bucket, rules_model, year  # noqa: E402
 VMEM = "drug.vmem_direction_pred"
 PARENTS = ["_target_class", "intervention.action", "_target_id", "_agent_id"]
 COVX = ["_lineage", "_year_bucket"]
-TEMPS = (1.0, 0.5, 0.33, 0.2, 0.1, 0.0)
+TEMPS = (0.0, 0.1, 0.2, 0.33, 0.5, 1.0)   # ascending: ties go to the smaller temperature
+LINEAGE_GATED = ("agent", "target")
+OK_STATUS = {"extracted", "no_counts", "unreachable"}
 SEALED = {"temporal_features": "config/temporal_features.json", "temporal_rules": "config/rules.json",
-          "holdout_params": "config/holdout_params.json", "harness_manifest": "config/harness_manifest.json",
-          "lab_lineage_v2": "config/lab_lineage_v2.json", "vmem_lookup_v2": "kb/vmem_lookup_v2.json",
-          "corpus_protocol": "config/corpus_protocol.md", "corpus_manifest": "preflight/corpus_manifest.csv"}
+          "holdout_params_v2": "config/holdout_params_v2.json", "harness_manifest_v2": "config/harness_manifest_v2.json",
+          "lab_lineage_v3": "config/lab_lineage_v3.json", "vmem_lookup_v3": "kb/vmem_lookup_v3.json",
+          "corpus_protocol": "config/corpus_protocol.md", "corpus_manifest": "preflight/corpus_manifest.csv",
+          "corpus_status_final": "data/corpus_status.json"}
+RUN_LOG = ROOT / "logs" / "holdout_runs.jsonl"
+MARKER_DIR = ROOT / "data" / "confirmatory"
 
 
-# ---------------------------------------------------------------- seals and counted-run guard
+# ---------------------------------------------------------------- seals, provenance and counted-run guard
 
-def seal_state(dry):
+def _registry():
     reg_p = ROOT / "sealed" / "SEALS.json"
-    reg = json.loads(reg_p.read_text()) if reg_p.exists() else {}
-    out = {}
+    return json.loads(reg_p.read_text()) if reg_p.exists() else {}
+
+
+def seal_state(dry, data_path):
+    """Dry runs report problems; counted runs exit on any of them."""
+    reg = _registry()
+    out, problems = {}, []
     for name, rel in SEALED.items():
         p = ROOT / rel
         if name not in reg or not p.exists():
-            if not dry:
-                sys.exit(f"{name} is not sealed ({rel}). A counted run needs every seal.")
+            problems.append(f"{name} is not sealed ({rel})")
             out[name] = "UNSEALED"
         elif sha256_file(p) != reg[name]["sha256"]:
             sys.exit(f"{name}: {rel} changed since it was sealed. Refusing to run.")
-        elif not reg[name].get("remote_commit") and not dry:
-            sys.exit(f"{name}: seal was never pushed.")
+        elif not reg[name].get("remote_commit"):
+            problems.append(f"{name}: seal was never pushed")
+            out[name] = "NOT PUSHED"
         else:
             out[name] = f"sealed {reg[name]['utc']}"
-    hm = ROOT / SEALED["harness_manifest"]
+    hm = ROOT / SEALED["harness_manifest_v2"]
     if hm.exists():
         for rel, h in json.loads(hm.read_text())["files"].items():
-            if sha256_file(ROOT / rel) != h:
-                if not dry:
-                    sys.exit(f"harness file {rel} differs from the sealed manifest.")
-                out["harness_manifest"] = "MISMATCH " + rel
-    if not dry:
-        st_p = ROOT / "data" / "corpus_status.json"
-        st = json.loads(st_p.read_text()) if st_p.exists() else {}
-        pend = [r["paper_id"] for r in csv.DictReader(open(ROOT / SEALED["corpus_manifest"]))
-                if r.get("screen_decision") == "include" and st.get(r["paper_id"], "pending") == "pending"]
-        if pend:
-            sys.exit(f"corpus manifest incomplete: {len(pend)} papers pending, e.g. {pend[:3]}. No counted verdict yet.")
+            if not (ROOT / rel).exists() or sha256_file(ROOT / rel) != h:
+                problems.append(f"harness file {rel} differs from the sealed v2 manifest")
+                out["harness_manifest_v2"] = "MISMATCH " + rel
+    # provenance: the rows must have been derived with the sealed lookup and lineage map
+    meta_p = Path(str(data_path) + ".meta.json")
+    if not meta_p.exists():
+        problems.append(f"no derive sidecar {meta_p.name}; rows must come from harness/derive_features.py")
+    else:
+        meta = json.loads(meta_p.read_text())
+        for key, name in (("vmem_lookup_sha256", "vmem_lookup_v3"), ("lab_lineage_sha256", "lab_lineage_v3")):
+            if name not in reg or meta.get(key) != reg[name]["sha256"]:
+                problems.append(f"data derived with a {key[:-7]} that is not the sealed {name}")
+        if meta.get("output_sha256") != sha256_file(data_path):
+            problems.append("data file changed after derive_features wrote it")
+    st_name = "corpus_status_final"
+    if st_name in reg and (ROOT / SEALED[st_name]).exists():
+        st = json.loads((ROOT / SEALED[st_name]).read_text())
+        inc = [r["paper_id"] for r in csv.DictReader(open(ROOT / SEALED["corpus_manifest"]))
+               if r.get("screen_decision") == "include"]
+        bad = [p for p in inc if st.get(p) not in OK_STATUS]
+        if bad:
+            problems.append(f"corpus incomplete: {len(bad)} included papers not resolved, e.g. {bad[:3]}")
+    if problems and not dry:
+        sys.exit("Counted run refused:\n  " + "\n  ".join(problems))
+    out["problems"] = problems
     return out
+
+
+def git_head():
+    r = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "HEAD"], capture_output=True, text=True)
+    d = subprocess.run(["git", "-C", str(ROOT), "status", "--porcelain", "--untracked-files=no"], capture_output=True, text=True)
+    return (r.stdout.strip() or None), bool(d.stdout.strip())
+
+
+def claim_marker(fam, mode, record):
+    """Write-once marker for a counted run, created before any fitting (O_EXCL)."""
+    MARKER_DIR.mkdir(parents=True, exist_ok=True)
+    p = MARKER_DIR / f"{fam}__{mode}.json"
+    try:
+        fd = os.open(p, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o444)
+    except FileExistsError:
+        sys.exit(f"A counted run for {fam}/{mode} already happened ({p.relative_to(ROOT)}). Counted runs are once only.")
+    with os.fdopen(fd, "w") as f:
+        f.write(json.dumps(record, indent=2, sort_keys=True))
+    return p
 
 
 def is_control(r):
@@ -134,13 +195,16 @@ def naive_bayes(train, cats, features, P, temp=1.0, prior_maj=False):
                     lp += temp * math.log((cond[(fam, f, v, c)] + alpha) / (prior[fam][c] + alpha * len(vals[(fam, f)])))
             logp[c] = lp
         m = max(logp.values())
-        return normalize({c: math.exp(v - m) for c, v in logp.items()}, cs, P["smooth"])
+        # the majority prior is already smoothed; smoothing again biased T=0 away from the baseline (finding 3b)
+        return normalize({c: math.exp(v - m) for c, v in logp.items()}, cs, 0.0 if base else P["smooth"])
     return predict
 
 
-def tempered(train, cats, features, P):
-    papers = sorted({get(r, "source.paper_id") for r in train})
-    folds = [set(papers[i::5]) for i in range(5)] if len(papers) >= 5 else []
+def choose_temp(train, cats, features, P):
+    papers = sorted({get(r, "source.paper_id") for r in train}, key=str)
+    if len(papers) < 5:
+        return 0.0
+    folds = [set(papers[i::5]) for i in range(5)]
     loss = {t: [] for t in TEMPS}
     for fp in folds:
         tr = [r for r in train if get(r, "source.paper_id") not in fp]
@@ -150,12 +214,17 @@ def tempered(train, cats, features, P):
         for t in TEMPS:
             f = naive_bayes(tr, cats, features, P, temp=t, prior_maj=True)
             loss[t] += [brier(f(r), outcome_dist(r, cats)) for r in te]
-    best_t, best = 1.0, None
+    best_t, best = 0.0, None
     for t in TEMPS:
         if loss[t] and (best is None or mean(loss[t]) < best - 1e-12):
             best_t, best = t, mean(loss[t])
-    f = naive_bayes(train, cats, features, P, temp=best_t, prior_maj=True)
-    f.temp = best_t
+    return best_t
+
+
+def tempered(train, cats, features, P):
+    t = choose_temp(train, cats, features, P)
+    f = naive_bayes(train, cats, features, P, temp=t, prior_maj=True)
+    f.temp = t
     return f
 
 
@@ -184,7 +253,7 @@ def infer(d, P):
     d = {k: v for k, v in d.items() if v}
     if not d:
         return None
-    ks = sorted(d)
+    ks = sorted(d, key=str)
     cm = [mean(d[k]) for k in ks]
     obs = mean(cm)
     rng = random.Random(P["seed"])
@@ -193,7 +262,7 @@ def infer(d, P):
     if len(cm) <= 14:
         flips = [mean([s * x for s, x in zip(sg, cm)]) for sg in itertools.product([1, -1], repeat=len(cm))]
     else:
-        flips = [mean([rng.choice([1, -1]) * x for x in cm]) for _ in range(20000)]
+        flips = [mean([rng.choice([1, -1]) * x for x in cm]) for _ in range(P["n_signflip"])]
     return {"mean": obs, "ci95": [bs[int(0.025 * n)], bs[int(0.975 * n) - 1]], "n_clusters": len(cm),
             "clusters_favoring_first": sum(x < 0 for x in cm),
             "sign_flip_p": sum(abs(f) >= abs(obs) - 1e-12 for f in flips) / len(flips),
@@ -201,10 +270,11 @@ def infer(d, P):
 
 
 def lineage_ci(items, P):
-    """items: list of (unit, lineage, diff). Same statistic, resampling lineages (multinomial weights)."""
+    """items: list of (unit, lineage, diff). Same statistic, resampling lineages (multinomial weights).
+    Returns None when there are fewer than min_lineages lineages: such a CI is not interpretable."""
     lins = sorted({l for _, l, _ in items}, key=str)
     units = sorted({u for u, _, _ in items}, key=str)
-    if not items or not lins:
+    if not items or len(lins) < P["min_lineages"]:
         return None
     A = defaultdict(float)
     N = defaultdict(float)
@@ -249,7 +319,7 @@ def build_splits(rows, mode, P, base_rules, rules_dir):
         if mode == "agent":
             return r.get("_components") or [r.get("_agent_id")]
         return r.get("_target_components") or [r.get("_target_id")]
-    for g in sorted({u for r in rows for u in units(r) if u}):
+    for g in sorted({u for r in rows for u in units(r) if u}, key=str):
         test = [r for r in rows if g in units(r)]
         tp = {get(r, "source.paper_id") for r in test}
         train = [r for r in rows if g not in units(r) and (mode in ("lab", "species") or get(r, "source.paper_id") not in tp)]
@@ -307,54 +377,53 @@ def diffs(per, x, y, dironly=False):
     return d, items
 
 
-def judge(cs, n_scored, n_clusters, P):
+def judge(cs, n_scored, n_clusters, P, lineage_gated):
     S = P["sesoi_brier"]
     if n_scored < P["min_folds"] or n_clusters < P["min_clusters"] or any(c is None for c in cs):
         return f"UNTESTABLE: {n_scored} scored folds, {n_clusters} clusters (need {P['min_folds']} and {P['min_clusters']})."
     if any(c["ci95"][0] > -S for c in cs):
         return f"FAIL: at least one comparison rules out a gain of {S} Brier or more."
-    if all(c["ci95"][1] < 0 for c in cs):
-        return "PASS: every comparison's 95% CI is below zero."
-    return "INCONCLUSIVE: a CI includes zero but does not rule out the smallest effect of interest."
+    if lineage_gated:
+        nl = min(c["n_lineages"] for c in cs)
+        if nl < P["min_lineages"]:
+            return (f"UNTESTABLE: {nl} lab lineages (need {P['min_lineages']}); the lineage-resampled CI that a PASS "
+                    "requires cannot be computed.")
+    ok = all(c["ci95"][1] < 0 and c["sign_flip_p"] < P["alpha_signflip"] for c in cs)
+    if ok and lineage_gated:
+        ok = all(c["lineage_ci95"] and c["lineage_ci95"][1] < 0 for c in cs)
+    if ok:
+        return "PASS: every comparison's unit CI is below zero, sign-flip p below alpha" + (
+            ", and lineage-resampled CI below zero." if lineage_gated else ".")
+    return "INCONCLUSIVE: no comparison rules out the smallest effect of interest, but not every PASS condition holds."
 
 
-# ---------------------------------------------------------------- main
+# ---------------------------------------------------------------- analysis (pure: no seals, no files)
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--data", required=True)
-    ap.add_argument("--mode", choices=["decade", "lab", "species", "agent", "target"], required=True)
-    ap.add_argument("--family", default=None, help="secondary analyses only")
-    ap.add_argument("--dry-run", action="store_true")
-    ap.add_argument("--out-dir", default=None)
-    ap.add_argument("--synthetic", action="store_true", help=argparse.SUPPRESS)
-    ap.add_argument("--params", default=None, help=argparse.SUPPRESS)
-    a = ap.parse_args()
-    if a.params and not a.synthetic:
-        sys.exit("--params is for --synthetic self-tests only")
-    P = json.loads(Path(a.params or ROOT / SEALED["holdout_params"]).read_text())
-    seals = {"all": "SYNTHETIC SELF-TEST"} if a.synthetic else seal_state(a.dry_run)
-    features = json.loads((ROOT / SEALED["temporal_features"]).read_text())["features"]
-    base_rules = json.loads((ROOT / SEALED["temporal_rules"]).read_text())["rules"]
-    cats = load_categories()
-    fam = a.family or P["primary_family"]
-    rows = [add_bucket(r) for r in load_jsonl(a.data) if r.get("outcomes") and year(r) is not None and r["task_family"] == fam]
+def shuffle_outcomes(rows, seed):
+    rng = random.Random(seed)
+    outs = [(r["outcomes"], r.get("n_total")) for r in rows]
+    rng.shuffle(outs)
+    for r, (o, n) in zip(rows, outs):
+        r["outcomes"], r["n_total"] = o, n
+    return rows
+
+
+def prepare_rows(raw, fam):
+    """Partial rows (unstated remainder, not resolved at adjudication) are never scored."""
+    rows = [add_bucket(dict(r)) for r in raw if r.get("outcomes") and not r.get("outcomes_partial")
+            and year(r) is not None and r["task_family"] == fam]
     n_controls = sum(is_control(r) for r in rows)
-    rows = [r for r in rows if not is_control(r)]
-    rng = random.Random(P["seed"])
-    if a.dry_run:
-        outs = [(r["outcomes"], r.get("n_total")) for r in rows]
-        rng.shuffle(outs)
-        for r, (o, n) in zip(rows, outs):
-            r["outcomes"], r["n_total"] = o, n
+    return [r for r in rows if not is_control(r)], n_controls
 
-    rules_dir = ROOT / "config"
-    makers = model_makers(features, P, cats, a.mode)
-    per, folds = run(rows, a.mode, makers, P, cats, base_rules, rules_dir)
+
+def analyze(rows, mode, P, features, base_rules, cats, rules_dir=None, run_p3_perm=True):
+    """rows: non-control rows of one family, outcomes already in place (real, shuffled or synthetic)."""
+    rules_dir = rules_dir or (ROOT / "config")
+    makers = model_makers(features, P, cats, mode)
+    per, folds = run(rows, mode, makers, P, cats, base_rules, rules_dir)
     scored = [f for f in folds if not f.get("skipped")]
-    n_items = sum(f["n_test"] for f in scored)
     n_units = len(per["majority"])
-
+    lg = mode in LINEAGE_GATED
     comps = {}
 
     def cmp(x, y, dironly=False, key=None):
@@ -372,30 +441,23 @@ def main():
         cmp(x, y)
 
     S = P["sesoi_brier"]
-    if a.mode in ("decade", "lab"):
-        endpoint, verdict = "P1 component", judge([a1, a2], len(scored), n_units, P)
-    elif a.mode == "species":
-        endpoint, verdict = "descriptive (species)", judge([a1, a2], len(scored), n_units, P)
-    else:
-        endpoint = "P2"
-        verdict = judge([a1, a2], len(scored), n_units, P)
-        if verdict.startswith("PASS") and not all(c["lineage_ci95"] and c["lineage_ci95"][1] < 0 for c in (a1, a2)):
-            verdict = "INCONCLUSIVE: unit-level CIs exclude zero but the lineage-resampled CI does not."
+    endpoint = {"decade": "P1 component", "lab": "P1 component", "species": "descriptive (species)"}.get(mode, "P2")
+    verdict = judge([a1, a2], len(scored), n_units, P, lineage_gated=lg)
+    unit_only = judge([a1, a2], len(scored), n_units, dict(P, min_lineages=0), lineage_gated=False)
 
     p3 = None
-    if a.mode == "target":
+    if mode == "target":
         c3 = cmp("core_vmem", "core_novmem", dironly=True, key="P3_core_vmem_minus_core_novmem_dirrows")
         c3b = cmp("core_class", "core_vmem", dironly=True, key="P3b_core_class_minus_core_vmem_dirrows")
         n_dir = c3["n_clusters"] if c3 else 0
-        v = judge([c3], len(scored), n_dir, P)
+        v = judge([c3], len(scored), n_dir, P, lineage_gated=True)
         perm_p = None
         if v.startswith("PASS"):
-            if not (c3["lineage_ci95"] and c3["lineage_ci95"][1] < 0):
-                v = "INCONCLUSIVE: lineage-resampled CI includes zero."
-            elif c3b and c3b["ci95"][0] <= -S:
+            if c3b and c3b["ci95"][0] <= -S:
                 v = "FAIL (P3b): the target-class label clearly beats the Vmem label; the gain is not specific to voltage."
-            else:
-                agents = sorted({r["_agent_id"] for r in rows if get(r, VMEM)})
+            elif run_p3_perm:
+                rng = random.Random(P["seed"] + 2)
+                agents = sorted({r["_agent_id"] for r in rows if get(r, VMEM)}, key=str)
                 lab0 = {g: next(get(r, VMEM) for r in rows if r["_agent_id"] == g and get(r, VMEM)) for g in agents}
                 more = 0
                 for _ in range(P["n_perm"]):
@@ -410,33 +472,74 @@ def main():
                 perm_p = (more + 1) / (P["n_perm"] + 1)
                 if perm_p >= 0.05:
                     v = f"FAIL: gain does not beat the label-permutation null (p={perm_p:.3f})."
+            else:
+                v = "PASS before permutation (permutation skipped in this calibration run)."
         p3 = {"verdict": v, "perm_p": perm_p, "n_directional_targets": n_dir,
               "n_rows_with_direction": sum(1 for r in rows if get(r, VMEM))}
 
-    pre = "SYNTHETIC SELF-TEST. " if a.synthetic else "DRY RUN ON SHUFFLED OUTCOMES, NOT COUNTED. " if a.dry_run else ""
-    verdict = pre + verdict
-    if p3:
-        p3["verdict"] = pre + p3["verdict"]
+    return {"endpoint": endpoint, "verdict": verdict, "verdict_unit_level_only": unit_only, "p3": p3, "mode": mode,
+            "n_scored_items": sum(f["n_test"] for f in scored), "n_scored_folds": len(scored), "n_units": n_units,
+            "n_papers": len({get(r, 'source.paper_id') for r in rows}), "n_rows": len(rows),
+            "n_lineages": len({r.get('_lineage') for r in rows}), "folds": folds, "comparisons": comps,
+            "model_names": list(per)}
 
-    report = {"endpoint": endpoint, "verdict": verdict, "p3": p3, "mode": a.mode, "family": fam, "dry_run": a.dry_run,
-              "seals": seals, "params": P, "features": features, "n_scored_items": n_items, "n_units": n_units,
-              "n_papers": len({get(r, 'source.paper_id') for r in rows}), "n_rows": len(rows),
-              "n_lineages": len({r.get('_lineage') for r in rows}), "controls_excluded": n_controls,
-              "folds": folds, "comparisons": comps}
-    out = Path(a.out_dir) if a.out_dir else ROOT / "reports"
-    out.mkdir(parents=True, exist_ok=True)
-    tag = f"holdout2_{a.mode}" + ("" if fam == P["primary_family"] else f"_{fam}") + ("_dryrun" if a.dry_run else "")
+
+# ---------------------------------------------------------------- main (counted or dry run only)
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--data", required=True)
+    ap.add_argument("--mode", choices=["decade", "lab", "species", "agent", "target"], required=True)
+    ap.add_argument("--family", default=None, help="secondary analyses only")
+    ap.add_argument("--dry-run", action="store_true")
+    a = ap.parse_args()
+    P = json.loads((ROOT / SEALED["holdout_params_v2"]).read_text())
+    data_path = Path(a.data).resolve()
+    seals = seal_state(a.dry_run, data_path)
+    features = json.loads((ROOT / SEALED["temporal_features"]).read_text())["features"]
+    base_rules = json.loads((ROOT / SEALED["temporal_rules"]).read_text())["rules"]
+    cats = load_categories()
+    fam = a.family or P["primary_family"]
+    head, dirty = git_head()
+    record = {"utc": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "argv": sys.argv[1:],
+              "mode": a.mode, "family": fam, "dry_run": a.dry_run, "counted": not a.dry_run,
+              "data_path": str(data_path), "data_sha256": sha256_file(data_path), "git_head": head, "git_dirty": dirty,
+              "python": platform.python_version(), "params_sha256": sha256_file(ROOT / SEALED["holdout_params_v2"]),
+              "harness_sha256": {rel: sha256_file(ROOT / rel) for rel in
+                                 ("harness/holdout2.py", "harness/derive_features.py", "harness/common.py", "harness/score.py")}}
+    if not a.dry_run:
+        if dirty:
+            sys.exit("Counted run refused: tracked files have uncommitted changes.")
+        record["marker"] = str(claim_marker(fam, a.mode, record).relative_to(ROOT))
+    rows, n_controls = prepare_rows(load_jsonl(data_path), fam)
+    if a.dry_run:
+        shuffle_outcomes(rows, P["seed"])
+    rep = analyze(rows, a.mode, P, features, base_rules, cats)
+
+    pre = "DRY RUN ON SHUFFLED OUTCOMES, NOT COUNTED. " if a.dry_run else ""
+    rep["verdict"] = pre + rep["verdict"]
+    if rep["p3"]:
+        rep["p3"]["verdict"] = pre + rep["p3"]["verdict"]
+    report = dict(rep, family=fam, dry_run=a.dry_run, seals=seals, params=P, features=features,
+                  controls_excluded=n_controls, run_record=record)
+    with open(RUN_LOG, "a") as f:
+        f.write(json.dumps({k: v for k, v in record.items()} | {"verdict": rep["verdict"],
+                            "p3": rep["p3"]["verdict"] if rep["p3"] else None}, sort_keys=True) + "\n")
+    out = ROOT / "reports"
+    tag = f"holdout2v2_{a.mode}" + ("" if fam == P["primary_family"] else f"_{fam}") + ("_dryrun" if a.dry_run else "")
     (out / f"{tag}.json").write_text(json.dumps(report, indent=2, default=str))
-    names = list(per)
-    L = [f"# Holdout by {a.mode}, family {fam} (tier 3)", "", f"{endpoint} verdict: {verdict}"]
-    if p3:
+    names = rep["model_names"]
+    L = [f"# Holdout by {a.mode}, family {fam} (tier 3), harness v2", "", f"{rep['endpoint']} verdict: {rep['verdict']}"]
+    if rep["p3"]:
+        p3 = rep["p3"]
         L += ["", f"P3 (does the textbook Vmem label help on unseen targets, beyond class and covariates): {p3['verdict']} "
               f"Directional targets: {p3['n_directional_targets']}; rows with a direction: {p3['n_rows_with_direction']}; "
               f"permutation p: {p3['perm_p']}."]
-    L += ["", f"Rows: {len(rows)} non-control arms from {report['n_papers']} papers in {report['n_lineages']} lineages; "
-          f"{n_controls} control/vehicle arms excluded. Scored items: {n_items} in {len(scored)} folds; held-out units: {n_units}.", "",
+    L += ["", f"Rows: {rep['n_rows']} non-control arms from {rep['n_papers']} papers in {rep['n_lineages']} lineages; "
+          f"{n_controls} control/vehicle arms excluded. Scored items: {rep['n_scored_items']} in {rep['n_scored_folds']} folds; "
+          f"held-out units: {rep['n_units']}.", "",
           "| fold | train | test | " + " | ".join(names) + " |", "|---|---|---|" + "---|" * len(names)]
-    for f in folds:
+    for f in rep["folds"]:
         if f.get("skipped"):
             L.append(f"| {f['fold']} | {f['n_train']} | {f['n_test']} | skipped |" + " |" * (len(names) - 1))
         else:
@@ -444,13 +547,15 @@ def main():
     L += ["", "Brier differences (negative = first model better); mean over held-out units of per-unit means.", "",
           "| comparison | mean | 95% CI (units) | 95% CI (lineages) | units | favouring first | sign-flip p |",
           "|---|---|---|---|---|---|---|"]
-    for k, c in comps.items():
+    for k, c in rep["comparisons"].items():
         if c:
             lc = c["lineage_ci95"]
             L.append(f"| {k} | {c['mean']:+.4f} | [{c['ci95'][0]:+.4f}, {c['ci95'][1]:+.4f}] | "
-                     + (f"[{lc[0]:+.4f}, {lc[1]:+.4f}] ({c['n_lineages']})" if lc else "n/a")
+                     + (f"[{lc[0]:+.4f}, {lc[1]:+.4f}] ({c['n_lineages']})" if lc else f"n/a ({c['n_lineages']} lineages)")
                      + f" | {c['n_clusters']} | {c['clusters_favoring_first']} | {c['sign_flip_p']:.3f} |")
-    L += ["", f"Seals: {seals}", "", "No human gold set was used to validate the extraction behind these rows. "
+    L += ["", f"Run record: data sha256 {record['data_sha256']}; git {head}{' (dirty)' if dirty else ''}; "
+          f"{record['utc']}; counted: {record['counted']}.", f"Seals: {seals}", "",
+          "No human gold set was used to validate the extraction behind these rows. "
           "The Vmem label is a pharmacological label assigned by a sealed textbook rule, not a voltage measurement."]
     (out / f"{tag}.md").write_text("\n".join(L) + "\n")
     print("\n".join(L))

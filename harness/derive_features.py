@@ -14,8 +14,9 @@ Adds (top-level fields; extractors never write these):
                                     combination, control, applied field, or agent not in the lookup)
   _dose_bucket, _timing_bucket, _duration_bucket, _fragment, _delivery, _field_dir, _lineage
 
-  python harness/derive_features.py data/raw_extractions/adjudicated.jsonl data/derived/all.jsonl
-Prints coverage counts only (no outcome information).
+  python harness/derive_features.py data/restricted/adjudicated/all.jsonl data/restricted/derived/all.jsonl
+Prints coverage counts only (no outcome information). Writes <dst>.meta.json with the input, output, lookup and
+lineage sha256 (checked by holdout2 before a counted run).
 """
 import json
 import math
@@ -25,7 +26,7 @@ from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common import ROOT, active_schema, get, load_jsonl, norm_val, write_jsonl  # noqa: E402
+from common import ROOT, active_schema, get, load_jsonl, norm_val, sha256_file, write_jsonl  # noqa: E402
 
 UNIT_TO_UM = {"m": 1e6, "mm": 1e3, "um": 1.0, "µm": 1.0, "μm": 1.0, "nm": 1e-3, "pm": 1e-6}
 
@@ -106,8 +107,10 @@ def field_dir(x):
 def main():
     src, dst = sys.argv[1], sys.argv[2]
     cfg = active_schema()
-    lk = json.loads((ROOT / cfg.get("vmem_lookup", "kb/vmem_lookup.json")).read_text())
-    lin = {canon(k): v for k, v in json.loads((ROOT / cfg.get("lab_lineage", "config/lab_lineage.json")).read_text())["lab_to_lineage"].items()}
+    lk_p = ROOT / cfg.get("vmem_lookup", "kb/vmem_lookup.json")
+    lin_p = ROOT / cfg.get("lab_lineage", "config/lab_lineage.json")
+    lk = json.loads(lk_p.read_text())
+    lin = {canon(k): v for k, v in json.loads(lin_p.read_text())["lab_to_lineage"].items()}
     alias = {}
     for name, a in lk["agents"].items():
         for n in [name] + a.get("aliases", []):
@@ -172,6 +175,12 @@ def main():
             cov[f"lab_not_in_lineage_map:{lab}"] += 1
     Path(dst).parent.mkdir(parents=True, exist_ok=True)
     write_jsonl(dst, rows)
+    # provenance sidecar: holdout2 refuses a counted run unless these match the sealed lookup and lineage map
+    meta = {"source": str(src), "source_sha256": sha256_file(src), "output_sha256": sha256_file(dst),
+            "vmem_lookup": str(lk_p.relative_to(ROOT)), "vmem_lookup_sha256": sha256_file(lk_p),
+            "lab_lineage": str(lin_p.relative_to(ROOT)), "lab_lineage_sha256": sha256_file(lin_p),
+            "derive_features_sha256": sha256_file(Path(__file__))}
+    Path(str(dst) + ".meta.json").write_text(json.dumps(meta, indent=2, sort_keys=True))
     print(f"rows: {len(rows)} -> {dst}")
     for k, v in sorted(cov.items()):
         print(f"  {k}: {v}")
