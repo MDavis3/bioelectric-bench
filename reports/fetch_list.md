@@ -1,5 +1,34 @@
 # Fetch list: papers and supplements for Manav (2026-11-10)
 
+## Status after Manav's downloads (2026-11-10)
+
+**In hand (inbox/):**
+- **Section A, 8 of 20:**
+  - 24 Nogi 2005
+  - 26 Oviedo 2007
+  - 33 Chan 2011
+  - 43 Annand 2014 thesis, 357 pages
+  - Whole-volume scans for 1 Child 1911, 2 Buchanan 1922, 3 Shearer 1924 and 4 Rustia 1925. The article pages still need to be located inside each scan.
+- **Section B, all 15 pilot items.** The 10 that came from Manav are PDFs only; their supplements were not included.
+- **Extra, not on the list:** two background reviews (Reddien & Sánchez Alvarado 2004; Newmark & Sánchez Alvarado, encyclopedia article) and the Durant 2019 preprint.
+
+**Still missing, 12 of section A:**
+- 5 Rulon 1944
+- 15 Rose 1970
+- 9 Marsh & Beams 1952
+- 8 Dimmitt & Marsh 1952
+- 12 Marsh 1962
+- 14 Marsh 1969
+- 7 Marsh & Beams 1947 (abstract)
+- 62 Ferenc 2019
+- 10 Bonaventure 1957
+- 13 Liotti 1966
+- 6 (1946, unidentified)
+- 22 (2003, unidentified)
+
+The four Marsh papers and Ferenc 2019 matter most.
+
+
 **Why:** the kill criterion needs at least 25 planarian polarity papers with counts. 9 are in hand. These files decide whether the question is testable at all.
 
 **Already downloaded by Claude (2026-11-10), in `inbox/`:**
