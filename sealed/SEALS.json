@@ -85,6 +85,7 @@
   },
   "db_power_v1": {
     "copy": "sealed/db_power_v1__d00d2ba84130.json",
+    "remote_commit": "fcb679f707520b2f86ba076dfe8e174ce1be1159",
     "sha256": "d00d2ba84130c1b05dc7b05ac4cb089fc591c6d2cff16c912aa7d70fce8c3418",
     "source": "reports/db_power_v1.json",
     "utc": "2026-11-10T16:53:03Z"
