@@ -1,0 +1,109 @@
+{
+ "meta": {
+  "n_rows": 302,
+  "n_papers": 15,
+  "n_lineages": 4,
+  "params": "reports/calibration/params_calib_nperm50.json",
+  "strength": 0.4,
+  "seeds": 50,
+  "source": "data/setups/setup_pass_derived/all_v3lookup.jsonl"
+ },
+ "summary": {
+  "null|real|agent": {
+   "n": 50,
+   "verdict": {
+    "FAIL": 50
+   },
+   "unit_only": {
+    "FAIL": 50
+   },
+   "p3": {}
+  },
+  "null|real|target": {
+   "n": 50,
+   "verdict": {
+    "FAIL": 50
+   },
+   "unit_only": {
+    "FAIL": 50
+   },
+   "p3": {
+    "UNTESTABLE": 50
+   }
+  },
+  "null|lin9|agent": {
+   "n": 50,
+   "verdict": {
+    "FAIL": 50
+   },
+   "unit_only": {
+    "FAIL": 50
+   },
+   "p3": {}
+  },
+  "null|lin9|target": {
+   "n": 50,
+   "verdict": {
+    "FAIL": 50
+   },
+   "unit_only": {
+    "FAIL": 50
+   },
+   "p3": {
+    "UNTESTABLE": 50
+   }
+  },
+  "class|real|agent": {
+   "n": 50,
+   "verdict": {
+    "FAIL": 49,
+    "UNTESTABLE": 1
+   },
+   "unit_only": {
+    "FAIL": 49,
+    "PASS": 1
+   },
+   "p3": {}
+  },
+  "class|real|target": {
+   "n": 50,
+   "verdict": {
+    "FAIL": 49,
+    "UNTESTABLE": 1
+   },
+   "unit_only": {
+    "FAIL": 49,
+    "PASS": 1
+   },
+   "p3": {
+    "UNTESTABLE": 50
+   }
+  },
+  "class|lin9|agent": {
+   "n": 50,
+   "verdict": {
+    "FAIL": 49,
+    "INCONCLUSIVE": 1
+   },
+   "unit_only": {
+    "FAIL": 49,
+    "PASS": 1
+   },
+   "p3": {}
+  },
+  "class|lin9|target": {
+   "n": 50,
+   "verdict": {
+    "FAIL": 49,
+    "INCONCLUSIVE": 1
+   },
+   "unit_only": {
+    "FAIL": 49,
+    "PASS": 1
+   },
+   "p3": {
+    "UNTESTABLE": 50
+   }
+  }
+ }
+}
