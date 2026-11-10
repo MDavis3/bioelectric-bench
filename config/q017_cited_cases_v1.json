@@ -1,0 +1,20 @@
+{
+ "note": "Q017 cited-cases list (red team MUST 7): channel/pump malformation syndromes the bioelectric literature already cites, frozen by the planner before any ClinVar content was seen. PASS-strong requires the interaction to stay above 1.5 with these gene x condition units removed. Resolved by gene + condition name; MIM numbers from memory, to verify. All TRPV4 skeletal dysplasias and all PIEZO2 distal arthrogryposis conditions are included as groups.",
+ "cases": [
+  ["CACNA1C", "Timothy syndrome", "601005"],
+  ["KCNJ2", "Andersen-Tawil syndrome", "170390"],
+  ["KCNH1", "Temple-Baraitser syndrome", "611816"],
+  ["KCNH1", "Zimmermann-Laband syndrome 1", "135500"],
+  ["KCNN3", "Zimmermann-Laband syndrome 3", "618658"],
+  ["ABCC9", "Cantu syndrome", "239850"],
+  ["KCNJ8", "Cantu syndrome", "239850"],
+  ["KCNJ6", "Keppen-Lubinsky syndrome", "614098"],
+  ["NALCN", "CLIFAHDD", "616266"],
+  ["TRPV4", "ALL skeletal dysplasias (metatropic, spondylometaphyseal Kozlowski, brachyolmia, spondyloepiphyseal Maroteaux, parastremmatic, others)", "group"],
+  ["PIEZO2", "ALL distal arthrogryposis conditions (DA3 Gordon, DA5, Marden-Walker)", "group"],
+  ["GJA1", "oculodentodigital dysplasia", "164200"],
+  ["KCNJ13", "any", "group"],
+  ["KCNK9", "Birk-Barel syndrome", "612292"],
+  ["CACNA1S", "any", "group"]
+ ]
+}
