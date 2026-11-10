@@ -43,6 +43,7 @@
   },
   "outcome_categories": {
     "copy": "sealed/outcome_categories__e0907615ac51.json",
+    "remote_commit": "834659c22ccfdd5341d83ee14e5cec8ed901d988",
     "sha256": "e0907615ac517108572492b5e4d1c946eecc9f415ac02994605db48d217433ae",
     "source": "schema/outcome_categories.json",
     "utc": "2026-11-10T06:34:21Z"
