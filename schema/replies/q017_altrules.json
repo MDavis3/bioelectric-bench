@@ -1,0 +1,28 @@
+{
+ "fields": [
+  "class_ALT",
+  "class_LOF",
+  "class_GREY",
+  "control_ALT",
+  "control_LOF",
+  "control_GREY",
+  "grey_ALT",
+  "grey_LOF",
+  "grey_GREY",
+  "other_ALT",
+  "other_LOF",
+  "other_GREY",
+  "class_blocks_ALT",
+  "control_blocks_ALT",
+  "val_ALT_ok",
+  "val_ALT_nongrey",
+  "val_LOF_ok",
+  "val_LOF_nongrey",
+  "val_unresolved"
+ ],
+ "keyed_by": "rule",
+ "keys": [
+  "R2",
+  "R3"
+ ]
+}
