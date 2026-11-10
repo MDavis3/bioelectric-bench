@@ -50,6 +50,7 @@
   },
   "db_units_setup_v1": {
     "copy": "sealed/db_units_setup_v1__70644def60b1.csv",
+    "remote_commit": "33232a26271935a2483fa4075750a881845398cc",
     "sha256": "70644def60b1ce99c99ade22f560c7442a964a13cec4346b060209efb652e43a",
     "source": "data/db_setup/units_setup.csv",
     "utc": "2026-11-10T16:38:25Z"
