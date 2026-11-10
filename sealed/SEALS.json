@@ -1,6 +1,7 @@
 {
   "bound_rule_v1": {
     "copy": "sealed/bound_rule_v1__36e4ac063f88.md",
+    "remote_commit": "849c0a8082368ea0893bd60b1690611b1eab9233",
     "sha256": "36e4ac063f888eb47714ad45b3ba8adc7d07cd46f1146340d1f123412fa84a49",
     "source": "plans/bound_rule.md",
     "utc": "2026-11-10T08:15:11Z"
