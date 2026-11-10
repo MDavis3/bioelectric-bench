@@ -1,0 +1,59 @@
+{
+  "x": "data/raw_extractions/B",
+  "y": "data/raw_extractions/F",
+  "papers": 6,
+  "x_rows": 33,
+  "y_rows": 26,
+  "matched": 18,
+  "recall_of_y": 0.6923076923076923,
+  "precision_vs_y": 0.5454545454545454,
+  "field_agreement": {
+    "task_family": 1.0,
+    "intervention.type": 0.7222222222222222,
+    "_agent_id": 0.9444444444444444,
+    "_target_id": 0.9444444444444444,
+    "arm_role": 1.0,
+    "_fragment": 0.9444444444444444,
+    "_dose_bucket": 0.6111111111111112,
+    "_timing_bucket": 0.7777777777777778,
+    "_duration_bucket": 0.5555555555555556,
+    "n_total": 0.9444444444444444,
+    "dominant_outcome": 0.9444444444444444
+  },
+  "tv_within_0.15": 0.8888888888888888,
+  "mean_tv": 0.060199298214607885,
+  "per_paper_counts": {
+    "beane2013_development": {
+      "x_rows": 1,
+      "y_rows": 1,
+      "matched": 1
+    },
+    "chan2017_bba": {
+      "x_rows": 9,
+      "y_rows": 9,
+      "matched": 9
+    },
+    "emmonsbell2015_ijms": {
+      "x_rows": 1,
+      "y_rows": 1,
+      "matched": 1
+    },
+    "emmonsbell2019_iscience": {
+      "x_rows": 14,
+      "y_rows": 7,
+      "matched": 0
+    },
+    "oviedo2010_devbiol": {
+      "x_rows": 6,
+      "y_rows": 6,
+      "matched": 5
+    },
+    "tseng2025_ijms": {
+      "x_rows": 2,
+      "y_rows": 2,
+      "matched": 2
+    }
+  },
+  "gate_score": 0.6923076923076923,
+  "gate_pass": false
+}

@@ -66,24 +66,24 @@
     },
     "holdout_decade": {
       "desc": "Decade holdout run on sealed features",
-      "note": "DRY RUN (shuffled): UNTESTABLE, 1 scored fold",
-      "status": "passed",
+      "note": "dry run only (shuffled outcomes); UNTESTABLE by sealed minimums; not a pass",
+      "status": "skipped",
       "track": "B_code",
-      "updated": "2026-11-10T06:35:41Z"
+      "updated": "2026-11-10T06:50:22Z"
     },
     "holdout_lab": {
       "desc": "Leave-one-lab-out run",
-      "note": "DRY RUN (shuffled): UNTESTABLE, 2 lineages",
-      "status": "passed",
+      "note": "dry run only (shuffled outcomes); UNTESTABLE by sealed minimums; not a pass",
+      "status": "skipped",
       "track": "B_code",
-      "updated": "2026-11-10T06:35:41Z"
+      "updated": "2026-11-10T06:50:22Z"
     },
     "holdout_species": {
       "desc": "Leave-one-species-out run",
-      "note": "DRY RUN (shuffled): UNTESTABLE, 1 species with rows",
-      "status": "passed",
+      "note": "dry run only (shuffled outcomes); UNTESTABLE by sealed minimums; not a pass",
+      "status": "skipped",
       "track": "B_code",
-      "updated": "2026-11-10T06:35:41Z"
+      "updated": "2026-11-10T06:50:22Z"
     },
     "kb_drug_graph": {
       "desc": "Drug, target, ortholog, expression graph built (kb/)",
@@ -108,10 +108,10 @@
     },
     "model_bakeoff": {
       "desc": "Extractor and image-scorer models chosen from gold results (harness/bakeoff.py)",
-      "note": "No human gold. vs Fable pass: Haiku 0.63, Sonnet 0.69 (outcomes 0.89-0.94). Routing: Sonnet + Opus extract, fresh Opus adjudicates blinded to pass identity; Haiku screening only.",
-      "status": "passed",
+      "note": "No model reached 0.85 vs the Fable proxy (post-fix: Haiku 0.68, Sonnet 0.69). Haiku dropped from outcomes; Opus unpiloted as extractor.",
+      "status": "failed",
       "track": "core",
-      "updated": "2026-11-10T06:12:01Z"
+      "updated": "2026-11-10T06:50:22Z"
     },
     "negative_search": {
       "desc": "Documented negative search per shortlisted candidate",
@@ -136,10 +136,10 @@
     },
     "plan_written": {
       "desc": "Fable planner writes plans/plan.md: primary endpoints, allocation, kill criteria",
-      "note": "",
-      "status": "pending",
+      "note": "plans/plan.md + red-team 1 + endpoint revision/review; sealed as plan_v1_2",
+      "status": "passed",
       "track": "core",
-      "updated": null
+      "updated": "2026-11-10T06:50:22Z"
     },
     "positive_control": {
       "desc": "Desk reproduces a published phenotype under its published protocol",
