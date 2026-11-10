@@ -55,6 +55,12 @@
     "source": "data/db_setup/nn_features.jsonl",
     "utc": "2026-11-10T16:38:29Z"
   },
+  "db_outcome_hash_v1": {
+    "copy": "sealed/db_outcome_hash_v1__a6fb962a9145.sha256",
+    "sha256": "a6fb962a91453e484e7d00f3308b834101358d0027610dabe7f65af9b76615fd",
+    "source": "data/db_setup/db_outcome_v1.sha256",
+    "utc": "2026-11-10T16:38:34Z"
+  },
   "db_units_setup_v1": {
     "copy": "sealed/db_units_setup_v1__70644def60b1.csv",
     "remote_commit": "33232a26271935a2483fa4075750a881845398cc",
