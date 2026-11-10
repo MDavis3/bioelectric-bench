@@ -1,0 +1,23 @@
+{
+  "note": "harness v2: sha256 of files that determine holdout verdicts and extracted rows; sealed as harness_manifest_v2",
+  "files": {
+    "harness/holdout2.py": "3ff54169a405978ed62a5f82a7623d264d5993baa4c36c9a11b5263307172eef",
+    "harness/common.py": "98de41e7e31be2bca18f1428b2c05c1527c38fef38c01d4b5b65f4b18017ecde",
+    "harness/score.py": "484133c8494f1e6facbf306cdfeee94059b78d8ae065850a884c32677360e0ab",
+    "harness/temporal_holdout.py": "b8c2bdeb21f8646120131834d353312a83ccbcd2e3a98f15794d78b217ffecb6",
+    "harness/derive_features.py": "e472c4c812ede30352448aee09b57c4447186b4af473757a46f0c623c62755aa",
+    "harness/validate_rows.py": "0e03cfc6410c689af60db8220306b14ece568e792e88101dd5ff0479d7f4ef53",
+    "harness/planner_firewall.py": "7fbd948e159b180dd6a3b775339bf6c5a2b81e68e940a1509d86e5c03abbbe78",
+    "harness/firewall_check.py": "f8934a14ff43f089fbe9611d6d9a6ccba73da15988b5b4313c54d5a0d2f21ebc",
+    "harness/bound_count.py": "847e299a121d0083a863bdcf2a0ab8dfada64fa8f505ae2bbc5758f9ee27d02e",
+    "harness/combine_verdicts.py": "7c43590517637167d7cac7f9c2fa6971dc5fdb7309a4cca32c98e812e47e5fa5",
+    "harness/make_harness_manifest_v2.py": "ea503825c22c9f96e8f21e8eb477e12849c025b3caf173ec06f94aadb08c997c",
+    "harness/blind_passes.py": "f26cc3f02c88cb1ec565ae7cec815301d47ef60e2e22f21a1eebc371648d7b33",
+    "harness/collect_adjudicated.py": "8a59e065b7dbab3ad05de65a60ba8879e821e73c9760d26dbcdb49c9eb78f03b",
+    "schema/extraction_schema.json": "8e71066ce2fc52b536685b593b3dc83382fbc43d1603d23d27e1521b50401570",
+    "schema/outcome_categories.json": "e0907615ac517108572492b5e4d1c946eecc9f415ac02994605db48d217433ae",
+    "extraction/INSTRUCTIONS_v2.md": "a76b298a875a4103e538a401a8be4b6474cd9f61ac966f654b0aa9bdf6011c6e",
+    "extraction/ADJUDICATION_v2.md": "591491e7ab10591946e20bdd90ffe4d5c45485a519c21e67a01558e30d11af2f",
+    "config/paper_crosswalk.json": "f6f12ab177751f4c8aa403b3595b4d458299c8a56ba55b85fe1c504e30ec1c7a"
+  }
+}
