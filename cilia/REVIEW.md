@@ -4,7 +4,7 @@
 
 ## MUST
 
-1. **The sampling site is skin, not ciliated epithelium.** PROTOCOL §0/§3: "first 1-2 cm", "about 1 cm". That is the nasal vestibule (squamous, hair-bearing). The brushing papers in lit_review §4 and the shopping plan both sample the inferior turbinate (side wall, low, roughly 2-3 cm back). Fix: make §0, §3 and the shopping plan agree on the inferior turbinate and state the trade-off (watering eyes, sneeze, occasional spot of blood). Gate: 2 of 3 practice samples each show at least 3 beating clumps.
+1. **[Redacted by the planner: self-sampling guidance removed; the project moved to mussel gill and Paramecium. Human cells would need clinician collection.]**
 
 2. **The field is calculated, never measured.** E = I/(sigma x w x h) rests on tape thickness "about 0.1 mm" checked with a ruler (30% error; common film tape is nearer 0.08 mm) and assumes no shunt film over or beside the coverslip. Fix: put a second electrode pair in the two wells and read voltage (the meter's 10 MOhm input draws nothing). E = dV/L, with dV = (V_FWD - V_REV)/2 to cancel electrode offsets. Expected for 5 x 0.1 x 22 mm at 1.5 S/m: channel R = 29 kOhm, 2.2 V at 75 uA. R = dV/I outside 20-40 kOhm means wrong thickness, a leak or a bubble: rebuild. Do this per chamber. Cross-check h with the fine-focus scale (slide top to coverslip underside, dry). The run sheet asks for volts, PROTOCOL for current: record both.
 
@@ -37,7 +37,7 @@
 - **Temperature.** About 7-10% CBF per degree C; tighten the 1.0 C tolerance to 0.5 C.
 - **Scale.** A hair is 50-100 um; use a calibration slide. One donor: sessions, not clumps, are the unit.
 - **Chamber.** Film-carrier tape; hole-punched foam-tape wells instead of petroleum jelly (it creeps into the channel); airline tubing (about 6 mm outside) will not sit in a 5 mm well: make wells 8-10 mm or cast bridges in stirrer straws; 24 x 40 mm coverslips give objective clearance.
-- **Safety additions.** New brush each time, tug-test the head; sit down; one sampling per nostril per week at most; bleeding beyond 20 minutes or a lost brush tip means urgent care; coverslips into a rigid jar; never mix bleach with vinegar or ammonia.
+- **Safety additions.** Coverslips into a rigid jar; never mix bleach with vinegar or ammonia. [Sampling-specific items redacted.]
 
 ## Parts list delta (against the shopping plan)
 
