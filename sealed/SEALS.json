@@ -1,6 +1,7 @@
 {
   "vmem_lookup": {
     "copy": "sealed/vmem_lookup__10fbc5aa6ba1.json",
+    "remote_commit": "96a2cbf26d0ff91fc65a497be9a14375114bdc08",
     "sha256": "10fbc5aa6ba19a81551e9efa6d24779edcc7a29d5de597976ccf3b0fa3279f2f",
     "source": "kb/vmem_lookup.json",
     "utc": "2026-11-10T05:37:53Z"
