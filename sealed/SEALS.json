@@ -47,5 +47,11 @@
     "sha256": "0bb768a12b9b0403d3e573ef86cd6ba89c16960dbc237e1abb5688962a3de995",
     "source": "kb/vmem_rule.md",
     "utc": "2026-11-10T05:38:03Z"
+  },
+  "vmem_rule_v2_additions": {
+    "copy": "sealed/vmem_rule_v2_additions__97cf669b0a86.md",
+    "sha256": "97cf669b0a86f1fec14037daba4d4c9eb0de40433094d68d41500ef49ae742dd",
+    "source": "kb/vmem_rule_v2_additions.md",
+    "utc": "2026-11-10T06:03:43Z"
   }
 }
