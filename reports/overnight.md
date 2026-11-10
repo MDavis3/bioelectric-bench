@@ -95,3 +95,7 @@ Approve ClinVar and run the allele-direction test (Q017): do gain-of-function or
   (labetalol, methyldopa and metformin comparators), so it is uninformative about mechanism rather than protective.
   Strata: epilepsy 0.91, acid 1.38, nausea 1.26, diabetes 0.20, hypertension 0.03, pain 0.32
   (reports/faers_probe_v1.md).
+- Dataset release (Q016): release/db_v1 in the public repo under CC-BY-SA-4.0. It contains the units, outcomes,
+  classes, endpoint, counted report and descriptor, with full attribution. Raw database dumps and HPO content are not
+  included.
+- **Still waiting on Manav:** the ClinVar manual download for Q017. Everything else is ready to seal and run.
