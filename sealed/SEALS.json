@@ -41,6 +41,12 @@
     "source": "config/lab_lineage_v2.json",
     "utc": "2026-11-10T06:03:46Z"
   },
+  "outcome_categories": {
+    "copy": "sealed/outcome_categories__e0907615ac51.json",
+    "sha256": "e0907615ac517108572492b5e4d1c946eecc9f415ac02994605db48d217433ae",
+    "source": "schema/outcome_categories.json",
+    "utc": "2026-11-10T06:34:21Z"
+  },
   "plan_v1_2": {
     "copy": "sealed/plan_v1_2__367ea2af1dee.md",
     "remote_commit": "db70268323c7e78bb3a022bdce130aabf9ccdf2b",

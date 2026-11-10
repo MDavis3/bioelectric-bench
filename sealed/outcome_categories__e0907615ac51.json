@@ -1,0 +1,168 @@
+{
+  "version": 1,
+  "note": "Locked before any test extraction (gate lock_schema). Every outcome row must use exactly these categories. Use 'other' and explain in notes rather than inventing a category. Changing this file after the lock invalidates the run. Every count put in 'other' needs a plain description in notes; harness/other_review.py lists them each round. New categories go in the next schema version.",
+  "task_families": {
+    "planaria_ap_polarity": {
+      "organism": "planaria",
+      "description": "Anterior-posterior identity of regenerated fragments, scored at the end of regeneration.",
+      "categories": [
+        "normal",
+        "double_head",
+        "double_tail",
+        "headless",
+        "tailless",
+        "no_regeneration",
+        "other"
+      ]
+    },
+    "planaria_cryptic": {
+      "organism": "planaria",
+      "description": "Outcome when normal-looking regenerates from a treated population are re-cut with no further treatment.",
+      "categories": [
+        "normal",
+        "double_head",
+        "double_tail",
+        "other"
+      ]
+    },
+    "planaria_head_shape": {
+      "organism": "planaria",
+      "description": "Head morphology of regenerates, e.g. species-specific head shape shifts.",
+      "categories": [
+        "normal",
+        "altered_shape",
+        "other"
+      ]
+    },
+    "planaria_eyes": {
+      "organism": "planaria",
+      "description": "Eye number and placement in regenerates.",
+      "categories": [
+        "normal",
+        "ectopic_eyes",
+        "eyeless",
+        "other"
+      ]
+    },
+    "xenopus_lr_asymmetry": {
+      "organism": "xenopus",
+      "description": "Left-right placement of heart, gut and gall bladder.",
+      "categories": [
+        "normal",
+        "heterotaxia",
+        "other"
+      ]
+    },
+    "xenopus_craniofacial": {
+      "organism": "xenopus",
+      "description": "Craniofacial patterning at tadpole stages.",
+      "categories": [
+        "normal",
+        "abnormal",
+        "other"
+      ]
+    },
+    "xenopus_eye": {
+      "organism": "xenopus",
+      "description": "Eye formation, including ectopic eyes outside the head.",
+      "categories": [
+        "normal",
+        "ectopic_eye",
+        "eye_defect",
+        "other"
+      ]
+    },
+    "xenopus_brain": {
+      "organism": "xenopus",
+      "description": "Brain size and patterning.",
+      "categories": [
+        "normal",
+        "reduced",
+        "enlarged",
+        "mispatterned",
+        "other"
+      ]
+    },
+    "xenopus_tail_regeneration": {
+      "organism": "xenopus",
+      "description": "Tail regeneration after amputation, scored by the paper's own index or a simple three-level call.",
+      "categories": [
+        "full",
+        "partial",
+        "none"
+      ]
+    },
+    "other_family": {
+      "organism": "any",
+      "description": "Use only if an eligible experiment fits no family. Log every use; propose a new family only before the lock.",
+      "categories": [
+        "expected",
+        "unexpected",
+        "other"
+      ]
+    },
+    "zebrafish_embryo_morphology": {
+      "organism": "zebrafish",
+      "description": "Embryo/larva malformation calls from screens or papers (axis, craniofacial, fin, edema, pigment).",
+      "categories": [
+        "normal",
+        "malformed",
+        "dead",
+        "other"
+      ]
+    },
+    "fin_size_regeneration": {
+      "organism": "zebrafish",
+      "description": "Fin size or regrowth after amputation.",
+      "categories": [
+        "normal",
+        "enlarged",
+        "reduced",
+        "none"
+      ]
+    },
+    "mammal_developmental_tox": {
+      "organism": "mouse|rat|rabbit",
+      "description": "Malformation findings from knockouts or developmental toxicity studies, grouped by the region affected.",
+      "categories": [
+        "no_malformation",
+        "craniofacial",
+        "limb",
+        "axial_skeleton",
+        "heart",
+        "other_malformation"
+      ]
+    },
+    "human_channelopathy_anatomy": {
+      "organism": "human",
+      "description": "Developmental anatomy reported for a channel gene variant (HPO terms grouped). Used for cross-species direction checks, not scored as probabilities unless counts exist.",
+      "categories": [
+        "none_reported",
+        "craniofacial",
+        "limb_digit",
+        "organ_size",
+        "other"
+      ]
+    },
+    "xenopus_fetax": {
+      "organism": "xenopus",
+      "description": "FETAX malformation outcome at 96 h.",
+      "categories": [
+        "normal",
+        "malformed",
+        "dead"
+      ]
+    },
+    "planaria_screen": {
+      "organism": "planaria",
+      "description": "High-throughput screen regeneration/morphology endpoint.",
+      "categories": [
+        "normal",
+        "regeneration_defect",
+        "morphology_defect",
+        "dead",
+        "other"
+      ]
+    }
+  }
+}
