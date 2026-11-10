@@ -3,6 +3,7 @@
 
 Every number is read from planner-readable aggregate reports (no restricted or outcome file is read):
   reports/db_counted_v1.json           -> fig 1, preregistered rows (the one counted run)
+  reports/db_subset_ci_v1.json         -> fig 1, POST HOC intervals for the stratum, S1 and positive-control rows
   reports/db_explore_v1.json           -> fig 1, no-size and grey-class rows (exploratory)
   reports/db_secondary_v1.json         -> fig 1, morphant, fly, human, Xenopus rows (exploratory)
   reports/db_power_v1.json, reports/db_power_v1_brier_rule.json -> fig 2
@@ -41,6 +42,7 @@ def load(name):
 def fig1():
     c = load("db_counted_v1.json")
     e = load("db_explore_v1.json")
+    b = load("db_subset_ci_v1.json")  # post hoc, 1000 block-bootstrap resamples
     s = load("db_secondary_v1.json")
     sp = s["species"]
 
@@ -48,16 +50,18 @@ def fig1():
         return (d["or"], d["lo"], d["hi"])
 
     loso = sorted(exp(v) for v in c["or_loso"].values())
-    # (label, or, lo, hi, kind); lo/hi None = point estimate only (no interval in the counted report)
+    # (label, or, lo, hi, kind). Points for the counted-run rows come from the counted report; the intervals of
+    # the check and positive-control rows are post hoc (db_subset_ci_v1.json). Leave-one-subclass-out has none.
     rows = [
         ("head", "Preregistered, counted run (mouse + zebrafish)"),
         ("Primary T1: patterning, class vs control", exp(c["t1_logor"]), exp(c["t1_lo"]), exp(c["t1_hi"]), "primary"),
-        ("Mouse only", exp(c["or_mouse"]), None, None, "check"),
-        ("Zebrafish only", exp(c["or_zebrafish"]), None, None, "check"),
-        ("IMPC stratum", exp(c["or_impc"]), None, None, "check"),
-        ("S1: lethal-without-morphology dropped", exp(c["or_s1"]), None, None, "check"),
+        ("Mouse only", exp(c["or_mouse"]), b["mouse"]["lo"], b["mouse"]["hi"], "check"),
+        ("Zebrafish only", exp(c["or_zebrafish"]), b["zebrafish"]["lo"], b["zebrafish"]["hi"], "check"),
+        ("IMPC stratum", exp(c["or_impc"]), b["impc"]["lo"], b["impc"]["hi"], "check"),
+        ("S1: lethal-without-morphology dropped", exp(c["or_s1"]), b["s1"]["lo"], b["s1"]["hi"], "check"),
         ("Leave-one-subclass-out (6 runs)", loso, None, None, "loso"),
-        ("Positive control: excitable-tissue phenotypes", exp(c["exc_logor"]), None, None, "posctl"),
+        ("Positive control: excitable-tissue phenotypes", exp(c["exc_logor"]),
+         b["positive_control"]["lo"], b["positive_control"]["hi"], "posctl"),
         ("head", "Exploratory (no verdict weight)"),
         ("Patterning without size-like terms", *ci(e["nosize"]), "expl"),
         ("Grey class vs control", *ci(e["grey_vs_control_Y"]), "expl"),
@@ -99,6 +103,8 @@ def fig1():
             ax.plot(v, y, "s" if kind == "primary" else "o", color=col, ms=8 if kind == "primary" else 6)
             hi_txt = f2(hi) if hi < 100 else f"{hi:.0f}"
             txt = f"{f2(v)} [{f2(lo)}, {hi_txt}]"
+            if kind in ("check", "posctl"):
+                txt += " *"
         ax.text(XMAX * 1.25, y, txt, ha="left", va="center", fontsize=9, color=INK, clip_on=False)
         ticks.append(y)
         labels.append(label)
@@ -116,8 +122,9 @@ def fig1():
     ax.set_yticks(ticks)
     ax.set_yticklabels(labels)
     ax.tick_params(axis="y", length=0)
-    ax.set_xlabel("Adjusted odds ratio, channel/pump class vs membrane control (log scale)")
-    fig.subplots_adjust(left=0.37, right=0.71, top=0.97, bottom=0.09)
+    ax.set_xlabel("Adjusted odds ratio, channel/pump class vs membrane control (log scale)\n"
+                  "* interval computed post hoc (1000 block-bootstrap resamples)")
+    fig.subplots_adjust(left=0.37, right=0.71, top=0.97, bottom=0.11)
     fig.savefig(OUT / "fig1_forest.png", dpi=200)
     plt.close(fig)
 
