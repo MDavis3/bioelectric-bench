@@ -5,3 +5,5 @@ __pycache__/
 *.tmp
 .venv/
 state.tmp
+inbox/*
+!inbox/.gitkeep
