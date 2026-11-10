@@ -13,10 +13,7 @@ analysis). Shopping: cilia/private/shopping_plan.md (local only).
 
 - Battery power only (one 9 V battery). Never mains power, never a wall adapter, nothing electrical touches your body.
   The field goes across the slide only.
-- Sampling: the front of the nostril only (the first 1-2 cm), gentle rotation, one side per session. Stop if it hurts.
-  Skip sampling if you are on blood thinners, have a bleeding disorder, a cold or a nosebleed in the last week.
-  A small bleed: pinch the soft part of the nose for 10 minutes, leaning forward.
-- Your own cells only. Gloves on. Everything that touched a sample goes into 10% household bleach for 30 minutes,
+- Gloves on. Everything that touched a sample goes into 10% household bleach for 30 minutes,
   then the trash. Slides used for samples never go back to the kitchen.
 - Agar bridges and saline are harmless; keep the battery and wiring dry.
 
@@ -69,16 +66,11 @@ Orient the phone so the field axis is horizontal in the image (left-right), with
 right; check once by filming a cornstarch grain drifting under FWD.
 Scale (optional, for um/s): film a strand of your hair (about 70 um wide) at the same zoom once per session.
 
-## 3. Sampling (about 5 minutes)
+## 3. Tissue
 
-1. Wash hands, gloves on. Put 1 mL Ringer's (section 1) in a clean medicine cup.
-2. Gently insert a 0.6 mm interdental brush about 1 cm into one nostril, rotate it 3 times against the inner wall
-   (the side away from the septum), withdraw.
-3. Swirl the brush in the saline for 10 seconds. You should see a faint haze.
-4. Dead-clump control: put about one third of the suspension into a second cup and stand that cup in hot tap water
-   at 60 C or more for 10 minutes (cilia stop). Label it DEAD.
-5. Use samples within 3 hours, kept at room temperature (record it). Beat frequency stays stable for hours at room
-   temperature in published work.
+Self-sampling instructions have been removed from this protocol. The rig and analysis are run on non-human ciliated
+tissue (mussel gill from a fish market, in its own liquor) and Paramecium (hay infusion) instead. Any work with human
+cells would need to be collected by a clinician.
 
 ## 4. Running a session
 
