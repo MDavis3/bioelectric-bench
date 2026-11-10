@@ -47,6 +47,19 @@
    - Q018 (paralog redundancy): UNTESTABLE at its sealed power gate (75%), so it was not run.
 9. **Drafts.** Planarian preprint (drafts/preprint_planarian/), dataset descriptor (drafts/data_descriptor_db/), and a short research note on the database result (drafts/note_db_null/). All are drafts; nothing was submitted or posted.
 
+10. **Integrity audit** (Fable, reports/integrity_audit_db_v1.md).
+    - Items 1–5 pass:
+      - every sealed input was on GitHub before the counted-run marker (16:55:42Z);
+      - the rehearsal matches the counted run's input hashes;
+      - no outcome-by-class number was committed or logged before the preregistration seal;
+      - no sealed file was edited after sealing.
+    - Item 6 had sub-issues, now fixed or disclosed:
+      - The decision log was uncommitted. Now committed.
+      - The committed manifest differed from its seal. Now fixed; all 51 seals match their sources at HEAD.
+      - The T2 rule change was made without your prior sign-off (decision 1).
+      - The one-run claim rests on a local marker file plus push times.
+      - The firewall is a convention: the outcome file sat on the same disk.
+
 ## What it means
 
 - **Not supported:** the simple genetic version of the bioelectric-code idea, "losing a channel is special for body pattern".
