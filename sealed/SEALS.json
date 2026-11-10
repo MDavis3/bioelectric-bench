@@ -13,6 +13,12 @@
     "source": "config/corpus_protocol.md",
     "utc": "2026-11-10T05:54:00Z"
   },
+  "extraction_schema": {
+    "copy": "sealed/extraction_schema__8e71066ce2fc.json",
+    "sha256": "8e71066ce2fc52b536685b593b3dc83382fbc43d1603d23d27e1521b50401570",
+    "source": "schema/extraction_schema.json",
+    "utc": "2026-11-10T06:34:18Z"
+  },
   "holdout_params": {
     "copy": "sealed/holdout_params__8a999a54f97b.json",
     "remote_commit": "e48b8a9a6cef0fcd1f08b4e8d37e9393b484fd15",
