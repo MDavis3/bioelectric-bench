@@ -34,6 +34,12 @@
     "source": "config/db_classes_v1.json",
     "utc": "2026-11-10T16:38:13Z"
   },
+  "db_endpoint_map_v1": {
+    "copy": "sealed/db_endpoint_map_v1__0cc070a98681.json",
+    "sha256": "0cc070a986817c59c65564719803ff7cfb1bfc29f9becf5fa4eea42d012314ff",
+    "source": "config/db_endpoint_map_v1.json",
+    "utc": "2026-11-10T16:38:20Z"
+  },
   "db_endpoint_roots_v1": {
     "copy": "sealed/db_endpoint_roots_v1__9594c6b32153.json",
     "remote_commit": "d7e8d44d631fc729e997eba909abfcde6ee7ea07",
