@@ -1,0 +1,301 @@
+{
+  "endpoint": "descriptive (species)",
+  "verdict": "DRY RUN ON SHUFFLED OUTCOMES, NOT COUNTED. UNTESTABLE: 4 scored folds, 4 clusters (need 3 and 8).",
+  "verdict_unit_level_only": "UNTESTABLE: 4 scored folds, 4 clusters (need 3 and 8).",
+  "p3": null,
+  "mode": "species",
+  "n_scored_items": 147,
+  "n_scored_folds": 4,
+  "n_units": 4,
+  "n_papers": 13,
+  "n_rows": 147,
+  "n_lineages": 4,
+  "folds": [
+    {
+      "fold": "dugesia japonica",
+      "n_train": 58,
+      "n_test": 89,
+      "n_test_papers": 9,
+      "brier": {
+        "majority": 0.5731634494179533,
+        "nb_tempered": 0.5678594652387118,
+        "covariate": 0.5167842619741857,
+        "knn_sealed": 0.43850494745995366,
+        "naive_bayes": 0.6148463234309052,
+        "nn_v1": 0.42057155169418886,
+        "rules": 0.48128801988739117
+      },
+      "temps": {
+        "nb_tempered": 1.0,
+        "covariate": 1.0
+      }
+    },
+    {
+      "fold": "girardia dorotocephala",
+      "n_train": 146,
+      "n_test": 1,
+      "n_test_papers": 1,
+      "brier": {
+        "majority": 0.5373151628611897,
+        "nb_tempered": 0.5373151628611896,
+        "covariate": 0.5373151628611896,
+        "knn_sealed": 0.46444045989599647,
+        "naive_bayes": 0.7860589541761606,
+        "nn_v1": 0.5433661210955418,
+        "rules": 0.5760928571428572
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "planaria dorotocephala",
+      "n_train": 103,
+      "n_test": 44,
+      "n_test_papers": 2,
+      "brier": {
+        "majority": 0.48351842215191565,
+        "nb_tempered": 0.48351842215191565,
+        "covariate": 0.48351842215191565,
+        "knn_sealed": 0.5053950631452728,
+        "naive_bayes": 0.4970640291499737,
+        "nn_v1": 0.48351842215191565,
+        "rules": 0.5697833654201399
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    },
+    {
+      "fold": "schmidtea mediterranea",
+      "n_train": 134,
+      "n_test": 13,
+      "n_test_papers": 2,
+      "brier": {
+        "majority": 0.20887476127503898,
+        "nb_tempered": 0.20887476127503898,
+        "covariate": 0.20887476127503898,
+        "knn_sealed": 0.20060553202617296,
+        "naive_bayes": 0.26764268699629723,
+        "nn_v1": 0.20908297772093637,
+        "rules": 0.22574310718742635
+      },
+      "temps": {
+        "nb_tempered": 0.0,
+        "covariate": 0.0
+      }
+    }
+  ],
+  "comparisons": {
+    "nb_tempered_minus_covariate": {
+      "mean": 0.012768800816131519,
+      "ci95": [
+        0.0,
+        0.038306402448394554
+      ],
+      "n_clusters": 4,
+      "clusters_favoring_first": 0,
+      "sign_flip_p": 1.0,
+      "item_weighted_mean": 0.030923082248590614,
+      "lineage_ci95": null,
+      "n_lineages": 4
+    },
+    "nb_tempered_minus_majority": {
+      "mean": -0.001325996044810417,
+      "ci95": [
+        -0.003977988134431167,
+        -1.529634883209444e-18
+      ],
+      "n_clusters": 4,
+      "clusters_favoring_first": 3,
+      "sign_flip_p": 1.0,
+      "item_weighted_mean": -0.003211255727568018,
+      "lineage_ci95": null,
+      "n_lineages": 4
+    },
+    "knn_sealed_minus_majority": {
+      "mean": -0.04848144829467546,
+      "ci95": [
+        -0.10376660246159648,
+        0.006803705872245566
+      ],
+      "n_clusters": 4,
+      "clusters_favoring_first": 3,
+      "sign_flip_p": 0.375,
+      "item_weighted_mean": -0.07620686499152864,
+      "lineage_ci95": null,
+      "n_lineages": 4
+    },
+    "nb_tempered_minus_knn_sealed": {
+      "mean": 0.04715545224986504,
+      "ci95": [
+        -0.006803705872245567,
+        0.10111461037197564
+      ],
+      "n_clusters": 4,
+      "clusters_favoring_first": 1,
+      "sign_flip_p": 0.375,
+      "item_weighted_mean": 0.07299560926396062,
+      "lineage_ci95": null,
+      "n_lineages": 4
+    },
+    "naive_bayes_minus_majority": {
+      "mean": 0.09068504951180974,
+      "ci95": [
+        0.024851186678858092,
+        0.19697856198946606
+      ],
+      "n_clusters": 4,
+      "clusters_favoring_first": 0,
+      "sign_flip_p": 0.125,
+      "item_weighted_mean": 0.036180335515364585,
+      "lineage_ci95": null,
+      "n_lineages": 4
+    },
+    "nn_v1_minus_majority": {
+      "mean": -0.03658318076087875,
+      "ci95": [
+        -0.11439186918134901,
+        0.0045382186757640655
+      ],
+      "n_clusters": 4,
+      "clusters_favoring_first": 2,
+      "sign_flip_p": 1.0,
+      "item_weighted_mean": -0.09232599405023144,
+      "lineage_ci95": null,
+      "n_lineages": 4
+    },
+    "rules_minus_majority": {
+      "mean": 0.012508888482929217,
+      "ci95": [
+        -0.059212148577504786,
+        0.06891579392926504
+      ],
+      "n_clusters": 4,
+      "clusters_favoring_first": 1,
+      "sign_flip_p": 0.75,
+      "item_weighted_mean": -0.028048908389629007,
+      "lineage_ci95": null,
+      "n_lineages": 4
+    },
+    "covariate_minus_majority": {
+      "mean": -0.014094796860941936,
+      "ci95": [
+        -0.04228439058282572,
+        -1.529634883209444e-18
+      ],
+      "n_clusters": 4,
+      "clusters_favoring_first": 3,
+      "sign_flip_p": 1.0,
+      "item_weighted_mean": -0.03413433797615864,
+      "lineage_ci95": null,
+      "n_lineages": 4
+    }
+  },
+  "model_names": [
+    "majority",
+    "nb_tempered",
+    "covariate",
+    "knn_sealed",
+    "naive_bayes",
+    "nn_v1",
+    "rules"
+  ],
+  "family": "planaria_ap_polarity",
+  "dry_run": true,
+  "seals": {
+    "temporal_features": "sealed 2026-11-10T06:34:13Z",
+    "temporal_rules": "sealed 2026-11-10T05:38:09Z",
+    "holdout_params_v2": "sealed 2026-11-10T09:19:35Z",
+    "harness_manifest_v2": "sealed 2026-11-10T09:19:38Z",
+    "lab_lineage_v3": "sealed 2026-11-10T09:19:48Z",
+    "vmem_lookup_v3": "sealed 2026-11-10T09:19:42Z",
+    "corpus_protocol": "sealed 2026-11-10T05:54:00Z",
+    "corpus_manifest": "sealed 2026-11-10T05:54:03Z",
+    "corpus_status_final": "UNSEALED",
+    "problems": [
+      "corpus_status_final is not sealed (data/corpus_status.json)"
+    ]
+  },
+  "params": {
+    "note": "Every tunable of harness/holdout2.py (harness v2). Sealed as holdout_params_v2. Same as holdout_params (v1) except: min_lineages (new; lineage-gated endpoints P2/P3 are UNTESTABLE below it, equal to min_clusters for the same reason), alpha_signflip (new; the sign-flip p is now a PASS condition, per red-team 4), n_signflip (Monte Carlo draws when more than 14 units). The script takes no tunables from the command line. min_train_papers (new): a fold whose training set has fewer than 5 papers is skipped, because the tempered learner cannot run its 5-fold paper-level CV there and would be scored as an exact tie with majority (review finding 11). Low-confidence figure reads and partial rows are never scored.",
+    "primary_family": "planaria_ap_polarity",
+    "origins": [
+      1960,
+      1970,
+      1980,
+      1990,
+      2000,
+      2010,
+      2020
+    ],
+    "window": 10,
+    "min_train": 20,
+    "min_test": 1,
+    "min_folds": 3,
+    "min_clusters": 8,
+    "min_lineages": 8,
+    "alpha": 1.0,
+    "k": 5,
+    "smooth": 0.02,
+    "sesoi_brier": 0.02,
+    "alpha_signflip": 0.05,
+    "n_boot": 5000,
+    "n_signflip": 20000,
+    "n_perm": 200,
+    "seed": 0,
+    "covariates": [
+      "_year_bucket",
+      "_lineage",
+      "organism",
+      "intervention.type"
+    ],
+    "min_train_papers": 5
+  },
+  "features": [
+    "organism",
+    "species",
+    "_fragment",
+    "intervention.type",
+    "_target_id",
+    "_target_class",
+    "_agent_id",
+    "intervention.action",
+    "_delivery",
+    "_field_dir",
+    "drug.vmem_direction_pred",
+    "_dose_bucket",
+    "_timing_bucket",
+    "_duration_bucket"
+  ],
+  "controls_excluded": 25,
+  "run_record": {
+    "utc": "2026-11-10T09:38:21Z",
+    "argv": [
+      "--data",
+      "data/restricted/derived_v2/all.jsonl",
+      "--mode",
+      "species",
+      "--dry-run"
+    ],
+    "mode": "species",
+    "family": "planaria_ap_polarity",
+    "dry_run": true,
+    "counted": false,
+    "data_path": "/Users/manav/bioelectric-bench/bioelectric-bench/data/restricted/derived_v2/all.jsonl",
+    "data_sha256": "e0806a04fbba4b046b5d81595e902c9d72b8d2bd32c954eedf4e6ff9f68042bf",
+    "git_head": "66c022535f9821fcbb47ff3b5eb752270c60bdd3",
+    "git_dirty": true,
+    "python": "3.14.4",
+    "params_sha256": "6037ba6a6afd93b2f039eabbec080e63fca9ab8f68a15da71df96605840f59a9",
+    "harness_sha256": {
+      "harness/holdout2.py": "3ff54169a405978ed62a5f82a7623d264d5993baa4c36c9a11b5263307172eef",
+      "harness/derive_features.py": "e472c4c812ede30352448aee09b57c4447186b4af473757a46f0c623c62755aa",
+      "harness/common.py": "98de41e7e31be2bca18f1428b2c05c1527c38fef38c01d4b5b65f4b18017ecde",
+      "harness/score.py": "484133c8494f1e6facbf306cdfeee94059b78d8ae065850a884c32677360e0ab"
+    },
+    "row_problems": 31
+  }
+}

@@ -1,0 +1,26 @@
+rows: 604 -> data/restricted/derived_v2/all.jsonl
+  _dose_bucket:null: 38
+  _dose_bucket:set: 518
+  _duration_bucket:null: 46
+  _duration_bucket:set: 510
+  _fragment:null: 18
+  _fragment:set: 538
+  _target_id:null: 3
+  _target_id:set: 553
+  _timing_bucket:null: 30
+  _timing_bucket:set: 526
+  lab_not_in_lineage_map:rajnicek: 55
+  not_in_lookup:alsterpaullone: 1
+  not_in_lookup:bcatenin 1 rnai: 1
+  not_in_lookup:calcium chloride: 9
+  not_in_lookup:cav1 1 rnai: 1
+  not_in_lookup:cavbeta1: 2
+  not_in_lookup:dj bcatenin b rnai: 3
+  not_in_lookup:hcl: 74
+  not_in_lookup:isoquinolinone compound a: 1
+  not_in_lookup:isoquinolinone compound c: 1
+  not_in_lookup:n methyl d glucamine hcl: 1
+  not_in_lookup:pc2 rnai: 1
+  not_in_lookup:vnc transection: 14
+  vmem:None: 550
+  vmem:depolarize: 6

@@ -1,0 +1,35 @@
+{
+ "note": "CALIBRATION COPY: sealed holdout_params_v2 with n_perm reduced to 50 for runtime; nothing else changed.",
+ "primary_family": "planaria_ap_polarity",
+ "origins": [
+  1960,
+  1970,
+  1980,
+  1990,
+  2000,
+  2010,
+  2020
+ ],
+ "window": 10,
+ "min_train": 20,
+ "min_test": 1,
+ "min_folds": 3,
+ "min_clusters": 8,
+ "min_lineages": 8,
+ "alpha": 1.0,
+ "k": 5,
+ "smooth": 0.02,
+ "sesoi_brier": 0.02,
+ "alpha_signflip": 0.05,
+ "n_boot": 5000,
+ "n_signflip": 20000,
+ "n_perm": 50,
+ "seed": 0,
+ "covariates": [
+  "_year_bucket",
+  "_lineage",
+  "organism",
+  "intervention.type"
+ ],
+ "min_train_papers": 5
+}

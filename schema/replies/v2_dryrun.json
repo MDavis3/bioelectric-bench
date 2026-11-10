@@ -1,0 +1,1 @@
+{"fields": ["exit_collect", "exit_derive", "n_collected_rows", "not_in_lookup", "agent_dry_exit", "target_dry_exit", "decade_dry_exit", "lab_dry_exit", "species_dry_exit", "row_problems_agent", "shuffle_exit"], "keyed_by": null}

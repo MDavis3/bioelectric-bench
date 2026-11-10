@@ -1,0 +1,111 @@
+{
+ "family": "planaria_ap_polarity",
+ "decided_from": "Planform morphology names only, before loading any of our rows",
+ "rule_for_G1": "Planform category = map(single morphology with largest frequency); ties -> set of mapped categories",
+ "map": {
+  "Wild type": {
+   "category": "normal",
+   "reason": "wild-type regenerate"
+  },
+  "Double head, two pharynxes": {
+   "category": "double_head",
+   "reason": "two-headed"
+  },
+  "Double head, one pharynx": {
+   "category": "double_head",
+   "reason": "two-headed"
+  },
+  "Double head, incomplete, two pharynxes": {
+   "category": "double_head",
+   "reason": "two-headed (incomplete second head)"
+  },
+  "Double head, eyeless": {
+   "category": "double_head",
+   "reason": "two-headed; eye detail ignored for AP family"
+  },
+  "Double head, round head": {
+   "category": "double_head",
+   "reason": "two-headed; head shape ignored"
+  },
+  "Double head, round head, curled and immobile": {
+   "category": "double_head",
+   "reason": "two-headed; head shape/behaviour ignored"
+  },
+  "Double head, curled and immobile": {
+   "category": "double_head",
+   "reason": "two-headed; behaviour ignored"
+  },
+  "Middle head, double head": {
+   "category": "double_head",
+   "reason": "name includes double head; extra middle head ignored"
+  },
+  "Headless": {
+   "category": "headless",
+   "reason": "headless"
+  },
+  "Tailless, two pharynxes": {
+   "category": "tailless",
+   "reason": "tailless"
+  },
+  "Triple head": {
+   "category": "other",
+   "reason": "more than two heads; not the bipolar double_head outcome"
+  },
+  "Quadruple head": {
+   "category": "other",
+   "reason": "more than two heads; not the bipolar double_head outcome"
+  },
+  "Side head": {
+   "category": "other",
+   "reason": "lateral ectopic head; not an AP-axis category"
+  },
+  "Double side heads": {
+   "category": "other",
+   "reason": "lateral ectopic heads; not an AP-axis category"
+  },
+  "Middle head": {
+   "category": "other",
+   "reason": "ectopic mid-body head; not an AP-axis category"
+  },
+  "Side protrusion": {
+   "category": "other",
+   "reason": "lateral outgrowth; not an AP-axis category"
+  },
+  "Ectopic pharynxes, 2 posterior, ectopic brains": {
+   "category": "other",
+   "reason": "ectopic organs; not one of the six named AP outcomes"
+  },
+  "Cyclop": {
+   "category": "other",
+   "reason": "single fused-eye head; abnormal head, not normal and not headless"
+  },
+  "Eyes, small": {
+   "category": "other",
+   "reason": "reduced-eye head; abnormal head grade, not normal and not headless"
+  },
+  "Pointed, fused eyes": {
+   "category": "other",
+   "reason": "reduced head grade; abnormal head, not normal and not headless"
+  },
+  "Pointed, eyeless": {
+   "category": "other",
+   "reason": "anophthalmic pointed head; a head is present, so not headless; abnormal so not normal"
+  },
+  "Round head": {
+   "category": "other",
+   "reason": "head shape change only"
+  },
+  "Round head, curled and immobile": {
+   "category": "other",
+   "reason": "head shape/behaviour change only"
+  },
+  "Curled and immobilized": {
+   "category": "other",
+   "reason": "behavioural/toxic phenotype, no AP call"
+  },
+  "Lethal": {
+   "category": "other",
+   "reason": "death; schema says use other rather than invent a category"
+  }
+ }
+}
