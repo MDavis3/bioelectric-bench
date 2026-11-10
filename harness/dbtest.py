@@ -235,6 +235,7 @@ def t2_cv(s, E, x, y, folds, nn, params):
     grid = params["ridge_grid"]
     shrink = params["nn_shrink"]
     d = np.full(len(y), np.nan)
+    dl = np.full(len(y), np.nan)
     for f in np.unique(folds):
         tr = (folds != f) & cc
         te = (folds == f) & cc
@@ -270,7 +271,10 @@ def t2_cv(s, E, x, y, folds, nn, params):
         p1 = logit_pred(b1, Z1te[te])
         p2 = logit_pred(b2, Z2te[te])
         d[te] = (p1 - y[te]) ** 2 - (p2 - y[te]) ** 2
-    return d
+        q1, q2 = np.clip(p1, 1e-6, 1 - 1e-6), np.clip(p2, 1e-6, 1 - 1e-6)
+        ll = lambda q: -(y[te] * np.log(q) + (1 - y[te]) * np.log(1 - q))
+        dl[te] = ll(q1) - ll(q2)
+    return d, dl
 
 
 def block_table(s, x, cc):
@@ -353,15 +357,17 @@ def analyze(s, E, mats_nn, y, y_exc, lethal_nomorph, params, n_perm=None, n_boot
         perms.append(t1_fit(E, nns, xp, y, cc))
     rep["t1_perm_p"] = float((1 + np.sum(np.array(perms) >= b)) / (1 + n_perm))
     # T2
-    d = t2_cv(s, E, x, y, folds, nn, params)
+    d, dl = t2_cv(s, E, x, y, folds, nn, params)
     ok = ~np.isnan(d)
-    rep["t2_mean"] = float(np.nanmean(d))
-    bl_d = pd.Series(d[ok]).groupby(s.block.values[ok]).agg(["sum", "count"])
-    t2b = []
-    for _ in range(n_boot):
-        pick = rng.integers(0, len(bl_d), len(bl_d))
-        t2b.append(bl_d["sum"].values[pick].sum() / bl_d["count"].values[pick].sum())
-    rep["t2_lo"], rep["t2_hi"] = [float(v) for v in np.percentile(t2b, [2.5, 97.5])]
+    blk = s.block.values[ok]
+    for tag, vec in (("t2", d), ("t2ll", dl)):
+        rep[f"{tag}_mean"] = float(np.nanmean(vec))
+        bl_d = pd.Series(vec[ok]).groupby(blk).agg(["sum", "count"])
+        bs = []
+        for _ in range(n_boot):
+            pick = rng.integers(0, len(bl_d), len(bl_d))
+            bs.append(bl_d["sum"].values[pick].sum() / bl_d["count"].values[pick].sum())
+        rep[f"{tag}_lo"], rep[f"{tag}_hi"] = [float(v) for v in np.percentile(bs, [2.5, 97.5])]
     # consistency
     def sub_or(mask):
         m = cc & mask
@@ -400,6 +406,7 @@ def judge(rep, P, sim_ok=True):
         "perm_p<alpha": rep["t1_perm_p"] < P["alpha"],
         "t1>=sesoi": rep["t1_logor"] >= sesoi,
         "t2_lo>0": rep["t2_lo"] > 0,
+        "t2ll_lo>0": rep.get("t2ll_lo", -1) > 0,
         "mouse>0": pos(rep["or_mouse"]),
         "zebrafish>0": pos(rep["or_zebrafish"]),
         "s1>0": pos(rep["or_s1"]),
@@ -407,6 +414,13 @@ def judge(rep, P, sim_ok=True):
     }
     if impc_ok:
         conds["impc>0"] = pos(rep["or_impc"])
+    rule = P.get("t2_rule", "brier_required")
+    if rule == "brier_required":
+        conds.pop("t2ll_lo>0")
+    elif rule == "logloss_required":
+        conds.pop("t2_lo>0")
+    else:
+        conds.pop("t2_lo>0"); conds.pop("t2ll_lo>0")
     if all(conds.values()):
         return "PASS", "all conditions met" + ("" if impc_ok else " (IMPC floor not met: IMPC condition dropped)")
     if rep["t1_hi"] < sesoi:
@@ -443,6 +457,8 @@ def sim_one(args):
     rng = np.random.default_rng(1000 + seed)
     y, ye, le = simulate_y(s, rates, rng, world, P)
     rep = analyze(s, E, mats_nn, y, ye, le, P, n_perm=P["sim_n_perm"], n_boot=P["sim_n_boot"], seed=seed)
+    if P.get("sim_all_rules"):
+        return {r: judge(rep, dict(P, t2_rule=r))[0] for r in ("brier_required", "logloss_required", "reported")}
     v, _ = judge(rep, P)
     return v
 
@@ -499,8 +515,13 @@ def main():
         for w in a.worlds.split(","):
             with ProcessPoolExecutor(a.workers, mp_context=mp.get_context("fork")) as ex:
                 vs = list(ex.map(sim_one, [(s, E, mats_nn, rates, w, i, P) for i in range(a.seeds)]))
-            out[w] = {v: vs.count(v) for v in sorted(set(vs))}
-            out[w]["n"] = a.seeds
+            if isinstance(vs[0], dict):
+                out[w] = {r: {v: [x[r] for x in vs].count(v) for v in sorted({x[r] for x in vs})} for r in vs[0]}
+                for r in out[w]:
+                    out[w][r]["n"] = a.seeds
+            else:
+                out[w] = {v: vs.count(v) for v in sorted(set(vs))}
+                out[w]["n"] = a.seeds
             print(w, out[w], flush=True)
         out["note"] = f"n_perm={P['sim_n_perm']} n_boot={P['sim_n_boot']} per simulated run"
         Path(a.out).write_text(json.dumps(out, indent=1))

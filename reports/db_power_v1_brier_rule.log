@@ -1,0 +1,4 @@
+null {'FAIL': 126, 'INCONCLUSIVE': 74, 'n': 200}
+planted {'FAIL': 1, 'INCONCLUSIVE': 143, 'PASS': 56, 'n': 200}
+depth {'FAIL': 135, 'INCONCLUSIVE': 65, 'n': 200}
+excitable {'FAIL': 103, 'INCONCLUSIVE': 96, 'PASS': 1, 'n': 200}
