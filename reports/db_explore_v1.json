@@ -1,0 +1,177 @@
+{
+ "note": "EXPLORATORY (prereg section J); does not change the sealed verdict in reports/db_counted_v1.json.",
+ "primary_Y_recomputed": {
+  "or": 0.782,
+  "lo": 0.483,
+  "hi": 1.336,
+  "perm_p_one_sided": 0.8611,
+  "n_x1": 394,
+  "n_x0": 972
+ },
+ "nosize": {
+  "or": 0.947,
+  "lo": 0.56,
+  "hi": 1.604,
+  "perm_p_one_sided": 0.6024,
+  "n_x1": 394,
+  "n_x0": 972
+ },
+ "grey_vs_control_Y": {
+  "or": 0.802,
+  "lo": 0.416,
+  "hi": 1.441,
+  "perm_p_one_sided": 0.4476,
+  "n_x1": 154,
+  "n_x0": 972
+ },
+ "grey_vs_control_Yexc": {
+  "or": 1.301,
+  "lo": 0.697,
+  "hi": 2.697,
+  "perm_p_one_sided": 0.3297,
+  "n_x1": 154,
+  "n_x0": 972
+ },
+ "by_subclass_Y": {
+  "gap_junction": {
+   "or": 0.5,
+   "lo": 0.013,
+   "hi": 0.96,
+   "perm_p_one_sided": 0.6267,
+   "n_x1": 32,
+   "n_x0": 972
+  },
+  "ligand_gated": {
+   "or": 0.822,
+   "lo": 0.27,
+   "hi": 1.99,
+   "perm_p_one_sided": 0.6786,
+   "n_x1": 101,
+   "n_x0": 972
+  },
+  "other_channel": {
+   "or": 2.271,
+   "lo": 0.587,
+   "hi": 7.15,
+   "perm_p_one_sided": 0.0798,
+   "n_x1": 32,
+   "n_x0": 972
+  },
+  "p_type_pump": {
+   "or": 1.752,
+   "lo": 0.011,
+   "hi": 5.282,
+   "perm_p_one_sided": 0.2874,
+   "n_x1": 17,
+   "n_x0": 972
+  },
+  "v_atpase": {
+   "or": 0.773,
+   "lo": 0.012,
+   "hi": 1.886,
+   "perm_p_one_sided": 0.493,
+   "n_x1": 23,
+   "n_x0": 972
+  },
+  "voltage_gated": {
+   "or": 0.609,
+   "lo": 0.24,
+   "hi": 1.295,
+   "perm_p_one_sided": 0.9002,
+   "n_x1": 189,
+   "n_x0": 972
+  }
+ },
+ "by_subclass_Yexc": {
+  "gap_junction": {
+   "or": 1.038,
+   "lo": 0.769,
+   "hi": 1.691,
+   "perm_p_one_sided": 0.5369,
+   "n_x1": 32,
+   "n_x0": 972
+  },
+  "ligand_gated": {
+   "or": 2.766,
+   "lo": 1.56,
+   "hi": 5.567,
+   "perm_p_one_sided": 0.002,
+   "n_x1": 101,
+   "n_x0": 972
+  },
+  "other_channel": {
+   "or": 0.714,
+   "lo": 0.237,
+   "hi": 2.44,
+   "perm_p_one_sided": 0.8104,
+   "n_x1": 32,
+   "n_x0": 972
+  },
+  "p_type_pump": {
+   "or": 1.652,
+   "lo": 0.01,
+   "hi": 71.365,
+   "perm_p_one_sided": 0.3633,
+   "n_x1": 17,
+   "n_x0": 972
+  },
+  "v_atpase": {
+   "or": 1.336,
+   "lo": 0.901,
+   "hi": 1.846,
+   "perm_p_one_sided": 0.7106,
+   "n_x1": 23,
+   "n_x0": 972
+  },
+  "voltage_gated": {
+   "or": 2.237,
+   "lo": 1.22,
+   "hi": 3.721,
+   "perm_p_one_sided": 0.002,
+   "n_x1": 189,
+   "n_x0": 972
+  }
+ },
+ "crude_rates": {
+  "mouse|class": {
+   "n": 297,
+   "Y_rate": 0.108,
+   "Yexc_rate": 0.771
+  },
+  "mouse|control": {
+   "n": 783,
+   "Y_rate": 0.119,
+   "Yexc_rate": 0.612
+  },
+  "mouse|grey": {
+   "n": 121,
+   "Y_rate": 0.099,
+   "Yexc_rate": 0.653
+  },
+  "mouse|other": {
+   "n": 13594,
+   "Y_rate": 0.158,
+   "Yexc_rate": 0.528
+  },
+  "zebrafish|class": {
+   "n": 97,
+   "Y_rate": 0.134,
+   "Yexc_rate": 0.68
+  },
+  "zebrafish|control": {
+   "n": 189,
+   "Y_rate": 0.122,
+   "Yexc_rate": 0.593
+  },
+  "zebrafish|grey": {
+   "n": 33,
+   "Y_rate": 0.182,
+   "Yexc_rate": 0.697
+  },
+  "zebrafish|other": {
+   "n": 5478,
+   "Y_rate": 0.177,
+   "Yexc_rate": 0.539
+  }
+ }
+}
