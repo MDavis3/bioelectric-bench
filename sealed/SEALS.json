@@ -132,6 +132,12 @@
     "source": "plans/plan.md",
     "utc": "2026-11-10T06:34:10Z"
   },
+  "planner_firewall_v2_code": {
+    "copy": "sealed/planner_firewall_v2_code__496fcdedead0.py",
+    "sha256": "496fcdedead078d2ab2f620af241c256059e7acbc4e2a09190e0aa07dc0f19da",
+    "source": "harness/planner_firewall_v2.py",
+    "utc": "2026-11-10T15:46:10Z"
+  },
   "repilot_gates_v1": {
     "copy": "sealed/repilot_gates_v1__9a767c7761ed.md",
     "remote_commit": "429d8a534a3711703072649b8a94c2fffcd40e69",
