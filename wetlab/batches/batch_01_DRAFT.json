@@ -1,10 +1,10 @@
 {
   "organism": "planaria",
-  "stage": "trunk fragment",
-  "injury": "pre- and post-pharyngeal cuts",
+  "stage": "pre-tail fragment (posterior to pharynx)",
+  "injury": "post-pharyngeal and pre-tail cuts",
   "readout": {
     "method": "phone macro or USB microscope photo, one animal per image, scored blind by dish code",
-    "timepoint": "day 10-14 after cutting"
+    "timepoint": "day 10 after cutting"
   },
   "viability_check": "day 3: count live fragments per dish; dead ones scored 'dead'",
   "replicates": null,
@@ -55,19 +55,25 @@
   ],
   "max_control_abnormal": 0.1,
   "max_lethality": 0.1,
-  "pass_rule": "desk_threshold_rule_v1 item 7: wetlab/tabulate.py exits 0 (no control arm over 10% non-normal) and no arm flagged toxic (lethality limit 0.10).",
+  "pass_rule": "desk_threshold_rule_v1 item 7 as implemented in wetlab/tabulate.py: exit 0 only if every dish is fully recorded, each water arm has at most 10% non-normal, and no control arm exceeds 10% lethality (a toxic control voids the batch).",
   "handling": {
-    "medium": "one brand of commercial natural spring water throughout (all published octanol protocols in wetlab/published_handling.csv used spring water)",
-    "temperature_c": "20-22 (published: 20-22)",
+    "source_row": "wetlab/published_handling.csv: emmonsbell2015_ijms plain-water control (Girardia dorotocephala)",
+    "medium": "commercial natural spring water (one brand)",
+    "temperature_c": 20,
     "starve_days_before_cut": 7,
-    "cut": "remove head and tail on a cold damp surface; keep the pharynx-containing trunk piece",
-    "density": "10 fragments per 100 mm dish",
-    "water_change": "every 2-3 days, and the day after cutting",
-    "scoring_day": "14 (published D. japonica scoring day; record day 10 too)"
+    "cut": "pre-tail piece, posterior to the pharynx, cut on a cold damp surface",
+    "density": "10 pieces per 100 mm dish",
+    "water_change": "every 2-3 days",
+    "scoring_day": 10,
+    "deviations": [
+      "starvation days and water-change interval are husbandry defaults (Stowers education protocol), not from the paper"
+    ]
   },
   "preregistered": {
     "min_penetrance_that_counts": "n/a (rig validation)",
     "osf_or_preprint_url": null
   },
-  "note": "Generate dish codes with wetlab/randomize.py only after sealing. Predictions for both arms are sealed by a fresh Predictor before cutting (wetlab/batch_setups.py makes its input)."
+  "note": "Generate dish codes with wetlab/randomize.py only after sealing. Predictions for both arms are sealed by a fresh Predictor before cutting (wetlab/batch_setups.py makes its input).",
+  "primary_scorer": "SET BEFORE SEALING (e.g. 'vision' or 'manav')",
+  "scoring_day": 10
 }

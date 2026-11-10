@@ -10,7 +10,7 @@ Prices are rough (search snippets, 2026-11-10; wetlab/SCOUT_NOTES.md has the sou
 | Girardia (Dugesia) tigrina, "brown" planaria | Flinn | about $17 per 30 | No qualifying published positive control in our corpus. |
 | Dugesia japonica / Schmidtea mediterranea | not sold to individuals | n/a | D. japonica is the only species where a published polarity positive control qualifies under the sealed rule (octanol). Would need an academic lab to share a clonal line. |
 
-Order at least 100 worms: rig validation alone uses 60 pieces from 30 worms, and you want spares to settle in for 1-2 weeks first.
+Order at least 200 worms: one piece is kept per worm, so rig validation uses 60 worms and batch 2 another 90, plus spares to settle in for 1-2 weeks first.
 
 ## Water and food
 
@@ -28,8 +28,9 @@ Order at least 100 worms: rig validation alone uses 60 pieces from 30 worms, and
 | Single-edge razor blades or #10/#11 scalpel blades | cutting | $5-12 |
 | Ice pack + damp lint-free tissue or filter paper (cold cutting surface) | immobilises worms for cutting | $5 |
 | 3 mL transfer pipettes, a pack | moving worms and changing water | $16-30 per 500 |
-| Fixed-volume micropipette (about 10 uL) + tips | octanol dilution (about 10 uL into 500 mL); cannot be done accurately by kitchen scale | $30-100 |
-| Glass bottle, 500 mL to 1 L, with cap | making the octanol bath (octanol dissolves poorly; vortex or shake long) | $10 |
+| Adjustable micropipette, 2-20 uL, + tips | octanol dilution: 8 uL per 500 mL (Girardia protocol) or 10 uL per 500 mL (D. japonica protocol); cannot be done by kitchen scale | $30-100 |
+| Glass bottle, 500 mL to 1 L, with cap; a magnetic stirrer if available | making the octanol bath (octanol dissolves poorly; stir or shake at least 30 min) | $10-40 |
+| Lidded tin or sharps container | used blades | $0-5 |
 | USB microscope or clip-on phone macro lens | one photo per worm on day 10-14 | $15-50 |
 | Labels and a fine marker | dish codes only (from wetlab/randomize.py) | $5 |
 | Thermometer; a cool, dark cupboard or wine fridge holding 18-22 C | temperature control (published: 20-22 C) | $10-150 |

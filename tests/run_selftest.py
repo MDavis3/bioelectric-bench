@@ -186,6 +186,7 @@ def main():
     wl.mkdir()
     batch = json.loads((ROOT / "wetlab/batches/batch_TEMPLATE.json").read_text())
     batch["sealed_date"] = "2026-12-01"
+    batch["primary_scorer"] = "vision"
     bp = wl / "batch_t.json"
     bp.write_text(json.dumps(batch))
     ok, out = run([PY, str(ROOT / "wetlab/randomize.py"), str(bp), "--seed", "1"])
@@ -209,7 +210,24 @@ def main():
                     w.writerow([d["code"], k, cat, "", "vision"])
                     w.writerow([d["code"], k, cat if rr.random() < 0.9 else "normal", "", "manav"])
 
-    tab = [PY, str(ROOT / "wetlab/tabulate.py"), str(bp), "--scorer", "vision", "--out", str(wl / "out")]
+    import hashlib as _hl
+
+    def seal_all():
+        """Scratch seal registry in the order tabulate requires (batch < predictions < key sha256 < scores)."""
+        h = lambda p: _hl.sha256(Path(p).read_bytes()).hexdigest()
+        reg = {"batch_01": {"sha256": h(bp), "utc": "2026-12-01T01:00:00Z"},
+               "batch_01_predictions": {"sha256": "x", "utc": "2026-12-01T02:00:00Z"},
+               "batch_01_key_sha256": {"sha256": h(wl / "batch_t_key.sha256"), "utc": "2026-12-01T03:00:00Z"},
+               "batch_01_scores": {"sha256": h(wl / "batch_t_scores.csv"), "utc": "2026-12-01T04:00:00Z"}}
+        (wl / "reg.json").write_text(json.dumps(reg))
+
+    _orig_write = write_scores
+
+    def write_scores(pc_double, veh_abn):  # noqa: F811
+        _orig_write(pc_double, veh_abn)
+        seal_all()
+
+    tab = [PY, str(ROOT / "wetlab/tabulate.py"), str(bp), "--registry", str(wl / "reg.json"), "--out", str(wl / "out")]
     write_scores(0.5, 0.0)
     ok, out = run(tab)
     items = (wl / "out/setups/setups.jsonl").read_text().splitlines() if ok else []

@@ -9,7 +9,7 @@
   "viability_check": "day 3: count live fragments per dish; dead ones scored 'dead'",
   "replicates": null,
   "batch": "batch_02",
-  "status": "DRAFT: only if Manav obtains Dugesia japonica (not sold to individuals)",
+  "status": "DRAFT: only if Manav obtains Dugesia japonica; positive-control gate needs desk_threshold_rule_v2 (double_head only, octanol above controls at Fisher p < 0.05) written and sealed first",
   "sealed_date": null,
   "species": "Dugesia japonica",
   "purpose": "Positive control (gate positive_control): reproduce the published octanol phenotype exactly as published.",
@@ -17,7 +17,8 @@
     "arm": "octanol",
     "category": "affected",
     "min_fraction": 0.2,
-    "source": "reports/desk_power.md run 2 (desk_threshold_rule_v1): dugesia_japonica C1 octanol minimum 20 points; 4 papers, 1 lineage after verification"
+    "min_scorable": 21,
+    "source": "reports/desk_power.md run 2 (desk_threshold_rule_v1). PROVISIONAL: replace by the desk_threshold_rule_v2 output before sealing (red-team MUST 8)"
   },
   "score_positive_control": false,
   "arms": [
@@ -56,38 +57,43 @@
         "delivery": "bath",
         "description": "1-octanol bath in spring water after cutting, as published"
       },
-      "citation": "oviedo2010_devbiol and durant2017_bpj methods (wetlab/published_handling.csv): 127 uM 1-octanol in commercial spring water, 72 h from cutting, pharynx-containing fragments, scored at day 14 (Oviedo) or 21 (Durant)"
+      "citation": "sole source: oviedo2010_devbiol methods (wetlab/published_handling.csv row 1): 127 uM 1-octanol in commercial natural spring water, 72 h from cutting, scored at day 14"
     },
     {
-      "arm": "vehicle_handling",
-      "role": "control",
+      "arm": "sham_handling",
+      "role": "vehicle",
       "task_family": "planaria_ap_polarity",
       "dishes": 3,
       "fragments_per_dish": 10,
       "intervention": {
         "type": "control",
         "target": null,
-        "agent": "water, handled exactly like the octanol arm (same bottle shaking, same changes)",
+        "agent": "water",
         "dose": null,
         "dose_units": null,
         "timing": "0 hpa",
-        "duration": "whole regeneration period",
+        "duration": "same as the octanol arm",
         "delivery": "bath",
-        "description": "sham bath: spring water handled like the octanol bath"
+        "description": "spring water handled exactly like the octanol bath (same bottle, same mixing, same changes)"
       }
     }
   ],
   "max_control_abnormal": 0.1,
   "max_lethality": 0.3,
   "handling": {
+    "source_row": "wetlab/published_handling.csv row 1 (oviedo2010_devbiol)",
     "medium": "commercial natural spring water",
-    "temperature_c": "20-22",
-    "stock": "about 10 uL 1-octanol into 500 mL spring water gives about 127 uM; shake or stir long (poorly soluble); make fresh",
-    "exposure": "72 h from cutting, then rinse into plain water",
-    "scoring_day": 14
+    "stock": "10 uL neat 1-octanol into 500 mL spring water = 127 uM (10 uL x 0.827 g/mL / 130.23 g/mol / 0.5 L); stir 30 min; microlitres, never millilitres",
+    "exposure": "72 h from cutting, then plain water",
+    "scoring_day": 14,
+    "deviations": [
+      "temperature (20-22 C) and mixing time are not stated in the source row; taken from durant2017_bpj row 23 and noted as such"
+    ]
   },
   "preregistered": {
     "min_penetrance_that_counts": "positive control: >= 20% affected (any non-normal) among scorable fragments, per desk_threshold_rule_v1",
     "osf_or_preprint_url": null
-  }
+  },
+  "primary_scorer": "SET BEFORE SEALING",
+  "scoring_day": 14
 }

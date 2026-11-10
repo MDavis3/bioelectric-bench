@@ -1,7 +1,10 @@
 # Desk Lab Kit v1: readiness guide
 
-For Manav (or any hobbyist or teaching lab). Follows wetlab/PROTOCOL.md. Every handling value below traces to a row
-of wetlab/published_handling.csv (61 rows from 8 papers; setup facts only). Thresholds come from reports/desk_power.md,
+For Manav (or any hobbyist or teaching lab). Follows wetlab/PROTOCOL.md. Every dose, exposure and scoring day in the
+batch files traces to one named row of wetlab/published_handling.csv (61 rows from 8 papers; setup facts only); each
+batch file lists its source row and every home deviation. Husbandry defaults (section 2) come from the Stowers
+education protocol (wetlab/SCOUT_NOTES.md), not from the papers. Red-team: wetlab/REDTEAM.md (all MUST items closed
+or marked open below). Thresholds come from reports/desk_power.md,
 computed by the sealed rule plans/desk_threshold_rule.md (`desk_threshold_rule_v1`) before any rate was seen by the
 planner. Supplies: wetlab/SUPPLIES.md. Source notes: wetlab/SCOUT_NOTES.md.
 
@@ -9,9 +12,9 @@ planner. Supplies: wetlab/SUPPLIES.md. Source notes: wetlab/SCOUT_NOTES.md.
 
 | Species | Can you buy it? | Published positive control (sealed rule) | What the kit lets you do |
 |---|---|---|---|
-| Girardia (Dugesia) dorotocephala | Yes (Ward's, Flinn, Carolina) | Octanol protocol exists (Emmons-Bell 2015: 123 uM, 72 h, daily refresh, pre-tail fragments, head-shape readout) but has no scorable published rate in our data, so it does NOT qualify as a gate | Batch 1 (rig validation). Batch 2 only as a descriptive pilot (wetlab/batches/batch_02_DRAFT_girardia_dorotocephala.json) |
+| Girardia (Dugesia) dorotocephala | Yes (Ward's, Flinn, Carolina) | Octanol protocol exists (Emmons-Bell 2015: 8 uL per 500 mL, stated as 123 uM, 72 h with daily refresh, pre-tail pieces, head-shape readout) but has no scorable published rate in our data, so it does NOT qualify as a gate | Batch 1 (rig validation). Batch 2g only as a descriptive pilot (wetlab/batches/batch_02g_DRAFT_girardia_dorotocephala.json) |
 | Girardia (Dugesia) tigrina | Yes (Flinn) | None in our corpus | Batch 1 only |
-| Dugesia japonica | No (academic labs only) | Octanol QUALIFIES: 4 papers (one lineage), minimum 20 points among scorable fragments at 30 per arm; heptanol also qualifies (1 paper) | Batch 1, then batch 2 as a real gate (wetlab/batches/batch_02_DRAFT_dugesia_japonica.json) |
+| Dugesia japonica | No (academic labs only) | Octanol qualifies under rule v1 (4 papers, one lineage, minimum 20 points of any non-normal outcome); heptanol has a published rate but its two published concentrations disagree by about 50-fold, so it is not runnable | Batch 1, then batch 2 as a gate, after desk_threshold_rule_v2 is sealed (section 6) |
 | Schmidtea mediterranea | No | None in our corpus | n/a |
 
 Plain verdict: **with worms you can buy, the kit gets you to a validated rig and a descriptive octanol pilot, not to a
@@ -32,11 +35,11 @@ the label. "Planaria maculata" in old papers is often read as G. tigrina; this i
 ## 3. Cutting
 
 - Chill a damp lint-free tissue on an ice pack; place one worm; when it stretches still, cut with a fresh razor or
-  scalpel: one cut just behind the head (behind the eyes) and one just in front of the tail, keeping the
-  pharynx-containing trunk piece. For the Girardia octanol pilot, use the published pre-tail piece (posterior to the
-  pharynx) instead.
+  scalpel. Girardia (batch 1 and 2g): keep the published pre-tail piece, posterior to the pharynx (one cut just behind
+  the pharynx, one just in front of the tail). D. japonica (batch 2): keep the pharynx-containing trunk piece.
 - 10 pieces per dish, labelled only with the dish code from wetlab/randomize.py.
-- Cut in two sessions; within each session follow the randomized dish order so cutting skill does not track the arm.
+- Cut in two sessions; wetlab/randomize.py assigns each dish a session (each arm split across both) and an order
+  within it, so cutting skill does not track the arm.
 
 ## 4. Schedule
 
@@ -47,26 +50,36 @@ the label. "Planaria maculata" in old papers is often read as G. tigrina; this i
 | 1-3 | water change day 1 | refresh baths daily if the paper did (Girardia protocol: daily) |
 | 3 | viability check: count live pieces per dish; dead = "dead" | same; after 72 h move all arms to plain water |
 | 4-13 | water change every 2-3 days | same |
-| 14 (and 10) | photograph every piece, one per image, file name `<dishcode>_<worm>.jpg` | same (Girardia pilot: day 10) |
+| scoring day (one, fixed in the batch file: 10 for Girardia, 14 for D. japonica) | photograph every piece, one per image, file name `<dishcode>_<worm>.jpg` | same |
 
 ## 5. Scoring
 
 Categories (schema/outcome_categories.json): planaria_ap_polarity uses normal, double_head, double_tail, headless,
 tailless, no_regeneration, other; planaria_head_shape uses normal, altered_shape, other. "Dead" counts toward lethality
-only. Manav scores a random subset blind first; then the image scorer scores the blind folder (wetlab/prep_images.py).
+only; any other word is refused by wetlab/tabulate.py. Scores file: wetlab/batches/<batch>_scores.csv with columns
+code,worm,category,image,scorer, one line per piece per scorer, every piece of every dish recorded (dead included).
+The batch file names one primary_scorer; only that scorer's calls decide the batch.
 
-## 6. Gates and void rules
+Blinding: a second person holds the key (wetlab/batches/<batch>_key.json) and doses the dishes; the person who cuts and
+scores never sees it. If nobody else is available, human scores are declared UNBLINDED in the report and only the
+image scorer's blind scores (wetlab/prep_images.py folder) count. The key is never pushed before the scores are
+sealed: only its sha256 (<batch>_key.sha256) is sealed before cutting.
 
-- Batch 1 passes when wetlab/tabulate.py exits 0 with no arm flagged toxic: each water arm at most 10% non-normal
-  (PROTOCOL.md: at least 90% normal) and lethality at most 10% (desk_threshold_rule_v1, item 7). Most home rigs fail
-  here first; fixing water, temperature or cutting is a real result.
-- Batch 2 (D. japonica only) voids if the octanol arm shows less than 20% affected among scorable pieces, or any water
-  arm over 10% non-normal; arms over 30% lethality are excluded as toxic.
-- Expected: with the published rate's lower bound, a 21-piece scorable octanol arm passes the 20-point minimum about
-  90% of the time (reports/desk_power.md). Published control arms in the corpus are not a guide to a home rig: many are
-  controls of short-piece or RNAi assays, so the kit uses the PROTOCOL.md 10% rule, not a pooled published rate.
+## 6. Gates and void rules (as wetlab/tabulate.py enforces them)
+
+- Refused (exit 3) unless the batch file, predictions, key hash and scores file are sealed in that order and unchanged.
+- Void (exit 2, a void record is written) if any dish has unrecorded pieces; any water or sham arm shows more than 10%
+  non-normal; any control arm or the positive-control arm exceeds its lethality limit (batch 1: 10%; batch 2: 30%);
+  or the positive control has fewer than 21 scorable pieces or falls below its minimum. Test arms over 30% lethality
+  are excluded as toxic. Most home rigs fail batch 1 first; fixing water, temperature or cutting is a real result.
+- What the D. japonica gate does and does not show (red-team MUST 8, open): rule v1 counts any non-normal outcome,
+  while PROTOCOL.md names double heads; at the threshold, 6 of 30 octanol pieces against 3 of 30 allowed in controls is
+  not a significant difference (one-sided Fisher p about 0.24); the pass probability of about 90% is for the octanol
+  arm alone. Before any D. japonica batch is sealed, write and seal desk_threshold_rule_v2: double_head only, and the
+  octanol arm above controls at Fisher p < 0.05. Published control arms in the corpus are not a guide to a home rig
+  (many are controls of short-piece or RNAi assays), so the kit uses the PROTOCOL.md 10% rule.
 - Sizes: 3 dishes x 10 pieces per arm. Detecting a 20-point change over controls needs about 70 pieces per arm in
-  D. japonica (reports/desk_power.md); 30 per arm only sees large effects, as PROTOCOL.md says.
+  D. japonica (reports/desk_power.md); 30 per arm sees only large effects, as PROTOCOL.md says.
 
 ## 7. Seal order (nothing is claimed otherwise)
 
@@ -77,7 +90,15 @@ Any batch whose result would be reported gets an independent replication batch.
 
 ## 8. Safety
 
-Gloves and glasses for octanol; ventilate; keep away from food, children and pets; label everything. 1-octanol is an
-eye irritant, combustible and harmful to aquatic life: read the bottle's safety data sheet, collect treated water and
-dispose of it per local rules. Never release worms or treated water outdoors. Ethanol, ether, chloretone and the other
-old anesthetics stay off the desk.
+- Blades: cut away from fingers on a stable surface; keep blades in a closed sharps container (a lidded tin works);
+  never leave loose blades.
+- 1-octanol (read the safety data sheet for your bottle first): gloves and safety glasses on whenever the bottle is
+  open; no flame or heat nearby (combustible); pipette neat octanol in MICROLITRES, never millilitres (10 uL or 8 uL
+  per 500 mL); store tightly closed, labelled, away from food, children and pets.
+- Eye splash: rinse with running water for 15 minutes, then seek medical advice with the safety data sheet. Skin: wash
+  with soap and water. Small spill: absorb with paper towel, bag it, ventilate.
+- Labware used for chemicals never goes back to the kitchen. Collect all treated water in a labelled bottle and take it
+  to household hazardous waste unless your local authority says otherwise; never pour it outside.
+- Never release worms or water outdoors (non-native species). To end a culture: follow the supplier's care-sheet
+  method; if none is given, freeze the worms in a sealed bag before disposal.
+- Ethanol, ether, chloretone and the other old anesthetics stay off the desk.

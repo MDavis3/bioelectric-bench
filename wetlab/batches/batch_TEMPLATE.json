@@ -45,7 +45,7 @@
         "target": "innexins",
         "agent": "1-octanol",
         "dose": null,
-        "dose_units": "mM (set from the published protocol)",
+        "dose_units": "uM (set from the published protocol)",
         "timing": "0 hpa",
         "duration": "48-72 h (set from the published protocol)",
         "delivery": "bath",

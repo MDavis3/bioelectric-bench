@@ -1,14 +1,14 @@
 {
   "organism": "planaria",
   "stage": "pre-tail fragment (posterior to pharynx)",
-  "injury": "pre- and post-pharyngeal cuts",
+  "injury": "post-pharyngeal and pre-tail cuts",
   "readout": {
     "method": "phone macro or USB microscope photo, one animal per image, scored blind by dish code",
     "timepoint": "day 10-14 after cutting"
   },
   "viability_check": "day 3: count live fragments per dish; dead ones scored 'dead'",
   "replicates": null,
-  "batch": "batch_02",
+  "batch": "batch_02g",
   "status": "DRAFT: positive control NOT QUALIFIED under desk_threshold_rule_v1 (no scorable published Girardia rows); run only as a descriptive pilot, never as the gate",
   "sealed_date": null,
   "species": "Girardia dorotocephala",
@@ -44,8 +44,8 @@
         "type": "gap_junction_block",
         "target": "innexins",
         "agent": "1-octanol",
-        "dose": 123,
-        "dose_units": "uM",
+        "dose": null,
+        "dose_units": "8 uL neat 1-octanol per 500 mL spring water (paper states 123 uM; by density this volume gives about 102 uM; the volume governs)",
         "timing": "0 hpa",
         "duration": "72 h with daily refresh, then plain water",
         "delivery": "bath",
@@ -54,34 +54,41 @@
       "citation": "emmonsbell2015_ijms methods (wetlab/published_handling.csv): Girardia dorotocephala pre-tail fragments, 123 uM 1-octanol dispersed directly in spring water, 72 h with daily refresh, 20 C, scored about day 10; hexanol used as a control alcohol"
     },
     {
-      "arm": "hexanol",
-      "role": "control",
+      "arm": "sham_handling",
+      "role": "vehicle",
       "task_family": "planaria_head_shape",
       "dishes": 3,
       "fragments_per_dish": 10,
       "intervention": {
         "type": "control",
         "target": null,
-        "agent": "1-hexanol",
+        "agent": "water",
         "dose": null,
-        "dose_units": "uM (same molar concentration as the published hexanol control; copy from the paper before sealing)",
+        "dose_units": null,
         "timing": "0 hpa",
-        "duration": "72 h with daily refresh",
+        "duration": "same as the octanol arm",
         "delivery": "bath",
-        "description": "control alcohol bath, as published"
+        "description": "spring water handled exactly like the octanol bath, refreshed daily"
       }
     }
   ],
   "max_control_abnormal": 0.1,
   "max_lethality": 0.3,
   "handling": {
+    "source_row": "wetlab/published_handling.csv row 30 (emmonsbell2015_ijms, Girardia dorotocephala)",
     "medium": "commercial natural spring water",
     "temperature_c": 20,
-    "exposure": "72 h, refreshed daily, then plain water",
-    "scoring_day": 10
+    "stock": "8 uL neat 1-octanol into 500 mL spring water, mixed at least 30 min, remade each day for 3 days; microlitres, never millilitres",
+    "exposure": "72 h with daily refresh, then plain water",
+    "scoring_day": 10,
+    "deviations": [
+      "the published hexanol control alcohol arm is omitted because its concentration is not stated; a sham-handling water arm replaces it"
+    ]
   },
   "preregistered": {
     "min_penetrance_that_counts": "none set: the sealed rule found no published rate to set it from; any threshold would be invented",
     "osf_or_preprint_url": null
-  }
+  },
+  "primary_scorer": "SET BEFORE SEALING",
+  "scoring_day": 10
 }

@@ -32,9 +32,9 @@ def main():
     for arm in b["arms"]:
         iv = dict(arm["intervention"])
         rows.append({
-            "item_id": f"{b['batch']}#{arm['arm']}",
+            "item_id": f"desk:{b['batch']}#{arm['arm']}",
             "split": "test",
-            "source": {"paper_id": f"desk_{b['batch']}", "title": f"Desk lab {b['batch']}", "year": year,
+            "source": {"paper_id": f"desk:{b['batch']}", "title": f"Desk lab {b['batch']}", "year": year,
                        "lab": "desk", "location": "desk batch file"},
             "organism": b.get("organism", "planaria"), "species": b["species"],
             "task_family": arm["task_family"], "stage": b.get("stage"), "injury": b.get("injury"),
@@ -49,7 +49,7 @@ def main():
     bad = [(r["item_id"], e) for r in rows for e in check_setup_row(r, allowed, words)]
     if bad:
         sys.exit("setup rows fail the firewall check: " + "; ".join(f"{i}: {e}" for i, e in bad))
-    out = Path(a.out or ROOT / "data" / "desk" / b["batch"] / "setups" / "setups.jsonl")
+    out = Path(a.out or ROOT / "data" / "desk" / b["batch"] / "predictor_setups.jsonl")
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text("".join(json.dumps(r, sort_keys=True) + "\n" for r in rows))
     print(f"{len(rows)} setup rows -> {out}")

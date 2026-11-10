@@ -28,7 +28,7 @@ discovery engine are written up as protocols for real labs, not run at home.
 
 ## Blinding
 
-1. python wetlab/randomize.py wetlab/batches/batch_NN.json  -> dish codes and key. Dose using the key, then put it away. Seal the key.
+1. python wetlab/randomize.py wetlab/batches/batch_NN.json  -> dish codes, sessions and key. A second person holds the key and doses; the cutter and scorers never see it. Seal only the key's sha256 (batch_NN_key.sha256) before cutting; the key itself is pushed only after the scores are sealed. With no second person, human scores are declared unblinded.
 2. Manav scores a random subset of images first, blind, before any model scores are visible.
 3. python wetlab/prep_images.py RAW_DIR wetlab/batches/batch_NN  -> random file names, metadata stripped, shuffled. Seal the image key.
 4. The image scorer (a different model from the Predictor, with no access to the hypothesis or predictions) scores the blind folder only.
