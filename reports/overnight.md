@@ -99,3 +99,9 @@ Approve ClinVar and run the allele-direction test (Q017): do gain-of-function or
   classes, endpoint, counted report and descriptor, with full attribution. Raw database dumps and HPO content are not
   included.
 - **Still waiting on Manav:** the ClinVar manual download for Q017. Everything else is ready to seal and run.
+- **Q017 (altered-function vs loss-of-function, ClinVar): UNTESTABLE** at its pre-outcome gates (plans/q017_prereg.md).
+  - ClinVar's variant spectrum cannot separate the two mechanisms: known gain-of-function or dominant-negative
+    conditions were labelled correctly 1 of 13 times as specified, and 8 of 12 under the best looser rule.
+  - Matched control genes have too few dominant missense conditions: 6 to 26 against a floor of 30.
+  - No outcome was looked at, and no counted run was made. It would need curated mechanism labels (for example
+    Gene2Phenotype), which is a new source.
