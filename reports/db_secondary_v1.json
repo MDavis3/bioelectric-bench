@@ -1,0 +1,1078 @@
+{
+ "note": "EXPLORATORY (prereg plans/pivot_db_v1.md section J; queue Q012/Q013). Cannot change the sealed verdict in reports/db_counted_v1.json.",
+ "species": {
+  "xenopus": {
+   "n_units": 495,
+   "n_class": 7,
+   "n_control": 19,
+   "n_grey": 0,
+   "n_other": 469,
+   "n_class_blocks": 6,
+   "n_control_blocks": 14,
+   "crude": {
+    "class": {
+     "n": 7,
+     "Y_rate": 0.857,
+     "n_Y": 6,
+     "Y_exc_rate": 0.714,
+     "n_Y_exc": 5,
+     "Y_nosize_rate": 0.857,
+     "n_Y_nosize": 6,
+     "Y_upheno_rate": 0.857,
+     "n_Y_upheno": 6,
+     "Y_exc_upheno_rate": 0.286,
+     "n_Y_exc_upheno": 2
+    },
+    "control": {
+     "n": 19,
+     "Y_rate": 0.579,
+     "n_Y": 11,
+     "Y_exc_rate": 0.474,
+     "n_Y_exc": 9,
+     "Y_nosize_rate": 0.526,
+     "n_Y_nosize": 10,
+     "Y_upheno_rate": 0.474,
+     "n_Y_upheno": 9,
+     "Y_exc_upheno_rate": 0.263,
+     "n_Y_exc_upheno": 5
+    },
+    "grey": {
+     "n": 0,
+     "Y_rate": null,
+     "n_Y": 0,
+     "Y_exc_rate": null,
+     "n_Y_exc": 0,
+     "Y_nosize_rate": null,
+     "n_Y_nosize": 0,
+     "Y_upheno_rate": null,
+     "n_Y_upheno": 0,
+     "Y_exc_upheno_rate": null,
+     "n_Y_exc_upheno": 0
+    },
+    "other": {
+     "n": 469,
+     "Y_rate": 0.759,
+     "n_Y": 356,
+     "Y_exc_rate": 0.414,
+     "n_Y_exc": 194,
+     "Y_nosize_rate": 0.706,
+     "n_Y_nosize": 331,
+     "Y_upheno_rate": 0.527,
+     "n_Y_upheno": 247,
+     "Y_exc_upheno_rate": 0.181,
+     "n_Y_exc_upheno": 85
+    },
+    "crude_or_Y": {
+     "or": 4.364,
+     "fisher_p": 0.357
+    },
+    "crude_or_Y_exc": {
+     "or": 2.778,
+     "fisher_p": 0.391
+    },
+    "crude_or_Y_nosize": {
+     "or": 5.4,
+     "fisher_p": 0.19
+    },
+    "crude_or_Y_upheno": {
+     "or": 6.667,
+     "fisher_p": 0.178
+    },
+    "crude_or_Y_exc_upheno": {
+     "or": 1.12,
+     "fisher_p": 1.0
+    }
+   },
+   "adjusted": {
+    "Y": {
+     "or": 4.792,
+     "lo": 0.067,
+     "hi": 9286.88,
+     "perm_p_one_sided": 0.2338,
+     "perm_p_two_sided": 0.4446,
+     "n_x1": 7,
+     "n_x0": 19,
+     "n_x1_blocks": 6,
+     "boot_used": 999
+    },
+    "Y_exc": {
+     "or": 3.166,
+     "lo": 0.189,
+     "hi": 19700039.337,
+     "perm_p_one_sided": 0.2248,
+     "perm_p_two_sided": 0.4665,
+     "n_x1": 7,
+     "n_x0": 19,
+     "n_x1_blocks": 6,
+     "boot_used": 998
+    },
+    "Y_nosize": {
+     "or": 6.17,
+     "lo": 0.253,
+     "hi": 6604.663,
+     "perm_p_one_sided": 0.1429,
+     "perm_p_two_sided": 0.3007,
+     "n_x1": 7,
+     "n_x0": 19,
+     "n_x1_blocks": 6,
+     "boot_used": 1000
+    },
+    "Y_upheno": {
+     "or": 7.187,
+     "lo": 0.249,
+     "hi": 94230.962,
+     "perm_p_one_sided": 0.1209,
+     "perm_p_two_sided": 0.1888,
+     "n_x1": 7,
+     "n_x0": 19,
+     "n_x1_blocks": 6,
+     "boot_used": 1000
+    },
+    "Y_exc_upheno": {
+     "or": 1.185,
+     "lo": 0.0,
+     "hi": 211.241,
+     "perm_p_one_sided": 0.5534,
+     "perm_p_two_sided": 0.8811,
+     "n_x1": 7,
+     "n_x0": 19,
+     "n_x1_blocks": 6,
+     "boot_used": 996
+    }
+   },
+   "median_n_records": {
+    "class": 18.0,
+    "control": 7.0
+   },
+   "info": {
+    "n_records": 7761,
+    "obsolete_unresolved_records": 130,
+    "obsolete_unresolved_terms": 19,
+    "n_Y_terms": 3093,
+    "n_Yexc_terms": 5715,
+    "n_Ynosize_terms": 1898,
+    "orth_src": {
+     "alliance": 445,
+     "none": 26,
+     "xenbase_fallback": 24
+    },
+    "upheno_record_coverage": 0.366
+   }
+  },
+  "fly": {
+   "n_units": 2720,
+   "n_class": 57,
+   "n_control": 84,
+   "n_grey": 16,
+   "n_other": 2563,
+   "n_class_blocks": 28,
+   "n_control_blocks": 49,
+   "crude": {
+    "class": {
+     "n": 57,
+     "Y_rate": 0.123,
+     "n_Y": 7,
+     "Y_exc_rate": 0.702,
+     "n_Y_exc": 40,
+     "Y_nosize_rate": 0.123,
+     "n_Y_nosize": 7,
+     "Y_upheno_rate": 0.0,
+     "n_Y_upheno": 0,
+     "Y_exc_upheno_rate": 0.421,
+     "n_Y_exc_upheno": 24,
+     "Y_eye_rate": 0.175,
+     "n_Y_eye": 10
+    },
+    "control": {
+     "n": 84,
+     "Y_rate": 0.179,
+     "n_Y": 15,
+     "Y_exc_rate": 0.56,
+     "n_Y_exc": 47,
+     "Y_nosize_rate": 0.179,
+     "n_Y_nosize": 15,
+     "Y_upheno_rate": 0.0,
+     "n_Y_upheno": 0,
+     "Y_exc_upheno_rate": 0.274,
+     "n_Y_exc_upheno": 23,
+     "Y_eye_rate": 0.214,
+     "n_Y_eye": 18
+    },
+    "grey": {
+     "n": 16,
+     "Y_rate": 0.0,
+     "n_Y": 0,
+     "Y_exc_rate": 0.688,
+     "n_Y_exc": 11,
+     "Y_nosize_rate": 0.0,
+     "n_Y_nosize": 0,
+     "Y_upheno_rate": 0.0,
+     "n_Y_upheno": 0,
+     "Y_exc_upheno_rate": 0.438,
+     "n_Y_exc_upheno": 7,
+     "Y_eye_rate": 0.125,
+     "n_Y_eye": 2
+    },
+    "other": {
+     "n": 2563,
+     "Y_rate": 0.273,
+     "n_Y": 700,
+     "Y_exc_rate": 0.448,
+     "n_Y_exc": 1147,
+     "Y_nosize_rate": 0.273,
+     "n_Y_nosize": 700,
+     "Y_upheno_rate": 0.0,
+     "n_Y_upheno": 0,
+     "Y_exc_upheno_rate": 0.153,
+     "n_Y_exc_upheno": 391,
+     "Y_eye_rate": 0.308,
+     "n_Y_eye": 790
+    },
+    "crude_or_Y": {
+     "or": 0.644,
+     "fisher_p": 0.48
+    },
+    "crude_or_Y_exc": {
+     "or": 1.852,
+     "fisher_p": 0.112
+    },
+    "crude_or_Y_nosize": {
+     "or": 0.644,
+     "fisher_p": 0.48
+    },
+    "crude_or_Y_upheno": {
+     "or": null,
+     "fisher_p": 1.0
+    },
+    "crude_or_Y_exc_upheno": {
+     "or": 1.929,
+     "fisher_p": 0.101
+    },
+    "crude_or_Y_eye": {
+     "or": 0.78,
+     "fisher_p": 0.669
+    }
+   },
+   "adjusted": {
+    "Y": {
+     "or": 0.657,
+     "lo": 0.145,
+     "hi": 1.721,
+     "perm_p_one_sided": 0.8382,
+     "perm_p_two_sided": 0.3087,
+     "n_x1": 57,
+     "n_x0": 84,
+     "n_x1_blocks": 28,
+     "boot_used": 1000
+    },
+    "Y_exc": {
+     "or": 2.041,
+     "lo": 0.855,
+     "hi": 5.509,
+     "perm_p_one_sided": 0.038,
+     "perm_p_two_sided": 0.0569,
+     "n_x1": 57,
+     "n_x0": 84,
+     "n_x1_blocks": 28,
+     "boot_used": 1000
+    },
+    "Y_nosize": {
+     "or": 0.657,
+     "lo": 0.149,
+     "hi": 1.617,
+     "perm_p_one_sided": 0.8422,
+     "perm_p_two_sided": 0.3147,
+     "n_x1": 57,
+     "n_x0": 84,
+     "n_x1_blocks": 28,
+     "boot_used": 1000
+    },
+    "Y_upheno": {
+     "or": null,
+     "note": "too few units or no events",
+     "n_x1": 57,
+     "n_x0": 84
+    },
+    "Y_exc_upheno": {
+     "or": 1.952,
+     "lo": 0.932,
+     "hi": 4.21,
+     "perm_p_one_sided": 0.047,
+     "perm_p_two_sided": 0.0849,
+     "n_x1": 57,
+     "n_x0": 84,
+     "n_x1_blocks": 28,
+     "boot_used": 1000
+    },
+    "Y_eye": {
+     "or": 0.792,
+     "lo": 0.153,
+     "hi": 2.57,
+     "perm_p_one_sided": 0.7253,
+     "perm_p_two_sided": 0.5085,
+     "n_x1": 57,
+     "n_x0": 84,
+     "n_x1_blocks": 28,
+     "boot_used": 1000
+    }
+   },
+   "median_n_records": {
+    "class": 8.0,
+    "control": 5.5
+   },
+   "info": {
+    "not_lof_class": 143088,
+    "eligible_records": 56713,
+    "allele_not_classical_insertion": 183969,
+    "non_allele_component": 17158,
+    "multi_gene": 12,
+    "n_Y_terms": 935,
+    "n_Yexc_terms": 22854,
+    "n_Ynosize_terms": 898,
+    "orth_src": {
+     "alliance": 1855,
+     "flybase_fallback": 269,
+     "none": 596
+    },
+    "upheno_record_coverage": 0.061
+   }
+  },
+  "fly_broad": {
+   "n_units": 12683,
+   "n_class": 115,
+   "n_control": 271,
+   "n_grey": 41,
+   "n_other": 12256,
+   "n_class_blocks": 36,
+   "n_control_blocks": 93,
+   "crude": {
+    "class": {
+     "n": 115,
+     "Y_rate": 0.113,
+     "n_Y": 13,
+     "Y_exc_rate": 0.617,
+     "n_Y_exc": 71,
+     "Y_nosize_rate": 0.113,
+     "n_Y_nosize": 13,
+     "Y_upheno_rate": 0.0,
+     "n_Y_upheno": 0,
+     "Y_exc_upheno_rate": 0.357,
+     "n_Y_exc_upheno": 41,
+     "Y_eye_rate": 0.148,
+     "n_Y_eye": 17
+    },
+    "control": {
+     "n": 271,
+     "Y_rate": 0.096,
+     "n_Y": 26,
+     "Y_exc_rate": 0.332,
+     "n_Y_exc": 90,
+     "Y_nosize_rate": 0.096,
+     "n_Y_nosize": 26,
+     "Y_upheno_rate": 0.0,
+     "n_Y_upheno": 0,
+     "Y_exc_upheno_rate": 0.166,
+     "n_Y_exc_upheno": 45,
+     "Y_eye_rate": 0.125,
+     "n_Y_eye": 34
+    },
+    "grey": {
+     "n": 41,
+     "Y_rate": 0.146,
+     "n_Y": 6,
+     "Y_exc_rate": 0.39,
+     "n_Y_exc": 16,
+     "Y_nosize_rate": 0.146,
+     "n_Y_nosize": 6,
+     "Y_upheno_rate": 0.0,
+     "n_Y_upheno": 0,
+     "Y_exc_upheno_rate": 0.317,
+     "n_Y_exc_upheno": 13,
+     "Y_eye_rate": 0.146,
+     "n_Y_eye": 6
+    },
+    "other": {
+     "n": 12256,
+     "Y_rate": 0.16,
+     "n_Y": 1965,
+     "Y_exc_rate": 0.201,
+     "n_Y_exc": 2466,
+     "Y_nosize_rate": 0.16,
+     "n_Y_nosize": 1965,
+     "Y_upheno_rate": 0.0,
+     "n_Y_upheno": 0,
+     "Y_exc_upheno_rate": 0.066,
+     "n_Y_exc_upheno": 807,
+     "Y_eye_rate": 0.192,
+     "n_Y_eye": 2359
+    },
+    "crude_or_Y": {
+     "or": 1.201,
+     "fisher_p": 0.585
+    },
+    "crude_or_Y_exc": {
+     "or": 3.245,
+     "fisher_p": 2.96e-07
+    },
+    "crude_or_Y_nosize": {
+     "or": 1.201,
+     "fisher_p": 0.585
+    },
+    "crude_or_Y_upheno": {
+     "or": null,
+     "fisher_p": 1.0
+    },
+    "crude_or_Y_exc_upheno": {
+     "or": 2.783,
+     "fisher_p": 8.64e-05
+    },
+    "crude_or_Y_eye": {
+     "or": 1.209,
+     "fisher_p": 0.622
+    }
+   },
+   "adjusted": {
+    "Y": {
+     "or": 1.153,
+     "lo": 0.371,
+     "hi": 2.395,
+     "perm_p_one_sided": 0.3487,
+     "perm_p_two_sided": 0.7023,
+     "n_x1": 115,
+     "n_x0": 271,
+     "n_x1_blocks": 36,
+     "boot_used": 1000
+    },
+    "Y_exc": {
+     "or": 3.354,
+     "lo": 1.837,
+     "hi": 6.421,
+     "perm_p_one_sided": 0.001,
+     "perm_p_two_sided": 0.001,
+     "n_x1": 115,
+     "n_x0": 271,
+     "n_x1_blocks": 36,
+     "boot_used": 1000
+    },
+    "Y_nosize": {
+     "or": 1.153,
+     "lo": 0.436,
+     "hi": 2.553,
+     "perm_p_one_sided": 0.3856,
+     "perm_p_two_sided": 0.7772,
+     "n_x1": 115,
+     "n_x0": 271,
+     "n_x1_blocks": 36,
+     "boot_used": 1000
+    },
+    "Y_upheno": {
+     "or": null,
+     "note": "too few units or no events",
+     "n_x1": 115,
+     "n_x0": 271
+    },
+    "Y_exc_upheno": {
+     "or": 2.714,
+     "lo": 1.282,
+     "hi": 5.667,
+     "perm_p_one_sided": 0.005,
+     "perm_p_two_sided": 0.009,
+     "n_x1": 115,
+     "n_x0": 271,
+     "n_x1_blocks": 36,
+     "boot_used": 1000
+    },
+    "Y_eye": {
+     "or": 1.164,
+     "lo": 0.396,
+     "hi": 2.791,
+     "perm_p_one_sided": 0.3756,
+     "perm_p_two_sided": 0.7333,
+     "n_x1": 115,
+     "n_x0": 271,
+     "n_x1_blocks": 36,
+     "boot_used": 1000
+    }
+   },
+   "median_n_records": {
+    "class": 7.0,
+    "control": 3.0
+   },
+   "info": {
+    "not_lof_class": 30303,
+    "eligible_records": 169498,
+    "allele_not_classical_insertion": 183969,
+    "non_allele_component": 17158,
+    "multi_gene": 12,
+    "n_Y_terms": 935,
+    "n_Yexc_terms": 22854,
+    "n_Ynosize_terms": 898,
+    "orth_src": {
+     "none": 7937,
+     "alliance": 4020,
+     "flybase_fallback": 726
+    },
+    "upheno_record_coverage": 0.06
+   }
+  },
+  "human": {
+   "n_units": 5276,
+   "n_class": 166,
+   "n_control": 282,
+   "n_grey": 64,
+   "n_other": 4764,
+   "n_class_blocks": 44,
+   "n_control_blocks": 107,
+   "crude": {
+    "class": {
+     "n": 166,
+     "Y_rate": 0.645,
+     "n_Y": 107,
+     "Y_exc_rate": 0.964,
+     "n_Y_exc": 160,
+     "Y_nosize_rate": 0.645,
+     "n_Y_nosize": 107,
+     "Y_upheno_rate": 0.554,
+     "n_Y_upheno": 92,
+     "Y_exc_upheno_rate": 0.94,
+     "n_Y_exc_upheno": 156
+    },
+    "control": {
+     "n": 282,
+     "Y_rate": 0.496,
+     "n_Y": 140,
+     "Y_exc_rate": 0.848,
+     "n_Y_exc": 239,
+     "Y_nosize_rate": 0.489,
+     "n_Y_nosize": 138,
+     "Y_upheno_rate": 0.387,
+     "n_Y_upheno": 109,
+     "Y_exc_upheno_rate": 0.748,
+     "n_Y_exc_upheno": 211
+    },
+    "grey": {
+     "n": 64,
+     "Y_rate": 0.531,
+     "n_Y": 34,
+     "Y_exc_rate": 0.875,
+     "n_Y_exc": 56,
+     "Y_nosize_rate": 0.484,
+     "n_Y_nosize": 31,
+     "Y_upheno_rate": 0.5,
+     "n_Y_upheno": 32,
+     "Y_exc_upheno_rate": 0.812,
+     "n_Y_exc_upheno": 52
+    },
+    "other": {
+     "n": 4764,
+     "Y_rate": 0.641,
+     "n_Y": 3054,
+     "Y_exc_rate": 0.894,
+     "n_Y_exc": 4258,
+     "Y_nosize_rate": 0.631,
+     "n_Y_nosize": 3006,
+     "Y_upheno_rate": 0.534,
+     "n_Y_upheno": 2543,
+     "Y_exc_upheno_rate": 0.813,
+     "n_Y_exc_upheno": 3871
+    },
+    "crude_or_Y": {
+     "or": 1.839,
+     "fisher_p": 0.00236
+    },
+    "crude_or_Y_exc": {
+     "or": 4.798,
+     "fisher_p": 6.86e-05
+    },
+    "crude_or_Y_nosize": {
+     "or": 1.892,
+     "fisher_p": 0.00165
+    },
+    "crude_or_Y_upheno": {
+     "or": 1.973,
+     "fisher_p": 0.000801
+    },
+    "crude_or_Y_exc_upheno": {
+     "or": 5.249,
+     "fisher_p": 1.03e-07
+    }
+   },
+   "adjusted": {
+    "Y": {
+     "or": 1.932,
+     "lo": 1.208,
+     "hi": 3.056,
+     "perm_p_one_sided": 0.004,
+     "perm_p_two_sided": 0.011,
+     "n_x1": 166,
+     "n_x0": 282,
+     "n_x1_blocks": 44,
+     "boot_used": 1000
+    },
+    "Y_exc": {
+     "or": 4.663,
+     "lo": 2.199,
+     "hi": 14.6,
+     "perm_p_one_sided": 0.001,
+     "perm_p_two_sided": 0.001,
+     "n_x1": 166,
+     "n_x0": 282,
+     "n_x1_blocks": 44,
+     "boot_used": 1000
+    },
+    "Y_nosize": {
+     "or": 1.981,
+     "lo": 1.205,
+     "hi": 3.195,
+     "perm_p_one_sided": 0.006,
+     "perm_p_two_sided": 0.014,
+     "n_x1": 166,
+     "n_x0": 282,
+     "n_x1_blocks": 44,
+     "boot_used": 1000
+    },
+    "Y_upheno": {
+     "or": 2.058,
+     "lo": 1.328,
+     "hi": 3.029,
+     "perm_p_one_sided": 0.003,
+     "perm_p_two_sided": 0.006,
+     "n_x1": 166,
+     "n_x0": 282,
+     "n_x1_blocks": 44,
+     "boot_used": 1000
+    },
+    "Y_exc_upheno": {
+     "or": 5.242,
+     "lo": 2.712,
+     "hi": 12.826,
+     "perm_p_one_sided": 0.001,
+     "perm_p_two_sided": 0.001,
+     "n_x1": 166,
+     "n_x0": 282,
+     "n_x1_blocks": 44,
+     "boot_used": 1000
+    }
+   },
+   "median_n_records": {
+    "class": 59.0,
+    "control": 33.0
+   },
+   "info": {
+    "rows_without_hgnc": 375,
+    "n_Y_terms": 3940,
+    "n_Yexc_terms": 5153,
+    "n_Ynosize_terms": 3246,
+    "orth_src": {
+     "self": 5276
+    },
+    "upheno_record_coverage": 0.401
+   }
+  }
+ },
+ "morphant": {
+  "eligibility_counts": {
+   "eligible_fish": 11750,
+   "multiple_reagents": 4867,
+   "crispr_or_talen": 685,
+   "mo_multi_target_or_unknown": 187,
+   "has_mutant_or_other_feature": 1359,
+   "other_gene_component": 114
+  },
+  "n_morphant_units": 4079,
+  "unpaired_crude": {
+   "class": {
+    "n": 87,
+    "Y_rate": 0.253,
+    "n_Y": 22,
+    "Y_exc_rate": 0.77,
+    "n_Y_exc": 67
+   },
+   "control": {
+    "n": 212,
+    "Y_rate": 0.236,
+    "n_Y": 50,
+    "Y_exc_rate": 0.604,
+    "n_Y_exc": 128
+   },
+   "grey": {
+    "n": 39,
+    "Y_rate": 0.282,
+    "n_Y": 11,
+    "Y_exc_rate": 0.615,
+    "n_Y_exc": 24
+   },
+   "other": {
+    "n": 3741,
+    "Y_rate": 0.339,
+    "n_Y": 1269,
+    "Y_exc_rate": 0.683,
+    "n_Y_exc": 2556
+   },
+   "crude_or_Y": {
+    "or": 1.097,
+    "fisher_p": 0.767
+   },
+   "crude_or_Y_exc": {
+    "or": 2.198,
+    "fisher_p": 0.00731
+   }
+  },
+  "t1": {
+   "covariates": [
+    "depth",
+    "n_genotypes",
+    "family_size",
+    "expr_breadth",
+    "nn_score"
+   ],
+   "Y": {
+    "or": 1.152,
+    "lo": 0.574,
+    "hi": 2.313,
+    "perm_p_one_sided": 0.2647,
+    "n_x1": 87,
+    "n_x0": 212
+   },
+   "Y_exc": {
+    "or": 2.189,
+    "lo": 1.171,
+    "hi": 4.558,
+    "perm_p_one_sided": 0.02,
+    "n_x1": 87,
+    "n_x0": 212
+   },
+   "n_class_blocks": 36
+  },
+  "paired": {
+   "n_genes_both": 1605,
+   "cls_agree": 1605,
+   "class_from": "sealed mutant unit (units_setup.csv)",
+   "class": {
+    "n_pairs": 37,
+    "Y": {
+     "both1": 4,
+     "mut1_mo0": 7,
+     "mut0_mo1": 4,
+     "both0": 22,
+     "rate_mut": 0.297,
+     "rate_mo": 0.216,
+     "concordance": 0.703,
+     "mcnemar_exact_p": 0.549
+    },
+    "Y_exc": {
+     "both1": 25,
+     "mut1_mo0": 3,
+     "mut0_mo1": 8,
+     "both0": 1,
+     "rate_mut": 0.757,
+     "rate_mo": 0.892,
+     "concordance": 0.703,
+     "mcnemar_exact_p": 0.227
+    }
+   },
+   "control": {
+    "n_pairs": 85,
+    "Y": {
+     "both1": 10,
+     "mut1_mo0": 5,
+     "mut0_mo1": 12,
+     "both0": 58,
+     "rate_mut": 0.176,
+     "rate_mo": 0.259,
+     "concordance": 0.8,
+     "mcnemar_exact_p": 0.143
+    },
+    "Y_exc": {
+     "both1": 42,
+     "mut1_mo0": 15,
+     "mut0_mo1": 17,
+     "both0": 11,
+     "rate_mut": 0.671,
+     "rate_mo": 0.694,
+     "concordance": 0.624,
+     "mcnemar_exact_p": 0.86
+    }
+   },
+   "grey": {
+    "n_pairs": 19,
+    "Y": {
+     "both1": 2,
+     "mut1_mo0": 1,
+     "mut0_mo1": 4,
+     "both0": 12,
+     "rate_mut": 0.158,
+     "rate_mo": 0.316,
+     "concordance": 0.737,
+     "mcnemar_exact_p": 0.375
+    },
+    "Y_exc": {
+     "both1": 9,
+     "mut1_mo0": 6,
+     "mut0_mo1": 1,
+     "both0": 3,
+     "rate_mut": 0.789,
+     "rate_mo": 0.526,
+     "concordance": 0.632,
+     "mcnemar_exact_p": 0.125
+    }
+   },
+   "other": {
+    "n_pairs": 1464,
+    "Y": {
+     "both1": 226,
+     "mut1_mo0": 172,
+     "mut0_mo1": 298,
+     "both0": 768,
+     "rate_mut": 0.272,
+     "rate_mo": 0.358,
+     "concordance": 0.679,
+     "mcnemar_exact_p": 6.65e-09
+    },
+    "Y_exc": {
+     "both1": 804,
+     "mut1_mo0": 173,
+     "mut0_mo1": 286,
+     "both0": 201,
+     "rate_mut": 0.667,
+     "rate_mo": 0.745,
+     "concordance": 0.686,
+     "mcnemar_exact_p": 1.49e-07
+    }
+   },
+   "all": {
+    "n_pairs": 1605,
+    "Y": {
+     "both1": 242,
+     "mut1_mo0": 185,
+     "mut0_mo1": 318,
+     "both0": 860,
+     "rate_mut": 0.266,
+     "rate_mo": 0.349,
+     "concordance": 0.687,
+     "mcnemar_exact_p": 3.23e-09
+    },
+    "Y_exc": {
+     "both1": 880,
+     "mut1_mo0": 197,
+     "mut0_mo1": 312,
+     "both0": 216,
+     "rate_mut": 0.671,
+     "rate_mo": 0.743,
+     "concordance": 0.683,
+     "mcnemar_exact_p": 3.9e-07
+    }
+   }
+  }
+ },
+ "roots": {
+  "human": {
+   "include": [
+    "HP:0009121",
+    "HP:0000772",
+    "HP:0000766",
+    "HP:0030853",
+    "HP:0001696",
+    "HP:0031592",
+    "HP:0001651",
+    "HP:0011544",
+    "HP:0045005",
+    "HP:0410043",
+    "HP:0000234",
+    "HP:0040064",
+    "HP:0011844",
+    "HP:0002644",
+    "HP:0000782",
+    "HP:0000889",
+    "HP:0005107"
+   ],
+   "exclude": [
+    "HP:0000707",
+    "HP:0001626",
+    "HP:0003011",
+    "HP:0000478",
+    "HP:0000598",
+    "HP:0001574",
+    "HP:0001939",
+    "HP:0040006",
+    "HP:0001507",
+    "HP:0000818"
+   ],
+   "exclude_keep": [
+    "HP:0030853",
+    "HP:0001696",
+    "HP:0031592",
+    "HP:0001651",
+    "HP:0011544",
+    "HP:0045005",
+    "HP:0410043"
+   ],
+   "exclude_extra": [
+    "HP:0010674",
+    "HP:0000682",
+    "HP:0011073",
+    "HP:0006292",
+    "HP:0000157",
+    "HP:0011830"
+   ],
+   "exc": [
+    "HP:0000707",
+    "HP:0001626",
+    "HP:0003011",
+    "HP:0000598"
+   ],
+   "exc_minus": [
+    "HP:0030853",
+    "HP:0001696",
+    "HP:0031592",
+    "HP:0001651",
+    "HP:0011544",
+    "HP:0045005",
+    "HP:0410043"
+   ],
+   "label_words": "mouse list verbatim"
+  },
+  "xenopus": {
+   "include": [
+    "XPO:0100325",
+    "XPO:0107262",
+    "XPO:0101439",
+    "XPO:0100905",
+    "XPO:0100166",
+    "XPO:0107260",
+    "XPO:0107261",
+    "XPO:0142056",
+    "XPO:0115386",
+    "XPO:0115384",
+    "XPO:0100741",
+    "XPO:0100136",
+    "XPO:0100677",
+    "XPO:0100422",
+    "XPO:0100513",
+    "XPO:0101102",
+    "XPO:0100461",
+    "XPO:0100002",
+    "XPO:0100591",
+    "XPO:0100296",
+    "XPO:0100758",
+    "XPO:0100386",
+    "XPO:0100466",
+    "XPO:0100305",
+    "XPO:0100768",
+    "XPO:0100123",
+    "XPO:0100764",
+    "XPO:0101040"
+   ],
+   "process_root": "XPO:0116434",
+   "process_include_regex": "left/right|left-right|axis|gastrulation|somit|segmentation|convergent extension|neural tube|neural crest|neural fold|notochord|heart looping|dorsal/ventral|anterior/posterior|blastopore|pattern specification|limb (development|morphogenesis)|craniofacial|pharyngeal arch|tail bud|embryonic skeletal",
+   "process_exc_regex": "heart|cardiac|neur|nerv|muscle|synap|behavio|swimming|action potential|sensory|vision|visual|hearing|otic",
+   "process_exc_keep_regex": "heart looping|left/right|left-right|neural tube|neural crest|neural fold",
+   "exclude": [
+    "XPO:0100032",
+    "XPO:0100363",
+    "XPO:0100013",
+    "XPO:0100468",
+    "XPO:0100185",
+    "XPO:0100273",
+    "XPO:0100536",
+    "XPO:0100995",
+    "XPO:0100497",
+    "XPO:0100734",
+    "XPO:0101278",
+    "XPO:0101387",
+    "XPO:0116429",
+    "XPO:0115505"
+   ],
+   "exclude_keep": [
+    "XPO:0100136",
+    "XPO:0100166"
+   ],
+   "obsolete_map": {
+    "XPO:0115824": "XPO:0141924",
+    "XPO:0115825": "XPO:0141924"
+   },
+   "exc": [
+    "XPO:0100032",
+    "XPO:0100363",
+    "XPO:0100468",
+    "XPO:0100536",
+    "XPO:0100995",
+    "XPO:0100497",
+    "XPO:0100734",
+    "XPO:0116429"
+   ],
+   "exc_minus": [
+    "XPO:0100136",
+    "XPO:0100677",
+    "XPO:0107262",
+    "XPO:0101439"
+   ],
+   "label_words": "mouse list without 'size'"
+  },
+  "fly": {
+   "include": [
+    "FBcv:0000698",
+    "FBcv:0000686",
+    "FBcv:0000324",
+    "FBcv:0000449",
+    "FBcv:0000316",
+    "FBbt:00004729",
+    "FBbt:00001778",
+    "FBbt:00004640",
+    "FBbt:00001780",
+    "FBbt:00004783",
+    "FBbt:00001779",
+    "FBbt:00001766",
+    "FBbt:00000154",
+    "FBbt:00004984",
+    "FBbt:00005201"
+   ],
+   "exclude": [
+    "FBbt:00005093",
+    "FBbt:00005106",
+    "FBbt:00005144",
+    "FBbt:00005074",
+    "FBbt:00058111",
+    "FBbt:00058291",
+    "FBbt:00004508"
+   ],
+   "exclude_keep": [],
+   "exc": [
+    "FBbt:00005093",
+    "FBbt:00005106",
+    "FBbt:00005144",
+    "FBbt:00005074",
+    "FBbt:00058111",
+    "FBbt:00058291",
+    "FBcv:0000387",
+    "FBcv:0000434",
+    "FBcv:0000435",
+    "FBcv:0000389",
+    "FBcv:0000417",
+    "FBcv:0000418"
+   ],
+   "exc_minus": [
+    "FBbt:00004508"
+   ],
+   "label_words": "mouse list without 'size'",
+   "variant_with_adult_eye": "Y_eye: same as Y but FBbt:00004508 (adult eye) and its parts not excluded"
+  }
+ },
+ "method_choices": [
+  "Human (HPO genes_to_phenotype): unit = HGNC gene (anchor = itself); include roots axial skeleton, rib, sternum, girdles, sacrum, head (HP:0000234), limbs (HP:0040064), appendicular skeleton, heterotaxy/situs/dextrocardia/L-looping, neural tube defect; excluded areas nervous system, cardiovascular, musculature, eye, ear, integument, metabolism/homeostasis, growth, mortality, endocrine (laterality and neural-tube terms kept), plus spine curvature, enamel, dental colour, dental eruption, tongue, oral mucosa (mirroring the mouse extra exclusions); mouse label-word list applied verbatim.",
+  "Xenopus (XPO): entity roots for axial skeleton, left-right axis/organizer, somite, AP/DV/main body axes, ventralized/dorsalized embryo, blastopore, neural tube/fold, notochord, cranial neural crest, craniofacial region/skeleton, head, pharyngeal arch, tail region/bud, limb/limb bud, fin, girdles, paraxial and axial mesoderm; XPO process terms (flat under XPO:0116434) included by a label pattern (axis, left/right, gastrulation, somite, segmentation, convergent extension, neural tube/crest/fold, notochord, heart looping, blastopore, pattern specification ...); excluded nervous system, cardiovascular, heart, muscle, eye/visual system, inner ear/otic, lateral line, pigment cells, behaviour, death; label words = mouse list without 'size'. Obsolete XPO ids resolved through replaced_by where present; two obsolete axis-duplication ids without replaced_by (XPO:0115824, XPO:0115825) hand-mapped to 'duplicated main body axis' (XPO:0141924); the rest left unmatched (counted in info).",
+  "fly_broad (sensitivity): also accepts classical/insertion alleles with no curated allele class (about 90% of classical alleles have none), still excluding any non-LOF class, aberrations, transgenic constructs (UAS/GAL4/RNAi are not in the classical allele file) and alleles carrying an encoded product.",
+  "Fly: Y = FBcv segmentation (gap/pair-rule/segment polarity), axis specification, DV axis, planar polarity, homeotic; FBbt (is_a + part_of) wing, wing disc, leg, leg disc, haltere, haltere disc, eye-antennal disc, embryonic segment, embryonic/first-instar cuticle; minus nervous system, neuron, glia, muscle cell, somatic muscle, dorsal vessel and the adult eye (variant Y_eye keeps the adult eye/ommatidia). FlyBase FBbt annotations carry no quality, so wing size and wing pattern defects cannot be separated (Y_nosize is therefore near-identical to Y for fly).",
+  "uPheno variant: species term counts when it has a uPheno crossSpeciesExactMatch (direct or via a shared UPHENO class) to an MP term in the sealed mouse Y set; this is the most faithful cross-species translation but covers only terms with an MP equivalent (coverage reported per species).",
+  "Y_nosize: drops terms whose label contains small/short/long/large/enlarged/elongated/size/length/width/height/macro/micro/hypoplas/hyperplas/aplasia/decreased/increased/thin/thick (stricter than the mouse nosize rule).",
+  "Morphants: see docstring; Y/Y_exc via a verbatim copy of the sealed ZFIN record loop."
+ ],
+ "caveats": [
+  "Exploratory, many endpoint choices made after the sealed result was known; treat as hypothesis generating.",
+  "Xenopus GenePhenoRef has no reagent column: morpholino, mutant, CRISPR F0 and mRNA overexpression records are pooled (morpholino flag = unknown for all). Overexpression of a channel can create gain-of-function phenotypes, so Xenopus is not a loss-of-function test.",
+  "Human HPO annotations are disease-gene level and ascertainment-driven: channel genes enter mostly through channelopathies (epilepsy, arrhythmia, myopathy), and gene-level phenotype annotation counts are large for syndromic genes; the depth covariate only partly adjusts. Variant mechanism (LOF vs GOF) is not filtered. Class genes carry about twice as many HPO annotations as control genes (median_n_records), and Y is 'any annotation in the set', so the human OR is expected to be inflated by annotation density (the forbidden covariate); the head root also captures facial dysmorphism common in channelopathy-related neurodevelopmental syndromes.",
+  "Fly endpoint is anatomy-only (no quality), so 'wing' includes size, vein and margin defects; bristle patterning on the notum is not in Y. Fly class membership depends on the human anchor; many fly channel families map one-to-many to human genes.",
+  "No NN score for secondary species (no expression/MF features built for them); covariates restricted to depth and family size as specified.",
+  "Morphant phenotypes are known to include off-target/toxicity artefacts (p53-mediated apoptosis, necrosis, edema); the paired McNemar compares annotation-level outcomes from different publications, not matched experiments."
+ ]
+}
