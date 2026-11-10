@@ -50,6 +50,7 @@
   },
   "db_nn_features_v1": {
     "copy": "sealed/db_nn_features_v1__a8eb54733d85.jsonl",
+    "remote_commit": "0e645b449ea7b3aeeb99f0dca9b3d8ed034d100c",
     "sha256": "a8eb54733d85e5bc1d1bc67c1e5597f5d799d93eb3bf0d1460e68c649328ed0e",
     "source": "data/db_setup/nn_features.jsonl",
     "utc": "2026-11-10T16:38:29Z"
