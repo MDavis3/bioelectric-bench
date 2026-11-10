@@ -1,4 +1,10 @@
 {
+  "corpus_protocol": {
+    "copy": "sealed/corpus_protocol__a87404a267ba.md",
+    "sha256": "a87404a267ba9d3557206af1b0b52e86214c9b8dcfd22ef48e4b3c01036b76e0",
+    "source": "config/corpus_protocol.md",
+    "utc": "2026-11-10T05:54:00Z"
+  },
   "lab_lineage": {
     "copy": "sealed/lab_lineage__38f6f31232ad.json",
     "remote_commit": "322f8d151ef7a18320f99c441c9dbf0ce31e806a",
