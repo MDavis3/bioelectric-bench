@@ -29,6 +29,7 @@
   },
   "plan_v1_2": {
     "copy": "sealed/plan_v1_2__367ea2af1dee.md",
+    "remote_commit": "db70268323c7e78bb3a022bdce130aabf9ccdf2b",
     "sha256": "367ea2af1deed427140eedfa84b25e718765a99a09f9b5a5770c412129e0d133",
     "source": "plans/plan.md",
     "utc": "2026-11-10T06:34:10Z"
