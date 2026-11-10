@@ -1,0 +1,10 @@
+{
+ "note": "Firewall allow-list v3: adds hand-reviewed design documents of the database test. Loaded by harness/planner_firewall_v3.py on top of the sealed v2 list. The flagged lines pair ontology ids, thresholds or setup counts with category words; none is an observed outcome.",
+ "text_allow_add": {
+  "plans/pivot_db_v0.md": "design draft; no outcome",
+  "plans/pivot_db_v1.md": "preregistration; thresholds and setup counts only",
+  "plans/pivot_redteam.md": "red-team review; thresholds and ontology ids only",
+  "plans/endpoint_roots_review.md": "root review; term counts in ontology closures, no annotation data"
+ },
+ "denied_add": []
+}

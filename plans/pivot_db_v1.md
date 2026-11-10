@@ -1,6 +1,6 @@
 # Preregistration v1: ion channel and pump genes vs patterning phenotypes across species
 
-Status: DRAFT until sealed as `db_prereg_v1`. Revised from plans/pivot_db_v0.md after the red team
+Status: DRAFT until sealed as `db_prereg_v1`. Implementation: harness/dbtest.py with config/db_params_v1.json. Revised from plans/pivot_db_v0.md after the red team
 (plans/pivot_redteam.md, 12 MUST items, all adopted; substitutions below are forced by the approved download list and
 are listed in section K). Written before any phenotype file was opened by the planner.
 
@@ -35,6 +35,11 @@ Secondary and settled (not pursued): the published planarian literature is too t
   indicator covariates.
 
 ## B. Primary endpoint (one, binary)
+
+The sealed root list is `config/db_endpoint_roots_v1.json` (revised twice before any outcome was opened: after a
+term-name spot-check, and after the no-data review plans/endpoint_roots_review.md, whose 5 MUST items were adopted). Where
+the bullets below differ from that file, the file governs. Element-level size-like mouse terms (short fibula, small
+vertebral body) are kept as morphology of patterned elements; a secondary sensitivity (Y_nosize) drops them.
 
 Y = 1 if the unit has at least one abnormal morphological patterning annotation, else 0.
 
@@ -104,8 +109,13 @@ Not allowed: number of phenotype annotations or terms, lethality annotation, any
 
 ## F. Splits
 
-- Block = connected component of (Alliance ortholog pairs) union (HGNC gene group at the family level). All units of a
-  block, in all species, share a fold.
+- Block = the smallest HGNC gene family (fewest human genes; ties by lowest family id) of the unit's human anchor.
+  Orthologs in all species share the anchor and so the block; an anchor with no HGNC family is its own block; a unit
+  with no human anchor is a singleton block. Implemented by `harness/db_blocks.py`.
+  - Revision before any outcome (setup-only): the original rule (connected components of Alliance ortholog pairs union
+    HGNC families) put 12481 of 20592 units, including 264 of 394 class units, into one component, because genes in
+    several families chain families together; capping family size did not help. The revised rule gives 50 class blocks
+    and 161 control blocks.
 - Primary: 10-fold grouped cross-validation over blocks, stratified so each fold has class blocks. Fixed seed 0.
 - Secondary: block x species holdout.
 
