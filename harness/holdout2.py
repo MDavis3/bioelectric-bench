@@ -71,7 +71,7 @@ PARENTS = ["_target_class", "intervention.action", "_target_id", "_agent_id"]
 COVX = ["_lineage", "_year_bucket"]
 TEMPS = (0.0, 0.1, 0.2, 0.33, 0.5, 1.0)   # ascending: ties go to the smaller temperature
 LINEAGE_GATED = ("agent", "target")
-OK_STATUS = {"extracted", "no_counts", "unreachable"}
+OK_STATUS = {"extracted", "no_counts", "unreachable", "excluded_on_full_text"}
 SEALED = {"temporal_features": "config/temporal_features.json", "temporal_rules": "config/rules.json",
           "holdout_params_v2": "config/holdout_params_v2.json", "harness_manifest_v2": "config/harness_manifest_v2.json",
           "lab_lineage_v3": "config/lab_lineage_v3.json", "vmem_lookup_v3": "kb/vmem_lookup_v3.json",

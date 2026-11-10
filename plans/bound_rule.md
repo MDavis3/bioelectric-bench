@@ -1,7 +1,9 @@
 # Bound rule for the kill criterion (sealed before any v2 count exists)
 
-Written 2026-11-10 by the overnight planner (Opus 5.5) from Manav's instruction text, before the setup-only pass and
-before any v2 extraction. Sealed as `bound_rule_v1`. The kill criterion it applies is plan v1.2: "fewer than 25
+Written 2026-11-10 by the overnight planner (Opus 5.5) from Manav's instruction text, before any v2 extraction. Sealed as `bound_rule_v1`.
+Known at sealing: v1 found 9 of the 12 in-hand pilot includes with a polarity row; the step-3 setup-only pass
+(no results) found 15 in-hand includes with at least one treated primary-family arm (logs/decisions.md).
+Revised after an independent Fable 5.2 read (plans/bound_rule_read.md); all its MUST and SHOULD items adopted. The kill criterion it applies is plan v1.2: "fewer than 25
 primary-family papers with counts reachable -> C1-C3 are declared untestable from published data".
 
 ## The rule (Manav's wording, verbatim)
@@ -23,9 +25,18 @@ regardless of the missing papers. If 16 or more, the missing papers could change
   not control, and at least one outcome category with a count above zero. Rows with `outcomes_partial` true and
   figure-read rows of any confidence DO count here (generous on purpose: it can only make the in-hand count larger,
   which makes an UNTESTABLE conclusion harder to reach, not easier).
-- **Paper with counts**: an in-hand include with at least one such row. Each paper counts once.
-- **Who computes it**: a script run by a subagent over the restricted adjudicated rows, replying with integers only
-  (the count, and the per-paper 0/1 flags keyed by paper id). The planner applies the rule to that integer alone.
+- **Paper with counts**: an in-hand include with at least one such row in pass S, pass O or the adjudicated set. An
+  in-hand include also counts as 1 if any pass reported it unreadable, not found in its scan or incomplete, or if a
+  supplement it cites for these results is not in hand. Each paper counts once.
+- **Who computes it**: `harness/bound_count.py`, committed and pushed before any v2 adjudicated row exists, run by a
+  subagent once all 20 are adjudicated and the input hashes are logged. Rows come from extraction/INSTRUCTIONS_v2.md as
+  sealed in `harness_manifest_v2`. The script maps rows to manifest `paper_id` by a committed crosswalk
+  (config/paper_crosswalk.json) and exits non-zero unless all 20 papers have a file and every row maps. Reply: the
+  integers of schema/replies/bound_count.json. The rule is applied to the first valid count; later re-extraction, or a
+  rerun for a logged script bug, is reported beside it.
+- The generous count is for this bound only; at 16 or more, the definition for the final 25 test is sealed before any
+  missing paper is extracted.
+- Orders 6, 7, 22 are assumed to add nothing; a count of 13-15 is UNTESTABLE on that assumption, 12 or fewer without it.
 
 ## Why 15
 

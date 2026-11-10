@@ -1,9 +1,34 @@
 {
  "fields": [
+  "has_counts",
+  "n_qualifying_rows",
+  "forced_by_problem",
   "n_incl_in_hand",
   "n_papers_with_counts",
   "n_treated_primary_rows_with_counts",
   "exit_code"
  ],
- "keyed_by": null
+ "keyed_by": "paper",
+ "keys": [
+  "child1911_jexpzool",
+  "buchanan1922_jexpzool",
+  "shearer1924_pmid17798088",
+  "rustia1925_jexpzool",
+  "nogi2005_pmid16243308",
+  "oviedo2007_pmid17670787",
+  "nogi2009_plosntd",
+  "oviedo2010_devbiol",
+  "beane2011_chembiol",
+  "chan2011_pmid21897362",
+  "zhang2011_jneurosci",
+  "beane2013_development",
+  "annand2014_ethos",
+  "emmonsbell2015_ijms",
+  "chan2017_bba",
+  "durant2017_bpj",
+  "durant2019_bpj",
+  "pietak2019_pmid30990801",
+  "emmonsbell2019_iscience",
+  "bischof2020_devbiol"
+ ]
 }

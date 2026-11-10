@@ -1,0 +1,33 @@
+{
+ "note": "Maps file keys used in papers/, inbox/ and v1 extraction to corpus manifest paper_id. In-hand list = plans/bound_rule.md.",
+ "aliases": {
+  "pietak2019_ploscb": "pietak2019_pmid30990801",
+  "nogi2005": "nogi2005_pmid16243308",
+  "oviedo2007": "oviedo2007_pmid17670787",
+  "chan2011": "chan2011_pmid21897362",
+  "annand2014": "annand2014_ethos",
+  "shearer1924": "shearer1924_pmid17798088"
+ },
+ "in_hand": [
+  "child1911_jexpzool",
+  "buchanan1922_jexpzool",
+  "shearer1924_pmid17798088",
+  "rustia1925_jexpzool",
+  "nogi2005_pmid16243308",
+  "oviedo2007_pmid17670787",
+  "nogi2009_plosntd",
+  "oviedo2010_devbiol",
+  "beane2011_chembiol",
+  "chan2011_pmid21897362",
+  "zhang2011_jneurosci",
+  "beane2013_development",
+  "annand2014_ethos",
+  "emmonsbell2015_ijms",
+  "chan2017_bba",
+  "durant2017_bpj",
+  "durant2019_bpj",
+  "pietak2019_pmid30990801",
+  "emmonsbell2019_iscience",
+  "bischof2020_devbiol"
+ ]
+}
