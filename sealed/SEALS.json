@@ -106,6 +106,7 @@
   },
   "repilot_gates_v1": {
     "copy": "sealed/repilot_gates_v1__9a767c7761ed.md",
+    "remote_commit": "429d8a534a3711703072649b8a94c2fffcd40e69",
     "sha256": "9a767c7761ed627f9ce66317c6e153a08ab46162a68208019954687daf3656d0",
     "source": "plans/repilot_gates.md",
     "utc": "2026-11-10T09:19:53Z"
