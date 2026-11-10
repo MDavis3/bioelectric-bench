@@ -1,0 +1,6 @@
+{
+ "fields": ["n_genes_gof", "n_genes_domneg", "n_genes_gof_or_domneg", "n_genes_null", "n_genes_both_gof_and_null",
+            "n_blocks_gof_or_domneg", "n_genotypes_gof_or_domneg", "problem_code"],
+ "keyed_by": "group",
+ "keys": ["mouse_class", "mouse_control", "mouse_other", "zebrafish_class", "zebrafish_control", "zebrafish_other"]
+}
