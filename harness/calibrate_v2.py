@@ -64,29 +64,58 @@ def shifted(rng, strength):
 
 
 def plant(rows, world, seed, strength):
+    """Worlds: null | class (class x action signal) | vmem (direction signal, the two directions forced to different
+    categories) | lineage_only (lab confound) | dominant_lab (one lineage, given the most arms, carries all of a class
+    signal) | few_dir (only 4 targets keep a direction label; vmem signal on them)."""
     rng = random.Random(seed)
+    rows = [json.loads(json.dumps(r)) for r in rows]
+    if world == "few_dir":
+        keep = sorted({t for r in rows if get(r, H.VMEM) for t in r.get("_target_components") or []}, key=str)
+        keep = set(rng.sample(keep, min(4, len(keep))))
+        for r in rows:
+            if not set(r.get("_target_components") or []) & keep:
+                r.setdefault("drug", {})["vmem_direction_pred"] = None
+    big = None
+    if world == "dominant_lab":
+        big = max(sorted({r.get("_lineage") for r in rows}, key=str),
+                  key=lambda l: sum(r.get("_lineage") == l for r in rows))
     key = {"class": lambda r: (r.get("_target_class"), get(r, "intervention.action")),
-           "vmem": lambda r: get(r, H.VMEM),
+           "dominant_lab": lambda r: (r.get("_target_class"), get(r, "intervention.action")) if r.get("_lineage") == big else None,
+           "vmem": lambda r: get(r, H.VMEM), "few_dir": lambda r: get(r, H.VMEM),
            "lineage_only": lambda r: r.get("_lineage")}.get(world)
     table = {}
+    if world in ("vmem", "few_dir"):   # distinct categories for the two directions, so direction (not presence) matters
+        a, b = rng.sample([c for c in BASE if c != "normal"], 2)
+        for k, tgt in (("depolarize", a), ("hyperpolarize", b)):
+            d = {c: (1 - strength) * p for c, p in BASE.items()}
+            d[tgt] += strength
+            table[k] = d
     out = []
     for r in rows:
-        r = json.loads(json.dumps(r))
-        if world == "null" or key is None:
+        k = key(r) if key else None
+        if world == "null" or k in (None, (None, None)):
             d = BASE
         else:
-            k = key(r)
-            if k in (None, (None, None)):
-                d = BASE
-            else:
-                if k not in table:
-                    table[k] = shifted(rng, strength)
-                d = table[k]
+            if k not in table:
+                table[k] = shifted(rng, strength)
+            d = table[k]
         n = r.get("n_total") if isinstance(r.get("n_total"), int) and r["n_total"] > 0 else 30
         r["outcomes"] = draw(d, min(n, 200), rng)
         r["n_total"] = sum(o["count"] for o in r["outcomes"])
         out.append(r)
     return out
+
+
+def dominate(rows, seed, share=0.58):
+    """Give one lineage about `share` of the papers (dominant_lab world)."""
+    rng = random.Random(seed + 31)
+    papers = sorted({get(r, "source.paper_id") for r in rows}, key=str)
+    big = set(rng.sample(papers, round(share * len(papers))))
+    others = sorted({r.get("_lineage") for r in rows}, key=str)
+    m = {p: ("LBIG" if p in big else others[i % len(others)]) for i, p in enumerate(papers)}
+    for r in rows:
+        r["_lineage"] = m[get(r, "source.paper_id")]
+    return rows
 
 
 def relineage(rows, seed, k=9):
@@ -100,13 +129,16 @@ def relineage(rows, seed, k=9):
 
 def one(job):
     world, variant, mode, seed, strength, rows, P, features, rules, cats = job
-    if world == "shuffle":
-        rs = H.shuffle_outcomes([json.loads(json.dumps(r)) for r in rows], 1000 + seed)
-    else:
-        rs = plant(rows, world, seed, strength)
-    if variant == "lin9":
+    rs = [json.loads(json.dumps(r)) for r in rows]
+    if variant == "lin9":            # relineage BEFORE planting, so lineage worlds use the final lineages
         rs = relineage(rs, seed)
-    rep = H.analyze(rs, mode, P, features, rules, cats, run_p3_perm=False)
+    if world == "dominant_lab":
+        rs = dominate(rs, seed)
+    if world == "shuffle":
+        rs = H.shuffle_outcomes(rs, 1000 + seed)
+    else:
+        rs = plant(rs, world, seed, strength)
+    rep = H.analyze(rs, mode, P, features, rules, cats, run_p3_perm=True)
     word = lambda v: v.split(":")[0].split(" ")[0] if v else None
     return {"world": world, "variant": variant, "mode": mode, "seed": seed, "strength": strength,
             "verdict": word(rep["verdict"]), "unit_only": word(rep["verdict_unit_level_only"]),
@@ -118,7 +150,7 @@ def one(job):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--setups", help="setup-only rows with derived features (planner-readable)")
+    ap.add_argument("--setups", help="setup-only rows with derived features (planner-readable), or 'skeleton'")
     ap.add_argument("--real-rows", help="restricted full rows; only with --worlds shuffle (subagent use)")
     ap.add_argument("--worlds", default="null,class")
     ap.add_argument("--variants", default="real,lin9")
@@ -141,7 +173,12 @@ def main():
     else:
         if "shuffle" in worlds:
             sys.exit("shuffle needs --real-rows")
-        raw = [dict(r, outcomes=[{"category": "normal", "count": 1}]) for r in load_jsonl(a.setups)]
+        if a.setups == "skeleton":
+            import holdout2_selftest as ST
+            src = ST.make_matrix(0)
+        else:
+            src = load_jsonl(a.setups)
+        raw = [dict(r, outcomes=[{"category": "normal", "count": 1}]) for r in src]
     rows, _ = H.prepare_rows(raw, FAM)
     jobs = [(w, v, m, s, a.strength, rows, P, features, rules, cats)
             for w in worlds for v in a.variants.split(",") for m in a.modes.split(",") for s in range(a.seeds)]

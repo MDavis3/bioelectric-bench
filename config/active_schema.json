@@ -11,8 +11,12 @@
     {
       "version": 1,
       "reason": "lookup v2 and lineage v2 add pilot agents and labs (setup strings only); class rules of v1 unchanged except 4 new classes documented in kb/vmem_rule_v2_additions.md"
+    },
+    {
+      "version": 1,
+      "reason": "harness v2: lookup v3 and lineage v3 (Fable xhigh pharmacology read from setup strings only; kb/vmem_rule_v3_changes.md, kb/lineage_v3_changes.md)"
     }
   ],
-  "vmem_lookup": "kb/vmem_lookup_v2.json",
-  "lab_lineage": "config/lab_lineage_v2.json"
+  "vmem_lookup": "kb/vmem_lookup_v3.json",
+  "lab_lineage": "config/lab_lineage_v3.json"
 }

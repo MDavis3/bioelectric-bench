@@ -62,7 +62,8 @@ from collections import defaultdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common import ROOT, get, load_categories, load_jsonl, norm_val, normalize, outcome_dist, sha256_file  # noqa: E402
+from common import ROOT, get, load_jsonl, norm_val, normalize, outcome_dist, sha256_file  # noqa: E402
+from make_harness_manifest_v2 import REQUIRED as MANIFEST_REQUIRED  # noqa: E402
 from score import brier, majority_baseline, mean, nn_baseline  # noqa: E402
 from temporal_holdout import add_bucket, rules_model, year  # noqa: E402
 
@@ -78,6 +79,17 @@ SEALED = {"temporal_features": "config/temporal_features.json", "temporal_rules"
           "corpus_protocol": "config/corpus_protocol.md", "corpus_manifest": "preflight/corpus_manifest.csv",
           "corpus_status_final": "data/corpus_status.json"}
 RUN_LOG = ROOT / "logs" / "holdout_runs.jsonl"
+CATS_PATH = "schema/outcome_categories.json"   # fixed path (in the v2 manifest); never via active_schema.json
+
+
+def load_cats():
+    with open(ROOT / CATS_PATH) as f:
+        return {k: v["categories"] for k, v in json.load(f)["task_families"].items()}
+
+
+def lineage_values():
+    p = ROOT / SEALED["lab_lineage_v3"]
+    return set(json.loads(p.read_text())["lab_to_lineage"].values()) if p.exists() else None
 MARKER_DIR = ROOT / "data" / "confirmatory"
 
 
@@ -106,7 +118,11 @@ def seal_state(dry, data_path):
             out[name] = f"sealed {reg[name]['utc']}"
     hm = ROOT / SEALED["harness_manifest_v2"]
     if hm.exists():
-        for rel, h in json.loads(hm.read_text())["files"].items():
+        listed = json.loads(hm.read_text())["files"]
+        missing = [f for f in MANIFEST_REQUIRED if f not in listed]
+        if missing:
+            problems.append(f"v2 manifest does not list required files {missing}")
+        for rel, h in listed.items():
             if not (ROOT / rel).exists() or sha256_file(ROOT / rel) != h:
                 problems.append(f"harness file {rel} differs from the sealed v2 manifest")
                 out["harness_manifest_v2"] = "MISMATCH " + rel
@@ -121,6 +137,8 @@ def seal_state(dry, data_path):
                 problems.append(f"data derived with a {key[:-7]} that is not the sealed {name}")
         if meta.get("output_sha256") != sha256_file(data_path):
             problems.append("data file changed after derive_features wrote it")
+        if meta.get("derive_features_sha256") != sha256_file(ROOT / "harness/derive_features.py"):
+            problems.append("data derived by a derive_features.py other than the current (manifest-checked) one")
     st_name = "corpus_status_final"
     if st_name in reg and (ROOT / SEALED[st_name]).exists():
         st = json.loads((ROOT / SEALED[st_name]).read_text())
@@ -274,7 +292,7 @@ def lineage_ci(items, P):
     Returns None when there are fewer than min_lineages lineages: such a CI is not interpretable."""
     lins = sorted({l for _, l, _ in items}, key=str)
     units = sorted({u for u, _, _ in items}, key=str)
-    if not items or len(lins) < P["min_lineages"]:
+    if not items or len([l for l in lins if l is not None]) < P["min_lineages"]:
         return None
     A = defaultdict(float)
     N = defaultdict(float)
@@ -349,7 +367,8 @@ def run(rows, mode, makers, P, cats, base_rules, rules_dir, only=None):
     per = {m: defaultdict(list) for m in names}   # model -> unit -> [(row, brier)]
     folds = []
     for label, train, test, rl in build_splits(rows, mode, P, base_rules, rules_dir):
-        if len(train) < P["min_train"] or len(test) < P["min_test"]:
+        if (len(train) < P["min_train"] or len(test) < P["min_test"]
+                or len({get(r, "source.paper_id") for r in train}) < P["min_train_papers"]):
             folds.append({"fold": label, "skipped": True, "n_train": len(train), "n_test": len(test)})
             continue
         res = {m: [] for m in names}
@@ -409,14 +428,16 @@ def shuffle_outcomes(rows, seed):
 
 
 def prepare_rows(raw, fam):
-    """Partial rows (unstated remainder, not resolved at adjudication) are never scored."""
+    """Partial rows (unstated remainder, not resolved at adjudication) and low-confidence figure reads are never scored
+    (preregistered in extraction/INSTRUCTIONS_v2.md)."""
     rows = [add_bucket(dict(r)) for r in raw if r.get("outcomes") and not r.get("outcomes_partial")
+            and r.get("figure_read_confidence") != "low"
             and year(r) is not None and r["task_family"] == fam]
     n_controls = sum(is_control(r) for r in rows)
     return [r for r in rows if not is_control(r)], n_controls
 
 
-def analyze(rows, mode, P, features, base_rules, cats, rules_dir=None, run_p3_perm=True):
+def analyze(rows, mode, P, features, base_rules, cats, rules_dir=None, run_p3_perm=True, force_perm=False):
     """rows: non-control rows of one family, outcomes already in place (real, shuffled or synthetic)."""
     rules_dir = rules_dir or (ROOT / "config")
     makers = model_makers(features, P, cats, mode)
@@ -431,7 +452,7 @@ def analyze(rows, mode, P, features, base_rules, cats, rules_dir=None, run_p3_pe
         c = infer(d, P)
         if c:
             c["lineage_ci95"] = lineage_ci(items, P)
-            c["n_lineages"] = len({l for _, l, _ in items})
+            c["n_lineages"] = len({l for _, l, _ in items if l is not None})
         comps[key or f"{x}_minus_{y}"] = c
         return c
 
@@ -441,7 +462,8 @@ def analyze(rows, mode, P, features, base_rules, cats, rules_dir=None, run_p3_pe
         cmp(x, y)
 
     S = P["sesoi_brier"]
-    endpoint = {"decade": "P1 component", "lab": "P1 component", "species": "descriptive (species)"}.get(mode, "P2")
+    endpoint = {"decade": "P1 component (decade)", "lab": "P1 component (lab)", "species": "descriptive (species)",
+                "agent": "P2 component (agent)", "target": "P2 component (target)"}[mode]
     verdict = judge([a1, a2], len(scored), n_units, P, lineage_gated=lg)
     unit_only = judge([a1, a2], len(scored), n_units, dict(P, min_lineages=0), lineage_gated=False)
 
@@ -452,8 +474,8 @@ def analyze(rows, mode, P, features, base_rules, cats, rules_dir=None, run_p3_pe
         n_dir = c3["n_clusters"] if c3 else 0
         v = judge([c3], len(scored), n_dir, P, lineage_gated=True)
         perm_p = None
-        if v.startswith("PASS"):
-            if c3b and c3b["ci95"][0] <= -S:
+        if v.startswith("PASS") or (force_perm and c3):
+            if c3b and c3b["ci95"][0] <= -S and not force_perm:
                 v = "FAIL (P3b): the target-class label clearly beats the Vmem label; the gain is not specific to voltage."
             elif run_p3_perm:
                 rng = random.Random(P["seed"] + 2)
@@ -471,7 +493,7 @@ def analyze(rows, mode, P, features, base_rules, cats, rules_dir=None, run_p3_pe
                     more += mean([mean(v_) for v_ in dd.values() if v_]) <= c3["mean"]
                 perm_p = (more + 1) / (P["n_perm"] + 1)
                 if perm_p >= 0.05:
-                    v = f"FAIL: gain does not beat the label-permutation null (p={perm_p:.3f})."
+                    v = f"INCONCLUSIVE: gain does not beat the label-permutation null (p={perm_p:.3f})."
             else:
                 v = "PASS before permutation (permutation skipped in this calibration run)."
         p3 = {"verdict": v, "perm_p": perm_p, "n_directional_targets": n_dir,
@@ -480,8 +502,53 @@ def analyze(rows, mode, P, features, base_rules, cats, rules_dir=None, run_p3_pe
     return {"endpoint": endpoint, "verdict": verdict, "verdict_unit_level_only": unit_only, "p3": p3, "mode": mode,
             "n_scored_items": sum(f["n_test"] for f in scored), "n_scored_folds": len(scored), "n_units": n_units,
             "n_papers": len({get(r, 'source.paper_id') for r in rows}), "n_rows": len(rows),
-            "n_lineages": len({r.get('_lineage') for r in rows}), "folds": folds, "comparisons": comps,
+            "n_lineages": len({r.get('_lineage') for r in rows} - {None}), "folds": folds, "comparisons": comps,
             "model_names": list(per)}
+
+
+def validate_for_run(raw, rows, fam, cats, lin_values):
+    """Checks a counted run needs before the marker is claimed (dry runs report the count only)."""
+    probs = []
+    for r in raw:
+        if r.get("task_family") != fam:
+            continue
+        iid = r.get("item_id")
+        y = get(r, "source.year")
+        if not isinstance(y, int):
+            probs.append(f"{iid}: source.year must be an integer")
+        if not r.get("outcomes"):
+            continue
+        try:
+            outcome_dist(r, cats)
+        except (ValueError, KeyError, TypeError) as e:
+            probs.append(f"{iid}: bad outcomes ({type(e).__name__})")
+            continue
+        tot = sum(float(o["count"]) for o in r["outcomes"])
+        if r.get("outcome_from_percent") and r.get("n_total") is None and not r.get("outcomes_partial") and abs(tot - 100) > 2:
+            probs.append(f"{iid}: percent row sums to {tot:.0f}, not 100, and is not flagged partial")
+    for r in rows:
+        if not r.get("_agent_id"):
+            probs.append(f"{r.get('item_id')}: no _agent_id")
+        if lin_values is None:
+            probs.append("sealed lineage map missing")
+            break
+        if r.get("_lineage") not in lin_values:
+            probs.append(f"{r.get('item_id')}: _lineage not a value of the sealed lineage map")
+    return probs
+
+
+def earlier_counted_run(fam, mode):
+    if RUN_LOG.exists():
+        for line in RUN_LOG.read_text().splitlines():
+            try:
+                x = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if x.get("counted") and x.get("family") == fam and x.get("mode") == mode:
+                return True
+    r = subprocess.run(["git", "-C", str(ROOT), "log", "--all", "--format=%H", "--", f"data/confirmatory/{fam}__{mode}.json"],
+                       capture_output=True, text=True)
+    return bool(r.stdout.strip())
 
 
 # ---------------------------------------------------------------- main (counted or dry run only)
@@ -498,8 +565,10 @@ def main():
     seals = seal_state(a.dry_run, data_path)
     features = json.loads((ROOT / SEALED["temporal_features"]).read_text())["features"]
     base_rules = json.loads((ROOT / SEALED["temporal_rules"]).read_text())["rules"]
-    cats = load_categories()
+    cats = load_cats()
     fam = a.family or P["primary_family"]
+    if fam not in cats:
+        sys.exit(f"unknown family {fam!r}")
     head, dirty = git_head()
     record = {"utc": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "argv": sys.argv[1:],
               "mode": a.mode, "family": fam, "dry_run": a.dry_run, "counted": not a.dry_run,
@@ -507,11 +576,23 @@ def main():
               "python": platform.python_version(), "params_sha256": sha256_file(ROOT / SEALED["holdout_params_v2"]),
               "harness_sha256": {rel: sha256_file(ROOT / rel) for rel in
                                  ("harness/holdout2.py", "harness/derive_features.py", "harness/common.py", "harness/score.py")}}
+    raw = load_jsonl(data_path)
+    rows, n_controls = prepare_rows(raw, fam)
+    vproblems = validate_for_run(raw, rows, fam, cats, lineage_values())
     if not a.dry_run:
-        if dirty:
-            sys.exit("Counted run refused: tracked files have uncommitted changes.")
+        if vproblems:
+            sys.exit("Counted run refused (rows):\n  " + "\n  ".join(vproblems[:20]))
+        if dirty or not head:
+            sys.exit("Counted run refused: needs a git repository with no uncommitted tracked changes.")
+        if earlier_counted_run(fam, a.mode):
+            sys.exit(f"Counted run refused: {RUN_LOG.relative_to(ROOT)} or git history already records a counted run for {fam}/{a.mode}.")
+        # rehearsal on shuffled outcomes, every branch (incl. the permutation), so a crash cannot burn the one run
+        reh = shuffle_outcomes([json.loads(json.dumps(r)) for r in rows], P["seed"] + 99)
+        analyze(reh, a.mode, dict(P, n_boot=200, n_perm=2, n_signflip=500), features, base_rules, cats, force_perm=True)
         record["marker"] = str(claim_marker(fam, a.mode, record).relative_to(ROOT))
-    rows, n_controls = prepare_rows(load_jsonl(data_path), fam)
+        with open(RUN_LOG, "a") as f:
+            f.write(json.dumps(dict(record, event="claimed"), sort_keys=True) + "\n")
+    record["row_problems"] = len(vproblems)
     if a.dry_run:
         shuffle_outcomes(rows, P["seed"])
     rep = analyze(rows, a.mode, P, features, base_rules, cats)
@@ -522,8 +603,9 @@ def main():
         rep["p3"]["verdict"] = pre + rep["p3"]["verdict"]
     report = dict(rep, family=fam, dry_run=a.dry_run, seals=seals, params=P, features=features,
                   controls_excluded=n_controls, run_record=record)
+    print(f"{rep['endpoint']} verdict: {rep['verdict']}" + (f" | P3: {rep['p3']['verdict']}" if rep["p3"] else ""), flush=True)
     with open(RUN_LOG, "a") as f:
-        f.write(json.dumps({k: v for k, v in record.items()} | {"verdict": rep["verdict"],
+        f.write(json.dumps({k: v for k, v in record.items()} | {"event": "finished", "verdict": rep["verdict"],
                             "p3": rep["p3"]["verdict"] if rep["p3"] else None}, sort_keys=True) + "\n")
     out = ROOT / "reports"
     tag = f"holdout2v2_{a.mode}" + ("" if fam == P["primary_family"] else f"_{fam}") + ("_dryrun" if a.dry_run else "")

@@ -271,6 +271,110 @@ def derive_writes_provenance_sidecar():
     shutil.rmtree(tmp)
 
 
+@test
+def validate_for_run_catches_bad_rows():
+    rows = rows_for("class")
+    cats = H.load_cats()
+    lin = {r["_lineage"] for r in rows}
+    raw = [dict(r) for r in rows]
+    assert H.validate_for_run(raw, rows, "planaria_ap_polarity", cats, lin) == []
+    bad = dict(raw[0], outcome_from_percent=True, n_total=None, outcomes=[{"category": "double_head", "count": 60}])
+    assert H.validate_for_run([bad] + raw[1:], rows, "planaria_ap_polarity", cats, lin)
+    assert H.validate_for_run(raw, rows, "planaria_ap_polarity", cats, lin - {rows[0]["_lineage"]})
+    yr = dict(raw[0], source=dict(raw[0]["source"], year="c. 1952"))
+    assert H.validate_for_run([yr] + raw[1:], rows, "planaria_ap_polarity", cats, lin)
+
+
+@test
+def low_confidence_figure_reads_and_few_paper_folds_skipped():
+    rows = rows_for("null")
+    rows[0] = dict(rows[0], figure_read_confidence="low")
+    kept, _ = H.prepare_rows(rows, "planaria_ap_polarity")
+    assert len(kept) == len(rows) - 1
+    feats = json.loads((ROOT / "config/temporal_features.json").read_text())["features"]
+    few = [r for r in kept if r["source"]["paper_id"] in ("paper0", "paper1", "paper2", "paper3")]
+    _, folds = H.run(few, "agent", H.model_makers(feats, P, CATS, "agent"), dict(P, min_train=1), CATS, [], ROOT / "config")
+    assert all(f.get("skipped") for f in folds)
+
+
+@test
+def unmapped_none_lineage_not_counted():
+    items = [(u, None if u % 2 else f"L{u % 5}", -0.1) for u in range(18)]
+    assert H.lineage_ci(items, P) is None   # 5 real lineages plus None
+
+
+@test
+def combine_truth_table():
+    import combine_verdicts as CV
+    assert CV.conj(["PASS", "PASS"]) == "PASS"
+    assert CV.conj(["PASS", "FAIL"]) == "FAIL"
+    assert CV.conj(["PASS", "UNTESTABLE"]) == "UNTESTABLE"
+    assert CV.conj(["FAIL", "UNTESTABLE"]) == "FAIL"
+    assert CV.conj(["PASS", "INCONCLUSIVE"]) == "INCONCLUSIVE"
+    assert CV.conj(["PASS", None]) == "UNTESTABLE"
+
+
+@test
+def split_whitelists_setup_keys():
+    tmp = Path(tempfile.mkdtemp(prefix="bb_sp_", dir=ROOT / "data" / "restricted"))
+    try:
+        r = {"item_id": "x#1#a", "task_family": "planaria_ap_polarity", "source": {"paper_id": "x", "year": 2010, "comment": "leak"},
+             "intervention": {"agent": "octanol", "result": "leak"}, "_result": "leak", "setup_flags": {"pooled": False, "comment": "leak"},
+             "outcomes": [{"category": "normal", "count": 3}], "remainder_quote": "leak"}
+        full = tmp / "full.jsonl"
+        full.write_text(json.dumps(r) + "\n")
+        out = subprocess.run([PY, str(ROOT / "harness/planner_firewall.py"), "split", str(full), "--pass", "_t", "--paper", tmp.name],
+                             capture_output=True, text=True)
+        assert out.returncode == 0, out.stderr
+        su = json.loads((ROOT / "data/setups/_t" / f"{tmp.name}.jsonl").read_text())
+        assert "leak" not in json.dumps(su), su
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+        shutil.rmtree(ROOT / "data/setups/_t", ignore_errors=True)
+        shutil.rmtree(ROOT / "data/restricted/outcomes/_t", ignore_errors=True)
+
+
+@test
+def full_counted_run_then_refused():
+    """A counted run in a scratch git repo with every v2 seal faked: runs once, writes the marker, refuses a rerun."""
+    from common import sha256_file
+    tmp, data = scratch_project()
+    try:
+        pv = json.loads((tmp / "config/holdout_params_v2.json").read_text())
+        pv.update(n_boot=200, n_perm=5, n_signflip=500)
+        (tmp / "config/holdout_params_v2.json").write_text(json.dumps(pv))
+        rows = [json.loads(l) for l in data.read_text().splitlines()]
+        labs = sorted({r["_lineage"] for r in rows})
+        (tmp / "config/lab_lineage_v3.json").write_text(json.dumps({"lab_to_lineage": {l: l for l in labs}}))
+        (tmp / "kb/vmem_lookup_v3.json").write_text(json.dumps({"agents": {}, "class_rules": []}))
+        (tmp / "extraction").mkdir(exist_ok=True)
+        shutil.copy2(ROOT / "extraction/INSTRUCTIONS_v2.md", tmp / "extraction/INSTRUCTIONS_v2.md")
+        (tmp / "config/corpus_protocol.md").write_text("x")
+        (tmp / "data/corpus_status.json").write_text(json.dumps({r["paper_id"]: "unreachable" for r in __import__("csv").DictReader(open(tmp / "preflight/corpus_manifest.csv"))}))
+        subprocess.run([PY, str(tmp / "harness/make_harness_manifest_v2.py")], capture_output=True, cwd=tmp, check=True)
+        meta = {"output_sha256": sha256_file(data), "vmem_lookup_sha256": sha256_file(tmp / "kb/vmem_lookup_v3.json"),
+                "lab_lineage_sha256": sha256_file(tmp / "config/lab_lineage_v3.json"),
+                "derive_features_sha256": sha256_file(tmp / "harness/derive_features.py")}
+        Path(str(data) + ".meta.json").write_text(json.dumps(meta))
+        reg = {name: {"sha256": sha256_file(tmp / rel), "utc": "x", "remote_commit": "abc"} for name, rel in H.SEALED.items()}
+        (tmp / "sealed/SEALS.json").write_text(json.dumps(reg))
+        for c in (["init", "-q"], ["add", "-A"], ["-c", "user.email=t@t", "-c", "user.name=t", "commit", "-qm", "x"]):
+            subprocess.run(["git", "-C", str(tmp), *c], capture_output=True, check=True)
+        cmd = [PY, str(tmp / "harness/holdout2.py"), "--data", str(data), "--mode", "lab"]
+        out = subprocess.run(cmd, capture_output=True, text=True, cwd=tmp)
+        assert out.returncode == 0, (out.stdout + out.stderr)[-2000:]
+        assert (tmp / "data/confirmatory/planaria_ap_polarity__lab.json").exists()
+        rep = json.loads((tmp / "reports/holdout2v2_lab.json").read_text())
+        assert rep["run_record"]["counted"] and not rep["verdict"].startswith("DRY")
+        out2 = subprocess.run(cmd, capture_output=True, text=True, cwd=tmp)
+        assert out2.returncode != 0, out2.stdout[-500:]
+    finally:
+        for q in tmp.rglob("*"):
+            if q.is_file():
+                os.chmod(q, 0o644)
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
 if __name__ == "__main__":
     bad = [r for r in RESULTS if not r[1]]
     for name, ok, tb in RESULTS:

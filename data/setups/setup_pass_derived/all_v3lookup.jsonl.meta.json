@@ -1,0 +1,10 @@
+{
+  "derive_features_sha256": "e472c4c812ede30352448aee09b57c4447186b4af473757a46f0c623c62755aa",
+  "lab_lineage": "config/lab_lineage_v3.json",
+  "lab_lineage_sha256": "45ac10c938ab370b78bb4b61425bc7ef67579b2b17ee309a977f18c93712ab2a",
+  "output_sha256": "2a4a74d70cec75af3bba689ee2d32355a1617ee33b55c5d4b919fc9e97b87ea7",
+  "source": "data/setups/setup_pass_derived/input.jsonl",
+  "source_sha256": "4199f40678857889ec23f09118a53313cc8e3984b43196230c5838e3f0f624d9",
+  "vmem_lookup": "kb/vmem_lookup_v3.json",
+  "vmem_lookup_sha256": "ae902e3140e139676c42fed52139c7d4924a619ee97f540b87fd4498dace0191"
+}

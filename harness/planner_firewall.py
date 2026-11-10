@@ -42,11 +42,31 @@ DENIED = [
 PLANNER_READABLE = ["reports", "logs", "plans", "kb", "config", "data/setups", "sealed", "extraction", "schema",
                     "data/corpus_status.json", "data/corpus_additions.csv", "state.json"]
 SCAN_EXT = {".md", ".json", ".jsonl", ".csv", ".txt"}
+# Text files reviewed by hand that legitimately pair category words with numbers (design docs, synthetic results).
+# Adding a file here is logged in logs/decisions.md with the reason.
+TEXT_ALLOW = {"reports/extraction_report.md", "reports/harness_v2_review.md", "reports/process_review.md",
+              "logs/decisions.md", "plans/endpoint_review_1.md"}
+DERIVED = {"_agent_id", "_components", "_target_id", "_target_components", "_target_class", "_dose_bucket",
+           "_timing_bucket", "_duration_bucket", "_fragment", "_delivery", "_field_dir", "_lineage", "_year_bucket"}
+NESTED = {"source": {"paper_id", "doi", "pmid", "title", "year", "pub_date", "location", "lab"},
+          "intervention": {"type", "target", "agent", "dose", "dose_units", "timing", "duration", "delivery",
+                           "field_strength_mV_per_mm", "field_direction", "description", "action", "timing_start_h",
+                           "duration_h"},
+          "readout": {"method", "timepoint"}, "drug": {"vmem_direction_pred"}, "setup_flags": {"pooled", "family_note"}}
+NUM_PAT = re.compile(r"\d+(\.\d+)?\s*%|\b\d+\s*/\s*\d+\b|\bn\s*=\s*\d+")
 OUTCOME_KEYS = {"outcomes", "dead_count", "result_is_null", "outcome_from_percent"}
 
 
 def denied(rel):
     return any(fnmatch.fnmatch(rel, g) or fnmatch.fnmatch(rel + "/", g) for g in DENIED)
+
+
+OUTCOME_WORDS_ONLY = {x.lower() for x in OUTCOME_WORDS} - {"phenotype", "ectopic", "heterotax"}
+# identifiers and closed vocabularies: not scanned
+SKIP_PATHS = {".source.title", ".source.paper_id", ".source.doi", ".item_id", ".task_family", ".intervention.agent",
+              ".intervention.dose_units", "._agent_id", "._components", "._target_id", "._target_components"}
+# label fields that may name what was scored (a category) but never a result word
+LABEL_PATHS = {".readout.method", ".setup_flags.family_note", ".source.location"}
 
 
 def outcome_words():
@@ -90,19 +110,42 @@ def iter_json_objs(p):
 
 def check_setup_row(r, allowed, words):
     errs = []
-    extra = {k for k in set(r) - allowed if not k.startswith("_")}
+    extra = set(r) - allowed - DERIVED - {"setup_flags"}
     if extra:
-        errs.append(f"non-setup fields {sorted(extra)}")
-    # free text that describes what was done (titles and readout names may legitimately name a category)
-    iv = r.get("intervention") or {}
-    blob = json.dumps([iv.get("description"), iv.get("duration"), iv.get("timing"), r.get("stage"), r.get("injury"),
-                       (r.get("readout") or {}).get("timepoint")]).lower()
-    hits = sorted(w for w in words if re.search(r"(?<![a-z])" + re.escape(w) + r"(?![a-z])", blob))
-    rm = json.dumps((r.get("readout") or {}).get("method")).lower()
-    hits += sorted(w for w in OUTCOME_WORDS if w.lower() in rm and w.lower() not in ("phenotype", "ectopic", "heterotax"))
+        errs.append(f"{len(extra)} non-setup fields")
+    for k, sub in NESTED.items():
+        v = r.get(k)
+        if isinstance(v, dict) and set(v) - sub:
+            errs.append(f"{len(set(v) - sub)} unknown keys inside {k}")
+    texts = []
+
+    def walk(path, v):
+        if isinstance(v, dict):
+            for kk, vv in v.items():
+                walk(path + "." + kk, vv)
+        elif isinstance(v, list):
+            for vv in v:
+                walk(path, vv)
+        elif isinstance(v, str) and path not in SKIP_PATHS:
+            texts.append((path, v.lower()))
+    walk("", r)
+    hits = set()
+    for path, t in texts:
+        ws = OUTCOME_WORDS_ONLY if path in LABEL_PATHS else words
+        hits |= {w for w in ws if re.search(r"(?<![a-z])" + re.escape(w) + r"(?![a-z])", t)}
     if hits:
-        errs.append(f"outcome words {hits}")
+        errs.append(f"{len(hits)} outcome words in free text")
     return errs
+
+
+def scan_text_file(p, words):
+    """Lines that name an outcome category AND carry a number pattern (%, a/b, n=)."""
+    bad = 0
+    for line in p.read_text(errors="replace").splitlines():
+        low = line.lower()
+        if NUM_PAT.search(low) and any(re.search(r"(?<![a-z])" + re.escape(w) + r"(?![a-z])", low) for w in words):
+            bad += 1
+    return bad
 
 
 def cmd_check(_):
@@ -127,14 +170,21 @@ def cmd_check(_):
                 continue
             if rel.startswith(("sealed/", "schema/")):
                 continue  # sealed copies are checked through their sources; schema files define the fields
+            if p.suffix in (".md", ".csv", ".txt"):
+                if rel in TEXT_ALLOW:
+                    continue
+                nb = scan_text_file(p, words)
+                if nb:
+                    errs.append(f"{rel}: {nb} lines pair an outcome category with a number; move per-arm values under reports/restricted/")
+                continue
             for obj in iter_json_objs(p):
                 if has_outcome_structure(obj):
                     errs.append(f"{rel}: contains an outcome structure; move it under a denied path")
                     break
-    # outcome-bearing JSONL anywhere outside denied paths
-    for p in ROOT.rglob("*.jsonl"):
+    # outcome-bearing JSON/JSONL anywhere outside denied paths
+    for p in list(ROOT.rglob("*.jsonl")) + list(ROOT.rglob("*.json")):
         rel = str(p.relative_to(ROOT))
-        if denied(rel) or rel.startswith((".venv/", ".git/")) or "/tests/" in "/" + rel:
+        if denied(rel) or rel.startswith((".venv/", ".git/", "sealed/", "schema/")) or "/tests/" in "/" + rel:
             continue
         if any(has_outcome_structure(o) for o in iter_json_objs(p)) and not any(e.startswith(rel + ":") for e in errs):
             errs.append(f"{rel}: outcome rows outside the denied paths")
@@ -150,7 +200,7 @@ def validate_reply(reply, schema):
     fields = set(schema["fields"])
 
     def leaf(path, v):
-        if isinstance(v, bool) or not isinstance(v, int):
+        if isinstance(v, bool) or not isinstance(v, int) or abs(v) > 10**7:
             errs.append(f"{path}: value must be an integer")
 
     def flat(path, obj):
@@ -190,8 +240,12 @@ def cmd_reply(a):
         return 1
     errs = validate_reply(reply, schema)
     print(f"reply check: {len(errs)} problems")
-    for e in errs[:50]:
-        print("  " + e)
+    kinds = {}
+    for e in errs:   # print problem kinds only: a rejected key name could itself carry text
+        k = e.split(": ", 1)[-1]
+        kinds[k] = kinds.get(k, 0) + 1
+    for k, n in sorted(kinds.items()):
+        print(f"  {n} x {k}")
     return 1 if errs else 0
 
 
@@ -202,7 +256,7 @@ def cmd_split(a):
     rel = str(src.relative_to(ROOT))
     if not denied(rel):
         sys.exit(f"{rel}: full rows must be written under a denied path (data/restricted/...)")
-    setup_fields = list(load_schema()["setup_fields"]) + ["setup_flags"]
+    setup_fields = list(load_schema()["setup_fields"])
     rows = [r for r in iter_json_objs(src)]
     sp = ROOT / "data" / "setups" / a.pass_ / f"{a.paper}.jsonl"
     op = ROOT / "data" / "restricted" / "outcomes" / a.pass_ / f"{a.paper}.jsonl"
@@ -211,8 +265,14 @@ def cmd_split(a):
     with open(sp, "w") as fs, open(op, "w") as fo:
         for r in rows:
             # script-derived features (leading underscore) are functions of setup fields only (derive_features.py)
-            fs.write(json.dumps({k: v for k, v in r.items() if k in setup_fields or k.startswith("_")}, sort_keys=True) + "\n")
-            fo.write(json.dumps({k: v for k, v in r.items() if k not in setup_fields or k == "item_id"}, sort_keys=True) + "\n")
+            su = {k: v for k, v in r.items() if k in setup_fields or k in DERIVED}
+            for k, sub in NESTED.items():
+                if isinstance(su.get(k), dict):
+                    su[k] = {kk: vv for kk, vv in su[k].items() if kk in sub}
+            if isinstance(r.get("setup_flags"), dict):
+                su["setup_flags"] = {kk: vv for kk, vv in r["setup_flags"].items() if kk in NESTED["setup_flags"]}
+            fs.write(json.dumps(su, sort_keys=True) + "\n")
+            fo.write(json.dumps(r, sort_keys=True) + "\n")   # the full row stays on the restricted side
     print(f"split {len(rows)} rows")
     return 0
 

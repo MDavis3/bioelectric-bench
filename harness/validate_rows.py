@@ -68,8 +68,18 @@ def main():
         sf = r.get("setup_flags") or {}
         if sf.get("remainder") not in (None, "stated", "unstated", "not_applicable"):
             e(f"bad setup_flags.remainder {sf.get('remainder')}")
+        if sf.get("remainder") == "stated" and not (r.get("remainder_quote") or "").strip():
+            e("a stated remainder needs remainder_quote")
         if r.get("outcomes_partial") and sf.get("remainder") != "unstated":
             e("partial outcomes need setup_flags.remainder = unstated")
+        under = [k for k in r if k.startswith("_")]
+        if under:
+            e(f"extractors must not write derived (underscore) keys: {len(under)} found")
+        if (r.get("outcome_from_percent") and r.get("n_total") is None and not r.get("outcomes_partial")
+                and outs and abs(tot - 100) > 2):
+            e(f"percent row sums to {tot} (not 100 within rounding) but is not flagged outcomes_partial")
+        if not isinstance(get(r, "source.year"), int):
+            e("source.year must be an integer")
         n = r.get("n_total")
         if n is not None and outs and not r.get("outcomes_partial") and abs(tot + (r.get("dead_count") or 0) - n) > 0.5 and abs(tot - n) > 0.5:
             e(f"counts sum to {tot} but n_total is {n} (dead_count {r.get('dead_count')})")

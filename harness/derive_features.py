@@ -145,7 +145,7 @@ def main():
         r["_target_class"] = "control" if ctrl else None
         if not ctrl and len(hits) == 1 and hits[0]:
             name, a = hits[0]
-            iv["action"] = iv.get("action") or a.get("action")
+            iv["action"] = a.get("action") or iv.get("action")  # the sealed lookup wins over the typed action (review 10)
             r["_target_class"] = a.get("target_class")
             vm = a["vmem"] if "vmem" in a else rules.get((a.get("target_class"), norm_val(iv.get("action"))))
         elif not ctrl and len(comps) > 1:

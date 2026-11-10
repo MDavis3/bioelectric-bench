@@ -59,9 +59,11 @@ def synthetic_run(world, mode, seed, params=None, strength=0.4, lineages=None, p
     rules = json.loads((ROOT / "config/rules.json").read_text())["rules"]
     base = [dict(r, outcomes=[{"category": "normal", "count": 1}]) for r in make_matrix(seed)]
     rows, _ = H.prepare_rows(base, "planaria_ap_polarity")
-    rows = C.plant(rows, world, seed, strength)
     if lineages:
         rows = C.relineage(rows, seed, lineages)
+    if world == "dominant_lab":
+        rows = C.dominate(rows, seed)
+    rows = C.plant(rows, world, seed, strength)
     rep = H.analyze(rows, mode, P, features, rules, load_categories(), run_p3_perm=perm)
     rep["verdict"] = "SYNTHETIC SELF-TEST. " + rep["verdict"]
     if rep["p3"]:
