@@ -7,3 +7,7 @@ __pycache__/
 state.tmp
 inbox/*
 !inbox/.gitkeep
+
+# Database dumps (licensed; outcome-bearing; fetched by scripts, hashes in data/raw_db_manifest.json)
+data/raw_db/
+data/db_restricted/
