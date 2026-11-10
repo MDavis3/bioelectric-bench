@@ -265,6 +265,12 @@
     "source": "harness/planner_firewall_v4.py",
     "utc": "2026-11-10T16:52:42Z"
   },
+  "q018_power": {
+    "copy": "sealed/q018_power__67fc9680d190.json",
+    "sha256": "67fc9680d190ad4f0a832229297ad3fc94328de287896ff586915cba59c85dca",
+    "source": "reports/q018_power.json",
+    "utc": "2026-11-10T17:11:26Z"
+  },
   "q018_prereg": {
     "copy": "sealed/q018_prereg__1f4664013c3e.md",
     "remote_commit": "dd11dd2adbe94c0a472699d1aa69c27bc739ca67",
