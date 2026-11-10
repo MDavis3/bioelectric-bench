@@ -1,4 +1,5 @@
 {
+ "status": "draft until A/A: SESOI, n clumps/sessions and the live:non-beating ratio are set from 2 A/A sessions (REVIEW item 10, `session.py aa`), then sealed as design_v2",
  "note": "Design v1 for the nasal-cilia x weak DC field experiment (cilia/PROTOCOL.md). Structure fixed now; the smallest effect of interest and the number of sessions are fixed after the baseline phase, in design_v2.",
  "conditions": [
   "SHAM",
@@ -8,22 +9,77 @@
  "repeats_per_clump": 1,
  "clump_types": {
   "live": 6,
-  "dead": 3
+  "nonbeating": 3,
+  "heatkilled": 2
  },
  "field_V_per_cm": 1.0,
- "field_set_by": "current: I = sigma * E * A (Ringer's sigma ~1.5 S/m at 22-25 C); 75 uA for 1 V/cm in a 5 mm x 0.1 mm channel",
+ "field_set_by": "measured: E = dV/L from sense electrodes in the wells; target current I = sigma*E*A (seawater ~5 S/m: about 250 uA for 1 V/cm in a 5 x 0.1 mm channel; pond water ~0.05 S/m: about 2.5 uA)",
  "epoch_seconds": 30,
  "film_seconds": 5,
  "capture_fps": 240,
- "primary_outcome": "clump drift along the field axis, FWD minus REV, in live clumps minus the same contrast in dead (heat-killed) clumps from the same sample",
+ "primary_outcome": "SUPERSEDED by co_primary_outcomes (REVIEW SHOULD on primary outcomes); kept for the record: clump drift along the field axis, FWD minus REV, in live clumps minus the same contrast in dead (heat-killed) clumps from the same sample",
  "secondary_outcomes": [
   "rotation FWD minus REV (live minus dead)",
   "CBF FWD minus SHAM and REV minus SHAM (live)",
   "CBF FWD minus REV (live)"
  ],
- "analysis": "per clump paired changes from the preceding OFF epoch; live vs dead two-sample permutation on the primary; sign-flip tests for secondaries; two-sided alpha 0.05 primary, secondaries descriptive",
- "temperature": "logged at start and end of every clump; a clump whose temperature changes by more than 1.0 C during its epochs is excluded",
- "medium": "home Ringer's with Ca2+ (PROTOCOL section 1); sigma 1.5 S/m",
+ "analysis": "SUPERSEDED by co_primary_outcomes/alpha_co_primary (two co-primaries at alpha 0.025 each); kept for the record: per clump paired changes from the preceding OFF epoch; live vs dead two-sample permutation on the primary; sign-flip tests for secondaries; two-sided alpha 0.05 primary, secondaries descriptive",
+ "temperature": "logged at start and end of every clump; a clump whose temperature changes by more than 0.5 C is excluded (was 1.0 C)",
  "light": "battery/USB LED only",
- "hand_check": "every tenth clip counted by hand for CBF; FFT readings that differ by more than 20% are replaced by the hand count and flagged"
+ "hand_check": "every tenth clip counted by hand for CBF; FFT readings that differ by more than 20% are replaced by the hand count and flagged",
+ "clump_types_note": "non-beating = never heated, same drop as live clumps, classified by active_fraction (type_rule); heat-killed (50-55 C) is secondary. v1 had {live: 6, dead: 3}; ratio to be reset from A/A SDs.",
+ "clumps_per_chamber": 3,
+ "off_epoch_seconds": 60,
+ "epoch_structure": "per clump: OFF(60 s), C1(30 s), OFF, C2, OFF, C3, OFF; conditions randomised per clump; SHAM is a time control (switch open)",
+ "track_fps": 60,
+ "clips": {
+  "trk": {
+   "name": "<session>_<clump:02d>_<epoch:02d>_trk.mov",
+   "objective": "10x",
+   "fps": 60,
+   "film": "through the epoch until 10 s before its end",
+   "scored_by": "cbf.py track"
+  },
+  "cbf": {
+   "name": "<session>_<clump:02d>_<epoch:02d>_cbf.mov",
+   "objective": "40x",
+   "fps": 240,
+   "film": "5 s slow motion before the epoch ends",
+   "scored_by": "cbf.py analyze"
+  }
+ },
+ "field_target": {
+  "current_uA": 75,
+  "sense_spacing_cm": 2.2,
+  "well_voltage": "field_V_per_cm x sense_spacing_cm (2.2 V); E = dV/L from the sense electrodes"
+ },
+ "exclusions": {
+  "temperature_change_C": 0.5,
+  "current_tolerance": 0.05,
+  "voltage_tolerance": 0.05,
+  "lost_clump": "epochs from the lost epoch onwards",
+  "track": "clump velocity dropped if the clump was tracked for under half the clip"
+ },
+ "type_rule": {
+  "nonbeating_max_active_fraction": 0.02,
+  "live_min_active_fraction": 0.05,
+  "source": "median active_fraction over the clump's OFF-epoch CBF clips"
+ },
+ "co_primary_outcomes": [
+  "CBF field effect in live clumps: mean over FWD and REV of (CBF epoch - preceding OFF) minus the same for SHAM; sign-flip test across live clumps",
+  "tracer-corrected drift along x, (clump_vx - tracer_vx) change from preceding OFF, FWD minus REV, live minus non-beating clumps; within-session label permutation"
+ ],
+ "alpha_co_primary": 0.025,
+ "secondary_outcomes_v2": [
+  "|rotation| field (FWD,REV) vs SHAM in live clumps",
+  "heat-killed passive drift FWD-REV",
+  "tracer FWD-REV",
+  "per-session summaries; session means as the unit (one donor)"
+ ],
+ "tissue": "mussel gill (fish-market blue mussel, Mytilus) in filtered mussel liquor or artificial seawater; Paramecium (hay infusion) as the rig positive control. Human cells: out of scope for home work (clinician collection only).",
+ "medium_conductivity_S_per_m": {
+  "seawater_or_liquor": 5.0,
+  "pond_water_paramecium": 0.05
+ },
+ "sesoi_rule": "CBF: max(2 x SD of the A/A CBF contrast, 15% of CBF). Drift: 2 x SD of the non-beating clump FWD-minus-REV drift contrast from the A/A sessions (planner decision: the tracer-based SD collapses to ~0 when the fluid is still)."
 }
