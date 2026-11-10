@@ -1,0 +1,870 @@
+{
+ "probe": "faers_probe_v1",
+ "plan": "plans/faers_probe_v1.md",
+ "source": "https://api.fda.gov/drug/event.json",
+ "run_utc": "2026-11-10T18:41:15Z",
+ "primary_basis": "group-level OR queries (each report counted once per arm)",
+ "outcome_A": "seriousnesscongenitalanomali:1",
+ "outcome_B_PTs": [
+  "CLEFT LIP",
+  "CLEFT PALATE",
+  "CLEFT LIP AND PALATE",
+  "POLYDACTYLY",
+  "SYNDACTYLY",
+  "LIMB REDUCTION DEFECT",
+  "ECTRODACTYLY",
+  "NEURAL TUBE DEFECT",
+  "SPINA BIFIDA",
+  "ANENCEPHALY",
+  "CRANIOSYNOSTOSIS",
+  "SITUS INVERSUS",
+  "HETEROTAXIA",
+  "DEXTROCARDIA",
+  "HEMIVERTEBRA",
+  "SPINE MALFORMATION"
+ ],
+ "outcome_B_strict_PTs": [
+  "CLEFT LIP",
+  "CLEFT PALATE",
+  "CLEFT LIP AND PALATE",
+  "POLYDACTYLY",
+  "SYNDACTYLY",
+  "LIMB REDUCTION DEFECT",
+  "ECTRODACTYLY",
+  "NEURAL TUBE DEFECT",
+  "SPINA BIFIDA",
+  "ANENCEPHALY",
+  "CRANIOSYNOSTOSIS",
+  "SITUS INVERSUS",
+  "HETEROTAXIA",
+  "DEXTROCARDIA",
+  "HEMIVERTEBRA"
+ ],
+ "pt_notes": "Plan PT 'vertebral anomaly' has no openFDA PT; mapped to SPINE MALFORMATION (B). B_strict = plan PTs with exact matches only.",
+ "strata": [
+  {
+   "stratum": "Epilepsy",
+   "class": [
+    "CARBAMAZEPINE",
+    "OXCARBAZEPINE",
+    "PHENYTOIN",
+    "LAMOTRIGINE",
+    "LACOSAMIDE",
+    "ETHOSUXIMIDE"
+   ],
+   "comparator": [
+    "LEVETIRACETAM"
+   ],
+   "group": {
+    "class": {
+     "total": 269710,
+     "A": 7576,
+     "B": 1146,
+     "B_strict": 1132
+    },
+    "comparator": {
+     "total": 135113,
+     "A": 3678,
+     "B": 628,
+     "B_strict": 622
+    }
+   },
+   "per_drug": {
+    "CARBAMAZEPINE": {
+     "total": 67456,
+     "A": 1514,
+     "B": 349
+    },
+    "OXCARBAZEPINE": {
+     "total": 15589,
+     "A": 223,
+     "B": 31
+    },
+    "PHENYTOIN": {
+     "total": 40535,
+     "A": 422,
+     "B": 113
+    },
+    "LAMOTRIGINE": {
+     "total": 133042,
+     "A": 5713,
+     "B": 775
+    },
+    "LACOSAMIDE": {
+     "total": 37920,
+     "A": 558,
+     "B": 98
+    },
+    "ETHOSUXIMIDE": {
+     "total": 2522,
+     "A": 53,
+     "B": 16
+    },
+    "LEVETIRACETAM": {
+     "total": 135113,
+     "A": 3678,
+     "B": 628
+    }
+   },
+   "overlap_total": 41244,
+   "summed": {
+    "class": {
+     "total": 297064,
+     "A": 8483,
+     "B": 1382
+    },
+    "comparator": {
+     "total": 135113,
+     "A": 3678,
+     "B": 628
+    }
+   },
+   "ror": {
+    "group_A": {
+     "table": [
+      7576,
+      262134,
+      3678,
+      131435
+     ],
+     "ror": 1.032799254927805,
+     "lo": 0.9923592337188347,
+     "hi": 1.0748872633371902,
+     "continuity_corrected": false
+    },
+    "group_B": {
+     "table": [
+      1146,
+      268564,
+      628,
+      134485
+     ],
+     "ror": 0.9137997281507678,
+     "lo": 0.8288843792181927,
+     "hi": 1.0074142595810782,
+     "continuity_corrected": false
+    },
+    "group_B_strict": {
+     "table": [
+      1132,
+      268578,
+      622,
+      134491
+     ],
+     "ror": 0.9113366361395693,
+     "lo": 0.8262256412033644,
+     "hi": 1.005215068320254,
+     "continuity_corrected": false
+    },
+    "summed_A": {
+     "table": [
+      8483,
+      288581,
+      3678,
+      131435
+     ],
+     "ror": 1.0504636712590445,
+     "lo": 1.0100404299140486,
+     "hi": 1.0925047076867331,
+     "continuity_corrected": false
+    },
+    "summed_B": {
+     "table": [
+      1382,
+      295682,
+      628,
+      134485
+     ],
+     "ror": 1.0009153727168674,
+     "lo": 0.9106208512774512,
+     "hi": 1.1001632369119823,
+     "continuity_corrected": false
+    }
+   }
+  },
+  {
+   "stratum": "Acid suppression",
+   "class": [
+    "OMEPRAZOLE",
+    "ESOMEPRAZOLE",
+    "LANSOPRAZOLE",
+    "PANTOPRAZOLE"
+   ],
+   "comparator": [
+    "FAMOTIDINE",
+    "RANITIDINE",
+    "CIMETIDINE"
+   ],
+   "group": {
+    "class": {
+     "total": 1054959,
+     "A": 4043,
+     "B": 252,
+     "B_strict": 232
+    },
+    "comparator": {
+     "total": 357441,
+     "A": 1797,
+     "B": 62,
+     "B_strict": 60
+    }
+   },
+   "per_drug": {
+    "OMEPRAZOLE": {
+     "total": 444305,
+     "A": 1074,
+     "B": 187
+    },
+    "ESOMEPRAZOLE": {
+     "total": 236737,
+     "A": 349,
+     "B": 18
+    },
+    "LANSOPRAZOLE": {
+     "total": 179042,
+     "A": 1285,
+     "B": 29
+    },
+    "PANTOPRAZOLE": {
+     "total": 336397,
+     "A": 2301,
+     "B": 29
+    },
+    "FAMOTIDINE": {
+     "total": 122311,
+     "A": 164,
+     "B": 33
+    },
+    "RANITIDINE": {
+     "total": 231080,
+     "A": 1610,
+     "B": 27
+    },
+    "CIMETIDINE": {
+     "total": 9744,
+     "A": 31,
+     "B": 3
+    }
+   },
+   "overlap_total": 55036,
+   "summed": {
+    "class": {
+     "total": 1196481,
+     "A": 5009,
+     "B": 263
+    },
+    "comparator": {
+     "total": 363135,
+     "A": 1805,
+     "B": 63
+    }
+   },
+   "ror": {
+    "group_A": {
+     "table": [
+      4043,
+      1050916,
+      1797,
+      355644
+     ],
+     "ror": 0.7613829483398888,
+     "lo": 0.7201337834995724,
+     "hi": 0.8049948597128773,
+     "continuity_corrected": false
+    },
+    "group_B": {
+     "table": [
+      252,
+      1054707,
+      62,
+      357379
+     ],
+     "ror": 1.3772286613034894,
+     "lo": 1.0430907363050526,
+     "hi": 1.818402483598602,
+     "continuity_corrected": false
+    },
+    "group_B_strict": {
+     "table": [
+      232,
+      1054727,
+      60,
+      357381
+     ],
+     "ror": 1.3101714472086141,
+     "lo": 0.9863511799599509,
+     "hi": 1.7403022939055153,
+     "continuity_corrected": false
+    },
+    "summed_A": {
+     "table": [
+      5009,
+      1191472,
+      1805,
+      361330
+     ],
+     "ror": 0.8415772866279574,
+     "lo": 0.7973882710994514,
+     "hi": 0.8882151331264577,
+     "continuity_corrected": false
+    },
+    "summed_B": {
+     "table": [
+      263,
+      1196218,
+      63,
+      363072
+     ],
+     "ror": 1.2670612913444905,
+     "lo": 0.9624709621032457,
+     "hi": 1.668044418207964,
+     "continuity_corrected": false
+    }
+   }
+  },
+  {
+   "stratum": "Nausea",
+   "class": [
+    "ONDANSETRON",
+    "GRANISETRON"
+   ],
+   "comparator": [
+    "METOCLOPRAMIDE",
+    "PROMETHAZINE",
+    "DOXYLAMINE"
+   ],
+   "group": {
+    "class": {
+     "total": 136283,
+     "A": 961,
+     "B": 184,
+     "B_strict": 182
+    },
+    "comparator": {
+     "total": 105484,
+     "A": 740,
+     "B": 113,
+     "B_strict": 110
+    }
+   },
+   "per_drug": {
+    "ONDANSETRON": {
+     "total": 125113,
+     "A": 926,
+     "B": 183
+    },
+    "GRANISETRON": {
+     "total": 12211,
+     "A": 36,
+     "B": 1
+    },
+    "METOCLOPRAMIDE": {
+     "total": 77711,
+     "A": 464,
+     "B": 55
+    },
+    "PROMETHAZINE": {
+     "total": 22883,
+     "A": 228,
+     "B": 40
+    },
+    "DOXYLAMINE": {
+     "total": 6323,
+     "A": 93,
+     "B": 21
+    }
+   },
+   "overlap_total": 14593,
+   "summed": {
+    "class": {
+     "total": 137324,
+     "A": 962,
+     "B": 184
+    },
+    "comparator": {
+     "total": 106917,
+     "A": 785,
+     "B": 116
+    }
+   },
+   "ror": {
+    "group_A": {
+     "table": [
+      961,
+      135322,
+      740,
+      104744
+     ],
+     "ror": 1.0051998496479069,
+     "lo": 0.9130077471987046,
+     "hi": 1.1067011652774814,
+     "continuity_corrected": false
+    },
+    "group_B": {
+     "table": [
+      184,
+      136099,
+      113,
+      105371
+     ],
+     "ror": 1.2606819853351157,
+     "lo": 0.9972650153592517,
+     "hi": 1.5936777523233956,
+     "continuity_corrected": false
+    },
+    "group_B_strict": {
+     "table": [
+      182,
+      136101,
+      110,
+      105374
+     ],
+     "ror": 1.281005082455476,
+     "lo": 1.0108575444701633,
+     "hi": 1.6233484433623833,
+     "continuity_corrected": false
+    },
+    "summed_A": {
+     "table": [
+      962,
+      136362,
+      785,
+      106132
+     ],
+     "ror": 0.9538023789618809,
+     "lo": 0.8676984723221496,
+     "hi": 1.0484505933019386,
+     "continuity_corrected": false
+    },
+    "summed_B": {
+     "table": [
+      184,
+      137140,
+      116,
+      106801
+     ],
+     "ror": 1.23529592211332,
+     "lo": 0.9790266641249938,
+     "hi": 1.5586460217134355,
+     "continuity_corrected": false
+    }
+   }
+  },
+  {
+   "stratum": "Type 2 diabetes",
+   "class": [
+    "GLYBURIDE",
+    "GLIPIZIDE",
+    "GLIMEPIRIDE"
+   ],
+   "comparator": [
+    "METFORMIN"
+   ],
+   "group": {
+    "class": {
+     "total": 123130,
+     "A": 86,
+     "B": 11,
+     "B_strict": 9
+    },
+    "comparator": {
+     "total": 445559,
+     "A": 2149,
+     "B": 198,
+     "B_strict": 185
+    }
+   },
+   "per_drug": {
+    "GLYBURIDE": {
+     "total": 24338,
+     "A": 53,
+     "B": 8
+    },
+    "GLIPIZIDE": {
+     "total": 61090,
+     "A": 24,
+     "B": 2
+    },
+    "GLIMEPIRIDE": {
+     "total": 39153,
+     "A": 11,
+     "B": 1
+    },
+    "METFORMIN": {
+     "total": 445559,
+     "A": 2149,
+     "B": 198
+    }
+   },
+   "overlap_total": 56927,
+   "summed": {
+    "class": {
+     "total": 124581,
+     "A": 88,
+     "B": 11
+    },
+    "comparator": {
+     "total": 445559,
+     "A": 2149,
+     "B": 198
+    }
+   },
+   "ror": {
+    "group_A": {
+     "table": [
+      86,
+      123044,
+      2149,
+      443410
+     ],
+     "ror": 0.1442138854972928,
+     "lo": 0.11624095630571789,
+     "hi": 0.17891839013718816,
+     "continuity_corrected": false
+    },
+    "group_B": {
+     "table": [
+      11,
+      123119,
+      198,
+      445361
+     ],
+     "ror": 0.20096230295712098,
+     "lo": 0.1095004397372272,
+     "hi": 0.36881904133668586,
+     "continuity_corrected": false
+    },
+    "group_B_strict": {
+     "table": [
+      9,
+      123121,
+      185,
+      445374
+     ],
+     "ror": 0.17598007848574365,
+     "lo": 0.09013463757489183,
+     "hi": 0.3435858717256916,
+     "continuity_corrected": false
+    },
+    "summed_A": {
+     "table": [
+      88,
+      124493,
+      2149,
+      443410
+     ],
+     "ror": 0.14585012557793414,
+     "lo": 0.11783851761545809,
+     "hi": 0.18052042372526125,
+     "continuity_corrected": false
+    },
+    "summed_B": {
+     "table": [
+      11,
+      124570,
+      198,
+      445361
+     ],
+     "ror": 0.19862148011381375,
+     "lo": 0.10822500341066843,
+     "hi": 0.3645229024655611,
+     "continuity_corrected": false
+    }
+   }
+  },
+  {
+   "stratum": "Hypertension",
+   "class": [
+    "NIFEDIPINE",
+    "AMLODIPINE",
+    "VERAPAMIL",
+    "DILTIAZEM"
+   ],
+   "comparator": [
+    "LABETALOL",
+    "METHYLDOPA",
+    "HYDRALAZINE"
+   ],
+   "group": {
+    "class": {
+     "total": 505222,
+     "A": 1244,
+     "B": 113,
+     "B_strict": 109
+    },
+    "comparator": {
+     "total": 20983,
+     "A": 965,
+     "B": 146,
+     "B_strict": 145
+    }
+   },
+   "per_drug": {
+    "NIFEDIPINE": {
+     "total": 41745,
+     "A": 331,
+     "B": 66
+    },
+    "AMLODIPINE": {
+     "total": 434733,
+     "A": 711,
+     "B": 46
+    },
+    "VERAPAMIL": {
+     "total": 4369,
+     "A": 4,
+     "B": 0
+    },
+    "DILTIAZEM": {
+     "total": 29669,
+     "A": 218,
+     "B": 1
+    },
+    "LABETALOL": {
+     "total": 13483,
+     "A": 307,
+     "B": 104
+    },
+    "METHYLDOPA": {
+     "total": 4935,
+     "A": 675,
+     "B": 43
+    },
+    "HYDRALAZINE": {
+     "total": 3102,
+     "A": 8,
+     "B": 0
+    }
+   },
+   "overlap_total": 7291,
+   "summed": {
+    "class": {
+     "total": 510516,
+     "A": 1264,
+     "B": 113
+    },
+    "comparator": {
+     "total": 21520,
+     "A": 990,
+     "B": 147
+    }
+   },
+   "ror": {
+    "group_A": {
+     "table": [
+      1244,
+      503978,
+      965,
+      20018
+     ],
+     "ror": 0.051203797714913825,
+     "lo": 0.04701928429247298,
+     "hi": 0.055760714776543874,
+     "continuity_corrected": false
+    },
+    "group_B": {
+     "table": [
+      113,
+      505109,
+      146,
+      20837
+     ],
+     "ror": 0.031928290969449505,
+     "lo": 0.024966213755065875,
+     "hi": 0.04083181271421189,
+     "continuity_corrected": false
+    },
+    "group_B_strict": {
+     "table": [
+      109,
+      505113,
+      145,
+      20838
+     ],
+     "ror": 0.03101172922931482,
+     "lo": 0.02417958124355262,
+     "hi": 0.03977435920437123,
+     "continuity_corrected": false
+    },
+    "summed_A": {
+     "table": [
+      1264,
+      509252,
+      990,
+      20530
+     ],
+     "ror": 0.05147164940744544,
+     "lo": 0.04730825446231145,
+     "hi": 0.05600144674189134,
+     "continuity_corrected": false
+    },
+    "summed_B": {
+     "table": [
+      113,
+      510403,
+      147,
+      21373
+     ],
+     "ror": 0.03218943664910592,
+     "lo": 0.02517982364863212,
+     "hi": 0.04115040066387011,
+     "continuity_corrected": false
+    }
+   }
+  },
+  {
+   "stratum": "Neuropathic pain",
+   "class": [
+    "GABAPENTIN",
+    "PREGABALIN"
+   ],
+   "comparator": [
+    "DULOXETINE"
+   ],
+   "group": {
+    "class": {
+     "total": 626589,
+     "A": 2051,
+     "B": 194,
+     "B_strict": 188
+    },
+    "comparator": {
+     "total": 71556,
+     "A": 384,
+     "B": 69,
+     "B_strict": 69
+    }
+   },
+   "per_drug": {
+    "GABAPENTIN": {
+     "total": 370444,
+     "A": 827,
+     "B": 126
+    },
+    "PREGABALIN": {
+     "total": 274154,
+     "A": 1273,
+     "B": 72
+    },
+    "DULOXETINE": {
+     "total": 71556,
+     "A": 384,
+     "B": 69
+    }
+   },
+   "overlap_total": 24827,
+   "summed": {
+    "class": {
+     "total": 644598,
+     "A": 2100,
+     "B": 198
+    },
+    "comparator": {
+     "total": 71556,
+     "A": 384,
+     "B": 69
+    }
+   },
+   "ror": {
+    "group_A": {
+     "table": [
+      2051,
+      624538,
+      384,
+      71172
+     ],
+     "ror": 0.608673981807352,
+     "lo": 0.5456756188120504,
+     "hi": 0.6789455188336428,
+     "continuity_corrected": false
+    },
+    "group_B": {
+     "table": [
+      194,
+      626395,
+      69,
+      71487
+     ],
+     "ror": 0.32087170999546405,
+     "lo": 0.24376408551101877,
+     "hi": 0.4223700717009815,
+     "continuity_corrected": false
+    },
+    "group_B_strict": {
+     "table": [
+      188,
+      626401,
+      69,
+      71487
+     ],
+     "ror": 0.3109448642531597,
+     "lo": 0.23595185790806686,
+     "hi": 0.4097730336291213,
+     "continuity_corrected": false
+    },
+    "summed_A": {
+     "table": [
+      2100,
+      642498,
+      384,
+      71172
+     ],
+     "ror": 0.6057946872986375,
+     "lo": 0.5432034941332421,
+     "hi": 0.6755980164391872,
+     "continuity_corrected": false
+    },
+    "summed_B": {
+     "table": [
+      198,
+      644400,
+      69,
+      71487
+     ],
+     "ror": 0.31833738158853536,
+     "lo": 0.2420151498908255,
+     "hi": 0.41872869761400994,
+     "continuity_corrected": false
+    }
+   }
+  }
+ ],
+ "pooled_MH": {
+  "group_A": {
+   "ror": 0.7190340863316635,
+   "lo": 0.6998024078036501,
+   "hi": 0.7387942818451582,
+   "se_log": 0.013832012213680326,
+   "reading_if_outcome_B": null
+  },
+  "group_B": {
+   "ror": 0.7228177907381438,
+   "lo": 0.6707956103844341,
+   "hi": 0.7788744447927217,
+   "se_log": 0.03810851325398791,
+   "reading_if_outcome_B": "outside pre-stated categories (interval excludes 1 but ROR <= 1.5, or ROR < 1 with interval below 1)"
+  },
+  "group_B_strict": {
+   "ror": 0.7162232938097078,
+   "lo": 0.6642420790540341,
+   "hi": 0.7722723729369425,
+   "se_log": 0.038441490449600844,
+   "reading_if_outcome_B": "outside pre-stated categories (interval excludes 1 but ROR <= 1.5, or ROR < 1 with interval below 1)"
+  },
+  "summed_A": {
+   "ror": 0.7431093833172836,
+   "lo": 0.723677909505723,
+   "hi": 0.7630626115855297,
+   "se_log": 0.013518793529926434,
+   "reading_if_outcome_B": null
+  },
+  "summed_B": {
+   "ror": 0.76585862575308,
+   "lo": 0.7120261549097976,
+   "hi": 0.8237610803983758,
+   "se_log": 0.03718517646213262,
+   "reading_if_outcome_B": "outside pre-stated categories (interval excludes 1 but ROR <= 1.5, or ROR < 1 with interval below 1)"
+  }
+ },
+ "prestated_reading_primary_B": "outside pre-stated categories (interval excludes 1 but ROR <= 1.5, or ROR < 1 with interval below 1)"
+}

@@ -1,0 +1,1226 @@
+[
+ {
+  "key": "group__Epilepsy__class__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"CARBAMAZEPINE\"+\"OXCARBAZEPINE\"+\"PHENYTOIN\"+\"LAMOTRIGINE\"+\"LACOSAMIDE\"+\"ETHOSUXIMIDE\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Epilepsy__class__total.json",
+  "utc": "2026-11-10T18:38:51Z",
+  "bytes": 19054,
+  "sha256": "2ad7a9fe73c6f1218a6f051206616ce455b1b47c4f4bdacf10d04803ac259790"
+ },
+ {
+  "key": "group__Epilepsy__class__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"CARBAMAZEPINE\"+\"OXCARBAZEPINE\"+\"PHENYTOIN\"+\"LAMOTRIGINE\"+\"LACOSAMIDE\"+\"ETHOSUXIMIDE\")+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/group__Epilepsy__class__A.json",
+  "utc": "2026-11-10T18:38:52Z",
+  "bytes": 50356,
+  "sha256": "bae42525bf2b4fa73d4ce715b5a2a7172256ec4eecbd2e8050d566df6d864ada"
+ },
+ {
+  "key": "group__Epilepsy__class__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"CARBAMAZEPINE\"+\"OXCARBAZEPINE\"+\"PHENYTOIN\"+\"LAMOTRIGINE\"+\"LACOSAMIDE\"+\"ETHOSUXIMIDE\")+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Epilepsy__class__B.json",
+  "utc": "2026-11-10T18:38:53Z",
+  "bytes": 53297,
+  "sha256": "a485ecf0ff08b936b93c57ee94950cc62c6595b886b154f8d6ad37705459fd02"
+ },
+ {
+  "key": "group__Epilepsy__class__B_strict",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"CARBAMAZEPINE\"+\"OXCARBAZEPINE\"+\"PHENYTOIN\"+\"LAMOTRIGINE\"+\"LACOSAMIDE\"+\"ETHOSUXIMIDE\")+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Epilepsy__class__B_strict.json",
+  "utc": "2026-11-10T18:38:54Z",
+  "bytes": 53297,
+  "sha256": "a02769efb6afd2a2137a6268f2fdbca651643c642695406ca23198535062a2bf"
+ },
+ {
+  "key": "drug__CARBAMAZEPINE__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"CARBAMAZEPINE\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__CARBAMAZEPINE__total.json",
+  "utc": "2026-11-10T18:38:54Z",
+  "bytes": 19053,
+  "sha256": "10c018a24b8235ea4ba8123977309a446aadb44af130d45ca7c5300505f20a69"
+ },
+ {
+  "key": "drug__CARBAMAZEPINE__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"CARBAMAZEPINE\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__CARBAMAZEPINE__A.json",
+  "utc": "2026-11-10T18:38:55Z",
+  "bytes": 50356,
+  "sha256": "29790a560679d95a5341bcdd46d3aefada11329c11c42fd673fd9cd507103533"
+ },
+ {
+  "key": "drug__CARBAMAZEPINE__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"CARBAMAZEPINE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__CARBAMAZEPINE__B.json",
+  "utc": "2026-11-10T18:38:56Z",
+  "bytes": 53296,
+  "sha256": "520baf1abf1d8594ddcc25a5e89f897c0381d554a4415d3f0642e89bf13409d2"
+ },
+ {
+  "key": "drug__OXCARBAZEPINE__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"OXCARBAZEPINE\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__OXCARBAZEPINE__total.json",
+  "utc": "2026-11-10T18:38:57Z",
+  "bytes": 14245,
+  "sha256": "44e8396b6b1fb85a75cd12367b38a4e13ed695aff3d90bd288147d55ab41c8a1"
+ },
+ {
+  "key": "drug__OXCARBAZEPINE__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"OXCARBAZEPINE\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__OXCARBAZEPINE__A.json",
+  "utc": "2026-11-10T18:38:58Z",
+  "bytes": 334520,
+  "sha256": "09821d20ed03593aa5d237187edee801a14a8dd181bc6d857462b51795bbc45a"
+ },
+ {
+  "key": "drug__OXCARBAZEPINE__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"OXCARBAZEPINE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__OXCARBAZEPINE__B.json",
+  "utc": "2026-11-10T18:38:59Z",
+  "bytes": 248489,
+  "sha256": "1d1c7af6006b42d25349c465d5cfb677d58488ee52352f94ff2773bed59ddcdd"
+ },
+ {
+  "key": "drug__PHENYTOIN__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"PHENYTOIN\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__PHENYTOIN__total.json",
+  "utc": "2026-11-10T18:39:00Z",
+  "bytes": 21830,
+  "sha256": "78b7a196425e596e930509bbe60fd7ad6db4f091be78b0d4172b49581936978d"
+ },
+ {
+  "key": "drug__PHENYTOIN__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"PHENYTOIN\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__PHENYTOIN__A.json",
+  "utc": "2026-11-10T18:39:01Z",
+  "bytes": 25954,
+  "sha256": "d0cc4e591f021d7001e3f7439188a1187cd904ee0f7437cda818dd553c7f8fa7"
+ },
+ {
+  "key": "drug__PHENYTOIN__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"PHENYTOIN\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__PHENYTOIN__B.json",
+  "utc": "2026-11-10T18:39:02Z",
+  "bytes": 44773,
+  "sha256": "2deab3657ff93c121e08400c58a9f2a99fdbba1191fa1f89e1289678d9b7011a"
+ },
+ {
+  "key": "drug__LAMOTRIGINE__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"LAMOTRIGINE\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__LAMOTRIGINE__total.json",
+  "utc": "2026-11-10T18:39:03Z",
+  "bytes": 23587,
+  "sha256": "90ea8bc4599338c20f8c0b2eb2e5efc561934a76d9442ffb4cfe74e9d29b05b8"
+ },
+ {
+  "key": "drug__LAMOTRIGINE__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"LAMOTRIGINE\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__LAMOTRIGINE__A.json",
+  "utc": "2026-11-10T18:39:04Z",
+  "bytes": 50356,
+  "sha256": "e49c6894e2b346cb76fe807c2f4fd65372818a5b8690c0f9242209cce2c016c0"
+ },
+ {
+  "key": "drug__LAMOTRIGINE__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"LAMOTRIGINE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__LAMOTRIGINE__B.json",
+  "utc": "2026-11-10T18:39:05Z",
+  "bytes": 58212,
+  "sha256": "dad17b949c1e369325414adaac66e901d90c7f94a42ae56ef923c087001ff37a"
+ },
+ {
+  "key": "drug__LACOSAMIDE__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"LACOSAMIDE\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__LACOSAMIDE__total.json",
+  "utc": "2026-11-10T18:39:06Z",
+  "bytes": 51671,
+  "sha256": "68da1c4646ef9b8a81702e259acbfe20dc335c1210ae49a76a82ecd352f46fb5"
+ },
+ {
+  "key": "drug__LACOSAMIDE__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"LACOSAMIDE\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__LACOSAMIDE__A.json",
+  "utc": "2026-11-10T18:39:07Z",
+  "bytes": 99549,
+  "sha256": "4aac8c947b57ef823545ea08b4b976925eec3ea15e96867ab5baae9c924a43a5"
+ },
+ {
+  "key": "drug__LACOSAMIDE__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"LACOSAMIDE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__LACOSAMIDE__B.json",
+  "utc": "2026-11-10T18:39:08Z",
+  "bytes": 8696,
+  "sha256": "2bfd8e364dd9ea5eaadfee4fc3b902f5bf9214116f51d295980c95aeb9c51fab"
+ },
+ {
+  "key": "drug__ETHOSUXIMIDE__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"ETHOSUXIMIDE\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__ETHOSUXIMIDE__total.json",
+  "utc": "2026-11-10T18:39:09Z",
+  "bytes": 41316,
+  "sha256": "6096f42bc1d8898d9fb4c56c84f0d25ced086adfc7f2395c04acb3d3fe5e8a9f"
+ },
+ {
+  "key": "drug__ETHOSUXIMIDE__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"ETHOSUXIMIDE\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__ETHOSUXIMIDE__A.json",
+  "utc": "2026-11-10T18:39:09Z",
+  "bytes": 41314,
+  "sha256": "087dd0770fbcef3aed83f39eb3ddfe3e4eaf3168dff13ecbd570bc8cfc656b41"
+ },
+ {
+  "key": "drug__ETHOSUXIMIDE__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"ETHOSUXIMIDE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__ETHOSUXIMIDE__B.json",
+  "utc": "2026-11-10T18:39:10Z",
+  "bytes": 248489,
+  "sha256": "d9027fd606492419bb876a5f2027c277b039f498a8abe5ce232d328f02a26a56"
+ },
+ {
+  "key": "group__Epilepsy__comparator__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"LEVETIRACETAM\"&limit=1",
+  "local_path": "data/raw_db/faers/group__Epilepsy__comparator__total.json",
+  "utc": "2026-11-10T18:39:11Z",
+  "bytes": 19159,
+  "sha256": "c14989623bc6e82abbf7794e4ea26623249f1af2ae7492ca7d59ccc7e2490dca"
+ },
+ {
+  "key": "group__Epilepsy__comparator__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"LEVETIRACETAM\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/group__Epilepsy__comparator__A.json",
+  "utc": "2026-11-10T18:39:12Z",
+  "bytes": 37332,
+  "sha256": "9d7b9a3520b91b9b0191e76ecd4d5d8bc51580865dc6510926663d6efc46f4e0"
+ },
+ {
+  "key": "group__Epilepsy__comparator__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"LEVETIRACETAM\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Epilepsy__comparator__B.json",
+  "utc": "2026-11-10T18:39:13Z",
+  "bytes": 12729,
+  "sha256": "ba1882b8d956fa11aa7525dbbb1330ceb33c04ca7820364d0fa59fa0863716ee"
+ },
+ {
+  "key": "group__Epilepsy__comparator__B_strict",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"LEVETIRACETAM\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Epilepsy__comparator__B_strict.json",
+  "utc": "2026-11-10T18:39:14Z",
+  "bytes": 12729,
+  "sha256": "e87801ad6f41ab0d0286c5cc47bb3e4f1bd5b8d1d7bbf97370f20b898f489250"
+ },
+ {
+  "key": "drug__LEVETIRACETAM__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"LEVETIRACETAM\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__LEVETIRACETAM__total.json",
+  "utc": "2026-11-10T18:39:15Z",
+  "bytes": 19159,
+  "sha256": "c14989623bc6e82abbf7794e4ea26623249f1af2ae7492ca7d59ccc7e2490dca"
+ },
+ {
+  "key": "drug__LEVETIRACETAM__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"LEVETIRACETAM\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__LEVETIRACETAM__A.json",
+  "utc": "2026-11-10T18:39:15Z",
+  "bytes": 37332,
+  "sha256": "9d7b9a3520b91b9b0191e76ecd4d5d8bc51580865dc6510926663d6efc46f4e0"
+ },
+ {
+  "key": "drug__LEVETIRACETAM__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"LEVETIRACETAM\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__LEVETIRACETAM__B.json",
+  "utc": "2026-11-10T18:39:16Z",
+  "bytes": 12729,
+  "sha256": "ba1882b8d956fa11aa7525dbbb1330ceb33c04ca7820364d0fa59fa0863716ee"
+ },
+ {
+  "key": "overlap__Epilepsy__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"CARBAMAZEPINE\"+\"OXCARBAZEPINE\"+\"PHENYTOIN\"+\"LAMOTRIGINE\"+\"LACOSAMIDE\"+\"ETHOSUXIMIDE\")+AND+patient.drug.openfda.generic_name:\"LEVETIRACETAM\"&limit=1",
+  "local_path": "data/raw_db/faers/overlap__Epilepsy__total.json",
+  "utc": "2026-11-10T18:39:17Z",
+  "bytes": 176905,
+  "sha256": "ecb0d7baae27cf2c513b0dc71c22f1bbff10c79a7bf3373607f4950a527cdb65"
+ },
+ {
+  "key": "group__Acid suppression__class__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"OMEPRAZOLE\"+\"ESOMEPRAZOLE\"+\"LANSOPRAZOLE\"+\"PANTOPRAZOLE\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Acid_suppression__class__total.json",
+  "utc": "2026-11-10T18:39:18Z",
+  "bytes": 101532,
+  "sha256": "b6642f1e1b7cc8b8316bb3b0bf4f20d4f2bc4776725f4fce257334f624b6feee"
+ },
+ {
+  "key": "group__Acid suppression__class__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"OMEPRAZOLE\"+\"ESOMEPRAZOLE\"+\"LANSOPRAZOLE\"+\"PANTOPRAZOLE\")+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/group__Acid_suppression__class__A.json",
+  "utc": "2026-11-10T18:39:20Z",
+  "bytes": 19188,
+  "sha256": "39636190fce05d2fbe1012d367eac7fb0bacee5d55b316d9057a0314cf0155f7"
+ },
+ {
+  "key": "group__Acid suppression__class__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"OMEPRAZOLE\"+\"ESOMEPRAZOLE\"+\"LANSOPRAZOLE\"+\"PANTOPRAZOLE\")+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Acid_suppression__class__B.json",
+  "utc": "2026-11-10T18:39:21Z",
+  "bytes": 16060,
+  "sha256": "cb62a501abbff225a375f8458ed9773a15f74b0f6d7f666744f793b63bbbe471"
+ },
+ {
+  "key": "group__Acid suppression__class__B_strict",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"OMEPRAZOLE\"+\"ESOMEPRAZOLE\"+\"LANSOPRAZOLE\"+\"PANTOPRAZOLE\")+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Acid_suppression__class__B_strict.json",
+  "utc": "2026-11-10T18:39:21Z",
+  "bytes": 16060,
+  "sha256": "74454d5eb94b5e1175244f2aaa3561c7d39f3cfe66bf50d292e520145a5285c5"
+ },
+ {
+  "key": "drug__OMEPRAZOLE__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"OMEPRAZOLE\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__OMEPRAZOLE__total.json",
+  "utc": "2026-11-10T18:39:22Z",
+  "bytes": 185949,
+  "sha256": "9d36dff259f545282c20f66c8c7484e6e94b557137d0fe622109eee25fa6a4dd"
+ },
+ {
+  "key": "drug__OMEPRAZOLE__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"OMEPRAZOLE\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__OMEPRAZOLE__A.json",
+  "utc": "2026-11-10T18:39:23Z",
+  "bytes": 76907,
+  "sha256": "cb10222405fcbf30003d0a41e83574ff26194f15317b7fd321fe7e15cc33a7f2"
+ },
+ {
+  "key": "drug__OMEPRAZOLE__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"OMEPRAZOLE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__OMEPRAZOLE__B.json",
+  "utc": "2026-11-10T18:39:24Z",
+  "bytes": 126946,
+  "sha256": "691959a3b7549ae53699eafd810ca092ba4ba1f46dfe576f1e16a4cc42a3ee9f"
+ },
+ {
+  "key": "drug__ESOMEPRAZOLE__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"ESOMEPRAZOLE\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__ESOMEPRAZOLE__total.json",
+  "utc": "2026-11-10T18:39:25Z",
+  "bytes": 101531,
+  "sha256": "0aff658f6354dd3055e99593425bd723dbb865d7bc0e06baea78cc0703dd3db5"
+ },
+ {
+  "key": "drug__ESOMEPRAZOLE__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"ESOMEPRAZOLE\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__ESOMEPRAZOLE__A.json",
+  "utc": "2026-11-10T18:39:26Z",
+  "bytes": 19187,
+  "sha256": "58108cbfcc95e6fe187bdb3a41f08d7ddf1cbbb9677008fa277978d16bc3d6e9"
+ },
+ {
+  "key": "drug__ESOMEPRAZOLE__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"ESOMEPRAZOLE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__ESOMEPRAZOLE__B.json",
+  "utc": "2026-11-10T18:39:27Z",
+  "bytes": 16059,
+  "sha256": "ab4417b0fd20cc9ae1167442b765eec86d3c8291ba9ce327e7eb2e1f8ee99218"
+ },
+ {
+  "key": "drug__LANSOPRAZOLE__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"LANSOPRAZOLE\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__LANSOPRAZOLE__total.json",
+  "utc": "2026-11-10T18:39:28Z",
+  "bytes": 22921,
+  "sha256": "a72d1beda5b7e9daa421669b3541c4c1fb40d9dd708aac2765f64e30f1565af8"
+ },
+ {
+  "key": "drug__LANSOPRAZOLE__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"LANSOPRAZOLE\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__LANSOPRAZOLE__A.json",
+  "utc": "2026-11-10T18:39:29Z",
+  "bytes": 153559,
+  "sha256": "8a2ec9cb85c75cb405859986d24c7472f329ba3e8d50b79d2272ba93620b3cb1"
+ },
+ {
+  "key": "drug__LANSOPRAZOLE__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"LANSOPRAZOLE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__LANSOPRAZOLE__B.json",
+  "utc": "2026-11-10T18:39:30Z",
+  "bytes": 30701,
+  "sha256": "22a6658c5c2c9dddf65e99a7c631c9ea0ceeb2ccc818672db5b4c2fafdc5172b"
+ },
+ {
+  "key": "drug__PANTOPRAZOLE__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"PANTOPRAZOLE\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__PANTOPRAZOLE__total.json",
+  "utc": "2026-11-10T18:39:31Z",
+  "bytes": 220742,
+  "sha256": "cec98b2f0f2523daf290e50dde75f6a42174603be1bdf317b2ee1d4bd3803ebb"
+ },
+ {
+  "key": "drug__PANTOPRAZOLE__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"PANTOPRAZOLE\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__PANTOPRAZOLE__A.json",
+  "utc": "2026-11-10T18:39:31Z",
+  "bytes": 53234,
+  "sha256": "309c61602ed5cb77a4e0b2942f2049d7b3b10391f0f1fb5858760f290e92431a"
+ },
+ {
+  "key": "drug__PANTOPRAZOLE__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"PANTOPRAZOLE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__PANTOPRAZOLE__B.json",
+  "utc": "2026-11-10T18:39:32Z",
+  "bytes": 57085,
+  "sha256": "9ebeedf681a659f10c7b5929c49cec7fd65ed57e37cbf15fce84f7041c263a4e"
+ },
+ {
+  "key": "group__Acid suppression__comparator__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"FAMOTIDINE\"+\"RANITIDINE\"+\"CIMETIDINE\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Acid_suppression__comparator__total.json",
+  "utc": "2026-11-10T18:39:33Z",
+  "bytes": 191705,
+  "sha256": "c8baebec2c6b6bcf9813cabe60d86fdfb6ccfb186250d1dcd467fa95733f136c"
+ },
+ {
+  "key": "group__Acid suppression__comparator__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"FAMOTIDINE\"+\"RANITIDINE\"+\"CIMETIDINE\")+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/group__Acid_suppression__comparator__A.json",
+  "utc": "2026-11-10T18:39:34Z",
+  "bytes": 264537,
+  "sha256": "8df60fef96d3e11a045db4993fa87b9610f2fc9206ed726296ef1ee35f13feae"
+ },
+ {
+  "key": "group__Acid suppression__comparator__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"FAMOTIDINE\"+\"RANITIDINE\"+\"CIMETIDINE\")+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Acid_suppression__comparator__B.json",
+  "utc": "2026-11-10T18:39:35Z",
+  "bytes": 10910,
+  "sha256": "10d423013738f9449d1bfc4357a9ea88ff19c25728d31518421f96ece57aebc3"
+ },
+ {
+  "key": "group__Acid suppression__comparator__B_strict",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"FAMOTIDINE\"+\"RANITIDINE\"+\"CIMETIDINE\")+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Acid_suppression__comparator__B_strict.json",
+  "utc": "2026-11-10T18:39:36Z",
+  "bytes": 10910,
+  "sha256": "dcaa33ee582038d9a118c6f25c5217d1827fcd05227abe983011fe9cd977c20b"
+ },
+ {
+  "key": "drug__FAMOTIDINE__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"FAMOTIDINE\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__FAMOTIDINE__total.json",
+  "utc": "2026-11-10T18:39:37Z",
+  "bytes": 82911,
+  "sha256": "06bee77583dfe7ff1833eda4f0cb788c269406e3641cebf9437df247ff1e24ec"
+ },
+ {
+  "key": "drug__FAMOTIDINE__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"FAMOTIDINE\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__FAMOTIDINE__A.json",
+  "utc": "2026-11-10T18:39:38Z",
+  "bytes": 10911,
+  "sha256": "7b167fb9cefd51ab8918e611ce91efb71dc6dba8636dae14d7321668287829d1"
+ },
+ {
+  "key": "drug__FAMOTIDINE__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"FAMOTIDINE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__FAMOTIDINE__B.json",
+  "utc": "2026-11-10T18:39:39Z",
+  "bytes": 10910,
+  "sha256": "b6d9302bb2d24679ec08edf9fe9476d3d4af4875ebbf3dfd919c26ae66eb1d55"
+ },
+ {
+  "key": "drug__RANITIDINE__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"RANITIDINE\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__RANITIDINE__total.json",
+  "utc": "2026-11-10T18:39:39Z",
+  "bytes": 191705,
+  "sha256": "25bb92a95f702a90476911b33772214ac8309704c42db21a392c73fb46f79b28"
+ },
+ {
+  "key": "drug__RANITIDINE__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"RANITIDINE\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__RANITIDINE__A.json",
+  "utc": "2026-11-10T18:39:40Z",
+  "bytes": 264537,
+  "sha256": "8e3113e262be1bc87087771895bd081c12526751e72c0695947d253b9955b505"
+ },
+ {
+  "key": "drug__RANITIDINE__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"RANITIDINE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__RANITIDINE__B.json",
+  "utc": "2026-11-10T18:39:42Z",
+  "bytes": 64548,
+  "sha256": "89d2f0f2bf6ed694b42c62ac06c8523d1d58fefc9354a0bd1c31dd2196937195"
+ },
+ {
+  "key": "drug__CIMETIDINE__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"CIMETIDINE\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__CIMETIDINE__total.json",
+  "utc": "2026-11-10T18:39:43Z",
+  "bytes": 184125,
+  "sha256": "6bd39f81be2ba871252456aaafc0a7458244b92de8bc4cf42750ed1cb90f1ec6"
+ },
+ {
+  "key": "drug__CIMETIDINE__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"CIMETIDINE\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__CIMETIDINE__A.json",
+  "utc": "2026-11-10T18:39:44Z",
+  "bytes": 66146,
+  "sha256": "a5f7489900d468cb3b4e10eef9ff6bfc126abb2a384887fcfccc12a7e3167cc0"
+ },
+ {
+  "key": "drug__CIMETIDINE__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"CIMETIDINE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__CIMETIDINE__B.json",
+  "utc": "2026-11-10T18:39:44Z",
+  "bytes": 66145,
+  "sha256": "e75b64c2d2e18f03bdee7338abb8d818cd4343d599a66702096f180c87d36e64"
+ },
+ {
+  "key": "overlap__Acid suppression__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"OMEPRAZOLE\"+\"ESOMEPRAZOLE\"+\"LANSOPRAZOLE\"+\"PANTOPRAZOLE\")+AND+patient.drug.openfda.generic_name:(\"FAMOTIDINE\"+\"RANITIDINE\"+\"CIMETIDINE\")&limit=1",
+  "local_path": "data/raw_db/faers/overlap__Acid_suppression__total.json",
+  "utc": "2026-11-10T18:39:46Z",
+  "bytes": 184126,
+  "sha256": "c231445f028e9ffcb2517999500f06515649fef8b986860f1a5942076fe05811"
+ },
+ {
+  "key": "group__Nausea__class__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"ONDANSETRON\"+\"GRANISETRON\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Nausea__class__total.json",
+  "utc": "2026-11-10T18:39:47Z",
+  "bytes": 24844,
+  "sha256": "d7217bdaabcb6dc42cb0ed127d660a2d61126ce3ba5cff075d8e86ffcd8b2794"
+ },
+ {
+  "key": "group__Nausea__class__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"ONDANSETRON\"+\"GRANISETRON\")+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/group__Nausea__class__A.json",
+  "utc": "2026-11-10T18:39:48Z",
+  "bytes": 161068,
+  "sha256": "7153a317ede612b445a81501e172aa5716d5a9828c7aedcb9bdfadf3f8ba30a5"
+ },
+ {
+  "key": "group__Nausea__class__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"ONDANSETRON\"+\"GRANISETRON\")+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Nausea__class__B.json",
+  "utc": "2026-11-10T18:39:49Z",
+  "bytes": 18373,
+  "sha256": "8b46e6cf662945c5eca768c4164ed31c5d2d087f07fdd706041e3b30aac8062e"
+ },
+ {
+  "key": "group__Nausea__class__B_strict",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"ONDANSETRON\"+\"GRANISETRON\")+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Nausea__class__B_strict.json",
+  "utc": "2026-11-10T18:39:50Z",
+  "bytes": 18373,
+  "sha256": "783ca7262d64e60aaa68d01fdad9b0c478cec93b1c1d52c47baf95e693e02e9a"
+ },
+ {
+  "key": "drug__ONDANSETRON__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"ONDANSETRON\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__ONDANSETRON__total.json",
+  "utc": "2026-11-10T18:39:51Z",
+  "bytes": 24844,
+  "sha256": "8596947f998cd2d6fa90ea2dedfb0ea726f25651212f39b75adb674fe0969149"
+ },
+ {
+  "key": "drug__ONDANSETRON__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"ONDANSETRON\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__ONDANSETRON__A.json",
+  "utc": "2026-11-10T18:39:52Z",
+  "bytes": 161068,
+  "sha256": "d826da464ac561f4c2a51a558620c3ac8a7539251aee55a9f5691fe9690e3adc"
+ },
+ {
+  "key": "drug__ONDANSETRON__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"ONDANSETRON\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__ONDANSETRON__B.json",
+  "utc": "2026-11-10T18:39:53Z",
+  "bytes": 18373,
+  "sha256": "405a86cea1303949c33859ba5ff37cb9fb51aa7e2b209933d5fe803a80d7d3b4"
+ },
+ {
+  "key": "drug__GRANISETRON__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"GRANISETRON\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__GRANISETRON__total.json",
+  "utc": "2026-11-10T18:39:54Z",
+  "bytes": 41851,
+  "sha256": "e01fdeb47791271f6bf34fc5a89f895a51975930f36245690178c8d9ce33b5c8"
+ },
+ {
+  "key": "drug__GRANISETRON__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"GRANISETRON\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__GRANISETRON__A.json",
+  "utc": "2026-11-10T18:39:54Z",
+  "bytes": 11919,
+  "sha256": "47feab41fdee3613967449fbf7e5f0c62f013dee36aad15988c09508df0d615a"
+ },
+ {
+  "key": "drug__GRANISETRON__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"GRANISETRON\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__GRANISETRON__B.json",
+  "utc": "2026-11-10T18:39:55Z",
+  "bytes": 7082,
+  "sha256": "996926c7ae651cc8b5f596e5ab93e74a65e09bef1dcf7fa22040f771e67f2848"
+ },
+ {
+  "key": "group__Nausea__comparator__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"METOCLOPRAMIDE\"+\"PROMETHAZINE\"+\"DOXYLAMINE\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Nausea__comparator__total.json",
+  "utc": "2026-11-10T18:39:56Z",
+  "bytes": 111922,
+  "sha256": "b3e38c0b70eb03b143dc240e21f932e7ff60aeaf5bb23de9d7013c0516c76eb4"
+ },
+ {
+  "key": "group__Nausea__comparator__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"METOCLOPRAMIDE\"+\"PROMETHAZINE\"+\"DOXYLAMINE\")+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/group__Nausea__comparator__A.json",
+  "utc": "2026-11-10T18:39:57Z",
+  "bytes": 22502,
+  "sha256": "62f8ed7242e55e42110b2c7bac8e66807b20d2070be33551e747b08678f2fcb6"
+ },
+ {
+  "key": "group__Nausea__comparator__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"METOCLOPRAMIDE\"+\"PROMETHAZINE\"+\"DOXYLAMINE\")+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Nausea__comparator__B.json",
+  "utc": "2026-11-10T18:39:58Z",
+  "bytes": 18649,
+  "sha256": "f3643c62e6e2417e64a72e04d34a1d055c605f9530d4ad328ad9c98977a54ef8"
+ },
+ {
+  "key": "group__Nausea__comparator__B_strict",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"METOCLOPRAMIDE\"+\"PROMETHAZINE\"+\"DOXYLAMINE\")+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Nausea__comparator__B_strict.json",
+  "utc": "2026-11-10T18:39:59Z",
+  "bytes": 18649,
+  "sha256": "438e2a50b7eb908335dd460750de75c9410e877587d29e44202e072d90bf59fd"
+ },
+ {
+  "key": "drug__METOCLOPRAMIDE__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"METOCLOPRAMIDE\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__METOCLOPRAMIDE__total.json",
+  "utc": "2026-11-10T18:40:00Z",
+  "bytes": 111921,
+  "sha256": "34c0b8c6cecf8442f0ebbe596254940cbf71587e84c8b3ae82ce47423822208c"
+ },
+ {
+  "key": "drug__METOCLOPRAMIDE__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"METOCLOPRAMIDE\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__METOCLOPRAMIDE__A.json",
+  "utc": "2026-11-10T18:40:01Z",
+  "bytes": 13579,
+  "sha256": "69aa40a4985eeb792cf7f864ba3456536d8531d9d9f0ed31f07cc39344d44dd4"
+ },
+ {
+  "key": "drug__METOCLOPRAMIDE__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"METOCLOPRAMIDE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__METOCLOPRAMIDE__B.json",
+  "utc": "2026-11-10T18:40:02Z",
+  "bytes": 15871,
+  "sha256": "d01ae3a41338e16b02be0f6e3f08defb5f8caa0fb590095a8e134608b996ee25"
+ },
+ {
+  "key": "drug__PROMETHAZINE__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"PROMETHAZINE\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__PROMETHAZINE__total.json",
+  "utc": "2026-11-10T18:40:03Z",
+  "bytes": 71277,
+  "sha256": "0ac829c03e4114305e9fedf7580e96bda931c9641273a8f811e4178842edabd9"
+ },
+ {
+  "key": "drug__PROMETHAZINE__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"PROMETHAZINE\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__PROMETHAZINE__A.json",
+  "utc": "2026-11-10T18:40:05Z",
+  "bytes": 22502,
+  "sha256": "6c9501966488e3990d86b0661b72b283d25aebafc8d740ad8640e9205c3634e4"
+ },
+ {
+  "key": "drug__PROMETHAZINE__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"PROMETHAZINE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__PROMETHAZINE__B.json",
+  "utc": "2026-11-10T18:40:06Z",
+  "bytes": 18648,
+  "sha256": "bf3ae66382f761b7560c32625a91c6526b58d8bd34316cee7a004f981cdd4a48"
+ },
+ {
+  "key": "drug__DOXYLAMINE__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"DOXYLAMINE\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__DOXYLAMINE__total.json",
+  "utc": "2026-11-10T18:40:07Z",
+  "bytes": 35237,
+  "sha256": "0d2014fd626594b4650304bdc6129ae07f48218acedd30b31b471a013789e7f1"
+ },
+ {
+  "key": "drug__DOXYLAMINE__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"DOXYLAMINE\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__DOXYLAMINE__A.json",
+  "utc": "2026-11-10T18:40:08Z",
+  "bytes": 39718,
+  "sha256": "5b58a76d538a157da3bb36c663718fd2761245a297d99a15257734bab123df3b"
+ },
+ {
+  "key": "drug__DOXYLAMINE__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"DOXYLAMINE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__DOXYLAMINE__B.json",
+  "utc": "2026-11-10T18:40:08Z",
+  "bytes": 5106,
+  "sha256": "0387b703055acf39b4fac6bb5a81703b28e87e440ed28e5a9a6c56505dbb4492"
+ },
+ {
+  "key": "overlap__Nausea__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"ONDANSETRON\"+\"GRANISETRON\")+AND+patient.drug.openfda.generic_name:(\"METOCLOPRAMIDE\"+\"PROMETHAZINE\"+\"DOXYLAMINE\")&limit=1",
+  "local_path": "data/raw_db/faers/overlap__Nausea__total.json",
+  "utc": "2026-11-10T18:40:10Z",
+  "bytes": 70184,
+  "sha256": "4773c893d74f320c0ba78be9594b74107d86cf135c1629c96b727704ca0ac874"
+ },
+ {
+  "key": "group__Type 2 diabetes__class__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"GLYBURIDE\"+\"GLIPIZIDE\"+\"GLIMEPIRIDE\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Type_2_diabetes__class__total.json",
+  "utc": "2026-11-10T18:40:10Z",
+  "bytes": 29371,
+  "sha256": "bf8ee76c2516281d8b9aedcc983de8ae82cb3029bca799ec23c3d57c600c7788"
+ },
+ {
+  "key": "group__Type 2 diabetes__class__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"GLYBURIDE\"+\"GLIPIZIDE\"+\"GLIMEPIRIDE\")+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/group__Type_2_diabetes__class__A.json",
+  "utc": "2026-11-10T18:40:11Z",
+  "bytes": 320137,
+  "sha256": "5f4edf8996f40e3454629a9e7d59e4a2272982c2097565626e6bcf9db6d5117f"
+ },
+ {
+  "key": "group__Type 2 diabetes__class__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"GLYBURIDE\"+\"GLIPIZIDE\"+\"GLIMEPIRIDE\")+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Type_2_diabetes__class__B.json",
+  "utc": "2026-11-10T18:40:12Z",
+  "bytes": 15871,
+  "sha256": "9726621c85e21da6ace695bc95be9147362464ccb1e4364dc6c4f8936e602ec7"
+ },
+ {
+  "key": "group__Type 2 diabetes__class__B_strict",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"GLYBURIDE\"+\"GLIPIZIDE\"+\"GLIMEPIRIDE\")+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Type_2_diabetes__class__B_strict.json",
+  "utc": "2026-11-10T18:40:13Z",
+  "bytes": 15870,
+  "sha256": "63c19090e07f9d242a886d0d3ac5f337cb63afd196db96818765382a3c37c64b"
+ },
+ {
+  "key": "drug__GLYBURIDE__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"GLYBURIDE\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__GLYBURIDE__total.json",
+  "utc": "2026-11-10T18:40:14Z",
+  "bytes": 29370,
+  "sha256": "6829378dfbdb03a2dba1c10956f7dd651342f67808992cccaf262b20f1d4e07d"
+ },
+ {
+  "key": "drug__GLYBURIDE__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"GLYBURIDE\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__GLYBURIDE__A.json",
+  "utc": "2026-11-10T18:40:15Z",
+  "bytes": 28104,
+  "sha256": "5b0665ce21aaaeb5faa3745cd043378febc3189803f83e20168a001c7c96a267"
+ },
+ {
+  "key": "drug__GLYBURIDE__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"GLYBURIDE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__GLYBURIDE__B.json",
+  "utc": "2026-11-10T18:40:16Z",
+  "bytes": 15870,
+  "sha256": "2c930803dc327b7202e06cc2b1f639d885bdd3257496149f0badbeeb8996a2d8"
+ },
+ {
+  "key": "drug__GLIPIZIDE__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"GLIPIZIDE\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__GLIPIZIDE__total.json",
+  "utc": "2026-11-10T18:40:17Z",
+  "bytes": 12843,
+  "sha256": "9f8a87b7211e142a5899f4a5a12b1a9c98d0e7017be1cc7c4918642f1ef6ad69"
+ },
+ {
+  "key": "drug__GLIPIZIDE__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"GLIPIZIDE\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__GLIPIZIDE__A.json",
+  "utc": "2026-11-10T18:40:17Z",
+  "bytes": 64738,
+  "sha256": "5e104373275fcc92141a481ea07e958b536b68158c128932786946d372dcf522"
+ },
+ {
+  "key": "drug__GLIPIZIDE__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"GLIPIZIDE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__GLIPIZIDE__B.json",
+  "utc": "2026-11-10T18:40:18Z",
+  "bytes": 101767,
+  "sha256": "bfaa03942d89ae11364f1bb0c50c80eb9cab19dd9c9c81988adcaa84e9594147"
+ },
+ {
+  "key": "drug__GLIMEPIRIDE__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"GLIMEPIRIDE\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__GLIMEPIRIDE__total.json",
+  "utc": "2026-11-10T18:40:19Z",
+  "bytes": 29455,
+  "sha256": "3dd88dad3e5dedecb3f7cfc6668a30b5e29a12251816d2760c318bb0985a1124"
+ },
+ {
+  "key": "drug__GLIMEPIRIDE__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"GLIMEPIRIDE\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__GLIMEPIRIDE__A.json",
+  "utc": "2026-11-10T18:40:20Z",
+  "bytes": 320137,
+  "sha256": "c202b674b3cdbb1610bf399b043f05de7bab28eaf108d97441ce4272b21c5446"
+ },
+ {
+  "key": "drug__GLIMEPIRIDE__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"GLIMEPIRIDE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__GLIMEPIRIDE__B.json",
+  "utc": "2026-11-10T18:40:21Z",
+  "bytes": 10116,
+  "sha256": "1aaf6d96f2f331f72a58b1fe3f982a903570a3e8f0fb48cd613819f1d8c1e5be"
+ },
+ {
+  "key": "group__Type 2 diabetes__comparator__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"METFORMIN\"&limit=1",
+  "local_path": "data/raw_db/faers/group__Type_2_diabetes__comparator__total.json",
+  "utc": "2026-11-10T18:40:22Z",
+  "bytes": 9672,
+  "sha256": "99ef125d3454d2fdb2aaac293ad996ac9f527785d840d19eff3e9dd6889930b8"
+ },
+ {
+  "key": "group__Type 2 diabetes__comparator__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"METFORMIN\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/group__Type_2_diabetes__comparator__A.json",
+  "utc": "2026-11-10T18:40:23Z",
+  "bytes": 14692,
+  "sha256": "9357b3bf8393369e9158ec1f34b50e62b225d79036756f3216b997282641e319"
+ },
+ {
+  "key": "group__Type 2 diabetes__comparator__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"METFORMIN\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Type_2_diabetes__comparator__B.json",
+  "utc": "2026-11-10T18:40:23Z",
+  "bytes": 40549,
+  "sha256": "b4eac031178a740499e0eff468f5ed5cc2eb1b23d33e3862fe6fba89c2004765"
+ },
+ {
+  "key": "group__Type 2 diabetes__comparator__B_strict",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"METFORMIN\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Type_2_diabetes__comparator__B_strict.json",
+  "utc": "2026-11-10T18:40:24Z",
+  "bytes": 40549,
+  "sha256": "366114a975b7dcc7bfbd5bde0fe1af1e461e023262c5322447fb4d83399bbf9a"
+ },
+ {
+  "key": "drug__METFORMIN__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"METFORMIN\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__METFORMIN__total.json",
+  "utc": "2026-11-10T18:40:25Z",
+  "bytes": 9672,
+  "sha256": "99ef125d3454d2fdb2aaac293ad996ac9f527785d840d19eff3e9dd6889930b8"
+ },
+ {
+  "key": "drug__METFORMIN__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"METFORMIN\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__METFORMIN__A.json",
+  "utc": "2026-11-10T18:40:26Z",
+  "bytes": 14692,
+  "sha256": "9357b3bf8393369e9158ec1f34b50e62b225d79036756f3216b997282641e319"
+ },
+ {
+  "key": "drug__METFORMIN__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"METFORMIN\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__METFORMIN__B.json",
+  "utc": "2026-11-10T18:40:27Z",
+  "bytes": 40549,
+  "sha256": "b4eac031178a740499e0eff468f5ed5cc2eb1b23d33e3862fe6fba89c2004765"
+ },
+ {
+  "key": "overlap__Type 2 diabetes__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"GLYBURIDE\"+\"GLIPIZIDE\"+\"GLIMEPIRIDE\")+AND+patient.drug.openfda.generic_name:\"METFORMIN\"&limit=1",
+  "local_path": "data/raw_db/faers/overlap__Type_2_diabetes__total.json",
+  "utc": "2026-11-10T18:40:28Z",
+  "bytes": 12843,
+  "sha256": "44b135605d2990be82918204bfc0ef7525a59115ecea3a43994c2ca32dcef04f"
+ },
+ {
+  "key": "group__Hypertension__class__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"NIFEDIPINE\"+\"AMLODIPINE\"+\"VERAPAMIL\"+\"DILTIAZEM\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Hypertension__class__total.json",
+  "utc": "2026-11-10T18:40:29Z",
+  "bytes": 83942,
+  "sha256": "78e23b86cdb3b69a3088d4cd7737faf8e36d1239bab8fef67e1805259e57d10c"
+ },
+ {
+  "key": "group__Hypertension__class__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"NIFEDIPINE\"+\"AMLODIPINE\"+\"VERAPAMIL\"+\"DILTIAZEM\")+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/group__Hypertension__class__A.json",
+  "utc": "2026-11-10T18:40:30Z",
+  "bytes": 21501,
+  "sha256": "69498aec45041173e3bb0397e4b5e15842c4973811082d09902d10d7d634b0d1"
+ },
+ {
+  "key": "group__Hypertension__class__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"NIFEDIPINE\"+\"AMLODIPINE\"+\"VERAPAMIL\"+\"DILTIAZEM\")+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Hypertension__class__B.json",
+  "utc": "2026-11-10T18:40:31Z",
+  "bytes": 18427,
+  "sha256": "0fe09f77e73e144c9f9939636fbc81a44ed4a4667d3d7146134ed6eb9643c4e6"
+ },
+ {
+  "key": "group__Hypertension__class__B_strict",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"NIFEDIPINE\"+\"AMLODIPINE\"+\"VERAPAMIL\"+\"DILTIAZEM\")+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Hypertension__class__B_strict.json",
+  "utc": "2026-11-10T18:40:32Z",
+  "bytes": 18427,
+  "sha256": "1de456d16f1a05ac354865d554e96e610a99788eb3e1b03701be23dbb31caf0e"
+ },
+ {
+  "key": "drug__NIFEDIPINE__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"NIFEDIPINE\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__NIFEDIPINE__total.json",
+  "utc": "2026-11-10T18:40:33Z",
+  "bytes": 52110,
+  "sha256": "610176d9ad1732c1071101a8299b30e274017a8e965ca2830d8a902294fd319e"
+ },
+ {
+  "key": "drug__NIFEDIPINE__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"NIFEDIPINE\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__NIFEDIPINE__A.json",
+  "utc": "2026-11-10T18:40:33Z",
+  "bytes": 21500,
+  "sha256": "737dddc8f9c028ede87e7cb800ffc861263993e4d29f1d5a762a300d99e72476"
+ },
+ {
+  "key": "drug__NIFEDIPINE__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"NIFEDIPINE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__NIFEDIPINE__B.json",
+  "utc": "2026-11-10T18:40:34Z",
+  "bytes": 18426,
+  "sha256": "b4cb8e9a6c64bbd4accb60b6d2578e21569a30ccc821252a3cb179212d70d867"
+ },
+ {
+  "key": "drug__AMLODIPINE__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"AMLODIPINE\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__AMLODIPINE__total.json",
+  "utc": "2026-11-10T18:40:35Z",
+  "bytes": 83942,
+  "sha256": "4e96abbc8489796301d5eb7cb35f7a2eb22fe3ebed12084b7c84b4a7726c9b11"
+ },
+ {
+  "key": "drug__AMLODIPINE__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"AMLODIPINE\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__AMLODIPINE__A.json",
+  "utc": "2026-11-10T18:40:38Z",
+  "bytes": 53233,
+  "sha256": "2ad10f0904a234fea62690319276d227b96a6828d67e2e9c9c9f188435cdb96c"
+ },
+ {
+  "key": "drug__AMLODIPINE__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"AMLODIPINE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__AMLODIPINE__B.json",
+  "utc": "2026-11-10T18:40:38Z",
+  "bytes": 8121,
+  "sha256": "8d62b288a84ae9ad7fed7cd19ad6078bd6a3990fe50a90a154b02d720e7af592"
+ },
+ {
+  "key": "drug__VERAPAMIL__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"VERAPAMIL\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__VERAPAMIL__total.json",
+  "utc": "2026-11-10T18:40:39Z",
+  "bytes": 141936,
+  "sha256": "4c4510111e87a28505ce0260f6c29f4376bff3ada6a8a5ac1397d8b26ead4056"
+ },
+ {
+  "key": "drug__VERAPAMIL__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"VERAPAMIL\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__VERAPAMIL__A.json",
+  "utc": "2026-11-10T18:40:40Z",
+  "bytes": 59033,
+  "sha256": "cbe59f246753031686cdd53231c3ae81266f25b0eb2e04a5b6d4cfaa877a97d1"
+ },
+ {
+  "key": "drug__VERAPAMIL__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"VERAPAMIL\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__VERAPAMIL__B.json",
+  "utc": "2026-11-10T18:40:41Z",
+  "bytes": 80,
+  "sha256": "57b1e7534d003e4246182162fd2469cdf038de39405056f44fc006715e5496da"
+ },
+ {
+  "key": "drug__DILTIAZEM__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"DILTIAZEM\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__DILTIAZEM__total.json",
+  "utc": "2026-11-10T18:40:42Z",
+  "bytes": 83105,
+  "sha256": "36fb7b8c34a0c1af15d4d586b66a0a31531d86f9bfd6123333e40af612fffb94"
+ },
+ {
+  "key": "drug__DILTIAZEM__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"DILTIAZEM\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__DILTIAZEM__A.json",
+  "utc": "2026-11-10T18:40:44Z",
+  "bytes": 69208,
+  "sha256": "d4985e56593463897605295418d20a9938037ca7893e96d3c3242604fca339dd"
+ },
+ {
+  "key": "drug__DILTIAZEM__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"DILTIAZEM\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__DILTIAZEM__B.json",
+  "utc": "2026-11-10T18:40:45Z",
+  "bytes": 3448,
+  "sha256": "0f2c6f1076edcabf78d3f245341541ba21391de9cffa8c44009db6e6790817de"
+ },
+ {
+  "key": "group__Hypertension__comparator__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"LABETALOL\"+\"METHYLDOPA\"+\"HYDRALAZINE\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Hypertension__comparator__total.json",
+  "utc": "2026-11-10T18:40:46Z",
+  "bytes": 71277,
+  "sha256": "04e9a51ac8500020a76d451e0906b82bfc1c9f1cdab4b1bcefd9bccb78ed55d3"
+ },
+ {
+  "key": "group__Hypertension__comparator__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"LABETALOL\"+\"METHYLDOPA\"+\"HYDRALAZINE\")+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/group__Hypertension__comparator__A.json",
+  "utc": "2026-11-10T18:40:47Z",
+  "bytes": 21500,
+  "sha256": "6b33b45a8a678ab177f74e75ca7789fa669d779212532beb8cf22535df8428ec"
+ },
+ {
+  "key": "group__Hypertension__comparator__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"LABETALOL\"+\"METHYLDOPA\"+\"HYDRALAZINE\")+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Hypertension__comparator__B.json",
+  "utc": "2026-11-10T18:40:48Z",
+  "bytes": 40549,
+  "sha256": "28095869f9d9f3ec9bd187521b242f67221da64abec779ba185758e224272378"
+ },
+ {
+  "key": "group__Hypertension__comparator__B_strict",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"LABETALOL\"+\"METHYLDOPA\"+\"HYDRALAZINE\")+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Hypertension__comparator__B_strict.json",
+  "utc": "2026-11-10T18:40:49Z",
+  "bytes": 40549,
+  "sha256": "1952d6588a3e09730ef1a3a6a5479aaaa806360b34820b6926e66783992e0fae"
+ },
+ {
+  "key": "drug__LABETALOL__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"LABETALOL\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__LABETALOL__total.json",
+  "utc": "2026-11-10T18:40:49Z",
+  "bytes": 71277,
+  "sha256": "2cd10e06f05c0d18ba4b4bf0ee325e73a92973bb32a53279b812e6ce5d223b9a"
+ },
+ {
+  "key": "drug__LABETALOL__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"LABETALOL\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__LABETALOL__A.json",
+  "utc": "2026-11-10T18:40:50Z",
+  "bytes": 29335,
+  "sha256": "99c8c966173f8be00bac9ca3a111e0455eef64c06d6f19ea8bf6fc5373deffb6"
+ },
+ {
+  "key": "drug__LABETALOL__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"LABETALOL\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__LABETALOL__B.json",
+  "utc": "2026-11-10T18:40:51Z",
+  "bytes": 6904,
+  "sha256": "f677193598001b9b7cc704703c1f2b3f6ce5edbf714fccb5341213ca1ed7fe68"
+ },
+ {
+  "key": "drug__METHYLDOPA__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"METHYLDOPA\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__METHYLDOPA__total.json",
+  "utc": "2026-11-10T18:40:52Z",
+  "bytes": 114066,
+  "sha256": "f14bc0259c0607f2bf6a0dc51122cd2da117d2f9f533904f26a06a3492f95b92"
+ },
+ {
+  "key": "drug__METHYLDOPA__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"METHYLDOPA\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__METHYLDOPA__A.json",
+  "utc": "2026-11-10T18:40:53Z",
+  "bytes": 21500,
+  "sha256": "734f1372c62cbb9feb4965cd02b8c27f097f49f342684b4f3aa99e35037354b6"
+ },
+ {
+  "key": "drug__METHYLDOPA__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"METHYLDOPA\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__METHYLDOPA__B.json",
+  "utc": "2026-11-10T18:40:54Z",
+  "bytes": 40548,
+  "sha256": "3540be578d3bac2f1b5e974a31392eb40720f57fb870bab2746c2df280381513"
+ },
+ {
+  "key": "drug__HYDRALAZINE__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"HYDRALAZINE\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__HYDRALAZINE__total.json",
+  "utc": "2026-11-10T18:40:55Z",
+  "bytes": 39352,
+  "sha256": "2145956a1c16225f93b3f4c05741a8ae43b3d5a2da2eeb663dfc8fe0ade0b4be"
+ },
+ {
+  "key": "drug__HYDRALAZINE__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"HYDRALAZINE\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__HYDRALAZINE__A.json",
+  "utc": "2026-11-10T18:40:56Z",
+  "bytes": 29303,
+  "sha256": "a360c74a1a6d02aa42f67b7a90a2f330380df381ec077bc3fa8f9dc9e9374dde"
+ },
+ {
+  "key": "drug__HYDRALAZINE__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"HYDRALAZINE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__HYDRALAZINE__B.json",
+  "utc": "2026-11-10T18:40:57Z",
+  "bytes": 80,
+  "sha256": "57b1e7534d003e4246182162fd2469cdf038de39405056f44fc006715e5496da"
+ },
+ {
+  "key": "overlap__Hypertension__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"NIFEDIPINE\"+\"AMLODIPINE\"+\"VERAPAMIL\"+\"DILTIAZEM\")+AND+patient.drug.openfda.generic_name:(\"LABETALOL\"+\"METHYLDOPA\"+\"HYDRALAZINE\")&limit=1",
+  "local_path": "data/raw_db/faers/overlap__Hypertension__total.json",
+  "utc": "2026-11-10T18:40:58Z",
+  "bytes": 21501,
+  "sha256": "ac34fa57337c3fe54d009d434e8b185644aeff6bb09fbe1960a9694f08a55f41"
+ },
+ {
+  "key": "group__Neuropathic pain__class__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"GABAPENTIN\"+\"PREGABALIN\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Neuropathic_pain__class__total.json",
+  "utc": "2026-11-10T18:40:58Z",
+  "bytes": 5105,
+  "sha256": "41051e76e17c02912153b72e81b8279ff84215b0478c6c763b7138967b48d5e5"
+ },
+ {
+  "key": "group__Neuropathic pain__class__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"GABAPENTIN\"+\"PREGABALIN\")+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/group__Neuropathic_pain__class__A.json",
+  "utc": "2026-11-10T18:40:59Z",
+  "bytes": 53297,
+  "sha256": "76c1a6ae792cd35b8a66e85ea5047b2153d41b37c16be2f281218b857bac6bd3"
+ },
+ {
+  "key": "group__Neuropathic pain__class__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"GABAPENTIN\"+\"PREGABALIN\")+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Neuropathic_pain__class__B.json",
+  "utc": "2026-11-10T18:41:00Z",
+  "bytes": 53296,
+  "sha256": "184ee675989f3a4114bc76bbca124dfc0d79c32a1bab344ab2ea761a37ae26e3"
+ },
+ {
+  "key": "group__Neuropathic pain__class__B_strict",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"GABAPENTIN\"+\"PREGABALIN\")+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Neuropathic_pain__class__B_strict.json",
+  "utc": "2026-11-10T18:41:01Z",
+  "bytes": 53296,
+  "sha256": "8e38d57a301dc8c21684a77c32d7a1c7488a90c234d7449a18781fec9ca8efc9"
+ },
+ {
+  "key": "drug__GABAPENTIN__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"GABAPENTIN\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__GABAPENTIN__total.json",
+  "utc": "2026-11-10T18:41:02Z",
+  "bytes": 154690,
+  "sha256": "5a09547900db51b5551dcb8ad2807391360e18994c2dd3e0f0247ed73a579ee8"
+ },
+ {
+  "key": "drug__GABAPENTIN__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"GABAPENTIN\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__GABAPENTIN__A.json",
+  "utc": "2026-11-10T18:41:03Z",
+  "bytes": 53296,
+  "sha256": "59e698b432d91e7c6c448193e529778ca6d21b4439a5b07299eee92399db90de"
+ },
+ {
+  "key": "drug__GABAPENTIN__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"GABAPENTIN\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__GABAPENTIN__B.json",
+  "utc": "2026-11-10T18:41:04Z",
+  "bytes": 53296,
+  "sha256": "31c10be05672053cd2777817dad6a10157b58febd07f484b174ad5c30d3b4a61"
+ },
+ {
+  "key": "drug__PREGABALIN__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"PREGABALIN\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__PREGABALIN__total.json",
+  "utc": "2026-11-10T18:41:05Z",
+  "bytes": 5105,
+  "sha256": "460827379031d8eb813ea56e7aaf278a5b5a3598b570eaf3c1c89433b404644d"
+ },
+ {
+  "key": "drug__PREGABALIN__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"PREGABALIN\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__PREGABALIN__A.json",
+  "utc": "2026-11-10T18:41:05Z",
+  "bytes": 72132,
+  "sha256": "c5bafa1b5d645ee1651f8cbaa884ca8ffd62eeb473d8748751b8344a3b0e28a6"
+ },
+ {
+  "key": "drug__PREGABALIN__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"PREGABALIN\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__PREGABALIN__B.json",
+  "utc": "2026-11-10T18:41:06Z",
+  "bytes": 248489,
+  "sha256": "38fbd334b6df431c81d7f21b580055ffdd826ab44ca3a8db03b50cf8c49c571e"
+ },
+ {
+  "key": "group__Neuropathic pain__comparator__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"DULOXETINE\"&limit=1",
+  "local_path": "data/raw_db/faers/group__Neuropathic_pain__comparator__total.json",
+  "utc": "2026-11-10T18:41:07Z",
+  "bytes": 16879,
+  "sha256": "63a233250ce6fadb05a68b4077d6b3dbd0a8e1ed5e013d72e7ea4d2bbad691f1"
+ },
+ {
+  "key": "group__Neuropathic pain__comparator__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"DULOXETINE\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/group__Neuropathic_pain__comparator__A.json",
+  "utc": "2026-11-10T18:41:08Z",
+  "bytes": 65246,
+  "sha256": "74ead82bd07549e461e2e6d545512ce4fe50878f02c2a08061da028b42d2d63e"
+ },
+ {
+  "key": "group__Neuropathic pain__comparator__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"DULOXETINE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Neuropathic_pain__comparator__B.json",
+  "utc": "2026-11-10T18:41:09Z",
+  "bytes": 65245,
+  "sha256": "49f45b6c8e3cca6308f0664e8b3b94b35fddf02e52730f7d0b2da05f26c80771"
+ },
+ {
+  "key": "group__Neuropathic pain__comparator__B_strict",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"DULOXETINE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\")&limit=1",
+  "local_path": "data/raw_db/faers/group__Neuropathic_pain__comparator__B_strict.json",
+  "utc": "2026-11-10T18:41:10Z",
+  "bytes": 65245,
+  "sha256": "49f45b6c8e3cca6308f0664e8b3b94b35fddf02e52730f7d0b2da05f26c80771"
+ },
+ {
+  "key": "drug__DULOXETINE__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"DULOXETINE\"&limit=1",
+  "local_path": "data/raw_db/faers/drug__DULOXETINE__total.json",
+  "utc": "2026-11-10T18:41:11Z",
+  "bytes": 16879,
+  "sha256": "63a233250ce6fadb05a68b4077d6b3dbd0a8e1ed5e013d72e7ea4d2bbad691f1"
+ },
+ {
+  "key": "drug__DULOXETINE__A",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"DULOXETINE\"+AND+seriousnesscongenitalanomali:1&limit=1",
+  "local_path": "data/raw_db/faers/drug__DULOXETINE__A.json",
+  "utc": "2026-11-10T18:41:12Z",
+  "bytes": 65246,
+  "sha256": "74ead82bd07549e461e2e6d545512ce4fe50878f02c2a08061da028b42d2d63e"
+ },
+ {
+  "key": "drug__DULOXETINE__B",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:\"DULOXETINE\"+AND+patient.reaction.reactionmeddrapt.exact:(\"CLEFT%20LIP\"+\"CLEFT%20PALATE\"+\"CLEFT%20LIP%20AND%20PALATE\"+\"POLYDACTYLY\"+\"SYNDACTYLY\"+\"LIMB%20REDUCTION%20DEFECT\"+\"ECTRODACTYLY\"+\"NEURAL%20TUBE%20DEFECT\"+\"SPINA%20BIFIDA\"+\"ANENCEPHALY\"+\"CRANIOSYNOSTOSIS\"+\"SITUS%20INVERSUS\"+\"HETEROTAXIA\"+\"DEXTROCARDIA\"+\"HEMIVERTEBRA\"+\"SPINE%20MALFORMATION\")&limit=1",
+  "local_path": "data/raw_db/faers/drug__DULOXETINE__B.json",
+  "utc": "2026-11-10T18:41:13Z",
+  "bytes": 65245,
+  "sha256": "49f45b6c8e3cca6308f0664e8b3b94b35fddf02e52730f7d0b2da05f26c80771"
+ },
+ {
+  "key": "overlap__Neuropathic pain__total",
+  "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:(\"GABAPENTIN\"+\"PREGABALIN\")+AND+patient.drug.openfda.generic_name:\"DULOXETINE\"&limit=1",
+  "local_path": "data/raw_db/faers/overlap__Neuropathic_pain__total.json",
+  "utc": "2026-11-10T18:41:14Z",
+  "bytes": 124785,
+  "sha256": "7a2d459262ba03ed08c85c262acab699159f9949630029dc5593aeb5278f03f1"
+ }
+]
