@@ -1,0 +1,13 @@
+# Skipped arms / problems: oviedo2010_devbiol (pass S)
+- Fig 1A tail fragment (n=178): no bar shown (value zero); zero-only outcome cannot be recorded as a row.
+- Fig 3D head, pre-pharyngeal, tail fragments after Inx-5+13,-12 RNAi: no bar (zero), no n given.
+- Untreated controls for Figs 1, 2, 3 (water-injected, untreated fragments): described in words only ("always regenerated normally", "never observed"), no n or numbers.
+- Fig S1C hexanol (no effect), heptanol ("<65%"), octanol (100%) table: no n, hexanol NO, heptanol bound only; octanol 100% duplicates post-pharyngeal arm.
+- Table S1 single and multi-innexin RNAi arms with all "--" (about 19 arms, n 5-50): no numeric outcome reported (text says no phenotype for single RNAi).
+- Table S1 Dj-Inx-5+13;12 (n=137): pooled intact plus regenerating animals (ectopic head ~51%, polarity ~44%); overlaps the Fig 3D arms, not extracted separately.
+- Table S1 behavioural and fissioning percentages: not anatomical polarity outcomes (fissioning, behaviour, mortality ~37%).
+- Fig 5 longitudinal (n=48), transverse (n=72, n=24) multiheaded re-cuts (100% retained): conflict with Fig S5B (n=72 transverse ~90% single-headed); S5B version extracted, Fig 5 versions not extracted separately.
+- Fig S9B Dj-bcatenin-B RNAi alone rows: genetic arm without electrical/ionic component. Octanol+RNAi head (-- %) and tail (0%, n=8): not extractable.
+- Fig S6, S7 (octanol tissue levels, mutagenicity): not anatomical outcomes.
+- Fig 4A control n and Fig 2 n (>=10) ambiguous; see notes in rows.
+- Dj-Inx intact RNAi behaviour ~95% n=137 and ~50% n=30 ectopic pigmentation/pharynx: not extracted (behavioural / overlapping with n=14 row).

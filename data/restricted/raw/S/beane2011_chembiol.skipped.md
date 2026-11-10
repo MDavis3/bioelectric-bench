@@ -1,0 +1,11 @@
+# beane2011_chembiol skipped arms (pass S)
+- Fig 1D, SCH alone in pharynx fragments (67.43% headless) is the single row; Fig 4A1 "Pharynx" (62.5/12.5/25, no n, ~1 cm worms) and "No Head" (100% normal) bars are repeats of the same arms (pharynx and pre-pharynx fragments) with no n, so not separate rows.
+- Text: SCH alone control in the K+ rescue experiment (52.6% headless, n not stated) is a repeat of the pharynx SCH arm; not a separate row.
+- Fig 3B1/B2 (control-injected, SCH control-injected) and B3 (beta-catenin RNAi alone, 66.7% double-heads): no numbers for B1/B2; B3 is genetic only (no electrical component).
+- Fig 4B2/C2/D2 control halves/fragments: images only, no numbers.
+- pH 4 (n=50) and pH 9 (n=60) medium: stated only as "not sufficient to affect regenerative polarity", no outcome numbers.
+- SCH for under 72 h dose-response and 24 h SCH: "data not shown".
+- Fig 3A behavior (area explored), Fig 6C DiBAC intensities, Fig 7A Ca2+ intensities, Fig S1/S3 pH and Vmem: not anatomical outcomes.
+- Fig 2 marker analyses (n>=5): no frequencies.
+- Intact worms with SCH or ivermectin: no phenotype, no numbers.
+- Supplement (mmc1.pdf) read: Figs S1-S3 contain no outcome counts.

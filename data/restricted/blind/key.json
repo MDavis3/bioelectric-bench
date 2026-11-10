@@ -1,0 +1,82 @@
+{
+ "annand2014_ethos": {
+  "X": "S",
+  "Y": "O"
+ },
+ "beane2011_chembiol": {
+  "X": "O",
+  "Y": "S"
+ },
+ "beane2013_development": {
+  "X": "O",
+  "Y": "S"
+ },
+ "bischof2020_devbiol": {
+  "X": "O",
+  "Y": "S"
+ },
+ "buchanan1922_jexpzool": {
+  "X": "S",
+  "Y": "O"
+ },
+ "chan2011_pmid21897362": {
+  "X": "S",
+  "Y": "O"
+ },
+ "chan2017_bba": {
+  "X": "S",
+  "Y": "O"
+ },
+ "child1911_jexpzool": {
+  "X": "S",
+  "Y": "O"
+ },
+ "durant2017_bpj": {
+  "X": "S",
+  "Y": "O"
+ },
+ "durant2019_bpj": {
+  "X": "O",
+  "Y": "S"
+ },
+ "emmonsbell2015_ijms": {
+  "X": "O",
+  "Y": "S"
+ },
+ "emmonsbell2019_iscience": {
+  "X": "O",
+  "Y": "S"
+ },
+ "nogi2005_pmid16243308": {
+  "X": "S",
+  "Y": "O"
+ },
+ "nogi2009_plosntd": {
+  "X": "O",
+  "Y": "S"
+ },
+ "oviedo2007_pmid17670787": {
+  "X": "O",
+  "Y": "S"
+ },
+ "oviedo2010_devbiol": {
+  "X": "S",
+  "Y": "O"
+ },
+ "pietak2019_pmid30990801": {
+  "X": "S",
+  "Y": "O"
+ },
+ "rustia1925_jexpzool": {
+  "X": "O",
+  "Y": "S"
+ },
+ "shearer1924_pmid17798088": {
+  "X": "S",
+  "Y": "O"
+ },
+ "zhang2011_jneurosci": {
+  "X": "O",
+  "Y": "S"
+ }
+}

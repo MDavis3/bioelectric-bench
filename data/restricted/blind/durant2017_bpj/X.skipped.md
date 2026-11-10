@@ -1,0 +1,11 @@
+# durant2017_bpj skipped arms (pass S)
+- Fig 2 late octanol (days 2-5) tail-marker (FzT) in situ: molecular readout only (30%/30% marker loss, n=10), no anatomical outcome.
+- Fig 3 marker/neoblast analyses (PC2, 0821_HN, 1008_HH, ndk, FzT, H3P): molecular/histology, no anatomical outcome.
+- Fig 4 A-D / Table S1 DiBAC4(3) Vmem intensities: physiology readout, not anatomical.
+- Fig S5 valinomycin+KGluc depolarization control: dye validation, no anatomical outcome.
+- Fig S1B fission persistence: no number.
+- Fragments posterior to pharynx giving DH (text): no number.
+- Fig 1D adjacent pieces: image only, no number.
+- Fig 5 pooled state-diagram percentages: pooled over rounds; members already rows (WT->CRPT/DH = 8-OH row; H2O CRPT 75/25 = recut rows).
+- Fig S6 model: computational, no animal data.
+- Problem note: N=573 (Fig 1A legend) vs 593 (text); S3 3rd cut 23% (diagram) vs 27% (text).

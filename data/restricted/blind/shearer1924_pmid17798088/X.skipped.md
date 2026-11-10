@@ -1,0 +1,2 @@
+# shearer1924_pmid17798088 (Science 60:295-296, PDF pages 344-345; continues to top of p. 297 = PDF page 346)
+Brief note: transverse pieces behind the pharynx of Planaria maculata; no electrical or ionic intervention (the only treatment is cutting), and no counts or percentages are given (only qualitative statements: heteromorphic individuals occurred "occasionally" from extremely short pieces; original polarity "very large" percentage). No arm with a number, so no rows.
