@@ -80,3 +80,13 @@
 ## Next step I would take
 
 Approve ClinVar and run the allele-direction test (Q017): do gain-of-function or dominant alleles of channel genes cause more patterning defects than null alleles of the same genes, compared with control genes? It addresses the most direct remaining form of the bioelectric claim. It is also cheap and gene-matched, so annotation bias largely cancels.
+
+## After the overnight run (Manav's approvals, 2026-11-10 ~10:15 PST)
+
+- Q017 (altered-function vs loss-of-function conditions, ClinVar):
+  - Red team: 9 MUST items, adopted.
+  - Validation list and cited-case list frozen and sealed before any ClinVar content was seen.
+  - Core-malformation endpoint built by a reviewer who had seen no data: 518 terms.
+  - Analysis code and self-test done (harness/q017.py).
+  - **Blocked:** NCBI's robots.txt disallows all automated fetching, so ClinVar needs a manual browser download by
+    Manav. Everything else is ready to run once the file is in data/raw_db/clinvar/.
