@@ -29,6 +29,7 @@
   },
   "db_classes_v1": {
     "copy": "sealed/db_classes_v1__13cce957a1e1.json",
+    "remote_commit": "a8320cf7a101804f9724066fdf5fd1d44761571c",
     "sha256": "13cce957a1e162ab740304e77326ede1a5f90c7e0656c61ce93cdc72c65091bc",
     "source": "config/db_classes_v1.json",
     "utc": "2026-11-10T16:38:13Z"
