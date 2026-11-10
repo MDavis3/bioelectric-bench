@@ -78,6 +78,7 @@
   },
   "lab_lineage_v3": {
     "copy": "sealed/lab_lineage_v3__45ac10c938ab.json",
+    "remote_commit": "0a3ebe64b7a210ac8abf2528f5d3126e36e7faff",
     "sha256": "45ac10c938ab370b78bb4b61425bc7ef67579b2b17ee309a977f18c93712ab2a",
     "source": "config/lab_lineage_v3.json",
     "utc": "2026-11-10T09:19:48Z"
