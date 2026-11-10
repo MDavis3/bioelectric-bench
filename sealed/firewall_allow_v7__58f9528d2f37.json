@@ -1,0 +1,6 @@
+{
+ "note": "Firewall allow-list v7: Q017 design documents (thresholds and published examples, no ClinVar data) and the finished FAERS probe report.",
+ "text_allow_add": {"plans/q017_redteam.md": "design; thresholds only", "plans/q017_endpoint_review.md": "ontology term counts only",
+                    "plans/q017_v0.md": "design draft", "reports/faers_probe_v1.md": "finished exploratory probe"},
+ "denied_add": []
+}
